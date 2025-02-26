@@ -152,7 +152,7 @@ Before designing our game, we considered the **core system needs**:
   - Structured across **multiple time periods**.
   - Integrated **historical landmarks as gameplay elements**.
 
-- `core gameplay pillars`
+- `gameplay pillars`
   - **Strategic Placement & Adaptation**:
     - Players must carefully position defenses.
   - **Era-Specific Towers & Monsters**:
