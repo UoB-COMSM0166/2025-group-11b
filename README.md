@@ -243,7 +243,7 @@ TowerManager → GameMap: Checks grid availability
 GameMap → TowerManager: Returns result (success/fail)
 TowerManager → GameManager: Confirms placement
 GameManager → UIManager: Updates UI (tower placed)
-``
+```
 ## `Implement monster behavior lifecycle`
 
 ### State Diagram – Monster Behavior
