@@ -160,7 +160,7 @@ Before designing our game, we considered the **core system needs**:
   - **Historical Landmarks as Gameplay Features**:
     - Real-world locations enhance **gameplay and strategy**.
 
-- `chore: Develop early prototype`
+- `Develop early prototype`
   - Focused on:
     - Grid-based tower placement.
     - Monster AI pathfinding.
