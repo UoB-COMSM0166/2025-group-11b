@@ -26,6 +26,10 @@ Add a group photo here!
 
 # 2. Introduction
 
+<div style="text-align: center;">
+  <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
+</div>
+
 In designing our game, we set out to create a **historically immersive** tower defense experience that is both **engaging and educational**. Our vision was to craft a game that combines **strategy, progression, and cultural significance**, allowing players to explore the **rich history of Bristol** while defending the city from various threats across different time periods.
 
 ## A Unique Twist on Tower Defense
@@ -53,14 +57,6 @@ These landmarks are not just **visual elements** but play a **strategic role in 
 
 By combining **historical authenticity** with **engaging gameplay**, we have created a **tower defense game unlike any other**—one that **challenges players strategically** while also offering an **educational journey through time**.
 
-
-<div style="text-align: center;">
-  <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
-</div>
-
-In Oiram, you control a spaceman who must figure out how to escape through a gate using only a button and a mysterious machine. Players will initially be confused as they realise that the button requires you to stand on it for the door to open, indicating that another player or object is required to keep the door open. This is another twist we incorporated, a reimagining of the traditional multiplayer experience. Using the machine allows you to invert time and send a past version of yourself back through the level. You must then coordinate with your past movements and reach the door when your past self presses the button. Additionally, you must avoid your previous self to avoid a “Time Paradox”. As the levels increase in complexity there are other obstacles you must avoid and interact with, such as falling bombs, moving platforms, and deadly drops. You are not the only thing that is reversed when you use the time machine, thus requiring careful tracking of where bombs fell, as implosions are as deadly as explosions.
-
-These gameplay elements, alongside our use of machine vision to allow for a more accessible user experience, has allowed us to design a truly innovative game. Offering a unique sci-fi twist on the Super Mario style platforming genre, and a reimagining of the traditional multiplayer experience.
 # 3. Requirements
 
 ## System Needs & Implementation Considerations
