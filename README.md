@@ -78,7 +78,6 @@ Before designing our game, we considered the **core system needs**:
 
 - **Interoperability Needs**
   - The game should be **accessible across devices** (PC, console, web).
-  - It should integrate with **game engines like Unity or Unreal** for optimization.
 
 ---
 
@@ -90,7 +89,7 @@ Before designing our game, we considered the **core system needs**:
     - Places and upgrades towers.
     - Unlocks era-specific defenses.
     - Monitors monster waves and adapts tactics.
-    - Interacts with historical landmarks for bonuses.
+    - Appreciates historical landmarks and gains bonuses.
 
   - **Monster AI (Dynamic Threats)**:
     - Attacks in waves with different strategies.
@@ -107,7 +106,7 @@ Before designing our game, we considered the **core system needs**:
 ## User Stories
 
 - **Gameplay Mechanics**:
-  - `feat: Add tower placement`
+  - `Add tower placement`
     - As a player, I want to place towers on a grid to defend strategically.
   - `feat: Implement tower upgrades`
     - As a player, I want to upgrade towers to counter stronger monsters.
@@ -115,7 +114,7 @@ Before designing our game, we considered the **core system needs**:
     - As a player, I want diverse monster types to challenge my strategies.
 
 - **Era Progression & Difficulty**:
-  - `feat: Introduce era-based threats`
+  - `Introduce era-based threats`
     - As a player, I want new challenges in each era.
   - `feat: Implement rewards`
     - As a player, I want to earn in-game currency for upgrades.
@@ -123,8 +122,8 @@ Before designing our game, we considered the **core system needs**:
     - As a player, I want dynamic difficulty to match my skill level.
 
 - **Historical Elements & Landmarks**:
-  - `feat: Add landmarks`
-    - As a player, I want **Bristol landmarks** (e.g., Clifton Bridge, Bristol Castle) to provide defensive bonuses.
+  - `Add landmarks`
+    - As a player, I want to appreciate Bristol landmarks (e.g., Clifton Bridge, Bristol Castle) while gaining defensive bonuses.
   - `feat: Include historical learning`
     - As a player, I want to learn about **historical events and figures**.
 
@@ -148,12 +147,12 @@ Before designing our game, we considered the **core system needs**:
 
 ## Early Design & Prototyping
 
-- `design: Define early game concept`
+- `Define early game concept`
   - Combined **historical accuracy with strategy**.
   - Structured across **multiple time periods**.
   - Integrated **historical landmarks as gameplay elements**.
 
-- `design: Develop core gameplay pillars`
+- `core gameplay pillars`
   - **Strategic Placement & Adaptation**:
     - Players must carefully position defenses.
   - **Era-Specific Towers & Monsters**:
