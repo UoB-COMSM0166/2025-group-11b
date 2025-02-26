@@ -170,54 +170,40 @@ Before designing our game, we considered the **core system needs**:
 ---
 # 4. Design: System Architecture & Diagrams
 
-## `feat: Summarize design approach`
+## `Summarize design approach`
 This document outlines the **multi-layered architecture**, **core classes**, and **behavioral diagrams** for our **historical tower defense game**, ensuring **scalability**, **maintainability**, and **optimal performance**.
 
 ---
 
-## `feat: Multi-layered architecture`
+## `Multi-layered architecture`
 
 ### System Architecture
 The game is split into **three primary layers** to separate concerns and streamline development.
 
 1. **Client Layer (Frontend)**
-   - `feat: Implement UI & Input Handling`
+   - `Implement UI & Input Handling`
      - Displays **towers, monsters, and maps**.
      - Handles **mouse clicks** for placing/upgrading towers.
      - Provides **real-time feedback** with animations and sounds.
-   - `feat: Integrate rendering engine`
-     - Uses **Unity/Unreal** for rendering, physics, and animations.
      - Implements a **grid-based system** for strategic tower placement.
-     - Supports **dynamic lighting and weather effects**.
 
 2. **Game Logic Layer (Core Mechanics)**
-   - `feat: Implement tower management`
+   - `Implement tower management`
      - Handles **placing, upgrading, and selling towers**.
      - Integrates **historical tower types** with unique abilities.
-   - `feat: Develop monster AI & pathfinding`
-     - Uses **A* algorithm** for pathfinding.
+   - `Develop monster AI & pathfinding`
+     - Uses BFS for pathfinding.
      - Monsters **adapt** routes based on tower placements.
-   - `feat: Implement wave & progression system`
+   - `Implement wave & progression system`
      - Spawns **monster waves** with increasing difficulty.
      - Unlocks **new eras** for additional challenges.
-   - `feat: Create resource system`
+   - `Create resource system`
      - Players **earn currency** for defeating monsters.
      - Allows **purchasing/upgrading towers**.
 
-3. **Data Layer (Backend & Storage)**
-   - `feat: Implement game state management`
-     - Stores **player progress, unlocked levels, and high scores**.
-     - Records **tower placements and upgrade states**.
-   - `feat: Implement persistent storage`
-     - Uses **JSON, SQLite, or cloud** for saving data.
-     - Includes **auto-save** for continuous gameplay.
-   - `feat: Plan multiplayer & leaderboard integration`
-     - Potential for **competitive or co-op modes**.
-     - Supports **leaderboards and player stats** in future updates.
-
 ---
 
-## `feat: Define core class structure`
+## `Define core class structure`
 
 ### Class Diagram
 Below is the **OOP-based hierarchy** capturing major classes:
@@ -241,12 +227,12 @@ Below is the **OOP-based hierarchy** capturing major classes:
   - **Methods**: `placeTower()`, `upgradeTower()`, `pauseGame()`.
 
 - **PathfindingManager**
-  - Implements **A* pathfinding**.
+  - Implements **BFS**.
   - Adjusts **monster routes** dynamically based on **tower positions**.
 
 ---
 
-## `feat: Implement tower placement behavior`
+## `Implement tower placement behavior`
 
 ### Sequence Diagram – Placing a Tower
 ```plaintext
@@ -257,7 +243,7 @@ TowerManager → GameMap: Checks grid availability
 GameMap → TowerManager: Returns result (success/fail)
 TowerManager → GameManager: Confirms placement
 GameManager → UIManager: Updates UI (tower placed)
-## `feat: Implement monster behavior lifecycle`
+## `Implement monster behavior lifecycle`
 
 ### State Diagram – Monster Behavior
 ~~~~plaintext
@@ -268,58 +254,22 @@ GameManager → UIManager: Updates UI (tower placed)
 [Monster Dies] → [Player Gains Reward]
 ~~~~
 
-## `chore: Optimize architecture for scalability`
+## `Optimize architecture for scalability`
 - **Modular design** accommodates new towers, monsters, maps.
 - **Component-based** approach ensures easy maintenance.
 
-## `chore: Enhance performance`
-- **Optimized A* pathfinding** for seamless monster movement.
+## `Enhance performance`
+- **Optimized BFS for seamless monster movement.
 - **Object pooling** to reduce overhead when spawning monsters.
 - **Memory management** for large assets.
 
-## `chore: Improve user experience`
+## `Improve user experience`
 - **Intuitive UI** for placing/upgrading towers.
 - **Real-time audio/visual feedback** for attacks and upgrades.
 - **Difficulty scaling** matching player skill.
 
-## `feat: Integrate history & strategy`
+## `Integrate history & strategy`
 
-
-
-<div style="display: flex; justify-content: center; align-items: center;">
-  <table style="border-collapse: collapse; text-align: center; width: 60%; margin: 0 auto;">
-    <caption>
-      <b>Table 2</b><br>
-      <i>Oiram Game Objects.</i>
-    </caption>
-    <tr>
-      <th>Category</th>
-      <th>Image</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Gates</td>
-      <td><img src="Game/assets/Static/Door/door1.png" alt="Gates" style="height: 100px;"></td>
-      <td>Act as portals to the next level.</td>
-    </tr>
-    <tr>
-      <td>Switches</td>
-      <td><img src="Game/assets/Static/Button/button1.gif" alt="Switches" style="height: 100px;"></td>
-      <td>Toggle to open doors.</td>
-    </tr>
-    <tr>
-      <td>Tardis</td>
-      <td><img src="Game/assets/Static/TimeMachine/time1.png" alt="Tardis" style="height: 100px;"></td>
-      <td>Device to invoke time reversal.</td>
-    </tr>
-          <tr>
-      <td>Bomb</td>
-      <td><img src="Game/assets/Dynamic/bomb.png" alt="bomb" style="height: 100px;"></td>
-      <td>Bomb which kills the player when it explodes.</td>
-    </tr>
-  </table>
-</div>
-```
 # 5. Implementation
 
 feat: Implement game structure and core components
