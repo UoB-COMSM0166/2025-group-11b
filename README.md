@@ -101,115 +101,118 @@ These landmarks are not just **visual elements** 👀 but play a **strategic rol
 By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
 
 
-# 3. Requirements
+# 🎯 3. Requirements  
 
-## System Needs & Implementation Considerations
+## ⚙️ System Needs & Implementation Considerations  
 
-Before designing our game, we considered the **core system needs**:
+Before designing our game, we considered the **core system needs** 🏗️:  
 
-- **What should the system do?**
-  - Provide an interactive **tower defense experience** across historical periods.
-  - Allow **players to place, upgrade, and manage towers** dynamically.
-  - Unlock **new defensive technologies** based on era progression.
+- **🛡️ What should the system do?**  
+  - Provide an **interactive tower defense experience** across historical periods.  
+  - Allow **players to place, upgrade, and manage towers** dynamically.  
+  - Unlock **new defensive technologies** based on era progression.  
 
-- **User Needs**
-  - Players should experience an engaging strategy game while learning about **Bristol’s historical evolution**.
-  - The UI should allow **intuitive tower placement, upgrades, and resource management**.
+- **🎮 User Needs**  
+  - Players should experience an **engaging strategy game** while learning about **Bristol’s historical evolution** 🏰📜.  
+  - The UI should allow **intuitive tower placement, upgrades, and resource management** 🖥️.  
 
-- **Host Organization Needs**
-  - If used educationally, the game should include **historical accuracy and informational elements**.
-  - The system should be **easy to maintain and update** with additional content.
+- **🏛️ Host Organization Needs**  
+  - If used educationally, the game should include **historical accuracy and informational elements** 🏗️📖.  
+  - The system should be **easy to maintain and update** 🔄 with additional content.  
 
-- **Interoperability Needs**
-  - The game should be **accessible across devices** (PC, console, web).
-
----
-
-## Use Case Diagram, User Stories, and Early Design Process
-
-### Use Case Diagram
-- **Actors & Use Cases**:
-  - **Player (Guardian Role)**:
-    - Places and upgrades towers.
-    - Unlocks era-specific defenses.
-    - Monitors monster waves and adapts tactics.
-    - Appreciates historical landmarks and gains bonuses.
-
-  - **Monster AI (Dynamic Threats)**:
-    - Attacks in waves with different strategies.
-    - Adapts based on player defenses.
-    - Features unique monster types (e.g., knights, pirates, cyber threats).
-
-  - **Game System**:
-    - Generates monster waves per era.
-    - Unlocks new technologies.
-    - Provides real-time visual and audio feedback.
+- **📱 Interoperability Needs**  
+  - The game should be **accessible across devices** (PC 🖥️, console 🎮, web 🌐).  
 
 ---
 
-## User Stories
+## 📝 Use Case Diagram, User Stories, and Early Design Process  
 
-- **Gameplay Mechanics**:
-  - `Add tower placement`
-    - As a player, I want to place towers on a grid to defend strategically.
-  - `feat: Implement tower upgrades`
-    - As a player, I want to upgrade towers to counter stronger monsters.
-  - `feat: Add monster variety`
-    - As a player, I want diverse monster types to challenge my strategies.
+### 🎭 Use Case Diagram  
 
-- **Era Progression & Difficulty**:
-  - `Introduce era-based threats`
-    - As a player, I want new challenges in each era.
-  - `feat: Implement rewards`
-    - As a player, I want to earn in-game currency for upgrades.
-  - `feat: Implement difficulty scaling`
-    - As a player, I want dynamic difficulty to match my skill level.
+- **👤 Actors & Use Cases**:  
 
-- **Historical Elements & Landmarks**:
-  - `Add landmarks`
-    - As a player, I want to appreciate Bristol landmarks (e.g., Clifton Bridge, Bristol Castle) while gaining defensive bonuses.
-  - `feat: Include historical learning`
-    - As a player, I want to learn about **historical events and figures**.
+  - **🦸 Player (Guardian Role)**:  
+    - 🏹 Places and upgrades towers.  
+    - 🔓 Unlocks era-specific defenses.  
+    - 🌊 Monitors monster waves and adapts tactics.  
+    - 🏰 Appreciates historical landmarks and gains bonuses.  
+
+  - **👾 Monster AI (Dynamic Threats)**:  
+    - ⚔️ Attacks in waves with different strategies.  
+    - 🧠 Adapts based on player defenses.  
+    - 👹 Features unique monster types (e.g., knights, pirates, cyber threats).  
+
+  - **🎮 Game System**:  
+    - 🏰 Generates monster waves per era.  
+    - 🔬 Unlocks new technologies.  
+    - 🎧 Provides real-time visual and audio feedback.  
 
 ---
 
-## Functional & Non-Functional Requirements  
+## 📖 User Stories  
 
-### **Functional Requirements** (What the system should do)
-- The game must support **tower placement, upgrades, and defensive strategies**.
-- Monsters must **adapt dynamically** to player actions.
-- The system should provide **audio-visual feedback**.
-- Different levels must represent **historical periods**.
+### 🏹 **Gameplay Mechanics**  
+- ✅ `Add tower placement`  
+  - As a player, I want to **place towers** on a grid to defend strategically.  
+- ✅ `feat: Implement tower upgrades`  
+  - As a player, I want to **upgrade towers** to counter stronger monsters.  
+- ✅ `feat: Add monster variety`  
+  - As a player, I want **diverse monster types** to challenge my strategies.  
 
-### **Non-Functional Requirements** (Quality attributes)
-- **Security:** Prevent unauthorized access to game data.
-- **Usability:** Provide an intuitive interface for new and experienced players.
-- **Performance:** Maintain **smooth framerates**.
-- **Scalability:** Allow future updates for additional content.
+### ⚔️ **Era Progression & Difficulty**  
+- ✅ `Introduce era-based threats`  
+  - As a player, I want **new challenges in each era**.  
+- ✅ `feat: Implement rewards`  
+  - As a player, I want to **earn in-game currency** for upgrades.  
+- ✅ `feat: Implement difficulty scaling`  
+  - As a player, I want **dynamic difficulty** to match my skill level.  
+
+### 🏛️ **Historical Elements & Landmarks**  
+- ✅ `Add landmarks`  
+  - As a player, I want to **appreciate Bristol landmarks** (e.g., Clifton Bridge, Bristol Castle) while gaining defensive bonuses.  
+- ✅ `feat: Include historical learning`  
+  - As a player, I want to **learn about historical events and figures** 📜.  
 
 ---
 
-## Early Design & Prototyping
+## 🔍 Functional & Non-Functional Requirements  
 
-- `Define early game concept`
-  - Combined **historical accuracy with strategy**.
-  - Structured across **multiple time periods**.
-  - Integrated **historical landmarks as gameplay elements**.
+### **⚙️ Functional Requirements (What the system should do)**  
+- 🎯 The game must support **tower placement, upgrades, and defensive strategies**.  
+- 👾 Monsters must **adapt dynamically** to player actions.  
+- 🎧 The system should provide **audio-visual feedback**.  
+- ⏳ Different levels must represent **historical periods**.  
 
-- `gameplay pillars`
-  - **Strategic Placement & Adaptation**:
-    - Players must carefully position defenses.
-  - **Era-Specific Towers & Monsters**:
-    - Example: Medieval era uses **archers**, while the Industrial era introduces **steam-powered turrets**.
-  - **Historical Landmarks as Gameplay Features**:
-    - Real-world locations enhance **gameplay and strategy**.
+### **🔧 Non-Functional Requirements (Quality attributes)**  
+- 🔒 **Security**: Prevent unauthorized access to game data.  
+- 🎮 **Usability**: Provide an **intuitive interface** for new and experienced players.  
+- 🚀 **Performance**: Maintain **smooth framerates**.  
+- 🔄 **Scalability**: Allow **future updates** for additional content.  
 
-- `Develop early prototype`
-  - Focused on:
-    - Grid-based tower placement.
-    - Monster AI pathfinding.
-    - UI concepts for resource management.
-  - Validated **core mechanics** before full-scale development.
+---
+
+## 🎨 Early Design & Prototyping  
+
+### 🔬 `Define early game concept`  
+- 🏰 Combined **historical accuracy with strategy**.  
+- ⏳ Structured across **multiple time periods**.  
+- 🏛️ Integrated **historical landmarks as gameplay elements**.  
+
+### 🏗️ `Gameplay Pillars`  
+- 🎯 **Strategic Placement & Adaptation**:  
+  - Players must carefully **position defenses**.  
+- ⚔️ **Era-Specific Towers & Monsters**:  
+  - Example: **Medieval era 🏹 uses archers**, while the **Industrial era 🏭 introduces steam-powered turrets**.  
+- 🏰 **Historical Landmarks as Gameplay Features**:  
+  - Real-world locations enhance **gameplay and strategy**.  
+
+### 🛠️ `Develop early prototype`  
+- Focused on:  
+  - 🏗️ **Grid-based tower placement**.  
+  - 👾 **Monster AI pathfinding**.  
+  - 🎨 **UI concepts for resource management**.  
+- ✅ Validated **core mechanics** before full-scale development.  
+
 
 ---
 # 4. Design: System Architecture & Diagrams
