@@ -90,9 +90,9 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 | Landmark | Image | Landmark | Image |
 |----------|-------|----------|-------|
 | ⛪ **Bristol Cathedral** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100" height="100"> | 🚢 **SS Great Britain** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100" height="100"> |
-| 🌉 **Clifton Suspension Bridge** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100" height="100"> | 🏰 **St Mary Redcliffe** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/st_mary_redcliffe.jpg" width="100" height="100"> |
-| 🗼 **Cabot Tower** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/cabot_tower.jpg" width="100" height="100"> | 🏛️ **Wills Memorial Building** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/wills_memorial_building.jpg" width="100" height="100"> |
-| 🏛️ **Bristol Museum & Art Gallery** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/bristol_museum_art_gallery.jpg" width="100" height="100"> | 🎨 **Arnolfini** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/arnolfini.jpg" width="100" height="100"> |
+| 🌉 **Clifton Suspension Bridge** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100" height="100"> | 🏰 **St Mary Redcliffe** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Bristol_eglise_St_Mary_redcliffe-crop.jpg" width="100" height="100"> |
+| 🗼 **Cabot Tower** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Cabot%20Tower.jpg" width="100" height="100"> | 🏛️ **Wills Memorial Building** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/MVB%20500%20x%20250.jpg" width="100" height="100"> |
+| 🏛️ **Chemistry Building** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Chemistry.jpg" width="100" height="100"> | 🎨 **We The Curious** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/we%20the%20curious.jpg" width="100" height="100"> |
 
 ---
 
