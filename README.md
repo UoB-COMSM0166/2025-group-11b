@@ -119,7 +119,10 @@ During **Week 2**, our team (**which initially had 6 members**) brainstormed **t
 ### 📜 Paper Prototype Development  
 To better understand and test the game mechanics, we **created paper prototypes 📄🎲** for both concepts as part of the **early validation process**:  
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Early%20Design.gif" alt="Early Design" width="600">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Early%20Design.gif" 
+       alt="Early Design" 
+       width="500" 
+       style="max-width: 100%; height: auto;">
 </p>
 
 ## ⚙️ System Needs & Implementation Considerations  
