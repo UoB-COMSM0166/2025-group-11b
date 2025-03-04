@@ -118,6 +118,7 @@ During **Week 2**, our team (**which initially had 6 members**) brainstormed **t
 
 ### 📜 Paper Prototype Development  
 To better understand and test the game mechanics, we **created paper prototypes 📄🎲** for both concepts as part of the **early validation process**:  
+![Animation Preview](animation.gif)
 
 ## ⚙️ System Needs & Implementation Considerations  
 
