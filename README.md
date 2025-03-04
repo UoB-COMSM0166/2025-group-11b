@@ -87,9 +87,12 @@ Each era presents its own **challenges** 🎯, requiring players to **adapt thei
 
 To enhance immersion, we carefully incorporated **real historical landmarks** from Bristol, such as:  
 
-- 🏰 **Bristol Castle**  
-- 🌉 **Clifton Suspension Bridge**  
-- 🚢 **SS Great Britain**  
+| Landmark | Image |
+|----------|-------|
+| ⛪ **Bristol Cathedral** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100"> |
+| 🚢 **SS Great Britain** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100"> |
+| 🌉 **Clifton Suspension Bridge** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100"> |
+
 
 These landmarks are not just **visual elements** 👀 but play a **strategic role in defense** 🛡️, with some offering **unique defensive abilities** 🔥.  
 
