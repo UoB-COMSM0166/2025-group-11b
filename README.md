@@ -71,28 +71,31 @@ Add a group photo here!
 </div>
 
 
+## ⚔️ Strategic Depth & Progression 📈🔧  
 
+What makes our game unique is its **evolving technology system** 🔄—as players progress through the game, they unlock **era-specific defenses** 🏰🔫 such as:  
 
-## Strategic Depth & Progression
+- 🏹 **Medieval archer towers**  
+- ⚓ **18th-century naval cannons**  
+- 🏭 **Industrial steam-powered turrets**  
+- 🤖 **Futuristic AI-controlled drones**  
 
-What makes our game unique is its **evolving technology system**—as players progress through the game, they unlock **era-specific defenses** such as:
-- **Medieval archer towers**
-- **18th-century naval cannons**
-- **Industrial steam-powered turrets**
-- **Futuristic AI-controlled drones**
+Each era presents its own **challenges** 🎯, requiring players to **adapt their strategies** 🧠 while leveraging **historical innovations** 🏛️ to fortify their defenses.  
 
-Each era presents its own **challenges**, requiring players to **adapt their strategies** while leveraging **historical innovations** to fortify their defenses.
+---
 
-## Bringing History to Life
+## 🏛️ Bringing History to Life 🎮⏳  
 
-To enhance immersion, we carefully incorporated **real historical landmarks** from Bristol, such as:
-- **Bristol Castle**
-- **Clifton Suspension Bridge**
-- **SS Great Britain**
+To enhance immersion, we carefully incorporated **real historical landmarks** from Bristol, such as:  
 
-These landmarks are not just **visual elements** but play a **strategic role in defense**, with some offering **unique defensive abilities**.
+- 🏰 **Bristol Castle**  
+- 🌉 **Clifton Suspension Bridge**  
+- 🚢 **SS Great Britain**  
 
-By combining **historical authenticity** with **engaging gameplay**, we have created a **tower defense game unlike any other**—one that **challenges players strategically** while also offering an **educational journey through time**.
+These landmarks are not just **visual elements** 👀 but play a **strategic role in defense** 🛡️, with some offering **unique defensive abilities** 🔥.  
+
+By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
+
 
 # 3. Requirements
 
