@@ -96,6 +96,8 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 | 🏛️ **Bristol Museum & Art Gallery** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/bristol_museum_art_gallery.jpg" width="100" height="100"> | 🎨 **Arnolfini** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/arnolfini.jpg" width="100" height="100"> |
 </div>
 
+---
+
 These landmarks are not just **visual elements** 👀 but play a **strategic role in defense** 🛡️, with some offering **unique defensive abilities** 🔥.  
 
 By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
