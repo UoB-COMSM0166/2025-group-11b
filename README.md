@@ -36,21 +36,21 @@ In designing our game, we set out to create a **historically immersive** tower d
 
 Most tower defense games focus purely on mechanics, but we wanted to **integrate historical storytelling** into the gameplay. Our game spans **multiple eras**, from the **medieval period** to the **modern day**, each with **distinct monsters, architectural styles, and defense technologies**. Players take on the role of a **"Guardian"**, protecting Bristol from **historical and futuristic threats**, including **invading armies, pirate raids, industrial uprisings, and high-tech cyber warfare**.
 
-<div align="center">
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Middle%20Ages.jpg" width="300"><br>
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Middle%20Ages.jpg" width="250"><br>
     <b>Figure 1</b><br>
     <i>Medieval Map</i>
   </div>
 
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/sailing.png" width="300"><br>
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/sailing.png" width="250"><br>
     <b>Figure 2</b><br>
     <i>Age of Exploration Map</i>
   </div>
 
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/future.png" width="300"><br>
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/future.png" width="250"><br>
     <b>Figure 3</b><br>
     <i>Future Map</i>
   </div>
