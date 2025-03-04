@@ -103,6 +103,22 @@ By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, w
 
 # 🎯 3. Requirements  
 
+## 🏗️ Ideation Process - Game Concept Development 🎯  
+
+### 💡 Early Brainstorming & Game Ideas  
+During **Week 2**, our team (**which initially had 6 members**) brainstormed **two potential game concepts**:  
+
+1. **🛡️ Tower Defense Game**  
+   - A **historical tower defense game**, integrating **different defense strategies across various eras**.  
+   - Players would be able to **place, upgrade, and manage towers** to defend against invaders from different time periods (e.g., knights ⚔️, pirates 🏴‍☠️, futuristic AI robots 🤖).  
+
+2. **✈️ Aircraft Shooter Game**  
+   - A **classic aerial shooter**, where players pilot an aircraft to **engage in air combat and eliminate enemies**.  
+   - The game would feature multiple historical settings (e.g., **WWI, WWII, modern warfare, and futuristic battles**).  
+
+### 📜 Paper Prototype Development  
+To better understand and test the game mechanics, we **created paper prototypes 📄🎲** for both concepts as part of the **early validation process**:  
+
 ## ⚙️ System Needs & Implementation Considerations  
 
 Before designing our game, we considered the **core system needs** 🏗️:  
