@@ -87,12 +87,45 @@ Each era presents its own **challenges** 🎯, requiring players to **adapt thei
 
 To enhance immersion, we carefully incorporated **real historical landmarks** from Bristol, such as:  
 
+<div align="center">
 | Landmark | Image | Landmark | Image |
 |----------|-------|----------|-------|
 | ⛪ **Bristol Cathedral** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100" height="100"> | 🚢 **SS Great Britain** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100" height="100"> |
 | 🌉 **Clifton Suspension Bridge** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100" height="100"> | 🏰 **St Mary Redcliffe** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Bristol_eglise_St_Mary_redcliffe-crop.jpg" width="100" height="100"> |
 | 🗼 **Cabot Tower** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Cabot%20Tower.jpg" width="100" height="100"> | 🏛️ **Merchant Venturers Building** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/MVB%20500%20x%20250.jpg" width="100" height="100"> |
 | 🏛️ **Chemistry Building** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Chemistry.jpg" width="100" height="100"> | 🎨 **We The Curious** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/we%20the%20curious.jpg" width="100" height="100"> |
+<table align="center">
+  <tr>
+    <th>Landmark</th>
+    <th>Image</th>
+    <th>Landmark</th>
+    <th>Image</th>
+  </tr>
+  <tr align="center">
+    <td>⛪ <b>Bristol Cathedral</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100" height="100"></td>
+    <td>🚢 <b>SS Great Britain</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100" height="100"></td>
+  </tr>
+  <tr align="center">
+    <td>🌉 <b>Clifton Suspension Bridge</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100" height="100"></td>
+    <td>🏰 <b>St Mary Redcliffe</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Bristol_eglise_St_Mary_redcliffe-crop.jpg" width="100" height="100"></td>
+  </tr>
+  <tr align="center">
+    <td>🗼 <b>Cabot Tower</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Cabot%20Tower.jpg" width="100" height="100"></td>
+    <td>🏛️ <b>Merchant Venturers Building</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/MVB%20500%20x%20250.jpg" width="100" height="100"></td>
+  </tr>
+  <tr align="center">
+    <td>🏛️ <b>Chemistry Building</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Chemistry.jpg" width="100" height="100"></td>
+    <td>🎨 <b>We The Curious</b></td>
+    <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/we%20the%20curious.jpg" width="100" height="100"></td>
+  </tr>
+</table>
 
 ---
 
