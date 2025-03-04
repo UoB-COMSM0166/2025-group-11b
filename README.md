@@ -24,17 +24,29 @@ Add a group photo here!
 # Video Demonstration
 
 
-# 2. Introduction
+# ✨ 2. Introduction 🎮🏰
 
 <div style="text-align: center;">
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 
-In designing our game, we set out to create a **historically immersive** tower defense experience that is both **engaging and educational**. Our vision was to craft a game that combines **strategy, progression, and cultural significance**, allowing players to explore the **rich history of Bristol** while defending the city from various threats across different time periods.
+🛡️ In designing our game, we set out to create a **historically immersive** tower defense experience that is both **engaging 🎯 and educational 📚**.  
+🌍 Our vision was to craft a game that combines **strategy ♟️, progression 📈, and cultural significance 🏛️**, allowing players to explore the **rich history of Bristol** while defending the city from various threats across different time periods.  
+---
+## ⚔️ A Unique Twist on Tower Defense 🏹  
 
-## A Unique Twist on Tower Defense
+🕰️ Most tower defense games focus purely on mechanics, but we wanted to **integrate historical storytelling 📖** into the gameplay.  
 
-Most tower defense games focus purely on mechanics, but we wanted to **integrate historical storytelling** into the gameplay. Our game spans **multiple eras**, from the **medieval period** to the **modern day**, each with **distinct monsters, architectural styles, and defense technologies**. Players take on the role of a **"Guardian"**, protecting Bristol from **historical and futuristic threats**, including **invading armies, pirate raids, industrial uprisings, and high-tech cyber warfare**.
+⏳ Our game spans **multiple eras**, from the **medieval period ⚒️** to the **modern day 🌆**, each with **distinct monsters 👹, architectural styles 🏰, and defense technologies 🔫**.  
+
+👑 Players take on the role of a **"Guardian" 🦸**, protecting Bristol from **historical and futuristic threats**, including:  
+
+- ⚔️ **Invading armies**  
+- 🏴‍☠️ **Pirate raids**  
+- 🏭 **Industrial uprisings**  
+- 🖥️ **High-tech cyber warfare**  
+
+🔥 Get ready to **defend, strategize, and experience history like never before!** 🚀🔥  
 
 <div align="center">
   <table>
