@@ -143,7 +143,7 @@ During **Week 2**, our team (**which initially had 6 members**) brainstormed **t
    - The game would feature multiple historical settings (e.g., **WWI, WWII, modern warfare, and futuristic battles**).  
 
 ### 📜 Paper Prototype Development  
-To better understand and test the game mechanics, we **created paper prototypes 📄🎲** for both concepts as part of the **early validation process**:  
+To better understand and test the game mechanics, we created paper prototypes 📄🎲 for this concept as part of the early validation process：
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Early%20Design.gif" 
        alt="Early Design" 
