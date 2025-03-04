@@ -90,10 +90,10 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 
 | Landmark | Image | Landmark | Image |
 |----------|-------|----------|-------|
-| ⛪ **Bristol Cathedral** | ![Bristol Cathedral](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg) | 🚢 **SS Great Britain** | ![SS Great Britain](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg) |
-| 🌉 **Clifton Suspension Bridge** | ![Clifton Suspension Bridge](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg) | 🏰 **St Mary Redcliffe** | ![St Mary Redcliffe](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/st_mary_redcliffe.jpg) |
-| 🗼 **Cabot Tower** | ![Cabot Tower](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/cabot_tower.jpg) | 🏛️ **Wills Memorial Building** | ![Wills Memorial Building](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/wills_memorial_building.jpg) |
-| 🏛️ **Bristol Museum & Art Gallery** | ![Bristol Museum & Art Gallery](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/bristol_museum_art_gallery.jpg) | 🎨 **Arnolfini** | ![Arnolfini](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/arnolfini.jpg) |
+| ⛪ **Bristol Cathedral** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100" height="100"> | 🚢 **SS Great Britain** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100" height="100"> |
+| 🌉 **Clifton Suspension Bridge** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100" height="100"> | 🏰 **St Mary Redcliffe** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/st_mary_redcliffe.jpg" width="100" height="100"> |
+| 🗼 **Cabot Tower** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/cabot_tower.jpg" width="100" height="100"> | 🏛️ **Wills Memorial Building** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/wills_memorial_building.jpg" width="100" height="100"> |
+| 🏛️ **Bristol Museum & Art Gallery** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/bristol_museum_art_gallery.jpg" width="100" height="100"> | 🎨 **Arnolfini** | <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/arnolfini.jpg" width="100" height="100"> |
 
 
 These landmarks are not just **visual elements** 👀 but play a **strategic role in defense** 🛡️, with some offering **unique defensive abilities** 🔥.  
