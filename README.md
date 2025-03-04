@@ -77,7 +77,6 @@ What makes our game unique is its **evolving technology system** 🔄—as playe
 
 - 🏹 **Medieval archer towers**  
 - ⚓ **18th-century naval cannons**  
-- 🏭 **Industrial steam-powered turrets**  
 - 🤖 **Futuristic AI-controlled drones**  
 
 Each era presents its own **challenges** 🎯, requiring players to **adapt their strategies** 🧠 while leveraging **historical innovations** 🏛️ to fortify their defenses.  
