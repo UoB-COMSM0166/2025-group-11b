@@ -40,17 +40,17 @@ Most tower defense games focus purely on mechanics, but we wanted to **integrate
   <table>
     <tr>
       <td align="center" style="padding: 10px;">
-        <img src="..." width="250"><br>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Middle%20Ages.jpg" width="300"><br>
         <b>Figure 1</b><br>
         <i>Medieval Map</i>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="..." width="250"><br>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/sailing.png" width="300"><br>
         <b>Figure 2</b><br>
         <i>Age of Exploration Map</i>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="..." width="250"><br>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/future.png" width="300"><br>
         <b>Figure 3</b><br>
         <i>Future Map</i>
       </td>
