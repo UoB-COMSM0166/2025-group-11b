@@ -36,24 +36,26 @@ In designing our game, we set out to create a **historically immersive** tower d
 
 Most tower defense games focus purely on mechanics, but we wanted to **integrate historical storytelling** into the gameplay. Our game spans **multiple eras**, from the **medieval period** to the **modern day**, each with **distinct monsters, architectural styles, and defense technologies**. Players take on the role of a **"Guardian"**, protecting Bristol from **historical and futuristic threats**, including **invading armies, pirate raids, industrial uprisings, and high-tech cyber warfare**.
 
-<div style="text-align: center;">
-  <div style="display: inline-block; margin: 10px; vertical-align: top; text-align: center;">
-    <img src="..." width="250"><br>
-    <b>Figure 1</b><br>
-    <i>Medieval Map</i>
-  </div>
-
-  <div style="display: inline-block; margin: 10px; vertical-align: top; text-align: center;">
-    <img src="..." width="250"><br>
-    <b>Figure 2</b><br>
-    <i>Age of Exploration Map</i>
-  </div>
-
-  <div style="display: inline-block; margin: 10px; vertical-align: top; text-align: center;">
-    <img src="..." width="250"><br>
-    <b>Figure 3</b><br>
-    <i>Future Map</i>
-  </div>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="..." width="250"><br>
+        <b>Figure 1</b><br>
+        <i>Medieval Map</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="..." width="250"><br>
+        <b>Figure 2</b><br>
+        <i>Age of Exploration Map</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="..." width="250"><br>
+        <b>Figure 3</b><br>
+        <i>Future Map</i>
+      </td>
+    </tr>
+  </table>
 </div>
 
 
