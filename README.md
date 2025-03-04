@@ -38,13 +38,12 @@ Add a group photo here!
 
 🕰️ Most tower defense games focus purely on mechanics, but we wanted to **integrate historical storytelling 📖** into the gameplay.  
 
-⏳ Our game spans **multiple eras**, from the **medieval period ⚒️** to the **modern day 🌆**, each with **distinct monsters 👹, architectural styles 🏰, and defense technologies 🔫**.  
+⏳ Our game spans **multiple eras**, from the **medieval period ⚒️** to the **high-tech future 🤖**, each with **distinct monsters 👹, architectural styles 🏰, and defense technologies 🔫**.  
 
 👑 Players take on the role of a **"Guardian" 🦸**, protecting Bristol from **historical and futuristic threats**, including:  
 
 - ⚔️ **Invading armies**  
 - 🏴‍☠️ **Pirate raids**  
-- 🏭 **Industrial uprisings**  
 - 🖥️ **High-tech cyber warfare**  
 
 🔥 Get ready to **defend, strategize, and experience history like never before!** 🚀🔥  
