@@ -69,6 +69,8 @@ var gameEnded = false; // 标记本局游戏是否已经结束
 
 var monsterSpeedMultiplier = 1;  // 默认1倍速度
 
+// 创建Tooltip对象
+let tooltip;
 
 // Misc functions
 
@@ -410,6 +412,7 @@ function resetGame() {
     toPlace = false;
     // 启动第一波（此时 nextWave() 会使 wave 变为 1）
     nextWave();
+    tooltip = new Tooltip("Here comes the "+wave+" wave of enemies!", width / 2, height / 2);
 }
 
 // Changes tile size to fit everything onscreen
@@ -523,7 +526,7 @@ function draw() {
 
     // Update game status
     updatePause();
-    updateStatus();
+    // updateStatus();
 
     // Update spawn and wave cooldown
     if (!paused) {
@@ -709,7 +712,69 @@ function draw() {
         scd = spawnCool;
         toCooldown = false;
     }
+    //绘制最上层界面
 
+    image(moneyBarImg,100,50);
+    // var displayWave = wave > totalWaves ? totalWaves : wave;
+    // document.getElementById('wave').innerHTML = 'Wave: ' + displayWave + '/' + totalWaves;
+    // document.getElementById('health').innerHTML = 'Health: ' + health + '/' + maxHealth;
+    // document.getElementById('cash').innerHTML = '$' + cash;
+    // var displayWave = wave > totalWaves ? totalWaves : wave;
+    // document.getElementById('wave').innerHTML = 'Wave: ' + displayWave + '/' + totalWaves;
+    noStroke();
+    fill(0,255);
+    textSize(25);
+    textAlign(LEFT,BASELINE);
+    text(cash,210,96);
+
+    image(healthBarImg,400,56);
+    text( health + '/' + maxHealth,500,96);
+
+    image(monsterBarImg,680,38);
+    var displayWave = wave > totalWaves ? totalWaves : wave;
+    text(  displayWave + '/' + totalWaves ,850,96);
+
+
+    tooltip.update();  // 更新提示状态
+    tooltip.display();  // 显示提示文本
+
+    if(tooltip.isVisible==false){
+        paused = false;
+    }
+
+
+    let x = width-400; // 初始 x 坐标
+    let y = height-100; // 初始 y 坐标
+    let itemWidth = 160; // 每个怪物项的间隔宽度
+
+    for (let key in monster) {
+        if (monster.hasOwnProperty(key)) {
+            fill(0);
+            rect(x,y,160,50,30);
+            console.log(monster)
+            // 绘制怪物图像或颜色圆点
+            if (monster[key].image) {
+                // 如果有图像，加载并绘制图像
+                    image(monster[key].image, x, y, 40, 40); // 绘制图像
+            } else {
+                // 如果没有图像，绘制颜色圆点
+                let col = monster[key].color;
+                if (Array.isArray(col)) {
+                    fill(col[0], col[1], col[2]); // 设置填充颜色
+                } else {
+                    fill(col); // 设置填充颜色
+                }
+                ellipse(x + 25, y + 25, 30, 30); // 绘制圆点
+            }
+            textAlign(LEFT,BASELINE);
+            // 绘制怪物名称
+            fill(255); // 设置文本颜色为黑色
+            textSize(16); // 设置文本大小
+            text(key, x + 50, y + 30); // 绘制文本
+
+            x += itemWidth; // 更新 y 坐标以绘制下一个怪物项
+        }
+    }
 }
 
 
@@ -904,3 +969,62 @@ function updateMonsterPanel() {
         }
     }
 }
+
+
+class Tooltip {
+    constructor(message, x, y) {
+        this.message = message;  // 提示信息
+        this.x = x;  // 提示位置X坐标
+        this.y = y;  // 提示位置Y坐标
+        this.alpha = 0;  // 初始透明度为0，表示隐藏
+        // this.displayDuration = 3000;  // 提示显示的持续时间（毫秒）
+        this.fadeDurationInt = 2000;  // 渐变显示和隐藏的持续时间（毫秒）
+        this.fadeDurationOut = 2000;  // 渐变显示和隐藏的持续时间（毫秒）
+        this.speed = 20;//显示速度
+        this.isVisible = true;  // 是否显示
+
+    }
+
+    // 显示提示
+
+
+    // 更新提示状态
+    update() {
+        if(this.fadeDurationInt>0){
+            this.fadeDurationInt-=  this.speed;
+            this.alpha = map(this.fadeDurationInt,2000,0,0,255);
+        }
+
+
+
+        if(this.fadeDurationInt==0){
+            if(this.fadeDurationOut>0);{
+                this.fadeDurationOut-=  this.speed;
+                this.alpha = map(this.fadeDurationOut,2000,0,255,0);
+            }
+        }
+
+        if(this.fadeDurationOut==0) {
+
+
+            this.isVisible =false;
+        }
+
+
+
+
+    }
+
+    // 显示文本
+    display() {
+            if(this.isVisible) {
+                noStroke();
+                fill(255, 0, 0, this.alpha);  // 设置文本颜色和透明度
+                textSize(50);
+                textAlign(CENTER, CENTER);
+                text(this.message, this.x, this.y);  // 显示文本
+            }
+
+    }
+}
+

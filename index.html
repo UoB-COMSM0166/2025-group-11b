@@ -43,11 +43,11 @@
       <div id="sidebar">
         <!-- 状态面板 -->
         <div id="status-panel">
-          <h2>状态</h2>
-          <!-- 添加 status-text-large 类，后续在 CSS 中定义较大的字号 -->
+          <h2>State</h2>
+          <!-- 添加 status-text-large 类，后续在 CSS 中定义较大的字号
           <p id="wave" class="status-text-large"></p>
           <p id="health" class="status-text-large"></p>
-          <p id="cash" class="status-text-large"></p>
+          <p id="cash" class="status-text-large"></p> -->
           
           <!-- 新增一个四宫格按钮容器 -->
           <div class="button-grid">
@@ -58,21 +58,21 @@
           </div>
         </div>
 
-        <!-- 新增敌人栏 -->
+        <!-- 新增敌人栏
         <div id="monster-panel">
           <h2>敌人栏</h2>
           <div id="monster-list"></div>
-        </div>
+        </div> -->
         
         <!-- 商店面板 -->
         <div id="store-panel">
           <h2>商店</h2>
           <div class="button-group">
             <button class="gun" onclick="setPlace('gun')">Gun Tower (1)</button>
-            <button class="laser" onclick="setPlace('laser')">Laser Tower (2)</button>
+            <!-- <button class="laser" onclick="setPlace('laser')">Laser Tower (2)</button>
             <button class="slow" onclick="setPlace('slow')">Slow Tower (3)</button>
             <button class="laserfire" onclick="setPlace('laserfire')">Laserfire Tower (4)</button>
-            <button class="bomb" onclick="setPlace('bomb')">Bomb Tower (6)</button>
+            <button class="bomb" onclick="setPlace('bomb')">Bomb Tower (6)</button> -->
           </div>
         </div>
         
@@ -137,7 +137,7 @@
             document.getElementById("map").value = level.id;
             document.getElementById("level-selection").style.display = "none";
             resetGame();
-            paused = false;
+            paused = true;
           });
           container.appendChild(card);
         });

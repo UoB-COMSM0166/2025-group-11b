@@ -5,6 +5,10 @@ let myTowerImg
 
 let bgImg;  // 声明背景图变量
 
+let moneyImg;//钱图像
+let moneyBarImg;//钱图像
+let healthBarImg;
+let monsterBarImg;
 function preload() {
     // 加载塔图片（确保图片路径正确）
     loadImages();
@@ -15,12 +19,20 @@ function loadImages() {
 	myTowerImg = loadImage("images/leftrole.jpeg");
 	plagueRatImg = loadImage("images/plagueRat.png");
     dragonImg = loadImage("images/dragon.png");
-
+    moneyImg = loadImage("images/money.png");
+    moneyBarImg = loadImage("images/moneyBar.png");
+    healthBarImg = loadImage("images/healthBar.png");
+    monsterBarImg = loadImage("images/monsterBar.png");
 }
 function setup() {
     var canvas = createCanvas(1440, 768);
     canvas.parent('main-holder');
     paused = true;
+    healthBarImg.resize(healthBarImg.width*0.7,healthBarImg.height*0.7)
+    monsterBarImg.resize(monsterBarImg.width*0.6,monsterBarImg.height*0.6)
+    tooltip = new Tooltip("这是一个提示!", width / 2, height / 2);
+
+    loadMoster();
 }
 // Load all sounds
 function loadSounds() {
