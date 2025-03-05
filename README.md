@@ -151,7 +151,7 @@ To better understand and test the game mechanics, we created paper prototypes �
        style="max-width: 100%; height: auto;">
 </p>
 
-### User Stories & Stakeholders
+### 🧑‍🤝‍🧑 User Stories & Stakeholders
 
 In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
 
