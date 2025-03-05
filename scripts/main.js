@@ -534,18 +534,13 @@ function draw() {
         if (wcd > 0 && toWait) wcd--;
     }
 
-    // Draw spawnpoints
-    for (var i = 0; i < spawnpoints.length; i++) {
-        stroke(255);
-        fill(0, 230, 64);
-        var s = spawnpoints[i];
-        rect(s.x * ts, s.y * ts, ts, ts);
-    }
+    // // Draw spawnpoints
+    // for (var i = 0; i < spawnpoints.length; i++) {
+    //     stroke(255);
+    //     var s = spawnpoints[i];
+    //     rect(s.x * ts, s.y * ts, ts, ts);
+    // }
 
-    // Draw exit
-    stroke(255);
-    fill(207, 0, 15);
-    rect(exit.x * ts, exit.y * ts, ts, ts);
 
     // Draw temporary spawnpoints
     for (var i = 0; i < tempSpawns.length; i++) {
