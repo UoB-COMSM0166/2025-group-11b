@@ -188,7 +188,21 @@ As we refined our ideas, we began developing **user stories** to ensure that our
    As a **sound designer**, I want to:  
    - 🎧 Have background music that intensifies with wave progression to enhance the player’s experience.
 
-  
+### 🎨 Early Design & Prototyping  
+
+### 🔬 `Define early game concept`  
+- 🏰 Combined **historical accuracy with strategy**.  
+- ⏳ Structured across **multiple time periods**.  
+- 🏛️ Integrated **historical landmarks as gameplay elements**.  
+
+### 🏗️ `Gameplay Pillars`  
+- 🎯 **Strategic Placement & Adaptation**:  
+  - Players must carefully **position defenses**.  
+- ⚔️ **Era-Specific Towers & Monsters**:  
+  - Example: **Medieval era 🏹 uses archers**, while the **Industrial era 🏭 introduces steam-powered turrets**.  
+- 🏰 **Historical Landmarks as Gameplay Features**:  
+  - Real-world locations enhance **gameplay and strategy**.
+  - 
 
 ## ⚙️ System Needs & Implementation Considerations  
 
@@ -236,31 +250,6 @@ Before designing our game, we considered the **core system needs** 🏗️:
 
 ---
 
-## 📖 User Stories  
-
-### 🏹 **Gameplay Mechanics**  
-- ✅ `Add tower placement`  
-  - As a player, I want to **place towers** on a grid to defend strategically.  
-- ✅ `feat: Implement tower upgrades`  
-  - As a player, I want to **upgrade towers** to counter stronger monsters.  
-- ✅ `feat: Add monster variety`  
-  - As a player, I want **diverse monster types** to challenge my strategies.  
-
-### ⚔️ **Era Progression & Difficulty**  
-- ✅ `Introduce era-based threats`  
-  - As a player, I want **new challenges in each era**.  
-- ✅ `feat: Implement rewards`  
-  - As a player, I want to **earn in-game currency** for upgrades.  
-- ✅ `feat: Implement difficulty scaling`  
-  - As a player, I want **dynamic difficulty** to match my skill level.  
-
-### 🏛️ **Historical Elements & Landmarks**  
-- ✅ `Add landmarks`  
-  - As a player, I want to **appreciate Bristol landmarks** (e.g., Clifton Bridge, Bristol Castle) while gaining defensive bonuses.  
-- ✅ `feat: Include historical learning`  
-  - As a player, I want to **learn about historical events and figures** 📜.  
-
----
 
 ## 🔍 Functional & Non-Functional Requirements  
 
@@ -278,20 +267,7 @@ Before designing our game, we considered the **core system needs** 🏗️:
 
 ---
 
-## 🎨 Early Design & Prototyping  
 
-### 🔬 `Define early game concept`  
-- 🏰 Combined **historical accuracy with strategy**.  
-- ⏳ Structured across **multiple time periods**.  
-- 🏛️ Integrated **historical landmarks as gameplay elements**.  
-
-### 🏗️ `Gameplay Pillars`  
-- 🎯 **Strategic Placement & Adaptation**:  
-  - Players must carefully **position defenses**.  
-- ⚔️ **Era-Specific Towers & Monsters**:  
-  - Example: **Medieval era 🏹 uses archers**, while the **Industrial era 🏭 introduces steam-powered turrets**.  
-- 🏰 **Historical Landmarks as Gameplay Features**:  
-  - Real-world locations enhance **gameplay and strategy**.  
 
 ### 🛠️ `Develop early prototype`  
 - Focused on:  
