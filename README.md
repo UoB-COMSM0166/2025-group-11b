@@ -168,25 +168,11 @@ In this phase, we identified the key **stakeholders** whose input and needs woul
 
 As we refined our ideas, we began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
 
-- 🏰 **Gameplay Mechanics**  
-   As a **player**, I want to:  
-   - 🏹 Place towers on a grid so that I can strategize my defense.  
-   - 🔮 Use different types of towers with unique abilities so that I can choose the best defense strategy.  
-   - 👾 Have monsters move along a predefined path so I can predict their movement.
-
-- 🚀 **Progression & Difficulty**  
-   As a **player**, I want to:  
-   - 🥇 Have waves of monsters become progressively harder so that the game remains challenging.  
-   - 💸 Earn in-game currency for defeating monsters so I can upgrade my towers.  
-   - ⚖️ Adjust the difficulty setting so I can change the challenge based on my skill level.
-
-- 🎮 **UI**  
-   As a **UI designer**, I want to:  
-   - ⏸️ Create a pause menu where players can restart or change settings.
-
-- 🎶 **Sound & Feedback**  
-   As a **sound designer**, I want to:  
-   - 🎧 Have background music that intensifies with wave progression to enhance the player’s experience.
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Stakeholder%20Requirements.jpg"><br>
+  <b>Figure 16</b><br>
+  <i>Attempting to split tower defense game maps</i>
+</p>
 
 ### 🎨 Early Design & Prototyping  
 
