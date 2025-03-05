@@ -151,7 +151,7 @@ To better understand and test the game mechanics, we created paper prototypes �
        style="max-width: 100%; height: auto;">
 </p>
 
-# User Stories & Stakeholders  
+### User Stories & Stakeholders  
 
 At this stage, we also took into account the key **stakeholders** who would be directly impacted by our game's development, ensuring the game would appeal to a wide range of users and creators alike. Here's who we identified as crucial:
 
@@ -173,27 +173,27 @@ As we continued to refine our ideas, we began formulating **user stories** to he
 ## Epic 1: Gameplay Mechanics  
 As a **player**, I want to:
 
-- 🏰 **Place towers** on a grid so that I can strategize my defense.  
-- 🏹 **Use different types of towers** with unique abilities so that I can choose the best defense strategy.  
-- 🧟‍♂️ **Monsters move along a predefined path** so I can predict their movement.  
+- Place towers on a grid so that I can strategize my defense.
+- Use different types of towers with unique abilities so that I can choose the best defense strategy.
+- Have monsters move along a predefined path so I can predict their movement.
 
 ## Epic 2: Progression & Difficulty  
 As a **player**, I want to:
 
-- 💪 **Waves of monsters** to become progressively harder so that the game remains challenging.  
-- 💰 **Earn in-game currency** for defeating monsters so I can upgrade my towers.  
-- 🎮 **Difficulty setting** so I can adjust the challenge based on my skill level.  
+- Have waves of monsters become progressively harder so that the game remains challenging.
+- Earn in-game currency for defeating monsters so I can upgrade my towers.
+- Adjust the difficulty setting so I can change the challenge based on my skill level.
 
 ## Epic 3: UI  
 As a **UI designer**, I want to:
 
-- 🎮 **Create a pause menu** where players can restart or change settings.  
+- Create a pause menu where players can restart or change settings.
 
 ## Epic 4: Sound & Feedback  
-
 As a **sound designer**, I want to:
 
-- 🎶 **Background music** that intensifies with wave progression to enhance the player’s experience.  
+- Have background music that intensifies with wave progression to enhance the player’s experience.
+
 
 ---
 
