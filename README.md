@@ -153,44 +153,41 @@ To better understand and test the game mechanics, we created paper prototypes �
 
 ### User Stories & Stakeholders
 
-In this phase, we also identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
+In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
 
-- **Players**: The main users who play the game.
-- **Game Designers**: Those who design levels and mechanics.
-- **Developers**: Programmers implementing the game.
-- **QA Testers**: People testing for bugs and balance.
-- **Artists**: Designers of game assets (characters, towers, environment).
-- **Sound Designers**: Those who create sound effects and music.
-- **Project Managers**: Oversee development progress.
-- **Marketing Team**: Promote the game to players.
-- **Investors/Publishers**: Fund the project.
-- **Community Moderators**: Manage player discussions and feedback.
+- 🎮 **Players**: The main users who play the game.
+- 🎨 **Game Designers**: Those who design levels and mechanics.
+- 👩‍💻 **Developers**: Programmers implementing the game.
+- 🐞 **QA Testers**: People testing for bugs and balance.
+- 🖌️ **Artists**: Designers of game assets (characters, towers, environment).
+- 🎶 **Sound Designers**: Those who create sound effects and music.
+- 📅 **Project Managers**: Oversee development progress.
+- 📢 **Marketing Team**: Promote the game to players.
+- 💰 **Investors/Publishers**: Fund the project.
+- 🧑‍⚖️ **Community Moderators**: Manage player discussions and feedback.
 
-As we refined our ideas, we also began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
+As we refined our ideas, we began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
 
-#### Epic 1: Gameplay Mechanics  
+- 🏰 **Gameplay Mechanics**  
+   As a **player**, I want to:  
+   - 🏹 Place towers on a grid so that I can strategize my defense.  
+   - 🔮 Use different types of towers with unique abilities so that I can choose the best defense strategy.  
+   - 👾 Have monsters move along a predefined path so I can predict their movement.
 
-As a **player**, I want to:
-- Place towers on a grid so that I can strategize my defense.
-- Use different types of towers with unique abilities so that I can choose the best defense strategy.
-- Have monsters move along a predefined path so I can predict their movement.
+- 🚀 **Progression & Difficulty**  
+   As a **player**, I want to:  
+   - 🥇 Have waves of monsters become progressively harder so that the game remains challenging.  
+   - 💸 Earn in-game currency for defeating monsters so I can upgrade my towers.  
+   - ⚖️ Adjust the difficulty setting so I can change the challenge based on my skill level.
 
-#### Epic 2: Progression & Difficulty  
+- 🎮 **UI**  
+   As a **UI designer**, I want to:  
+   - ⏸️ Create a pause menu where players can restart or change settings.
 
-As a **player**, I want to:
-- Have waves of monsters become progressively harder so that the game remains challenging.
-- Earn in-game currency for defeating monsters so I can upgrade my towers.
-- Adjust the difficulty setting so I can change the challenge based on my skill level.
+- 🎶 **Sound & Feedback**  
+   As a **sound designer**, I want to:  
+   - 🎧 Have background music that intensifies with wave progression to enhance the player’s experience.
 
-#### Epic 3: UI  
-
-As a **UI designer**, I want to:
-- Create a pause menu where players can restart or change settings.
-
-#### Epic 4: Sound & Feedback  
-
-As a **sound designer**, I want to:
-- Have background music that intensifies with wave progression to enhance the player’s experience.
   
 
 ## ⚙️ System Needs & Implementation Considerations  
