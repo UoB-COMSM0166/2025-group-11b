@@ -151,48 +151,53 @@ To better understand and test the game mechanics, we created paper prototypes �
        style="max-width: 100%; height: auto;">
 </p>
 
-### User Stories & Stakeholders  
+### User Stories & Stakeholders
 
 At this stage, we also took into account the key **stakeholders** who would be directly impacted by our game's development, ensuring the game would appeal to a wide range of users and creators alike. Here's who we identified as crucial:
 
-- 🎮 **Players**: The main users who play the game.
-- 🎮 **Game Designers**: Those who design levels and mechanics.
-- 👨‍💻 **Developers**: Programmers implementing the game.
-- 🧪 **QA Testers**: People testing for bugs and balance.
-- 🎨 **Artists**: Designers of game assets (characters, towers, environment).
-- 🎧 **Sound Designers**: Those who create sound effects and music.
-- 📋 **Project Managers**: Oversee development progress.
-- 📣 **Marketing Team**: Promote the game to players.
-- 💼 **Investors/Publishers**: Fund the project.
-- 🌐 **Community Moderators**: Manage player discussions and feedback.
+- **Players**: The main users who play the game.
+- **Game Designers**: Those who design levels and mechanics.
+- **Developers**: Programmers implementing the game.
+- **QA Testers**: People testing for bugs and balance.
+- **Artists**: Designers of game assets (characters, towers, environment).
+- **Sound Designers**: Those who create sound effects and music.
+- **Project Managers**: Oversee development progress.
+- **Marketing Team**: Promote the game to players.
+- **Investors/Publishers**: Fund the project.
+- **Community Moderators**: Manage player discussions and feedback.
 
 ---
 
 As we continued to refine our ideas, we began formulating **user stories** to help us better align our vision with the experiences we wanted to deliver. Here’s a breakdown of the **epics** and their respective user stories. It was a **collaborative effort** between developers, designers, and artists, and we made sure to incorporate various perspectives as we fleshed them out.
 
-## Epic 1: Gameplay Mechanics  
+#### Epic 1: Gameplay Mechanics  
+
 As a **player**, I want to:
 
-- Place towers on a grid so that I can strategize my defense.
-- Use different types of towers with unique abilities so that I can choose the best defense strategy.
+- Place towers on a grid so that I can strategize my defense.  
+- Use different types of towers with unique abilities so that I can choose the best defense strategy.  
 - Have monsters move along a predefined path so I can predict their movement.
 
-## Epic 2: Progression & Difficulty  
+#### Epic 2: Progression & Difficulty  
+
 As a **player**, I want to:
 
-- Have waves of monsters become progressively harder so that the game remains challenging.
-- Earn in-game currency for defeating monsters so I can upgrade my towers.
+- Have waves of monsters become progressively harder so that the game remains challenging.  
+- Earn in-game currency for defeating monsters so I can upgrade my towers.  
 - Adjust the difficulty setting so I can change the challenge based on my skill level.
 
-## Epic 3: UI  
+#### Epic 3: UI  
+
 As a **UI designer**, I want to:
 
 - Create a pause menu where players can restart or change settings.
 
-## Epic 4: Sound & Feedback  
+#### Epic 4: Sound & Feedback  
+
 As a **sound designer**, I want to:
 
 - Have background music that intensifies with wave progression to enhance the player’s experience.
+
 
 
 ---
