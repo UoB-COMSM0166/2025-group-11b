@@ -15,13 +15,10 @@
     <script src="scripts/monsters.js" defer></script>
     <script src="scripts/particle.js" defer></script>
     <script src="scripts/particle_system.js" defer></script>
-    <script src="scripts/effect.js" defer></script>
-    <script src="scripts/effects.js" defer></script>
     <script src="scripts/bullet.js" defer></script>
     <script src="scripts/tower.js" defer></script>
     <script src="scripts/towers.js" defer></script>
     <script src="scripts/maps.js" defer></script>
-    <script src="scripts/tiles.js" defer></script>
     <script src="scripts/main.js" defer></script>
     
 
@@ -29,7 +26,7 @@
   <body> 
     <!-- 选关覆盖层（初始时隐藏，只有当用户点击“放弃并退出到选关界面”时显示） -->
     <div id="level-selection">
-      <h2>Select Level</h2>
+      <h2>选择关卡</h2>
       <div id="level-cards-container">
         <!-- 关卡卡片由脚本动态生成 -->
       </div>
@@ -46,7 +43,7 @@
       <div id="sidebar">
         <!-- 状态面板 -->
         <div id="status-panel">
-          <h2>State</h2>
+          <h2>状态</h2>
           <!-- 添加 status-text-large 类，后续在 CSS 中定义较大的字号 -->
           <p id="wave" class="status-text-large"></p>
           <p id="health" class="status-text-large"></p>
@@ -55,35 +52,33 @@
           <!-- 新增一个四宫格按钮容器 -->
           <div class="button-grid">
             <button id="pause" onclick="pause()">暂停/开始</button>
-            <button onclick="resetGame()">Reset</button>
-            <button id="exit-game-button">Exit to the level selection screen</button>
-            <button id="speed-monster-button">Long press to accelerate</button>
+            <button onclick="resetGame()">重置游戏</button>
+            <button id="exit-game-button">放弃并退出到选关界面</button>
+            <button id="speed-monster-button">长按加速</button>
           </div>
         </div>
 
         <!-- 新增敌人栏 -->
         <div id="monster-panel">
-          <h2>Enemy</h2>
+          <h2>敌人栏</h2>
           <div id="monster-list"></div>
         </div>
         
         <!-- 商店面板 -->
         <div id="store-panel">
-          <h2>Store</h2>
+          <h2>商店</h2>
           <div class="button-group">
             <button class="gun" onclick="setPlace('gun')">Gun Tower (1)</button>
-            <!-- <button class="laser" onclick="setPlace('laser')">Laser Tower (2)</button>
+            <button class="laser" onclick="setPlace('laser')">Laser Tower (2)</button>
             <button class="slow" onclick="setPlace('slow')">Slow Tower (3)</button>
             <button class="laserfire" onclick="setPlace('laserfire')">Laserfire Tower (4)</button>
-            <button class="buff" onclick="setPlace('buff')">Buff Tower (5)</button>
             <button class="bomb" onclick="setPlace('bomb')">Bomb Tower (6)</button>
-            <button class="tesla" onclick="setPlace('tesla')">Tesla Coil (7)</button> -->
           </div>
         </div>
         
         <!-- 塔信息面板 -->
         <div id="info-panel">
-          <h2>Tower Detais</h2>
+          <h2>塔信息</h2>
           <div id="info-div">
             <p id="name"></p>
             <p id="cost"></p>
@@ -109,7 +104,7 @@
     <script>
       // 定义可选关卡（这里使用之前下拉框中的 4 个选项，可根据需要调整）
       const levels = [
-        { id: "customMap", name: "Snowy Bristol" }  // 新增的地图选项
+        { id: "customMap", name: "自定义地图" }  // 新增的地图选项
       ];
       
       // 从 localStorage 取出关卡星级（假设 key 为 "rating_关卡ID"，值为 0~3）

@@ -1,0 +1,313 @@
+new p5();   // p5.js global mode
+
+
+// Check if approximately at tile center
+function atTileCenter(x, y, col, row) {
+    var c = center(col, row);
+    var t = ts / 24;
+    return between(x, c.x - t, c.x + t) && between(y, c.y - t, c.y + t);
+}
+
+// Check if number falls within range (exclusive)
+function between(num, min, max) {
+    return num > Math.min(min, max) && num < Math.max(min, max);
+}
+
+// Build 2d array of value
+function buildArray(cols, rows, val) {
+    var arr = [];
+    for (var x = 0; x < cols; x++) {
+        arr[x] = [];
+        for (var y = 0; y < rows; y++) {
+            arr[x][y] = val;
+        }
+    }
+    return arr;
+}
+
+// Return position at center of tile
+function center(col, row) {
+    return createVector(col*ts + ts/2, row*ts + ts/2);
+}
+
+// Copy 2d array
+function copyArray(arr) {
+    var newArr = [];
+    for (var x = 0; x < arr.length; x++) {
+        newArr[x] = [];
+        for (var y = 0; y < arr[x].length; y++) {
+            newArr[x][y] = arr[x][y];
+        }
+    }
+    return newArr;
+}
+
+// Convert grid coordinates to string
+function cts(col, row) {
+    return col + ',' + row;
+}
+
+// Returns an array of entities with a certain name
+function getByName(entities, names) {
+    var results = [];
+    if (typeof names === 'string') names = [names];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        for (var j = 0; j < names.length; j++) {
+            if (e.name === names[j]) results.push(e);
+        }
+    }
+    return results;
+}
+
+// Get first monster (i.e. closest to exit)
+// TODO determine more accurate selection system that is not fooled by loops
+function getFirst(entities) {
+    var leastDist = 10000;
+    var chosen = entities[0];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        var t = gridPos(e.pos.x, e.pos.y);
+        var dist = dists[t.x][t.y];
+        if (dist < leastDist) {
+            leastDist = dist;
+            chosen = e;
+        }
+    }
+    return chosen;
+}
+
+// Get entities within a range (radius in tiles)
+// TODO have minimum and maximum range
+function getInRange(cx, cy, radius, entities) {
+    var results = [];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (insideCircle(e.pos.x, e.pos.y, cx, cy, (radius + 1) * ts)) {
+            results.push(e);
+        }
+    }
+    return results;
+}
+
+// Nearest to entity
+function getNearest(entities, pos, ignore) {
+    var lowestDist = 10000;
+    var chosen = entities[0];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (typeof ignore !== 'undefined' && ignore.includes(e)) continue;
+        var dist = pos.dist(e.pos);
+        if (dist < lowestDist) {
+            lowestDist = dist;
+            chosen = e;
+        }
+    }
+    return chosen;
+}
+
+
+// Get monster with the most health
+function getStrongest(entities) {
+    var mostHealth = 0;
+    var chosen = entities[0];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (e.health > mostHealth) {
+            mostHealth = e.health;
+            chosen = e;
+        }
+    }
+    return chosen;
+}
+
+// Get all taunting monsters
+function getTaunting(entities) {
+    var results = [];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (e.taunt) results.push(e);
+    }
+    return results;
+}
+
+// Return grid coordinate
+function gridPos(x, y) {
+    return createVector(floor(x / ts), floor(y / ts));
+}
+
+function insideCircle(x, y, cx, cy, r) {
+    return sq(x - cx) + sq(y - cy) < sq(r);
+}
+
+function mouseInMap() {
+    return between(mouseX, 0, width) && between(mouseY, 0, height);
+}
+
+// Return orthogonal neighbors of a certain value
+function neighbors(grid, col, row, val) {
+    var neighbors = [];
+    if (col !== 0 && grid[col - 1][row] === val) {
+        neighbors.push(cts(col - 1, row));
+    }
+    if (row !== 0 && grid[col][row - 1] === val) {
+        neighbors.push(cts(col, row - 1));
+    }
+    if (col !== grid.length - 1 && grid[col + 1][row] === val) {
+        neighbors.push(cts(col + 1, row));
+    }
+    if (row !== grid[col].length - 1 && grid[col][row + 1] === val) {
+        neighbors.push(cts(col, row + 1));
+    }
+    return neighbors;
+}
+
+function outsideRect(x, y, cx, cy, w, h) {
+    return x < cx || y < cy || x > cx + w || y > cy + h;
+}
+
+function polygon(x, y, radius, npoints) {
+    var angle = TWO_PI / npoints;
+    beginShape();
+    for (var a = 0; a < TWO_PI; a += angle) {
+        var sx = x + cos(a) * radius;
+        var sy = y + sin(a) * radius;
+        vertex(sx, sy);
+    }
+    endShape(CLOSE);
+}
+
+// Returns a random integer, using the same arguments as p5js random()
+function randint() {
+    return floor(random(...arguments));
+}
+
+// Displays a range of numbers
+function rangeText(min, max) {
+    if (min === max) {
+        return String(min);
+    } else {
+        return String(min) + '-' + String(max);
+    }
+}
+
+// Remove empty temporary spawnpoints
+function removeTempSpawns() {
+    for (var i = tempSpawns.length - 1; i >= 0; i--) {
+        if (tempSpawns[i][1] === 0) tempSpawns.splice(i, 1);
+    }
+}
+
+// Convert string to vector
+function stv(str) {
+    var arr = str.split(',');
+    return createVector(parseInt(arr[0]), parseInt(arr[1]));
+}
+
+// Convert vector to string
+function vts(v) {
+    return v.x + ',' + v.y;
+}
+
+
+
+/**
+ * 寻找从格子值 0（开始）到格子值 4（终点）的整条路径。
+ * @param {number[][]} grid - 上面 maps.customMap.grid 形式的二维数组
+ * @returns {Array<{col:number, row:number}>} 路径坐标列表
+ */
+function findPathBFS(grid) {
+    // 1. 找到起点(0) 和 终点(4)
+    let startPos = null;
+    let endPos = null;
+    for (let c = 0; c < grid.length; c++) {
+      for (let r = 0; r < grid[c].length; r++) {
+        if (grid[c][r] === 0) {
+          startPos = {col: c, row: r};
+        } else if (grid[c][r] === 4) {
+          endPos = {col: c, row: r};
+        }
+      }
+    }
+    if (!startPos || !endPos) {
+      console.log('未找到起点或终点');
+      return [];
+    }
+  
+    // 2. BFS 所需队列、标记
+    let queue = [];
+    let visited = new Set();
+    let cameFrom = new Map();
+    let distance = {}; // 用来存储每个格子到终点的距离
+
+    // 起点入队
+    queue.push(startPos);
+    visited.add(posKey(startPos.col, startPos.row));
+    distance[posKey(startPos.col, startPos.row)] = 0;  // 起点的距离是 0
+
+    // 3. BFS 主循环
+    while (queue.length > 0) {
+      let current = queue.shift();
+      if (current.col === endPos.col && current.row === endPos.row) {
+        // 找到终点 => 回溯得到路径
+        return backtrackPath(cameFrom, startPos, endPos);
+      }
+      // 获取可通行的邻居(值为 1 或 4)
+      let nb = getWalkableNeighbors(grid, current.col, current.row);
+      for (let nxt of nb) {
+        let k = posKey(nxt.col, nxt.row);
+        if (!visited.has(k)) {
+          visited.add(k);
+          cameFrom.set(k, current);
+          queue.push(nxt);
+          // 更新当前邻居的距离
+          distance[k] = distance[posKey(current.col, current.row)] + 1;
+        }
+      }
+    }
+
+    // 没搜到终点，返回空
+    return [];
+}
+
+/** 返回当前位置上下左右、值为1(路径)或4(终点)的邻居 */
+function getWalkableNeighbors(grid, c, r) {
+    let results = [];
+    // 上
+    if (r > 0 && (grid[c][r-1] === 1 || grid[c][r-1] === 4)) {
+      results.push({col:c, row:r-1});
+    }
+    // 下
+    if (r < grid[c].length-1 && (grid[c][r+1] === 1 || grid[c][r+1] === 4)) {
+      results.push({col:c, row:r+1});
+    }
+    // 左
+    if (c > 0 && (grid[c-1][r] === 1 || grid[c-1][r] === 4)) {
+      results.push({col:c-1, row:r});
+    }
+    // 右
+    if (c < grid.length-1 && (grid[c+1][r] === 1 || grid[c+1][r] === 4)) {
+      results.push({col:c+1, row:r});
+    }
+    return results;
+}
+
+/** 回溯 cameFrom，构造完整路径 */
+function backtrackPath(cameFrom, startPos, endPos) {
+    let path = [];
+    let current = endPos;
+    let startKey = posKey(startPos.col, startPos.row);
+    while (true) {
+      path.push(current);
+      if (posKey(current.col, current.row) === startKey) {
+        break;
+      }
+      current = cameFrom.get(posKey(current.col, current.row));
+    }
+    path.reverse();
+    return path;
+}
+
+function posKey(c, r) {
+    return c + ',' + r;
+}
