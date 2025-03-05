@@ -151,7 +151,7 @@ To better understand and test the game mechanics, we created paper prototypes �
        style="max-width: 100%; height: auto;">
 </p>
 
-# Stakeholders  
+# User Stories & Stakeholders  
 
 At this stage, we also took into account the key **stakeholders** who would be directly impacted by our game's development, ensuring the game would appeal to a wide range of users and creators alike. Here's who we identified as crucial:
 
@@ -168,59 +168,32 @@ At this stage, we also took into account the key **stakeholders** who would be d
 
 ---
 
-# Epics & User Stories  
-
 As we continued to refine our ideas, we began formulating **user stories** to help us better align our vision with the experiences we wanted to deliver. Here’s a breakdown of the **epics** and their respective user stories. It was a **collaborative effort** between developers, designers, and artists, and we made sure to incorporate various perspectives as we fleshed them out.
 
 ## Epic 1: Gameplay Mechanics  
 As a **player**, I want to:
 
 - 🏰 **Place towers** on a grid so that I can strategize my defense.  
-  - **Why this matters**: The ability to place towers freely would give players full control over their defense strategy, making the game feel dynamic and engaging.  
 - 🏹 **Use different types of towers** with unique abilities so that I can choose the best defense strategy.  
-  - **Why this matters**: Variety in towers offers flexibility, allowing players to adapt their approach based on enemy types and wave progression.  
 - 🧟‍♂️ **Monsters move along a predefined path** so I can predict their movement.  
-  - **Why this matters**: Predictability in monster movement is crucial for developing tactical plans and enhancing the strategic depth of the game.
 
 ## Epic 2: Progression & Difficulty  
 As a **player**, I want to:
 
 - 💪 **Waves of monsters** to become progressively harder so that the game remains challenging.  
-  - **Why this matters**: Gradually increasing difficulty ensures the game remains engaging and doesn’t get too easy too quickly.  
 - 💰 **Earn in-game currency** for defeating monsters so I can upgrade my towers.  
-  - **Why this matters**: In-game currency provides players with a sense of reward and progression, encouraging them to keep playing and improving.  
 - 🎮 **Difficulty setting** so I can adjust the challenge based on my skill level.  
-  - **Why this matters**: Allowing players to choose the difficulty level ensures accessibility and enjoyment for a wide range of player abilities.
 
-## Epic 3: Graphics & UI  
-As a **player**, I want to:
-
-- 🖥️ **Intuitive UI** that clearly displays my available resources and tower placements.  
-  - **Why this matters**: An intuitive UI will help players focus on gameplay without being distracted by confusing or cluttered menus.  
-- 🎨 **Visually distinct monsters** so I can easily recognize different types and threats.  
-  - **Why this matters**: Clear differentiation between monsters allows players to react appropriately to different challenges.  
-- ⏸️ **Pause menu** where I can restart or change settings.  
-  - **Why this matters**: Having a pause menu adds convenience, letting players take breaks or adjust the game as needed.
-
+## Epic 3: UI  
 As a **UI designer**, I want to:
 
 - 🎮 **Create a pause menu** where players can restart or change settings.  
-  - **Why this matters**: A well-designed pause menu is essential for providing a seamless and user-friendly experience.
 
 ## Epic 4: Sound & Feedback  
-As a **player**, I want to:
-
-- 🔊 **Sound effects** when I place towers and when monsters are defeated so I get immediate feedback.  
-  - **Why this matters**: Audio cues provide immediate feedback, helping players feel more connected to the action and improving overall immersion.  
-- 🎶 **Background music** that changes intensity as waves progress to enhance immersion.  
-  - **Why this matters**: Dynamic music that evolves with the gameplay can amplify the emotional atmosphere, making the game feel more immersive.  
-- 🔔 **Visual and sound cues** when a tower is upgraded so I know my upgrades are successful.  
-  - **Why this matters**: Feedback on upgrades is essential for ensuring players feel their progression is meaningful.
 
 As a **sound designer**, I want to:
 
 - 🎶 **Background music** that intensifies with wave progression to enhance the player’s experience.  
-  - **Why this matters**: Intensifying music as the waves get harder adds to the excitement and tension, keeping the player engaged throughout the game.
 
 ---
 
