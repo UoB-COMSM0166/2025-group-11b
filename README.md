@@ -153,7 +153,7 @@ To better understand and test the game mechanics, we created paper prototypes �
 
 ### User Stories & Stakeholders
 
-At this stage, we also took into account the key **stakeholders** who would be directly impacted by our game's development, ensuring the game would appeal to a wide range of users and creators alike. Here's who we identified as crucial:
+In this phase, we also identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
 
 - **Players**: The main users who play the game.
 - **Game Designers**: Those who design levels and mechanics.
@@ -166,44 +166,31 @@ At this stage, we also took into account the key **stakeholders** who would be d
 - **Investors/Publishers**: Fund the project.
 - **Community Moderators**: Manage player discussions and feedback.
 
----
-
-As we continued to refine our ideas, we began formulating **user stories** to help us better align our vision with the experiences we wanted to deliver. Here’s a breakdown of the **epics** and their respective user stories. It was a **collaborative effort** between developers, designers, and artists, and we made sure to incorporate various perspectives as we fleshed them out.
+As we refined our ideas, we also began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
 
 #### Epic 1: Gameplay Mechanics  
 
 As a **player**, I want to:
-
-- Place towers on a grid so that I can strategize my defense.  
-- Use different types of towers with unique abilities so that I can choose the best defense strategy.  
+- Place towers on a grid so that I can strategize my defense.
+- Use different types of towers with unique abilities so that I can choose the best defense strategy.
 - Have monsters move along a predefined path so I can predict their movement.
 
 #### Epic 2: Progression & Difficulty  
 
 As a **player**, I want to:
-
-- Have waves of monsters become progressively harder so that the game remains challenging.  
-- Earn in-game currency for defeating monsters so I can upgrade my towers.  
+- Have waves of monsters become progressively harder so that the game remains challenging.
+- Earn in-game currency for defeating monsters so I can upgrade my towers.
 - Adjust the difficulty setting so I can change the challenge based on my skill level.
 
 #### Epic 3: UI  
 
 As a **UI designer**, I want to:
-
 - Create a pause menu where players can restart or change settings.
 
 #### Epic 4: Sound & Feedback  
 
 As a **sound designer**, I want to:
-
 - Have background music that intensifies with wave progression to enhance the player’s experience.
-
-
-
----
-
-These epics and user stories laid the foundation for our next steps. We were ready to move forward with **paper prototypes** and begin testing the core mechanics to see how they would feel in action. But, of course, we knew we would need to refine and tweak them based on feedback from our **QA testers** and the evolving direction of the project. This process would ensure we stayed on track to create the best possible experience for our players.
-
   
 
 ## ⚙️ System Needs & Implementation Considerations  
