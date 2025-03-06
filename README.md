@@ -183,7 +183,11 @@ Once the core game concept was defined, we focused on establishing the key gamep
 To ensure the game met these design goals, we also considered the system's technical requirements. The game needed to be accessible across multiple platforms, allowing players to engage on PC, console, and web. The user interface was designed to be intuitive, facilitating easy tower placement, upgrades, and resource management.
 
 With these concepts in mind, we developed an early prototype, testing core gameplay mechanics such as grid-based tower placement, monster AI pathfinding, and resource management. These tests validated our ideas and ensured that the game could progress to full-scale development with a solid foundation.
-
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/user%20case.jpg" width="1000"><br>
+  <b>Figure 5</b><br>
+  <i>Use case diagrams</i>
+</p>
 
 
 
