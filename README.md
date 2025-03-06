@@ -124,9 +124,8 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 
 These landmarks are not just **visual elements** 👀 but play a **strategic role in defense** 🛡️, with some offering **unique defensive abilities** 🔥.  
 
-By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
+Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄, allowing players to evolve their defenses in historically meaningful ways.
 
-By introducing a unique tower upgrade system ⚙️, we allow players to customize and enhance their defenses 🔧🛡️ in ways never seen before. This innovative mechanic 💡 ensures that no two battles are the same, encouraging strategic thinking 🧠 while offering a deeply immersive gameplay experience 🎮.
 <div align="center">
   <table>
     <tr>
@@ -183,6 +182,7 @@ By introducing a unique tower upgrade system ⚙️, we allow players to customi
   </table>
 </div>
 
+By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
 
 # 🎯 3. Requirements  
 
