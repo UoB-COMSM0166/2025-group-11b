@@ -126,6 +126,63 @@ These landmarks are not just **visual elements** 👀 but play a **strategic rol
 
 By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
 
+By introducing a unique tower upgrade system ⚙️, we allow players to customize and enhance their defenses 🔧🛡️ in ways never seen before. This innovative mechanic 💡 ensures that no two battles are the same, encouraging strategic thinking 🧠 while offering a deeply immersive gameplay experience 🎮.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image1.jpg" width="300"><br>
+        <b>Figure 1</b><br>
+        <i>Description 1</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image2.jpg" width="300"><br>
+        <b>Figure 2</b><br>
+        <i>Description 2</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image3.jpg" width="300"><br>
+        <b>Figure 3</b><br>
+        <i>Description 3</i>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image4.jpg" width="300"><br>
+        <b>Figure 4</b><br>
+        <i>Description 4</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image5.jpg" width="300"><br>
+        <b>Figure 5</b><br>
+        <i>Description 5</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image6.jpg" width="300"><br>
+        <b>Figure 6</b><br>
+        <i>Description 6</i>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image7.jpg" width="300"><br>
+        <b>Figure 7</b><br>
+        <i>Description 7</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image8.jpg" width="300"><br>
+        <b>Figure 8</b><br>
+        <i>Description 8</i>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://example.com/image9.jpg" width="300"><br>
+        <b>Figure 9</b><br>
+        <i>Description 9</i>
+      </td>
+    </tr>
+  </table>
+</div>
+
 
 # 🎯 3. Requirements  
 
