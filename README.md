@@ -49,51 +49,52 @@ Add a group photo here!
 🔥 Get ready to **defend, strategize, and experience history like never before!** 🚀🔥  
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="200"><br>
-        <b>Base Tower</b>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="200"><br>
-        <b>Upgrade 1</b>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="200"><br>
-        <b>Upgrade 2</b>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Clifton%20Suspension%20Bridge.jpg" width="200"><br>
-        <b>Base Tower</b>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge1.jpg" width="200"><br>
-        <b>Upgrade 1</b>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge2.jpg" width="200"><br>
-        <b>Upgrade 2</b>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/we%20the%20curious.jpg" width="200"><br>
-        <b>Base Tower</b>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A71.jpg" width="200"><br>
-        <b>Upgrade 1</b>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A72.jpg" width="200"><br>
-        <b>Upgrade 2</b>
-      </td>
-    </tr>
+  <table style="border-collapse: collapse; width: 60%; max-width: 600px;">
+    <thead>
+      <tr style="background-color: #f2f2f2; height: 30px;">
+        <th>Base Tower</th>
+        <th>Upgrade 1</th>
+        <th>Upgrade 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="150" height="150">
+        </td>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="150" height="150">
+        </td>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="150" height="150">
+        </td>
+      </tr>
+      <tr>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Clifton%20Suspension%20Bridge.jpg" width="150" height="150">
+        </td>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge1.jpg" width="150" height="150">
+        </td>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge2.jpg" width="150" height="150">
+        </td>
+      </tr>
+      <tr>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/we%20the%20curious.jpg" width="150" height="150">
+        </td>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A71.jpg" width="150" height="150">
+        </td>
+        <td align="center" style="padding: 5px;">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A72.jpg" width="150" height="150">
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
+
 
 
 
