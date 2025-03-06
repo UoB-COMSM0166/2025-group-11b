@@ -184,7 +184,7 @@ To ensure the game met these design goals, we also considered the system's techn
 
 With these concepts in mind, we developed an early prototype, testing core gameplay mechanics such as grid-based tower placement, monster AI pathfinding, and resource management. These tests validated our ideas and ensured that the game could progress to full-scale development with a solid foundation.
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/user%20case.jpg" width="500"><br>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/user%20case.jpg" width="800"><br>
   <b>Figure 5</b><br>
   <i>Use case diagrams</i>
 </p>
