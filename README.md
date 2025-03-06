@@ -138,13 +138,13 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄,
     <tbody>
       <tr>
         <td align="center" style="padding: 5px;">
-          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="150" height="150">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/great-britain.jpg" width="150" height="150">
         </td>
         <td align="center" style="padding: 5px;">
-          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="150" height="150">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/ship%20upgrade1.jpg" width="150" height="150">
         </td>
         <td align="center" style="padding: 5px;">
-          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="150" height="150">
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/ship%20upgrade2.jpg" width="150" height="150">
         </td>
       </tr>
       <tr>
