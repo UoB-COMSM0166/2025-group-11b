@@ -52,23 +52,49 @@ Add a group photo here!
   <table>
     <tr>
       <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Middle%20Ages.jpg" width="300"><br>
-        <b>Figure 1</b><br>
-        <i>Medieval Map</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="200"><br>
+        <b>Base Tower</b>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/sailing.png" width="300"><br>
-        <b>Figure 2</b><br>
-        <i>Age of Exploration Map</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="200"><br>
+        <b>Upgrade 1</b>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/future.png" width="300"><br>
-        <b>Figure 3</b><br>
-        <i>Future Map</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="200"><br>
+        <b>Upgrade 2</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Clifton%20Suspension%20Bridge.jpg" width="200"><br>
+        <b>Base Tower</b>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge1.jpg" width="200"><br>
+        <b>Upgrade 1</b>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge2.jpg" width="200"><br>
+        <b>Upgrade 2</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/we%20the%20curious.jpg" width="200"><br>
+        <b>Base Tower</b>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A71.jpg" width="200"><br>
+        <b>Upgrade 1</b>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A72.jpg" width="200"><br>
+        <b>Upgrade 2</b>
       </td>
     </tr>
   </table>
 </div>
+
 
 
 ## ⚔️ Strategic Depth & Progression 📈🔧  
