@@ -225,13 +225,18 @@ As we refined our ideas, we began developing **user stories** to ensure that our
 
 ### 🎨 Early Design & Prototyping  
 
-In the early stages of design, we researched traditional tower defense games to understand their mechanics and identify potential areas for innovation. Our key decision was to merge tower defense gameplay with the historical evolution of Bristol, offering players the opportunity to enjoy the strategic gameplay while also learning about the city's history.
+🔍 Research & Conceptualization
+In the early stages of design, we researched traditional tower defense games to understand their mechanics and identify potential areas for innovation. Our key decision was to merge tower defense gameplay with the historical evolution of Bristol 🏛️, offering players the opportunity to enjoy strategic gameplay while also learning about the city's history.
 
+🛠️ Core Gameplay Design
 Once the core game concept was defined, we focused on establishing the key gameplay pillars. For example, tower placement would be strategically important, with different historical periods unlocking unique towers and monsters. We also aimed to incorporate Bristol's historical landmarks as key gameplay elements, enhancing both the strategic depth and the educational value of the game.
 
-To ensure the game met these design goals, we also considered the system's technical requirements. The game needed to be accessible across multiple platforms, allowing players to engage on PC, console, and web. The user interface was designed to be intuitive, facilitating easy tower placement, upgrades, and resource management.
+💻 Technical Considerations
+To ensure the game met these design goals, we considered the system's technical requirements. The game needed to be accessible across multiple platforms (PC, console, and web) 🌐, allowing players to engage seamlessly. The user interface was designed to be intuitive, facilitating easy tower placement, upgrades, and resource management.
 
-With these concepts in mind, we developed an early prototype, testing core gameplay mechanics such as grid-based tower placement, monster AI pathfinding, and resource management. These tests validated our ideas and ensured that the game could progress to full-scale development with a solid foundation.
+🚀 Prototype Development
+With these concepts in mind, we developed an early prototype, testing core mechanics such as grid-based tower placement, monster AI pathfinding, and resource management. These tests validated our ideas and ensured that the game could progress to full-scale development with a solid foundation.
+
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/user%20case.jpg" width="700"><br>
   <b>Figure 5</b><br>
