@@ -127,42 +127,52 @@ These landmarks are not just **visual elements** 👀 but play a **strategic rol
 Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄, allowing players to evolve their defenses in historically meaningful ways.
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="300"><br>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="300"><br>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="300"><br>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Clifton%20Suspension%20Bridge.jpg" width="300"><br>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge1.jpg" width="300"><br>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge2.jpg" width="300"><br>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/we%20the%20curious.jpg" width="300"><br>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A71.jpg" width="300"><br>
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A72.jpg" width="300"><br>
-      </td>
-    </tr>
+  <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+    <thead>
+      <tr>
+        <th>Base Tower</th>
+        <th>Upgrade 1</th>
+        <th>Upgrade 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="300">
+        </td>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="300">
+        </td>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="300">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Clifton%20Suspension%20Bridge.jpg" width="300">
+        </td>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge1.jpg" width="300">
+        </td>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge2.jpg" width="300">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/we%20the%20curious.jpg" width="300">
+        </td>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A71.jpg" width="300">
+        </td>
+        <td>
+          <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A72.jpg" width="300">
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
+
 
 By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
 
