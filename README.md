@@ -130,53 +130,35 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄,
   <table>
     <tr>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image1.jpg" width="300"><br>
-        <b>Figure 1</b><br>
-        <i>Description 1</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Cabot%20Tower.jpg" width="300"><br>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image2.jpg" width="300"><br>
-        <b>Figure 2</b><br>
-        <i>Description 2</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A71.jpg" width="300"><br>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image3.jpg" width="300"><br>
-        <b>Figure 3</b><br>
-        <i>Description 3</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%941%E5%8D%87%E7%BA%A72.jpg" width="300"><br>
       </td>
     </tr>
     <tr>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image4.jpg" width="300"><br>
-        <b>Figure 4</b><br>
-        <i>Description 4</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Clifton%20Suspension%20Bridge.jpg" width="300"><br>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image5.jpg" width="300"><br>
-        <b>Figure 5</b><br>
-        <i>Description 5</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge1.jpg" width="300"><br>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image6.jpg" width="300"><br>
-        <b>Figure 6</b><br>
-        <i>Description 6</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/bridge2.jpg" width="300"><br>
       </td>
     </tr>
     <tr>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image7.jpg" width="300"><br>
-        <b>Figure 7</b><br>
-        <i>Description 7</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/we%20the%20curious.jpg" width="300"><br>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image8.jpg" width="300"><br>
-        <b>Figure 8</b><br>
-        <i>Description 8</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A71.jpg" width="300"><br>
       </td>
       <td align="center" style="padding: 10px;">
-        <img src="https://example.com/image9.jpg" width="300"><br>
-        <b>Figure 9</b><br>
-        <i>Description 9</i>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/%E5%A1%942%E5%8D%87%E7%BA%A72.jpg" width="300"><br>
       </td>
     </tr>
   </table>
