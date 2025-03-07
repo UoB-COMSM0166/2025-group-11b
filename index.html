@@ -7,19 +7,23 @@
     <link href="style.css" rel="stylesheet">
     <!-- 脚本依次加载 -->
     <script src="scripts/lib/lz-string.min.js" defer></script>
-    <script src="scripts/lib/p5.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js" defer></script>
     <script src="scripts/lib/p5.sound.min.js" defer></script>
+    <script src="scripts/effect.js" defer></script>
+    <script src="scripts/effects.js" defer></script>
     <script src="scripts/utils.js" defer></script>
     <script src="scripts/load_assets.js" defer></script>
     <script src="scripts/monster.js" defer></script>
     <script src="scripts/monsters.js" defer></script>
     <script src="scripts/particle.js" defer></script>
     <script src="scripts/particle_system.js" defer></script>
+
     <script src="scripts/bullet.js" defer></script>
     <script src="scripts/tower.js" defer></script>
     <script src="scripts/towers.js" defer></script>
     <script src="scripts/maps.js" defer></script>
     <script src="scripts/main.js" defer></script>
+
     
 
   </head>
@@ -68,11 +72,13 @@
         <div id="store-panel">
           <h2>商店</h2>
           <div class="button-group">
-            <button class="gun" onclick="setPlace('gun')">Gun Tower (1)</button>
-            <!-- <button class="laser" onclick="setPlace('laser')">Laser Tower (2)</button>
-            <button class="slow" onclick="setPlace('slow')">Slow Tower (3)</button>
-            <button class="laserfire" onclick="setPlace('laserfire')">Laserfire Tower (4)</button>
-            <button class="bomb" onclick="setPlace('bomb')">Bomb Tower (6)</button> -->
+            <button class="gun" onclick="setPlace('gun')">Archer Tower</button>
+            <button class="gun" onclick="setPlace('oil')">Boiling Oil Tower</button>
+            <button class="bomb" onclick="setPlace('bomb')">Cannon Tower</button>
+            <button class="slow" onclick="setPlace('slow')">Net Thrower Tower</button>
+             <button class="laser" onclick="setPlace('laser')">Laser AA Tower</button>
+            <button class="slow" onclick="setPlace('slow2')">EMP Disruptor Tower</button>
+
           </div>
         </div>
         
@@ -104,7 +110,9 @@
     <script>
       // 定义可选关卡（这里使用之前下拉框中的 4 个选项，可根据需要调整）
       const levels = [
-        { id: "customMap", name: "自定义地图" }  // 新增的地图选项
+        { id: "customMap", name: "第一关" }  ,// 新增的地图选项
+        { id: "map2", name: "第二关" } , // 新增的地图选项
+        { id: "map3", name: "第三关" }  // 新增的地图选项
       ];
       
       // 从 localStorage 取出关卡星级（假设 key 为 "rating_关卡ID"，值为 0~3）
@@ -136,6 +144,18 @@
           card.addEventListener("click", function() {
             document.getElementById("map").value = level.id;
             document.getElementById("level-selection").style.display = "none";
+
+            mapData = maps[level.id] ;
+            if(mapData==maps["map2"]){
+              bgImg = loadImage("images/map2.png");
+            }
+            if(mapData==maps["map3"]){
+              bgImg = loadImage("images/map3.png");
+            }
+
+            if(mapData==maps["customMap"]){
+              bgImg = loadImage("images/your_background.png");
+            }
             resetGame();
             paused = true;
           });
@@ -145,6 +165,32 @@
       
       // 页面加载完毕后自动启动游戏，并绑定“放弃退出”按钮事件
       document.addEventListener("DOMContentLoaded", function() {
+
+        // 找到加速按钮
+        var speedBtn = document.getElementById("speed-monster-button");
+
+        // 当鼠标按下（或触控开始）时，设置加速
+        speedBtn.addEventListener("mousedown", function() {
+          monsterSpeedMultiplier = 2;
+          speedBtn.innerHTML = "加速中...";
+        });
+        // 为了兼容触控设备，添加 touchstart 事件
+        speedBtn.addEventListener("touchstart", function(e) {
+          monsterSpeedMultiplier = 2;
+          speedBtn.innerHTML = "加速中...";
+          // 阻止后续模拟的 mouse 事件
+          e.preventDefault();
+        });
+
+        // 当鼠标松开、离开按钮区域或触控结束时，恢复正常速度
+        function resetSpeed() {
+          monsterSpeedMultiplier = 1;
+          speedBtn.innerHTML = "长按加速";
+        }
+        speedBtn.addEventListener("mouseup", resetSpeed);
+        speedBtn.addEventListener("mouseleave", resetSpeed);
+        speedBtn.addEventListener("touchend", resetSpeed);
+        speedBtn.addEventListener("touchcancel", resetSpeed);
         // 生成选关卡片，让用户自行选择关卡
         createLevelCards();
         // 调用更新敌人栏的函数

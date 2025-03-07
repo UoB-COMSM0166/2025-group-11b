@@ -1,76 +1,88 @@
-var monsters = [];
-var projectiles = [];
-var systems = [];
-var towers = [];
-var newMonsters = [];
-var newProjectiles = [];
-var newTowers = [];
+let mapData = maps.customMap;  // 获取自定义地图数据
+// let cellWidth = 1440 / mapData.cols;  // 每个网格的宽度
+// let cellHeight = 768 / mapData.rows;  // 每个网格的高度
 
-var cols;
-var rows;
-var tileZoom = 2;
-var ts = 24;            // tile size
-var zoomDefault = ts;
+let cellWidth = 110;  // 每个网格的宽度
+let cellHeight = 110;  // 每个网格的高度
 
-var particleAmt = 32;   // number of particles to draw per explosion
+let debugMap = false;  // 是否显示调试地图
 
-var custom;             // custom map JSON
-var display;            // graphical display tiles
-var displayDir;         // direction display tiles are facing
-                        // (0 = none, 1 = left, 2 = up, 3 = right, 4 = down)
-var dists = buildArray(12, 8, null);  // 创建一个 12 列，8 行的数组，默认值为 null
-                        // distance to exit
-var grid;               // tile type
-                        // (0 = empty, 1 = wall, 2 = path, 3 = tower,
-                        //  4 = monster-only pathing)
-var metadata;           // tile metadata
-var paths;              // direction to reach exit
-var visitMap;           // whether exit can be reached
-var walkMap;            // walkability map
+// 开场白开始游戏
+var isStartGame = false;  // 游戏是否开始
 
-var exit;
-var spawnpoints = [];
-var tempSpawns = [];
+var monsters = [];  // 存放怪物的数组
+var projectiles = [];  // 存放投射物的数组
+var systems = [];  // 存放系统的数组
+var towers = [];  // 存放塔的数组
+var newMonsters = [];  // 存放新怪物的数组
+var newProjectiles = [];  // 存放新投射物的数组
+var newTowers = [];  // 存放新塔的数组
 
-var cash;
-var health;
-var maxHealth;
-var wave;
+var cols;  // 地图的列数
+var rows;  // 地图的行数
+var tileZoom = 2;  // 瓦片的缩放倍率
+var ts = 110;  // 单元格大小
 
-var spawnCool;          // number of ticks between spawning monsters
+var zoomDefault = ts;  // 默认的瓦片大小
 
-var bg;                 // background color
+var particleAmt = 32;  // 每次爆炸绘制的粒子数量
 
-var selected;
-var towerType;
+var custom;  // 自定义地图的JSON数据
+var display;  // 图形显示瓦片
+var displayDir;  // 显示瓦片的方向
+// (0 = 无方向, 1 = 左, 2 = 上, 3 = 右, 4 = 下)
+var dists = buildArray(12, 8, null);  // 创建一个12列8行的数组，默认值为null
+// 到出口的距离
+var grid;  // 瓦片类型
+// (0 = 空, 1 = 墙, 2 = 路径, 3 = 塔,
+// 4 = 仅怪物行走路径)
+var metadata;  // 瓦片元数据
+var paths;  // 到出口的路径方向
+var visitMap;  // 是否可以到达出口
+var walkMap;  // 可行走地图
 
-var sounds;             // dict of all sounds
+var exit;  // 出口
+var spawnpoints = [];  // 怪物的生成点
+var tempSpawns = [];  // 临时生成点
 
+var cash;  // 当前的金钱
+var health;  // 当前的生命值
+var maxHealth;  // 最大生命值
+var wave;  // 当前波次
 
-var paused;             // whether to update or not
-var randomWaves = true; // whether to do random or custom waves
-var scd;                // number of ticks until next spawn cycle
-var skipToNext = false; // whether or not to immediately start next wave
-var toCooldown;         // flag to reset spawning cooldown
-var toPathfind;         // flag to update monster pathfinding
-var toPlace;            // flag to place a tower
-var toWait;             // flag to wait before next wave
-var wcd;                // number of ticks until next wave
+var spawnCool;  // 怪物生成的冷却时间
 
-var minDist = 15;       // minimum distance between spawnpoint and exit
-var resistance = 0.5;   // percentage of damage blocked by resistance
-var sellConst = 0.8;    // ratio of tower cost to sell price
-var waveCool = 120;     // number of ticks between waves
-var weakness = 0.5;     // damage increase from weakness
+var bg;  // 背景色
 
+var selected;  // 当前选中的对象
+var towerType;  // 当前塔的类型
 
-var totalWaves = 6;   // 固定总波数为 2 波
-var gameEnded = false; // 标记本局游戏是否已经结束
+var sounds;  // 所有音效的字典
 
-var monsterSpeedMultiplier = 1;  // 默认1倍速度
+var paused;  // 游戏是否暂停
+var randomWaves = true;  // 是否使用随机波次
+var scd;  // 下一次生成怪物的倒计时
+var skipToNext = false;  // 是否跳过当前波次直接开始下一波
+var toCooldown;  // 用于重置生成冷却时间的标志
+var toPathfind;  // 用于更新怪物寻路的标志
+var toPlace;  // 用于放置塔的标志
+var toWait;  // 用于等待下一波的标志
+var wcd;  // 下一波的倒计时
+
+var minDist = 15;  // 生成点和出口的最小距离
+var resistance = 0.5;  // 伤害抵抗百分比
+var sellConst = 0.8;  // 塔出售价格与购买价格的比例
+var waveCool = 120;  // 波次之间的冷却时间（单位：ticks）
+var weakness = 0.5;  // 弱点造成的伤害增加百分比
+
+var totalWaves = 2;  // 固定总波数为2波
+var gameEnded = false;  // 游戏是否结束的标志
+
+var monsterSpeedMultiplier = 1;  // 怪物的速度倍率，默认1倍速度
 
 // 创建Tooltip对象
-let tooltip;
+let tooltip;  // 创建一个提示工具对象
+
 
 // Misc functions
 
@@ -92,15 +104,16 @@ function addWave(pattern) {
     }
 }
 
-// Buy and place a tower if player has enough money
-function buy(t) {
-    if (cash >= t.cost) {
-        cash -= t.cost;
-        toPlace = false;
-        selected = t;
-        if (grid[t.gridPos.x][t.gridPos.y] === 0) toPathfind = true;
-        updateInfo(t);
-        newTowers.push(t);
+// 购买并放置防御塔（当玩家资金充足时）
+function buy(t) {                          // 定义购买函数，接收防御塔配置对象t作为参数
+    if (cash >= t.cost) {                  // 校验玩家当前资金是否足够购买该防御塔
+        cash -= t.cost;                    // 扣除购买消耗的金额
+        toPlace = false;                   // 关闭防御塔放置状态指示器
+        selected = t;                      // 将当前选中对象设为该防御塔
+        if (grid[t.gridPos.x][t.gridPos.y] === 0)  // 检查目标网格单元是否为空置状态
+            toPathfind = true;              // 触发路径重新计算标志（地形变更需更新敌人路径）
+        updateInfo(t);                     // 更新界面显示的防御塔信息
+        newTowers.push(t);                 // 将新防御塔加入管理队列
     }
 }
 
@@ -144,7 +157,7 @@ function empty(col, row) {
     if (typeof exit !== 'undefined') {
         if (exit.x === col && exit.y === row) return false;
     }
-    
+
     return true;
 }
 
@@ -202,7 +215,8 @@ function importMap(str) {
         custom = JSON.parse(LZString.decompressFromBase64(str));
         document.getElementById('custom').selected = true;
         resetGame();
-    } catch (err) {}
+    } catch (err) {
+    }
 }
 
 // Check if wave is at least min and less than max
@@ -216,38 +230,67 @@ function isWave(min, max) {
 function loadMap() {
     // 优先使用隐藏的 #map（初始选关时由 start 按钮设置），否则退回到 #initial-map
     var mapElement = document.getElementById('map') || document.getElementById('initial-map');
-    var name = mapElement.value;
-    health = 40;
-    cash = 500;
 
+// 获取地图名称
+    var name = mapElement.value;
+
+// 初始化玩家生命值
+    health = 40;
+
+// 初始化玩家金钱
+    cash = 10000;
+
+// 获取地图数据
     var m = maps[name];
-    // Grids
+
+// 复制地图显示层数据
     display = copyArray(m.display);
+
+// 复制地图方向数据
     displayDir = copyArray(m.displayDir);
+
+// 复制地图网格数据
     grid = copyArray(m.grid);
+
+// 复制地图元数据
     metadata = copyArray(m.metadata);
-    // Important tiles
+
+// 设置出口位置
     exit = createVector(m.exit[0], m.exit[1]);
+
+// 初始化出生点数组
     spawnpoints = [];
+
+// 复制出生点数据
     for (var i = 0; i < m.spawnpoints.length; i++) {
         var s = m.spawnpoints[i];
         spawnpoints.push(createVector(s[0], s[1]));
     }
-    // Colors
+
+// 设置地图背景颜色
     bg = m.bg;
-    // Misc
+
+// 设置地图列数
     cols = m.cols;
+
+// 设置地图行数
     rows = m.rows;
 
-    resizeFit();
+// 调整画布适应窗口
+//     resizeFit();
 
+// 初始化临时出生点数组
     tempSpawns = [];
+
 }
 
 
 // Increment wave counter and prepare wave
 function nextWave() {
+    isStartGame = false;
+// 根据游戏模式添加敌人波次（随机生成或使用自定义配置）
     addWave(randomWaves ? randomWave() : customWave());
+// 条件运算符决定波次生成策略：当randomWaves为true时调用随机生成函数，否则调用自定义配置函数
     wave++;
 }
 
@@ -272,24 +315,54 @@ function pause() {
 function randomWave() {
     var waves = [];
 
-    if (isWave(0, 1)) {
-        waves.push([100, ['plagueRat', 'dockDredger', 1]]);
+
+    if (mapData == maps["customMap"]) {
+        if (isWave(0, 1)) {
+            waves.push([100, ['Bandit', 'BatteringRam', 1]]);
+        }
+        if (isWave(1, 2)) {
+            waves.push([80, ['BatteringRam', 4]]);
+        }
+        if (isWave(2, 3)) {
+            waves.push([80, ['Bandit', 4]]);
+        }
+        if (isWave(3, 6)) {
+            waves.push([100, ['Bandit', 'BatteringRam', 8]]);
+        }
+
     }
-    if (isWave(1, 2)) {
-        waves.push([80, ['dockDredger', 4]]);
-    }
-    if (isWave(2, 3)) {
-        waves.push([80, ['plagueRat', 4]]);
-    }
-    if (isWave(3, 6)) {
-        waves.push([100, ['plagueRat', 'dockDredger', 8]]);
+    if (mapData == maps["map2"]) {
+
+        if (isWave(0, 1)) {
+            waves.push([100, ['PirateRaider', 2]]);
+        }
+        if (isWave(1, 2)) {
+            waves.push([100, ['Mouse', 'PirateRaider', 10]]);
+            // waves.push([80, ['BatteringRam', 4]]);
+        }
+
+
     }
 
+    if (mapData == maps["map3"]) {
+
+        if (isWave(0, 1)) {
+            waves.push([100, ['AIMech', 5]]);
+        }
+        if (isWave(1, 2)) {
+            waves.push([100, ['DroneSwarm', 'AIMech', 10]]);
+            // waves.push([80, ['BatteringRam', 4]]);
+        }
+
+
+    }
+
+
     // if (isWave(0, 3)) {
-    //     waves.push([120, ['dockDredger',100]]);
+    //     waves.push([120, ['BatteringRam',100]]);
     // }
     // if (isWave(3, 4)) {
-    //     waves.push([100, ['dockDredger', 100]]);
+    //     waves.push([100, ['BatteringRam', 100]]);
     // }
     // if (isWave(2, 7)) {
     //     waves.push([30, ['weak', 25], ['strong', 25]]);
@@ -397,7 +470,7 @@ function resetGame() {
     newTowers = [];
 
     // 这里可以获取一次全局路径
-    window._globalPath = findPathBFS(grid); 
+    window._globalPath = findPathBFS(grid);
     console.log('全局路径 = ', window._globalPath);
     // 重置状态
     health = 40;
@@ -412,21 +485,34 @@ function resetGame() {
     toPlace = false;
     // 启动第一波（此时 nextWave() 会使 wave 变为 1）
     nextWave();
-    tooltip = new Tooltip("Here comes the "+wave+" wave of enemies!", width / 2, height / 2);
+
+    tooltip = new Tooltip("Here comes the " + wave + " wave of enemies!", cols * ts / 2, rows * ts / 2);
 }
 
 // Changes tile size to fit everything onscreen
+//自适应屏幕
 function resizeFit() {
     var div = document.getElementById('main-holder');
     var ts1 = floor(div.offsetWidth / cols);
     var ts2 = floor(div.offsetHeight / rows);
     ts = Math.min(ts1, ts2);
     resizeCanvas(cols * ts, rows * ts, true);
+
+    cellWidth = width / mapData.cols;  // 每个网格的宽度
+    cellHeight = height / mapData.rows;  // 每个网格的高度
+
+
 }
 
 
 // Resizes cols, rows, and canvas based on tile size
 function resizeMax() {
+    var div = document.getElementById('main-holder');
+    cols = 12
+    rows = 8;
+    resizeCanvas(cols * 110, rows * 110, true);
+
+
     var div = document.getElementById('main-holder');
     cols = floor(div.offsetWidth / ts);
     rows = floor(div.offsetHeight / ts);
@@ -461,18 +547,18 @@ function showRange(t, cx, cy) {
 function updateInfo(t) {
     var name = document.getElementById('name');
     name.innerHTML = '<span style="color:rgb(' + t.color + ')">' + t.title +
-    '</span>';
+        '</span>';
     document.getElementById('cost').innerHTML = 'Cost: $' + t.totalCost;
     document.getElementById('sellPrice').innerHTML = 'Sell price: $' +
-    t.sellPrice();
+        t.sellPrice();
     document.getElementById('upPrice').innerHTML = 'Upgrade price: ' +
-    (t.upgrades.length > 0 ? '$' + t.upgrades[0].cost : 'N/A');
+        (t.upgrades.length > 0 ? '$' + t.upgrades[0].cost : 'N/A');
     document.getElementById('damage').innerHTML = 'Damage: ' + t.getDamage();
     document.getElementById('type').innerHTML = 'Type: ' +
-    t.type.toUpperCase();
+        t.type.toUpperCase();
     document.getElementById('range').innerHTML = 'Range: ' + t.range;
     document.getElementById('cooldown').innerHTML = 'Avg. Cooldown: ' +
-    t.getCooldown().toFixed(2) + 's';
+        t.getCooldown().toFixed(2) + 's';
     var buttons = document.getElementById('info-buttons');
     buttons.style.display = toPlace ? 'none' : 'flex';
     document.getElementById('info-div').style.display = 'block';
@@ -493,12 +579,12 @@ function updateStatus() {
 }
 
 // Upgrade tower
-function upgrade(t) {
-    if (cash >= t.cost) {
-        cash -= t.cost;
-        selected.upgrade(t);
-        selected.upgrades = t.upgrades ? t.upgrades : [];
-        updateInfo(selected);
+function upgrade(t) {      // 定义升级函数，接收升级配置对象t作为参数
+    if (cash >= t.cost) {    // 校验当前资金是否满足升级所需费用
+        cash -= t.cost;      // 扣除升级消耗的资金
+        selected.upgrade(t); // 执行目标对象的升级逻辑
+        selected.upgrades = t.upgrades ? t.upgrades : [];  // 更新可用升级项列表（存在则继承，否则重置为空）
+        updateInfo(selected); // 刷新界面显示最新信息
     }
 }
 
@@ -518,10 +604,29 @@ function draw() {
         background(0);
         return;
     }
-
+    background(0);
     // 绘制背景图（覆盖整个画布）
-    image(bgImg, 0, 0, width, height);
+    // image(bgImg, 0, 0, width, height);
 
+    for (let col = 0; col < mapData.cols; col++) {
+        for (let row = 0; row < mapData.rows; row++) {
+            let value = mapData.grid[col][row];
+            let alpha = 200;
+            // 根据值设置不同颜色
+            let colors = {
+                0: color(255, 0, 0, alpha),   // 红色：起点
+                1: color(200, 200, 0, alpha), // 黄色：路径
+                3: color(0, 255, 0, alpha),   // 绿色：可放塔
+                2: color(100, alpha),         // 灰色：不可放塔
+                4: color(0, 0, 255, alpha)    // 蓝色：终点
+            };
+
+            fill(colors[value] || color(255));
+            stroke(0);
+            rect(col * ts, row * ts, ts, ts);
+
+        }
+    }
 
 
     // Update game status
@@ -533,243 +638,297 @@ function draw() {
         if (scd > 0) scd--;
         if (wcd > 0 && toWait) wcd--;
     }
-
-    // // Draw spawnpoints
+    //绘制出入口
+    // Draw spawnpoints
     // for (var i = 0; i < spawnpoints.length; i++) {
     //     stroke(255);
+    //     fill(0, 230, 64);
     //     var s = spawnpoints[i];
     //     rect(s.x * ts, s.y * ts, ts, ts);
     // }
 
+    // Draw exit
+    // stroke(255);
+    // fill(207, 0, 15);
+    // rect(exit.x * ts, exit.y * ts, ts, ts);
+    //
+    // // 绘制出生点
+    // for (var i = 0; i < spawnpoints.length; i++) {
+    //     stroke(255); // 设置描边颜色为白色
+    //     fill(0, 230, 64); // 设置填充颜色为绿色
+    //     var s = spawnpoints[i]; // 获取当前出生点
+    //     rect(s.x * ts, s.y * ts, ts, ts); // 绘制出生点矩形
+    // }
 
-    // Draw temporary spawnpoints
-    for (var i = 0; i < tempSpawns.length; i++) {
-        stroke(255);
-        fill(155, 32, 141);
-        var s = tempSpawns[i][0];
-        rect(s.x * ts, s.y * ts, ts, ts);
-    }
+// 绘制出口
+//     stroke(255); // 设置描边颜色为白色
+    // fill(207, 0, 15); // 设置填充颜色为红色
+    // rect(exit.x * ts, exit.y * ts, ts, ts); // 绘制出口矩形
 
-    // Spawn monsters
-    if (canSpawn() && !paused) {
-        // Spawn same monster for each spawnpoint
-        var name = newMonsters.shift();
+// 绘制临时出生点
+//     for (var i = 0; i < tempSpawns.length; i++) {
+//         stroke(255); // 设置描边颜色为白色
+//         fill(155, 32, 141); // 设置填充颜色为紫色
+    // var s = tempSpawns[i][0]; // 获取当前临时出生点
+    // rect(s.x * ts, s.y * ts, ts, ts); // 绘制临时出生点矩形
+    // }
+
+// 生成怪物
+    if (canSpawn() && !paused) { // 如果可以生成怪物且游戏未暂停
+        var name = newMonsters.shift(); // 取出新怪物的名称
+
+        // 在所有出生点生成相同的怪物
         for (var i = 0; i < spawnpoints.length; i++) {
-            var s = spawnpoints[i];
-            var c = center(s.x, s.y);
-            monsters.push(createMonster(c.x, c.y, monster[name]));
+            var s = spawnpoints[i]; // 获取当前出生点
+            var c = center(s.x, s.y); // 计算出生点的中心坐标
+            monsters.push(createMonster(c.x, c.y, monster[name])); // 创建并添加怪物
         }
 
-        // Temporary spawnpoints
+        // 处理临时出生点
         for (var i = 0; i < tempSpawns.length; i++) {
-            var s = tempSpawns[i];
-            if (s[1] === 0) continue;
-            s[1]--;
-            var c = center(s[0].x, s[0].y);
-            monsters.push(createMonster(c.x, c.y, monster[name]));
+            var s = tempSpawns[i]; // 获取当前临时出生点
+            if (s[1] === 0) continue; // 如果计数为 0，则跳过
+            s[1]--; // 递减计数
+            var c = center(s[0].x, s[0].y); // 计算临时出生点的中心坐标
+            monsters.push(createMonster(c.x, c.y, monster[name])); // 创建并添加怪物
         }
 
-        // Reset cooldown
+        // 触发冷却状态，防止立即再次生成怪物
         toCooldown = true;
     }
 
-    // Update and draw monsters
+
+    // 更新并绘制怪物
     for (let i = monsters.length - 1; i >= 0; i--) {
         let e = monsters[i];
 
-        // Update direction and position
+        // 更新方向和位置
         if (!paused) {
-            e.move();
-            e.update();
-            e.onTick();
+            e.move();  // 移动怪物
+            // 选择目标并更新塔的冷却时间
+
+            e.target(towers);  // 塔攻击目标
+
+
+            e.update();  // 更新怪物状态
+            e.onTick();  // 每帧更新怪物的逻辑
         }
 
-        // Kill if outside map
+        // 如果怪物超出地图范围，击杀怪物
         if (outsideMap(e)) e.kill();
 
-        // If at exit tile, kill and reduce player health
+        // 如果怪物到达出口格子，击杀并减少玩家生命
         if (atTileCenter(e.pos.x, e.pos.y, exit.x, exit.y)) e.quit();
 
-        // Draw
+        // 绘制怪物
         e.draw();
 
+        // 如果怪物死亡，从怪物数组中移除
         if (e.ifDie()) monsters.splice(i, 1);
     }
 
-    // Draw health bars
+// 绘制怪物的血条
     for (var i = 0; i < monsters.length; i++) {
-        monsters[i].showHealth();
+        monsters[i].showHealth();  // 显示每个怪物的血条
     }
 
-    // Update and draw towers
-    for (let i = towers.length - 1; i >= 0; i--) {
+// 更新并绘制塔
+    for (let i = 0; i < towers.length; i++) {
         let t = towers[i];
 
-        // Target monsters and update cooldowns
+        // 选择目标并更新塔的冷却时间
         if (!paused) {
-            t.target(monsters);
-            t.update();
+            t.target(monsters);  // 塔攻击目标
+            t.update();  // 更新塔的状态
         }
 
-        // Kill if outside map
+        // 如果塔超出地图范围，摧毁塔
         if (outsideMap(t)) t.kill();
 
-        // Draw
+        // 绘制塔
         t.draw();
 
+        // 如果塔死亡，从塔数组中移除
         if (t.isDead()) towers.splice(i, 1);
     }
 
-    // Update and draw particle systems
+// 更新并绘制粒子系统
     for (let i = systems.length - 1; i >= 0; i--) {
         let ps = systems[i];
-        ps.run();
-        if (ps.isDead()) systems.splice(i, 1);
+        ps.run();  // 执行粒子系统
+        if (ps.isDead()) systems.splice(i, 1);  // 如果粒子系统已死，从系统数组中移除
     }
 
-    // Update and draw projectiles
+// 更新并绘制子弹
     for (let i = projectiles.length - 1; i >= 0; i--) {
         let p = projectiles[i];
 
+        // 如果未暂停，更新子弹
         if (!paused) {
-            p.steer();
-            p.update();
+            p.steer();  // 控制子弹的运动
+            p.update();  // 更新子弹的位置
         }
 
-        // Attack target
-        if (p.reachedTarget()) p.explode()
+        // 如果子弹到达目标，爆炸
+        if (p.reachedTarget()) p.explode();
 
-        // Kill if outside map
+        // 如果子弹超出地图范围，摧毁子弹
         if (outsideMap(p)) p.kill();
 
+        // 绘制子弹
         p.draw();
 
+        // 如果子弹死亡，从子弹数组中移除
         if (p.isDead()) projectiles.splice(i, 1);
     }
 
-    // Draw range of tower being placed
+// 绘制塔的射程范围
     if (doRange()) {
-        var p = gridPos(mouseX, mouseY);
-        var c = center(p.x, p.y);
-        var t = createTower(0, 0, tower[towerType]);
-        showRange(t, c.x, c.y);
+        var p = gridPos(mouseX, mouseY);  // 获取鼠标位置对应的网格位置
+        var c = center(p.x, p.y);  // 计算塔的中心位置
+        var t = createTower(0, 0, tower[towerType]);  // 创建一个塔
+        showRange(t, c.x, c.y);  // 显示塔的射程
 
-        // Draw a red X if tower cannot be placed
+        // 如果塔无法放置，绘制红色的 X
         if (!canPlace(p.x, p.y)) {
             push();
-            translate(c.x, c.y);
-            rotate(PI / 4);
+            translate(c.x, c.y);  // 平移到塔的中心位置
+            rotate(PI / 4);  // 旋转 45 度
 
-            // Draw a red X
+            // 绘制红色的 X
             noStroke();
-            fill(207, 0, 15);
-            var edge = 0.1 * ts;
-            var len = 0.9 * ts / 2;
-            rect(-edge, len, edge * 2, -len * 2);
-            rotate(PI / 2);
-            rect(-edge, len, edge * 2, -len * 2);
+            fill(207, 0, 15);  // 设置颜色为红色
+            var edge = 0.1 * ts;  // 边缘的大小
+            var len = 0.9 * ts / 2;  // 线段的长度
+            rect(-edge, len, edge * 2, -len * 2);  // 绘制 X 的一部分
+            rotate(PI / 2);  // 旋转 90 度
+            rect(-edge, len, edge * 2, -len * 2);  // 绘制 X 的另一部分
 
             pop();
         }
     }
 
+// 移除临时生成的怪物
     removeTempSpawns();
 
-    projectiles = projectiles.concat(newProjectiles);
-    towers = towers.concat(newTowers);
-    newProjectiles = [];
-    newTowers = [];
+// 将新生成的子弹和塔加入到原数组中
+    projectiles = projectiles.concat(newProjectiles);  // 添加新子弹
+    towers = towers.concat(newTowers);  // 添加新塔
+    newProjectiles = [];  // 清空新子弹数组
+    newTowers = [];  // 清空新塔数组
 
-    // If player is dead, reset game
+// 如果玩家死亡，重置游戏
     if (health <= 0) resetGame();
 
-    // Start next wave
-    // 检测并等待下一波
+// 检测并等待下一波
     if ((toWait && wcd === 0) || (skipToNext && newMonsters.length === 0)) {
         if (wave < totalWaves) {
             toWait = false;
             wcd = 0;
-            nextWave();
+            nextWave();  // 开始下一波
+            paused = true;  // 暂停游戏
+            tooltip = new Tooltip("Here comes the " + wave + " wave of enemies!", width / 2, height / 2);  // 显示提示框
         } else {
-            // 已经是最后一波，调用 endLevel() 自动跳转到选关界面
+            // 如果已经是最后一波，结束游戏并跳转到选关界面
             endLevel();
         }
     }
 
-    // Wait for next wave
+// 等待下一波
     if (noMoreMonster() && !toWait) {
-        wcd = waveCool;
-        toWait = true;
+        wcd = waveCool;  // 重置波次冷却时间
+        toWait = true;  // 设置等待下一波
     }
 
-    // Reset spawn cooldown
+// 重置生成怪物的冷却时间
     if (toCooldown) {
-        scd = spawnCool;
-        toCooldown = false;
+        scd = spawnCool;  // 重置生成冷却时间
+        toCooldown = false;  // 设置冷却完成
     }
+
+
     //绘制最上层界面
+    image(moneyBarImg, cellWidth, cellHeight / 2, cellWidth * 2, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 1.8);
 
-    image(moneyBarImg,100,50);
-    // var displayWave = wave > totalWaves ? totalWaves : wave;
-    // document.getElementById('wave').innerHTML = 'Wave: ' + displayWave + '/' + totalWaves;
-    // document.getElementById('health').innerHTML = 'Health: ' + health + '/' + maxHealth;
-    // document.getElementById('cash').innerHTML = '$' + cash;
-    // var displayWave = wave > totalWaves ? totalWaves : wave;
-    // document.getElementById('wave').innerHTML = 'Wave: ' + displayWave + '/' + totalWaves;
     noStroke();
-    fill(0,255);
-    textSize(25);
-    textAlign(LEFT,BASELINE);
-    text(cash,210,96);
+    fill(0, 255);
+    textSize(cellWidth / 5);
+    textAlign(LEFT, BASELINE);
+    text(cash, cellWidth * 1.8, cellWidth * 0.85);
+    image(healthBarImg, cellWidth * 4, cellHeight / 2, cellWidth * 2, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 1.8);
 
-    image(healthBarImg,400,56);
-    text( health + '/' + maxHealth,500,96);
+    text(health + '/' + maxHealth, cellWidth * 4 * 1.2, cellHeight / 2 * 1.7);
 
-    image(monsterBarImg,680,38);
+    image(monsterBarImg, cellWidth * 6.5, cellHeight / 2 * 0.8, cellWidth * 2.5, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 2.5);
+
     var displayWave = wave > totalWaves ? totalWaves : wave;
-    text(  displayWave + '/' + totalWaves ,850,96);
+    text(displayWave + '/' + totalWaves, cellWidth * 7.8, cellHeight / 2 * 1.65);
 
 
     tooltip.update();  // 更新提示状态
     tooltip.display();  // 显示提示文本
 
-    if(tooltip.isVisible==false){
-        paused = false;
+
+    if (tooltip.isVisible == false) {
+        if (isStartGame == false) {
+            isStartGame = true;
+            paused = false;
+        }
+
     }
 
+    //底座敌人生物显示
 
-    let x = width-400; // 初始 x 坐标
-    let y = height-100; // 初始 y 坐标
-    let itemWidth = 160; // 每个怪物项的间隔宽度
+    let x = 5; // 初始 x 坐标
+    let y = height - cellHeight; // 初始 y 坐标
+    let itemWidth = cellHeight * 2; // 每个怪物项的间隔宽度
 
     for (let key in monster) {
+
+
         if (monster.hasOwnProperty(key)) {
             fill(0);
-            rect(x,y,160,50,30);
-            console.log(monster)
+            rect(x + cellHeight * 0.3, y + cellHeight / 2 * 0.3, cellHeight * 1.5, cellHeight / 2, cellHeight);
             // 绘制怪物图像或颜色圆点
             if (monster[key].image) {
                 // 如果有图像，加载并绘制图像
-                    image(monster[key].image, x, y, 40, 40); // 绘制图像
-            } else {
-                // 如果没有图像，绘制颜色圆点
-                let col = monster[key].color;
-                if (Array.isArray(col)) {
-                    fill(col[0], col[1], col[2]); // 设置填充颜色
-                } else {
-                    fill(col); // 设置填充颜色
-                }
-                ellipse(x + 25, y + 25, 30, 30); // 绘制圆点
+
+                image(monster[key].image, x, y, cellHeight, cellHeight); // 绘制图像
             }
-            textAlign(LEFT,BASELINE);
+            textAlign(CENTER, CENTER);
             // 绘制怪物名称
             fill(255); // 设置文本颜色为黑色
             textSize(16); // 设置文本大小
-            text(key, x + 50, y + 30); // 绘制文本
+            text(key, x + cellHeight * 1.2, y + cellHeight / 2); // 绘制文本
 
             x += itemWidth; // 更新 y 坐标以绘制下一个怪物项
         }
     }
+
+
+    //调试模式
+    if (debugMap) {
+        for (let col = 0; col < mapData.cols; col++) {
+            for (let row = 0; row < mapData.rows; row++) {
+                let value = mapData.grid[col][row];
+                let alpha = 200;
+                // 根据值设置不同颜色
+                let colors = {
+                    0: color(255, 0, 0, alpha),   // 红色：起点
+                    1: color(200, 200, 0, alpha), // 黄色：路径
+                    3: color(0, 255, 0, alpha),   // 绿色：可放塔
+                    2: color(100, alpha),         // 灰色：不可放塔
+                    4: color(0, 0, 255, alpha)    // 蓝色：终点
+                };
+
+                fill(colors[value] || color(255));
+                stroke(0);
+                rect(col * cellWidth, row * cellHeight, cellWidth, cellHeight);
+                // rect(col * 110, row * 110, 110, 110);
+            }
+        }
+    }
+
 }
 
 
@@ -865,7 +1024,7 @@ function mousePressed() {
     if (!mouseInMap()) return;
     var p = gridPos(mouseX, mouseY);
     var t = getTower(p.x, p.y);
-    
+
     if (t) {
         // Clicked on tower
         selected = t;
@@ -873,6 +1032,11 @@ function mousePressed() {
         updateInfo(selected);
     } else if (canPlace(p.x, p.y)) {
         buy(createTower(p.x, p.y, tower[towerType]));
+    }
+
+
+    if (mouseButton === RIGHT) {
+        debugMap = !debugMap;
     }
 }
 
@@ -889,8 +1053,9 @@ function endLevel() {
             localStorage.setItem("rating_" + levelId, newRating);
         }
         // 延时0.5秒后显示选关界面
-        setTimeout(function() {
+        setTimeout(function () {
             // 清空游戏中的实体（根据需要可进一步清空）
+            wave = 1;
             monsters = [];
             projectiles = [];
             systems = [];
@@ -934,7 +1099,7 @@ function updateMonsterPanel() {
             var item = document.createElement("div");
             item.className = "monster-item";
 
-             // 创建 img 作为敌人图像
+            // 创建 img 作为敌人图像
             var monsterImage = document.createElement("img");
             monsterImage.className = "monster-image";
 
@@ -954,7 +1119,7 @@ function updateMonsterPanel() {
                 }
                 item.appendChild(colorCircle);
             }
-            
+
             // 创建一个文本节点，显示敌人的名称（key）
             var nameText = document.createTextNode(key);
             // 添加元素
@@ -985,40 +1150,38 @@ class Tooltip {
 
     // 更新提示状态
     update() {
-        if(this.fadeDurationInt>0){
-            this.fadeDurationInt-=  this.speed;
-            this.alpha = map(this.fadeDurationInt,2000,0,0,255);
+        if (this.fadeDurationInt > 0) {
+            this.fadeDurationInt -= this.speed;
+            this.alpha = map(this.fadeDurationInt, 2000, 0, 0, 255);
         }
 
 
-
-        if(this.fadeDurationInt==0){
-            if(this.fadeDurationOut>0);{
-                this.fadeDurationOut-=  this.speed;
-                this.alpha = map(this.fadeDurationOut,2000,0,255,0);
+        if (this.fadeDurationInt == 0) {
+            if (this.fadeDurationOut > 0) ;
+            {
+                this.fadeDurationOut -= this.speed;
+                this.alpha = map(this.fadeDurationOut, 2000, 0, 255, 0);
             }
         }
 
-        if(this.fadeDurationOut==0) {
+        if (this.fadeDurationOut == 0) {
 
 
-            this.isVisible =false;
+            this.isVisible = false;
         }
-
-
 
 
     }
 
     // 显示文本
     display() {
-            if(this.isVisible) {
-                noStroke();
-                fill(255, 0, 0, this.alpha);  // 设置文本颜色和透明度
-                textSize(50);
-                textAlign(CENTER, CENTER);
-                text(this.message, this.x, this.y);  // 显示文本
-            }
+        if (this.isVisible) {
+            noStroke();
+            fill(255, 0, 0, this.alpha);  // 设置文本颜色和透明度
+            textSize(50);
+            textAlign(CENTER, CENTER);
+            text(this.message, this.x, this.y);  // 显示文本
+        }
 
     }
 }
