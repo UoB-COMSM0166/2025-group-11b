@@ -12,13 +12,14 @@ class Tower {  // 创建塔的类
         this.secondary = [0, 0, 0]; // 辅助色
         this.weight = 2;            // 激光描边宽度
         this.width = 0.3;           // 炮管宽度（以瓦片为单位）
-        this.health =10;
+        this.health = 10;
 
         // Misc  // 杂项
         this.alive = true;          // 塔是否存活
         this.name = 'tower';        // 塔的名称
         this.sound = null;          // 发射时播放的声音
         this.title = 'Tower';       // 塔的标题
+        this.selected = false;      // 是否被选中
 
         // Position  // 塔的位置
         this.angle = 0;             // 塔的角度
@@ -26,6 +27,7 @@ class Tower {  // 创建塔的类
         this.pos = createVector(col*ts + ts/2, row*ts + ts/2);  // 屏幕位置
 
         // Stats  // 塔的属性
+        this.cooldown = 0.01;       // 冷却时间
         this.cooldownMax = 0;       // 最大冷却时间
         this.cooldownMin = 0;       // 最小冷却时间
         this.cost = 0;              // 塔的购买成本
@@ -141,6 +143,7 @@ class Tower {  // 创建塔的类
     resetCooldown() {  // 重置冷却时间
         var cooldown = round(random(this.cooldownMin, this.cooldownMax));  // 随机生成冷却时间
         this.cd = cooldown;  // 设置冷却时间
+        this.cooldown = cooldown;
     }
 
     // Sell price  // 塔的出售价格
@@ -177,5 +180,44 @@ class Tower {  // 创建塔的类
     // Returns array of visible entities out of passed array  // 返回可见实体的数组
     visible(entities) {
         return getInRange(this.pos.x, this.pos.y, this.range, entities);  // 获取在范围内的实体
+    }
+
+    // 绘制攻击范围
+    diaplayRange(cx, cy)
+    {
+        stroke(255, 237, 102);
+        strokeWeight(2);
+        fill(this.color[0], this.color[1], this.color[2], 40);
+        //fill(100, 40);
+        // 攻击范围半径
+        var r = this.range * ts * 2;
+        circle(cx, cy, r);
+    }
+
+    // 显示剩余cd
+    displayCD(cx, cy)
+    {
+        let cdRatio = this.cd / this.cooldown;
+        if (cdRatio < 0.001) return;
+        strokeWeight(2);
+        stroke(255);
+        fill(100);
+        rect(cx - ts / 3, cy + ts / 5, 2 * ts / 3, ts / 5);
+        noStroke();
+        fill(0, 12, 188);
+        let wid = lerp(0, 2 * ts / 3, cdRatio);
+        rect(cx - ts / 3, cy + ts / 5, wid, ts / 5);
+    }
+
+    displayUpgrade(cx, cy)
+    {
+        let hasUpgrade = this.upgrades.length > 0;
+        if (!hasUpgrade) return;
+        let enoughCash = cash > this.upgrades[0].cost;
+        let icon = enoughCash ? iconUpgrade : iconUpgradeGrey;
+        let scale = 0.2;
+        let floatRange = enoughCash ? ts * scale : 0;
+        let anlge = frameCount * 0.1;
+        image(icon, cx, cy + sin(anlge) * floatRange, ts * scale, ts * scale);
     }
 }

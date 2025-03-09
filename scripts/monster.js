@@ -26,6 +26,7 @@ class Monster {
         this.weak = []; // 易伤的伤害类型
         this.speed = 1; // 移动速度（4 是最大值）
         this.taunt = false; // 是否嘲讽（强制塔攻击）
+        this.isStunned = false; // 是否麻痹
 
         // frame defalt set
         this.frameIndex = 0; // 当前帧索引
@@ -37,9 +38,12 @@ class Monster {
         this.isSlow2=false;
         this.count =0;
         this.oldSpeed;
-        this.isProtect=false;
+        this.isProtect = false;
+        
+        this.stunFrameIndex = 0;
+        this.stunFrameCount = 12;
     }
-
+    
     draw() { // 绘制怪物
         push(); // 保存当前绘图状态
         translate(this.pos.x, this.pos.y); // 移动到怪物位置
@@ -83,6 +87,28 @@ class Monster {
         if (this.health <= 0) this.onKilled(); // 如果生命值小于等于 0，调用死亡逻辑
 
 
+    }
+
+    // 绘制图片滤镜效果
+    drawImageTintEffect(type)
+    {
+        if (type === 'physical') tint(255, 0, 0);           // 物理攻击（红色）
+        else if (type === 'water') tint(0, 191, 255);       // 水攻击（蓝色）
+        else if (type === 'fire') tint(255, 69, 0);         // 火攻击（橙红色）
+        else if (type === 'line') tint(255, 215, 0);   // 雷电攻击（黄色）
+        else if (type === 'slow') tint(173, 216, 230);      // 冰霜（浅蓝色）
+        else noTint();                                      // 正常颜色
+    }
+
+    // 绘制伤害效果
+    drawDamageVisual(type)
+    {
+        if (type === 'physical') this.createGlowEffect([255, 0, 0]);            // 物理攻击光晕
+        else if (type === 'water') this.createRippleEffect([0, 191, 255]);      // 水波纹
+        else if (type === 'fire') this.createGlowEffect([255, 69, 0]);          // 火焰光晕
+        else if (type === 'line') this.createLightningEffect([255, 215, 0]);   // 电弧
+        else if (type === 'slow') this.createIceEffect([173, 216, 230]);        // 冰霜冻结
+        else noTint();                                                          // 正常颜色
     }
 
     // flash(color, duration) { // 闪烁效果
@@ -166,6 +192,19 @@ class Monster {
         }
     }
 
+    
+    // 创建麻痹效果（由effects.stun调用）
+    createStunnedEffect() {
+        let sprites = imgAttackStun;
+        let frameWidth = sprites.width / this.stunFrameCount;
+        let frameHeight = sprites.height;
+        let frameX = this.stunFrameIndex * frameWidth;
+        imageMode(CENTER);
+        image(sprites, this.pos.x + 15, this.pos.y + 0, ts, ts, frameX, 0, frameWidth, frameHeight);
+        this.stunFrameIndex = (this.stunFrameIndex + 1) % this.stunFrameCount;
+    }
+    
+
     shake(amount) { // 震动效果
         let originalX = this.pos.x; // 记录原始 X 位置
         let originalY = this.pos.y; // 记录原始 Y 位置
@@ -185,21 +224,28 @@ class Monster {
 
     // Draw health bar
     showHealth() { // 显示生命条
-        var percent = 1 - this.health / this.maxHealth; // 计算生命值百分比
-        if (percent === 0) return; // 如果生命值满，则返回
+        var percent = this.health / this.maxHealth;
+        if (percent <= 0 || percent >= 1.0) return;
+        
+        push();
+        translate(this.pos.x, this.pos.y);
 
-        push(); // 保存当前绘图状态
-        translate(this.pos.x, this.pos.y); // 移动到怪物位置
+        var edge = 0.7 * ts / 2;
+        var width = edge * percent * 2;
+        var top = 0.2 * ts;
+        var height = 0.15 * ts;
 
-        stroke(255); // 设置描边颜色
-        fill(207, 0, 15); // 设置填充颜色
-        var edge = 0.7 * ts / 2; // 计算生命条边缘
-        var width = floor(edge * percent * 2); // 计算生命条宽度
-        var top = 0.2 * ts; // 计算生命条顶部位置
-        var height = 0.15 * ts; // 计算生命条高度
-        rect(-edge, top, edge * percent * 2, height); // 绘制生命条
+        // 血条
+        noStroke();
+        fill(207, 0, 15);
+        rect(-edge, top, width, height);
+        // 血槽
+        stroke(255);
+        strokeWeight(2);
+        noFill();
+        rect(-edge, top, edge * 2, height);
 
-        pop(); // 恢复绘图状态
+        pop();
     }
 
     getColor() { // 获取颜色

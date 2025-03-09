@@ -27,9 +27,9 @@ function loadMoster() {
         color: [0, 255, 0], // 颜色
         name: 'Bandit', // 名称
         image: BanditImg, // 图片
-        cash: 2, // 击败后奖励金钱
+        cash: 8, // 击败后奖励金钱
         health: 50, // 生命值
-        speed: 0.7, // 移动速度
+        speed: 0.6, // 移动速度
         imageIndex: 0, // 记录当前动画帧
         draw() {
 
@@ -39,34 +39,20 @@ function loadMoster() {
             translate(this.pos.x, this.pos.y); // 位置移动
             rotate(this.vel.heading()); // 旋转角度
 
+            // 被攻击特效（滤镜）
+            this.drawImageTintEffect(this.flashType);
+            // 绘制敌人
+            image(m1Images[this.imageIndex], 0, 0, ts, ts);
+            // 被攻击环境效果
+            this.drawDamageVisual(this.flashType);
+            
+            pop();
 
-            // //TODO:使用tint会师程序变卡  一般是贴图形成动画
-            // // 被攻击特效
-            if (this.flashType === 'physical') {
-                tint(255, 0, 0); // 物理攻击（红色）
-                // this.createGlowEffect([255, 0, 0]); // 物理攻击光晕
-            } else if (this.flashType === 'water') {
-                tint(0, 191, 255); // 水攻击（蓝色）
-                this.createRippleEffect([0, 191, 255]); // 水波纹
-            } else if (this.flashType === 'fire') {
-                tint(255, 69, 0); // 火攻击（橙红色）
-                this.createGlowEffect([255, 69, 0]); // 火焰光晕
-
-            } else if (this.flashType === 'line') {
-                tint(255, 215, 0); // 雷电攻击（黄色）
-                this.createLightningEffect([255, 215, 0]); // 电弧
-            } else if (this.flashType === 'slow') {
-                tint(173, 216, 230); // 冰霜（浅蓝色）
-                this.createIceEffect([173, 216, 230]); // 冰霜冻结
-            } else if (paused == false) { // 如果游戏未暂停
+            if (paused == false) { // 如果游戏未暂停
                 if (frameCount % 10 == 0) {
                     this.imageIndex = (this.imageIndex + 1) % m1Images.length; // 切换动画帧
                 }
             }
-            image(m1Images[this.imageIndex], 0, 0, ts, ts); // 绘制怪物
-            pop();
-            this.flashType = null;
-            // noTint(); // 正常颜色
         }
     };
 
@@ -75,9 +61,9 @@ function loadMoster() {
         color: [255, 0, 0], // 颜色
         radius: 0.6, // 半径
         name: 'BatteringRam', // 名称
-        speed: 0.3, // 速度
-        cash: 3, // 击败后奖励金钱
-        health: 120, // 生命值
+        speed: 0.4, // 速度
+        cash: 15, // 击败后奖励金钱
+        health: 200, // 生命值
         frameIndex: 0, // 记录当前动画帧索引
         frameCount: 3, // 总帧数
         image: m_2Image, // 图片
@@ -91,33 +77,20 @@ function loadMoster() {
             translate(this.pos.x, this.pos.y); // 位置移动
             rotate(this.vel.heading()); // 旋转角度
 
-            //TODO:使用tint会师程序变卡  一般是贴图形成动画
-            // 被攻击特效
-            if (this.flashType === 'physical') {
-                tint(255, 0, 0); // 物理攻击（红色）
-                // this.createGlowEffect([255, 0, 0]); // 物理攻击光晕
-            } else if (this.flashType === 'water') {
-                tint(0, 191, 255); // 水攻击（蓝色）
-                this.createRippleEffect([0, 191, 255]); // 水波纹
-            } else if (this.flashType === 'fire') {
-                tint(255, 69, 0); // 火攻击（橙红色）
-                this.createGlowEffect([255, 69, 0]); // 火焰光晕
-
-            } else if (this.flashType === 'energy') {
-                tint(255, 215, 0); // 雷电攻击（黄色）
-                this.createLightningEffect([255, 215, 0]); // 电弧
-            } else if (this.flashType === 'slow') {
-                tint(173, 216, 230); // 冰霜（浅蓝色）
-                this.createIceEffect([173, 216, 230]); // 冰霜冻结
-            } else if (paused == false) { // 如果游戏未暂停
+            // 被攻击特效（滤镜）
+            this.drawImageTintEffect(this.flashType);
+            // 绘制敌人
+            image(m2Images[this.imageIndex], 0, 0, ts, ts);
+            // 被攻击环境效果
+            this.drawDamageVisual(this.flashType);
+            
+            pop();
+            
+            if (paused == false) { // 如果游戏未暂停
                 if (frameCount % 10 == 0) {
                     this.imageIndex = (this.imageIndex + 1) % m2Images.length; // 切换动画帧
                 }
             }
-            image(m2Images[this.imageIndex], 0, 0, ts, ts); // 绘制怪物
-            pop();
-            this.flashType = null;
-            // noTint(); // 正常颜色
         }
     };
 
@@ -126,9 +99,9 @@ function loadMoster() {
         color: [255, 0, 0], // 颜色
         radius: 0.6, // 半径
         name: 'Mouse', // 名称
-        speed: 0.5, // 速度
-        cash: 3, // 击败后奖励金钱
-        health: 150, // 生命值
+        speed: 0.75, // 速度
+        cash: 5, // 击败后奖励金钱
+        health: 30, // 生命值
         frameIndex: 0, // 记录当前动画帧索引
         frameCount: 3, // 总帧数
         image: m3Image, // 图片
@@ -142,33 +115,20 @@ function loadMoster() {
             translate(this.pos.x, this.pos.y); // 位置移动
             rotate(this.vel.heading()); // 旋转角度
 
-            //TODO:使用tint会师程序变卡  一般是贴图形成动画
-            // 被攻击特效
-            if (this.flashType === 'physical') {
-                tint(255, 0, 0); // 物理攻击（红色）
-                // this.createGlowEffect([255, 0, 0]); // 物理攻击光晕
-            } else if (this.flashType === 'water') {
-                tint(0, 191, 255); // 水攻击（蓝色）
-                this.createRippleEffect([0, 191, 255]); // 水波纹
-            } else if (this.flashType === 'fire') {
-                tint(255, 69, 0); // 火攻击（橙红色）
-                this.createGlowEffect([255, 69, 0]); // 火焰光晕
+            // 被攻击特效（滤镜）
+            this.drawImageTintEffect(this.flashType);
+            // 绘制敌人
+            image(m3Images[this.imageIndex], 0, 0, ts, ts);
+            // 被攻击环境效果
+            this.drawDamageVisual(this.flashType);
 
-            } else if (this.flashType === 'energy') {
-                tint(255, 215, 0); // 雷电攻击（黄色）
-                this.createLightningEffect([255, 215, 0]); // 电弧
-            } else if (this.flashType === 'slow') {
-                tint(173, 216, 230); // 冰霜（浅蓝色）
-                this.createIceEffect([173, 216, 230]); // 冰霜冻结
-            } else if (paused == false) { // 如果游戏未暂停
+            pop();
+
+            if (paused == false) { // 如果游戏未暂停
                 if (frameCount % 10 == 0) {
                     this.imageIndex = (this.imageIndex + 1) % m3Images.length; // 切换动画帧
                 }
             }
-            image(m3Images[this.imageIndex], 0, 0, ts, ts); // 绘制怪物
-            pop();
-
-            // noTint(); // 正常颜色
         }
     };
 
@@ -177,8 +137,8 @@ function loadMoster() {
         radius: 0.6, // 半径
         name: 'PirateRaider', // 名称
         speed: 0.5, // 速度
-        cash: 3, // 击败后奖励金钱
-        health: 70, // 生命值
+        cash: 12, // 击败后奖励金钱
+        health: 150, // 生命值
         frameIndex: 0, // 记录当前动画帧索引
         frameCount: 3, // 总帧数
         image: m4Image, // 图片
@@ -192,48 +152,32 @@ function loadMoster() {
             translate(this.pos.x, this.pos.y); // 位置移动
             rotate(this.vel.heading()); // 旋转角度
 
-            //TODO:使用tint会师程序变卡  一般是贴图形成动画
-            // 被攻击特效
-            if (this.flashType === 'physical') {
-                // tint(255, 0, 0); // 物理攻击（红色）
-                // this.createGlowEffect([255, 0, 0]); // 物理攻击光晕
-            } else if (this.flashType === 'water') {
-                tint(0, 191, 255); // 水攻击（蓝色）
-                this.createRippleEffect([0, 191, 255]); // 水波纹
-            } else if (this.flashType === 'fire') {
-                // tint(255, 69, 0); // 火攻击（橙红色）
-                this.createGlowEffect([255, 69, 0]); // 火焰光晕
+            // 被攻击特效（滤镜）
+            this.drawImageTintEffect(this.flashType);
+            // 绘制敌人
+            image(m4Images[this.imageIndex], 0, 0, ts, ts);
+            // 被攻击环境效果
+            this.drawDamageVisual(this.flashType);
 
-            } else if (this.flashType === 'energy') {
-                // tint(255, 215, 0); // 雷电攻击（黄色）
-                this.createLightningEffect([255, 215, 0]); // 电弧
-            } else if (this.flashType === 'slow') {
-                // tint(173, 216, 230); // 冰霜（浅蓝色）
-                this.createIceEffect([173, 216, 230]); // 冰霜冻结
-            } else if (paused == false) { // 如果游戏未暂停
+            pop();
+
+            if (paused == false) { // 如果游戏未暂停
                 if (frameCount % 10 == 0) {
                     this.imageIndex = (this.imageIndex + 1) % m4Images.length; // 切换动画帧
                 }
             }
-            image(m4Images[this.imageIndex], 0, 0, ts, ts); // 绘制怪物
-            pop();
-
-            // noTint(); // 正常颜色
         },
         onAim(e) {
             // if (this.canFire() || this.follow) this.aim(e.pos.x, e.pos.y);
             // if (!this.canFire()) return;
             // this.resetCooldown();
 
-            let bulletDamage = round(random(1,2));
+            let bulletDamage = round(random(0.1,0.2));
             // 实例化一个子弹，从塔的位置飞向目标
             if(frameCount%60==0){
                 let b = new Bullet2(this.pos.x, this.pos.y, e, bulletDamage);
                 projectiles.push(b);
             }
-
-
-
 
 
 
@@ -247,9 +191,9 @@ function loadMoster() {
         color: [255, 0, 0], // 颜色
         radius: 0.6, // 半径
         name: 'DroneSwarm', // 名称
-        speed: 0.5, // 速度
-        cash: 3, // 击败后奖励金钱
-        health: 70, // 生命值
+        speed: 0.4, // 速度
+        cash: 15, // 击败后奖励金钱
+        health: 120, // 生命值
         frameIndex: 0, // 记录当前动画帧索引
         frameCount: 3, // 总帧数
         image: m5Image, // 图片
@@ -263,33 +207,20 @@ function loadMoster() {
             translate(this.pos.x, this.pos.y); // 位置移动
             rotate(this.vel.heading()); // 旋转角度
 
-            //TODO:使用tint会师程序变卡  一般是贴图形成动画
-            // 被攻击特效
-            if (this.flashType === 'physical') {
-                // tint(255, 0, 0); // 物理攻击（红色）
-                // this.createGlowEffect([255, 0, 0]); // 物理攻击光晕
-            } else if (this.flashType === 'water') {
-                tint(0, 191, 255); // 水攻击（蓝色）
-                this.createRippleEffect([0, 191, 255]); // 水波纹
-            } else if (this.flashType === 'fire') {
-                // tint(255, 69, 0); // 火攻击（橙红色）
-                this.createGlowEffect([255, 69, 0]); // 火焰光晕
+            // 被攻击特效（滤镜）
+            this.drawImageTintEffect(this.flashType);
+            // 绘制敌人
+            image(m5Images[this.imageIndex], 0, 0, ts, ts);
+            // 被攻击环境效果
+            this.drawDamageVisual(this.flashType);
 
-            } else if (this.flashType === 'energy') {
-                // tint(255, 215, 0); // 雷电攻击（黄色）
-                this.createLightningEffect([255, 215, 0]); // 电弧
-            } else if (this.flashType === 'slow') {
-                // tint(173, 216, 230); // 冰霜（浅蓝色）
-                this.createIceEffect([173, 216, 230]); // 冰霜冻结
-            } else if (paused == false) { // 如果游戏未暂停
+            pop();
+
+            if (paused == false) { // 如果游戏未暂停
                 if (frameCount % 10 == 0) {
                     this.imageIndex = (this.imageIndex + 1) % m5Images.length; // 切换动画帧
                 }
             }
-            image(m5Images[this.imageIndex], 0, 0, ts, ts); // 绘制怪物
-            pop();
-
-            // noTint(); // 正常颜色
         }
     };
 
@@ -298,9 +229,9 @@ function loadMoster() {
         color: [255, 0, 0], // 颜色
         radius: 0.6, // 半径
         name: 'AIMech', // 名称
-        speed: 0.5, // 速度
-        cash: 3, // 击败后奖励金钱
-        health: 70, // 生命值
+        speed: 0.2, // 速度
+        cash: 120, // 击败后奖励金钱
+        health: 300, // 生命值
         frameIndex: 0, // 记录当前动画帧索引
         frameCount: 3, // 总帧数
         image: m6Image, // 图片
@@ -314,30 +245,12 @@ function loadMoster() {
             translate(this.pos.x, this.pos.y); // 位置移动
             rotate(this.vel.heading()); // 旋转角度
 
-            //TODO:使用tint会师程序变卡  一般是贴图形成动画
-            // 被攻击特效
-            if (this.flashType === 'physical') {
-                // tint(255, 0, 0); // 物理攻击（红色）
-                // this.createGlowEffect([255, 0, 0]); // 物理攻击光晕
-            } else if (this.flashType === 'water') {
-                tint(0, 191, 255); // 水攻击（蓝色）
-                this.createRippleEffect([0, 191, 255]); // 水波纹
-            } else if (this.flashType === 'fire') {
-                // tint(255, 69, 0); // 火攻击（橙红色）
-                this.createGlowEffect([255, 69, 0]); // 火焰光晕
-
-            } else if (this.flashType === 'energy') {
-                // tint(255, 215, 0); // 雷电攻击（黄色）
-                this.createLightningEffect([255, 215, 0]); // 电弧
-            } else if (this.flashType === 'slow') {
-                // tint(173, 216, 230); // 冰霜（浅蓝色）
-                this.createIceEffect([173, 216, 230]); // 冰霜冻结
-            } else if (paused == false) { // 如果游戏未暂停
-                if (frameCount % 10 == 0) {
-                    this.imageIndex = (this.imageIndex + 1) % m6Images.length; // 切换动画帧
-                }
-            }
-            image(m6Images[this.imageIndex], 0, 0, ts, ts); // 绘制怪物
+            // 被攻击特效（滤镜）
+            this.drawImageTintEffect(this.flashType);
+            // 绘制敌人
+            image(m6Images[this.imageIndex], 0, 0, ts, ts);
+            // 被攻击环境效果
+            this.drawDamageVisual(this.flashType);
 
             this.count ++;
 
@@ -349,7 +262,6 @@ function loadMoster() {
             }
 
 
-
             // }
 
             if(this.isProtect){
@@ -359,7 +271,11 @@ function loadMoster() {
 
             pop();
 
-            // noTint(); // 正常颜色
+            if (paused == false) { // 如果游戏未暂停
+                if (frameCount % 10 == 0) {
+                    this.imageIndex = (this.imageIndex + 1) % m6Images.length; // 切换动画帧
+                }
+            }
         }
     };
 

@@ -311,3 +311,20 @@ function backtrackPath(cameFrom, startPos, endPos) {
 function posKey(c, r) {
     return c + ',' + r;
 }
+
+// 判断点是否在扇形内
+function isPointInSector(x, y, centerX, centerY, radius, startAngle, endAngle) {
+    let dx = x - centerX;
+    let dy = y - centerY;
+    let distance = sqrt(dx * dx + dy * dy);
+    
+    if (distance > radius) return false;
+    
+    let angle = atan2(dy, dx);
+    if (angle < 0) angle += TWO_PI;
+    if (startAngle > endAngle) {
+      return (angle >= startAngle || angle <= endAngle);
+    } else {
+      return (angle >= startAngle && angle <= endAngle);
+    }
+}

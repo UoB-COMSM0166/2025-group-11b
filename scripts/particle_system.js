@@ -64,3 +64,35 @@ class ShrapnelExplosion extends ParticleSystem {
         this.particles.push(new Shrapnel(this.origin, 5));
     }
 }
+
+class StoneExplosion extends ParticleSystem {
+    constructor(x, y) {
+        super(x, y);
+    }
+
+    addParticle() {
+        let spd = 2;
+        this.particles.push(new Stone(this.origin, spd));
+    }
+}
+
+class CannonExplosion extends ParticleSystem {
+    constructor(x, y, particleAmt) {
+        super(x, y);
+        let spd = 2;
+
+        let centerR = random(1, 2);
+        this.particles.push(new Cannon(this.origin, spd, centerR));
+        var deltaAngle = TWO_PI / (particleAmt - 1);
+        for (let i = 0; i < particleAmt - 1; i++)
+        {
+            var a = i * deltaAngle + random(-PI/10, PI/10);
+            var d = ts * 0.8;
+            var x = this.origin.x + cos(a) * d;
+            var y = this.origin.y + sin(a) * d;
+            let r = random(centerR / 4, centerR / 2);
+            this.particles.push(new Cannon(createVector(x, y), spd, r));
+        }
+    
+    }
+}

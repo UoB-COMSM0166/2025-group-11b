@@ -55,14 +55,26 @@ let t6_1Image;
 let t6_2Image;
 let t6_3Image;
 
+let imgAttackAim;
+let imgAttackArrow;
+let imgAttackStone;
+let imgAttackBullet;
+let imgAttackCannonExplosion;
+let imgAttackLightning;
+let imgAttackStun;
+let imgUpgradeShine;
+
+let bgmStart;
+let bgmLevel1;
+let bgmLevel2;
+let bgmLevel3;
 
 function preload() {
     // 加载塔图片（确保图片路径正确）
 
     loadImages();
     loadSounds();
-    bgImg = loadImage("images/your_background.png");
-
+    preloadUIAssets();
 }
 
 function loadImages() {
@@ -130,10 +142,19 @@ function loadImages() {
         m6Images.push((loadImage("images/m6_" + (i + 1) + ".png")));
     }
 
+    imgAttackAim =  loadImage("images/tower/icon_aim.png");
+    imgAttackArrow =  loadImage("images/tower/arrow.png");
+    imgAttackStone =  loadImage("images/tower/stone.png");
+    imgAttackBullet =  loadImage("images/tower/bullet.png");
+    imgAttackCannonExplosion =  loadImage("images/tower/sprites_explosion.png");
+    imgAttackLightning =  loadImage("images/tower/sprites_lightning.png");
+    imgAttackStun =  loadImage("images/tower/sprites_stun.png");
+    imgUpgradeShine =  loadImage("images/tower/sprites_upgrade_shine.png");
 }
 
 function setup() {
-    var canvas = createCanvas(1440, 768);
+    var canvas = createCanvas(cols * ts, rows * ts);
+    background(255);
     canvas.parent('main-holder');
     // 通过 position() 方法将 canvas 居中
 
@@ -157,7 +178,8 @@ function setup() {
     healthBarImg.resize(healthBarImg.width * 0.7, healthBarImg.height * 0.7)
     monsterBarImg.resize(monsterBarImg.width * 0.6, monsterBarImg.height * 0.6)
 
-
+    playStartBGM();
+    onGameSetup();
     loadMoster();
 }
 
@@ -188,4 +210,14 @@ function loadSounds() {
     // Taunt monster death
     sounds.taunt = loadSound('sounds/taunt.wav');
     sounds.taunt.setVolume(0.3);
+
+    bgmStart = loadSound("sounds/Main-Titles.mp3");
+    bgmLevel1 = loadSound('sounds/Treasure-Hunt.mp3');
+    bgmLevel2 = loadSound('sounds/Fire-Nation.mp3');
+    bgmLevel3 = loadSound('sounds/To-the-Ends-of-the-Galaxy-Instrumental.mp3');
+    bgmStart.setVolume(0.3);
+    bgmLevel1.setVolume(0.3);
+    bgmLevel2.setVolume(0.3);
+    bgmLevel3.setVolume(0.3);
+    
 }

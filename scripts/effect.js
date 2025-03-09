@@ -31,3 +31,31 @@ class Effect { // 定义 Effect 类
         }
     }
 }
+
+class UpgradeFX extends Effect{
+    constructor(duration, x, y, ) {
+        super(duration);
+        this.xpos = x;
+        this.ypos = y;
+        this.frameIdx = 0;
+        this.frameNum = 12;
+    }
+
+    update(e) {
+        super.update(e);
+
+        if (this.frameIdx >= this.frameNum) {
+            this.onEnd(e); // 调用 onEnd 方法
+            this.kill(); // 终止效果
+        }
+
+        let sprites = imgUpgradeShine;
+        let frameWidth = sprites.width / this.frameNum;
+        let frameHeight = sprites.height;
+        let frameX = this.frameIdx * frameWidth;
+        imageMode(CENTER);
+        image(sprites, this.xpos, this.ypos, ts, ts, frameX, 0, frameWidth, frameHeight);
+
+        if (frameCount % 2 == 0) this.frameIdx++;
+    }
+}

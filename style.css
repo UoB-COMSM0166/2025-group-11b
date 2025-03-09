@@ -351,3 +351,108 @@ button:hover {
 #speed-monster-button:hover {
   background-color: #3f72af;
 }
+
+
+.button-resume{
+  background-image: url('../images/ui/bg_button_resume.png');
+  background-color: rgba(255, 255, 255, 0);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color: white;
+  padding: 15px 0px;
+  text-align: center;
+  font-family: 'UIFont', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.button-resume:hover {
+  opacity: 0.9;  /* 悬停时稍微透明 */
+  transform: scale(1.1);  /* 悬停时稍微变大 */
+}
+
+.button-pause{
+  background-image: url('../images/ui/bg_button_pause.png');
+  background-color: rgba(255, 255, 255, 0);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color: white;
+  padding: 15px 0px;
+  text-align: center;
+  font-family: 'UIFont', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.button-pause:hover {
+  opacity: 0.9;  /* 悬停时稍微透明 */
+  transform: scale(1.1);  /* 悬停时稍微变大 */
+}
+/* 禁用按钮时的样式 */
+.disabled {
+  cursor: not-allowed;
+}
+
+.button-reset{
+  background-image: url('../images/ui/bg_button_reset.png');
+  background-color: rgba(255, 255, 255, 0);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color: white;
+  padding: 15px 0px;
+  text-align: center;
+  font-family: 'UIFont', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.button-reset:hover {
+  opacity: 0.9;  /* 悬停时稍微透明 */
+  transform: scale(1.1);  /* 悬停时稍微变大 */
+}
+
+.button-quit{
+  background-image: url('../images/ui/bg_button_quit.png');
+  background-color: rgba(255, 255, 255, 0);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color: white;
+  padding: 15px 0px;
+  text-align: center;
+  font-family: 'UIFont', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.button-quit:hover {
+  opacity: 0.9;  /* 悬停时稍微透明 */
+  transform: scale(1.1);  /* 悬停时稍微变大 */
+}
+
+.button-speed{
+  background-image: url('../images/ui/bg_button_speed.png');
+  background-color: rgba(255, 255, 255, 0);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  text-align: right;
+  font-family: 'UIFont', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.button-speed:hover {
+  opacity: 0.9;  /* 悬停时稍微透明 */
+  transform: scale(1.1);  /* 悬停时稍微变大 */
+}
+
+@font-face {
+  font-family: 'UIFont';
+  src: url('../fonts/Savory Curry.ttf') format('truetype');
+}

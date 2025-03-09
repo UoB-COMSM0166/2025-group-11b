@@ -90,3 +90,23 @@ effects.regen = { // 定义生命恢复效果
         if (e.health < e.maxHealth && random() < 0.2) e.health++; // 20% 概率恢复 1 点生命值
     }
 };
+
+// 麻痹效果
+effects.stun = { 
+    color: [60, 87, 100],
+    name: 'stun',
+
+    onEnd: function(e) {
+        e.speed = this.oldSpeed;
+        e.isStunned = false;
+    },
+    onStart: function(e) { 
+        this.oldSpeed = e.speed;
+        this.speed = 0;
+        e.speed = this.speed;
+        e.isStunned = true;
+    },
+    onTick: function (e) {
+        e.createStunnedEffect();
+    }
+};

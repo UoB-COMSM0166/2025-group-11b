@@ -81,3 +81,76 @@ class Shrapnel extends Fire {  // 继承 Fire 类，定义弹片粒子
         this.radius = randint(2, 6);  // 设定弹片粒子的半径
     }
 }
+
+
+class Stone extends Particle {
+    
+    constructor(pos, speed) {
+        super(pos, speed);
+        this.decay = random(8, 10);
+        this.color = [151 + random(80), 45 + random(60), 200 + random(55)];
+        this.radius = random(0.2, 0.5);
+        this.rotAngle = random(TWO_PI);
+        this.rotateSpd = random(0.1);
+    }
+
+    draw()
+    {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.rotAngle);
+        let rad = this.radius * ts;
+        
+
+        image(imgAttackStone, 0, 0, rad, rad);
+
+        pop();
+    }
+
+    update()
+    {
+        super.update();
+        this.rotAngle += this.rotateSpd;
+    }
+
+}
+
+class Cannon extends Particle{
+
+    constructor(pos, speed, radius) {
+        super(pos, speed);
+        this.radius = radius;
+        this.rotAngle = random(TWO_PI);
+        this.frameIndex = 0;
+        this.frameNumbers = 7;
+    }
+
+    draw()
+    {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.rotAngle);
+
+        let rad = this.radius * ts;
+        let sprties = imgAttackCannonExplosion;
+        let frameWidth = sprties.width / this.frameNumbers;
+        let frameHeight = sprties.height;
+        let frameX = this.frameIndex * frameWidth;
+        imageMode(CENTER);
+        image(sprties, 0, 0, rad, rad, frameX, 0, frameWidth, frameHeight);
+
+        pop();
+    }
+
+    isDead() {
+        return this.frameIndex >= this.frameNumbers;
+    }
+
+    update()
+    {
+        if (frameCount % 5 == 0)
+        {
+            this.frameIndex ++;
+        }
+    }
+}

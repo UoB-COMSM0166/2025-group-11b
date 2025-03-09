@@ -1,3 +1,7 @@
+// 初始默认生命值和金钱
+const defaultHealth = 40;
+const defaultCash = 150;
+
 let mapData = maps.customMap;  // 获取自定义地图数据
 // let cellWidth = 1440 / mapData.cols;  // 每个网格的宽度
 // let cellHeight = 768 / mapData.rows;  // 每个网格的高度
@@ -5,7 +9,9 @@ let mapData = maps.customMap;  // 获取自定义地图数据
 let cellWidth = 110;  // 每个网格的宽度
 let cellHeight = 110;  // 每个网格的高度
 
-let debugMap = false;  // 是否显示调试地图
+let debugMap = true;  // 是否显示调试地图
+let enableShakeEffect = true;   // 是否开启画面震动
+let enableHeartbeatEffect = true;   // 是否开启心跳效果
 
 // 开场白开始游戏
 var isStartGame = false;  // 游戏是否开始
@@ -17,9 +23,10 @@ var towers = [];  // 存放塔的数组
 var newMonsters = [];  // 存放新怪物的数组
 var newProjectiles = [];  // 存放新投射物的数组
 var newTowers = [];  // 存放新塔的数组
+var vfx = [];   // 存放视觉效果的数组
 
-var cols;  // 地图的列数
-var rows;  // 地图的行数
+var cols = 12;  // 地图的列数
+var rows = 8;  // 地图的行数
 var tileZoom = 2;  // 瓦片的缩放倍率
 var ts = 110;  // 单元格大小
 
@@ -47,6 +54,7 @@ var tempSpawns = [];  // 临时生成点
 
 var cash;  // 当前的金钱
 var health;  // 当前的生命值
+let prevHealth = 0; // 上一帧生命值
 var maxHealth;  // 最大生命值
 var wave;  // 当前波次
 
@@ -75,10 +83,13 @@ var sellConst = 0.8;  // 塔出售价格与购买价格的比例
 var waveCool = 120;  // 波次之间的冷却时间（单位：ticks）
 var weakness = 0.5;  // 弱点造成的伤害增加百分比
 
-var totalWaves = 2;  // 固定总波数为2波
+var totalWaves = 10;  // 每一关固定总波数为2波
 var gameEnded = false;  // 游戏是否结束的标志
+var resultRating = 0;   // 关卡结算分（0~3 星）
 
 var monsterSpeedMultiplier = 1;  // 怪物的速度倍率，默认1倍速度
+
+let bgm;    // 背景音乐
 
 // 创建Tooltip对象
 let tooltip;  // 创建一个提示工具对象
@@ -99,6 +110,8 @@ function addGroup(group) {
 // Prepare a wave
 function addWave(pattern) {
     spawnCool = pattern.shift();
+    curWaveMonstersInfo = JSON.parse(JSON.stringify(pattern));
+    calculateMonsterTotalNumber();
     for (var i = 0; i < pattern.length; i++) {
         addGroup(pattern[i]);
     }
@@ -227,21 +240,23 @@ function isWave(min, max) {
 
 // Load map from template
 // Always have an exit and spawnpoints if you do not have a premade grid
-function loadMap() {
-    // 优先使用隐藏的 #map（初始选关时由 start 按钮设置），否则退回到 #initial-map
-    var mapElement = document.getElementById('map') || document.getElementById('initial-map');
+function loadMap(mapID) {
+//     // 优先使用隐藏的 #map（初始选关时由 start 按钮设置），否则退回到 #initial-map
+//     var mapElement = document.getElementById('map') || document.getElementById('initial-map');
 
-// 获取地图名称
-    var name = mapElement.value;
+// // 获取地图名称
+//     var name = mapElement.value;
 
-// 初始化玩家生命值
-    health = 40;
-
-// 初始化玩家金钱
-    cash = 10000;
 
 // 获取地图数据
-    var m = maps[name];
+    var m = maps[mapID];
+    mapData = m;
+    console.log(mapID);
+    // 地图
+    if (mapID == "customMap") bgImg = levelMapsImage[0];
+    else if (mapID == "map2") bgImg = levelMapsImage[1];
+    else if (mapID == "map3") bgImg = levelMapsImage[2];
+    console.log(`获取地图数据${m}`);
 
 // 复制地图显示层数据
     display = copyArray(m.display);
@@ -287,7 +302,7 @@ function loadMap() {
 
 // Increment wave counter and prepare wave
 function nextWave() {
-    isStartGame = false;
+    //isStartGame = false;
 // 根据游戏模式添加敌人波次（随机生成或使用自定义配置）
     addWave(randomWaves ? randomWave() : customWave());
 // 条件运算符决定波次生成策略：当randomWaves为true时调用随机生成函数，否则调用自定义配置函数
@@ -315,46 +330,101 @@ function pause() {
 function randomWave() {
     var waves = [];
 
-
     if (mapData == maps["customMap"]) {
         if (isWave(0, 1)) {
-            waves.push([100, ['Bandit', 'BatteringRam', 1]]);
+            waves.push([116, ['Bandit', 5]]);
         }
         if (isWave(1, 2)) {
-            waves.push([80, ['BatteringRam', 4]]);
+            waves.push([112, ['Bandit', 8]]);
         }
         if (isWave(2, 3)) {
-            waves.push([80, ['Bandit', 4]]);
+            waves.push([108, ['Bandit', 6], ['BatteringRam', 1]]);
         }
-        if (isWave(3, 6)) {
-            waves.push([100, ['Bandit', 'BatteringRam', 8]]);
+        if (isWave(3, 4)) {
+            waves.push([104, ['BatteringRam', 2]]);
         }
-
+        if (isWave(4, 5)) {
+            waves.push([100, ['Bandit', 12]]);
+        }
+        if (isWave(5, 6)) {
+            waves.push([96, ['Bandit', 8], ['BatteringRam', 2]]);
+        }
+        if (isWave(6, 7)) {
+            waves.push([92, ['BatteringRam', 4]]);
+        }
+        if (isWave(7, 8)) {
+            waves.push([88, ['Bandit', 15], ['BatteringRam', 1]]);
+        }
+        if (isWave(8, 9)) {
+            waves.push([84, ['Bandit', 10], ['BatteringRam', 3]]);
+        }
+        if (isWave(9, 10)) {
+            waves.push([80, ['BatteringRam', 5]]);
+        }
     }
     if (mapData == maps["map2"]) {
-
         if (isWave(0, 1)) {
-            waves.push([100, ['PirateRaider', 2]]);
+            waves.push([110, ['Mouse', 6]]);
         }
         if (isWave(1, 2)) {
-            waves.push([100, ['Mouse', 'PirateRaider', 10]]);
-            // waves.push([80, ['BatteringRam', 4]]);
+            waves.push([107, ['Mouse', 10]]);
         }
-
-
+        if (isWave(2, 3)) {
+            waves.push([103, ['PirateRaider', 2]]);
+        }
+        if (isWave(3, 4)) {
+            waves.push([97, ['Mouse', 8], ['PirateRaider', 1]]);
+        }
+        if (isWave(4, 5)) {
+            waves.push([92, ['Mouse', 15]]);
+        }
+        if (isWave(5, 6)) {
+            waves.push([88, ['PirateRaider', 4]]);
+        }
+        if (isWave(6, 7)) {
+            waves.push([83, ['Mouse', 12], ['PirateRaider', 2]]);
+        }
+        if (isWave(7, 8)) {
+            waves.push([79, ['PirateRaider', 6]]);
+        }
+        if (isWave(8, 9)) {
+            waves.push([75, ['Mouse', 20]]);
+        }
+        if (isWave(9, 10)) {
+            waves.push([70, ['Mouse', 15], ['PirateRaider', 5]]);
+        }
     }
-
     if (mapData == maps["map3"]) {
-
         if (isWave(0, 1)) {
-            waves.push([100, ['AIMech', 5]]);
+            waves.push([100, ['DroneSwarm', 2]]);
         }
         if (isWave(1, 2)) {
-            waves.push([100, ['DroneSwarm', 'AIMech', 10]]);
-            // waves.push([80, ['BatteringRam', 4]]);
+            waves.push([96, ['AIMech', 1]]);
         }
-
-
+        if (isWave(2, 3)) {
+            waves.push([93, ['DroneSwarm', 4]]);
+        }
+        if (isWave(3, 4)) {
+            waves.push([90, ['DroneSwarm', 1], ['AIMech', 1]]);
+        }
+        if (isWave(4, 5)) {
+            waves.push([85, ['DroneSwarm', 3]]);
+        }
+        if (isWave(5, 6)) {
+            waves.push([81, ['AIMech', 2]]);
+        }
+        if (isWave(6, 7)) {
+            waves.push([79, ['DroneSwarm', 4]]);
+        }
+        if (isWave(7, 8)) {
+            waves.push([73, ['DroneSwarm', 4], ['AIMech', 2]]);
+        }
+        if (isWave(8, 9)) {
+            waves.push([68, ['AIMech', 3]]);
+        }
+        if (isWave(9, 10)) {
+            waves.push([62, ['DroneSwarm', 5], ['AIMech', 1]]);
+        }
     }
 
 
@@ -457,9 +527,36 @@ function randomWave() {
     return random(waves);
 }
 
+// 开始游戏逻辑入口
+function startGame(id)
+{
+    loadGame(id);
+    resetGame();
+    // 自动开始游戏
+    paused = false;
+    isStartGame = true;
+    onGameStart();
+    switchBGM();
+}
 
+// 停止游戏
+function stopGame()
+{
+    isStartGame = false;
+    onLevelFinished();
+}
+
+
+// 加载游戏地图
+function loadGame(mapID)
+{
+    loadMap(mapID);
+    console.log(`成功加载地图${mapID}, 路径为${grid}`);
+}
+
+
+// 重置关卡
 function resetGame() {
-    loadMap();
     // 清空所有实体
     monsters = [];
     projectiles = [];
@@ -468,15 +565,20 @@ function resetGame() {
     newMonsters = [];
     newProjectiles = [];
     newTowers = [];
+    vfx = [];
 
-    // 这里可以获取一次全局路径
-    window._globalPath = findPathBFS(grid);
-    console.log('全局路径 = ', window._globalPath);
+    // // 这里可以获取一次全局路径
+    // window._globalPath = findPathBFS(grid);
+    // console.log('全局路径 = ', window._globalPath);
     // 重置状态
-    health = 40;
+    health = defaultHealth;    // 初始化玩家生命值
+    cash = defaultCash;   // 初始化玩家金钱
     maxHealth = health;
+    prevHealth = health;
     wave = 0;          // 重置波数
-    gameEnded = false; // 重置游戏结束标记
+    gameEnded = false;   // 重置游戏结束标记
+    resultRating = 0;   // 重置结算
+    toWait = false;
     // 重置各项标志
     paused = true;
     scd = 0;
@@ -500,7 +602,6 @@ function resizeFit() {
 
     cellWidth = width / mapData.cols;  // 每个网格的宽度
     cellHeight = height / mapData.rows;  // 每个网格的高度
-
 
 }
 
@@ -566,17 +667,17 @@ function updateInfo(t) {
 
 // Update pause button
 function updatePause() {
-    document.getElementById('pause').innerHTML = paused ? 'Start' : 'Pause';
+    // document.getElementById('pause').innerHTML = paused ? 'Start' : 'Pause';
 }
 
-// Update game status display with wave, health, and cash
-function updateStatus() {
-    // 如果当前波数超过总波数，则显示总波数（例如在最后一波中显示“2/2”）
-    var displayWave = wave > totalWaves ? totalWaves : wave;
-    document.getElementById('wave').innerHTML = '波数: ' + displayWave + '/' + totalWaves;
-    document.getElementById('health').innerHTML = 'Health: ' + health + '/' + maxHealth;
-    document.getElementById('cash').innerHTML = '$' + cash;
-}
+// // Update game status display with wave, health, and cash
+// function updateStatus() {
+//     // 如果当前波数超过总波数，则显示总波数（例如在最后一波中显示“2/2”）
+//     var displayWave = wave > totalWaves ? totalWaves : wave;
+//     document.getElementById('wave').innerHTML = '波数: ' + displayWave + '/' + totalWaves;
+//     document.getElementById('health').innerHTML = 'Health: ' + health + '/' + maxHealth;
+//     document.getElementById('cash').innerHTML = '$' + cash;
+// }
 
 // Upgrade tower
 function upgrade(t) {      // 定义升级函数，接收升级配置对象t作为参数
@@ -585,6 +686,9 @@ function upgrade(t) {      // 定义升级函数，接收升级配置对象t作�
         selected.upgrade(t); // 执行目标对象的升级逻辑
         selected.upgrades = t.upgrades ? t.upgrades : [];  // 更新可用升级项列表（存在则继承，否则重置为空）
         updateInfo(selected); // 刷新界面显示最新信息
+
+        // 绘制升级效果
+        vfx.push(new UpgradeFX(60, selected.pos.x, selected.pos.y));
     }
 }
 
@@ -600,33 +704,39 @@ function walkable(col, row) {
 
 // Main p5 functions
 function draw() {
-    if (!grid) {
+    updateMenuDisplay();
+    if (!isStartGame) return;
+    if(!grid) {
+        console.log("没有地图");
         background(0);
         return;
     }
-    background(0);
+    background(50);
+    // 镜头震动效果
+    if(enableShakeEffect) drawShakeEffect();
+    
     // 绘制背景图（覆盖整个画布）
-    // image(bgImg, 0, 0, width, height);
+    image(bgImg, 0, 0, width, height);
 
-    for (let col = 0; col < mapData.cols; col++) {
-        for (let row = 0; row < mapData.rows; row++) {
-            let value = mapData.grid[col][row];
-            let alpha = 200;
-            // 根据值设置不同颜色
-            let colors = {
-                0: color(255, 0, 0, alpha),   // 红色：起点
-                1: color(200, 200, 0, alpha), // 黄色：路径
-                3: color(0, 255, 0, alpha),   // 绿色：可放塔
-                2: color(100, alpha),         // 灰色：不可放塔
-                4: color(0, 0, 255, alpha)    // 蓝色：终点
-            };
+    // for (let col = 0; col < mapData.cols; col++) {
+    //     for (let row = 0; row < mapData.rows; row++) {
+    //         let value = mapData.grid[col][row];
+    //         let alpha = 200;
+    //         // 根据值设置不同颜色
+    //         let colors = {
+    //             0: color(255, 0, 0, alpha),   // 红色：起点
+    //             1: color(200, 200, 0, alpha), // 黄色：路径
+    //             3: color(0, 255, 0, alpha),   // 绿色：可放塔
+    //             2: color(100, alpha),         // 灰色：不可放塔
+    //             4: color(0, 0, 255, alpha)    // 蓝色：终点
+    //         };
 
-            fill(colors[value] || color(255));
-            stroke(0);
-            rect(col * ts, row * ts, ts, ts);
+    //         fill(colors[value] || color(255));
+    //         stroke(0);
+    //         rect(col * ts, row * ts, ts, ts);
 
-        }
-    }
+    //     }
+    // }
 
 
     // Update game status
@@ -709,7 +819,7 @@ function draw() {
 
             e.target(towers);  // 塔攻击目标
 
-
+            e.draw();    // 绘制怪物
             e.update();  // 更新怪物状态
             e.onTick();  // 每帧更新怪物的逻辑
         }
@@ -720,8 +830,8 @@ function draw() {
         // 如果怪物到达出口格子，击杀并减少玩家生命
         if (atTileCenter(e.pos.x, e.pos.y, exit.x, exit.y)) e.quit();
 
-        // 绘制怪物
-        e.draw();
+        // // 绘制怪物
+        // e.draw();
 
         // 如果怪物死亡，从怪物数组中移除
         if (e.ifDie()) monsters.splice(i, 1);
@@ -757,6 +867,12 @@ function draw() {
         let ps = systems[i];
         ps.run();  // 执行粒子系统
         if (ps.isDead()) systems.splice(i, 1);  // 如果粒子系统已死，从系统数组中移除
+    }
+
+    for (let i = vfx.length - 1; i >= 0; i--) {
+        let v = vfx[i];
+        v.update();
+        if (v.isDead()) vfx.splice(i, 1);
     }
 
 // 更新并绘制子弹
@@ -808,6 +924,9 @@ function draw() {
         }
     }
 
+    // 更新塔是否被选中的状态
+    checkSelected();
+
 // 移除临时生成的怪物
     removeTempSpawns();
 
@@ -817,20 +936,21 @@ function draw() {
     newProjectiles = [];  // 清空新子弹数组
     newTowers = [];  // 清空新塔数组
 
-// 如果玩家死亡，重置游戏
-    if (health <= 0) resetGame();
+// 如果玩家死亡，结束游戏
+    if (health <= 0) gameover(false);
 
-// 检测并等待下一波
+    // 检测并等待下一波
     if ((toWait && wcd === 0) || (skipToNext && newMonsters.length === 0)) {
         if (wave < totalWaves) {
             toWait = false;
             wcd = 0;
-            nextWave();  // 开始下一波
-            paused = true;  // 暂停游戏
-            tooltip = new Tooltip("Here comes the " + wave + " wave of enemies!", width / 2, height / 2);  // 显示提示框
+            //nextWave();  // 开始下一波
+            //paused = true;  // 暂停游戏
+            //tooltip = new Tooltip("Here comes the " + wave + " wave of enemies!", width / 2, height / 2);  // 显示提示框
+            onBeforeNextwave();
         } else {
             // 如果已经是最后一波，结束游戏并跳转到选关界面
-            endLevel();
+            endLevel(true);
         }
     }
 
@@ -847,90 +967,79 @@ function draw() {
     }
 
 
-    //绘制最上层界面
-    image(moneyBarImg, cellWidth, cellHeight / 2, cellWidth * 2, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 1.8);
+    // //绘制最上层界面
+    // image(moneyBarImg, cellWidth, cellHeight / 2, cellWidth * 2, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 1.8);
 
-    noStroke();
-    fill(0, 255);
-    textSize(cellWidth / 5);
-    textAlign(LEFT, BASELINE);
-    text(cash, cellWidth * 1.8, cellWidth * 0.85);
-    image(healthBarImg, cellWidth * 4, cellHeight / 2, cellWidth * 2, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 1.8);
+    // noStroke();
+    // fill(0, 255);
+    // textSize(cellWidth / 5);
+    // textAlign(LEFT, BASELINE);
+    // text(cash, cellWidth * 1.8, cellWidth * 0.85);
+    // image(healthBarImg, cellWidth * 4, cellHeight / 2, cellWidth * 2, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 1.8);
 
-    text(health + '/' + maxHealth, cellWidth * 4 * 1.2, cellHeight / 2 * 1.7);
+    // text(health + '/' + maxHealth, cellWidth * 4 * 1.2, cellHeight / 2 * 1.7);
 
-    image(monsterBarImg, cellWidth * 6.5, cellHeight / 2 * 0.8, cellWidth * 2.5, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 2.5);
+    // image(monsterBarImg, cellWidth * 6.5, cellHeight / 2 * 0.8, cellWidth * 2.5, cellWidth * (moneyBarImg.height / moneyBarImg.width) * 2.5);
 
-    var displayWave = wave > totalWaves ? totalWaves : wave;
-    text(displayWave + '/' + totalWaves, cellWidth * 7.8, cellHeight / 2 * 1.65);
-
-
-    tooltip.update();  // 更新提示状态
-    tooltip.display();  // 显示提示文本
+    // var displayWave = wave > totalWaves ? totalWaves : wave;
+    // text(displayWave + '/' + totalWaves, cellWidth * 7.8, cellHeight / 2 * 1.65);
 
 
-    if (tooltip.isVisible == false) {
-        if (isStartGame == false) {
-            isStartGame = true;
-            paused = false;
-        }
-
-    }
-
-    //底座敌人生物显示
-
-    let x = 5; // 初始 x 坐标
-    let y = height - cellHeight; // 初始 y 坐标
-    let itemWidth = cellHeight * 2; // 每个怪物项的间隔宽度
-
-    for (let key in monster) {
+    // tooltip.update();  // 更新提示状态
+    // tooltip.display();  // 显示提示文本
 
 
-        if (monster.hasOwnProperty(key)) {
-            fill(0);
-            rect(x + cellHeight * 0.3, y + cellHeight / 2 * 0.3, cellHeight * 1.5, cellHeight / 2, cellHeight);
-            // 绘制怪物图像或颜色圆点
-            if (monster[key].image) {
-                // 如果有图像，加载并绘制图像
+    // if (tooltip.isVisible == false) {
+    //     if (isStartGame == false) {
+    //         isStartGame = true;
+    //         paused = false;
+    //     }
 
-                image(monster[key].image, x, y, cellHeight, cellHeight); // 绘制图像
-            }
-            textAlign(CENTER, CENTER);
-            // 绘制怪物名称
-            fill(255); // 设置文本颜色为黑色
-            textSize(16); // 设置文本大小
-            text(key, x + cellHeight * 1.2, y + cellHeight / 2); // 绘制文本
+    // }
 
-            x += itemWidth; // 更新 y 坐标以绘制下一个怪物项
-        }
-    }
+    // //底座敌人生物显示
 
+    // let x = 5; // 初始 x 坐标
+    // let y = height - cellHeight; // 初始 y 坐标
+    // let itemWidth = cellHeight * 2; // 每个怪物项的间隔宽度
+
+    // for (let key in monster) {
+
+
+    //     if (monster.hasOwnProperty(key)) {
+    //         fill(0);
+    //         rect(x + cellHeight * 0.3, y + cellHeight / 2 * 0.3, cellHeight * 1.5, cellHeight / 2, cellHeight);
+    //         // 绘制怪物图像或颜色圆点
+    //         if (monster[key].image) {
+    //             // 如果有图像，加载并绘制图像
+
+    //             image(monster[key].image, x, y, cellHeight, cellHeight); // 绘制图像
+    //         }
+    //         textAlign(CENTER, CENTER);
+    //         // 绘制怪物名称
+    //         fill(255); // 设置文本颜色为黑色
+    //         textSize(16); // 设置文本大小
+    //         text(key, x + cellHeight * 1.2, y + cellHeight / 2); // 绘制文本
+
+    //         x += itemWidth; // 更新 y 坐标以绘制下一个怪物项
+    //     }
+    // }
+
+    // 画面心跳效果
+    if(enableHeartbeatEffect) drawHeartbeatEffect();
+    // 更新UI
+    updateMonsterStateUI();
+    animationDraw();
+    updateGameStateUI();
+    lateUpdateMenuDisplay();
 
     //调试模式
     if (debugMap) {
-        for (let col = 0; col < mapData.cols; col++) {
-            for (let row = 0; row < mapData.rows; row++) {
-                let value = mapData.grid[col][row];
-                let alpha = 200;
-                // 根据值设置不同颜色
-                let colors = {
-                    0: color(255, 0, 0, alpha),   // 红色：起点
-                    1: color(200, 200, 0, alpha), // 黄色：路径
-                    3: color(0, 255, 0, alpha),   // 绿色：可放塔
-                    2: color(100, alpha),         // 灰色：不可放塔
-                    4: color(0, 0, 255, alpha)    // 蓝色：终点
-                };
-
-                fill(colors[value] || color(255));
-                stroke(0);
-                rect(col * cellWidth, row * cellHeight, cellWidth, cellHeight);
-                // rect(col * 110, row * 110, 110, 110);
-            }
-        }
+        drawMapGrid();
     }
 
 }
-
+let shakeAmount = 0;
 
 // User input
 
@@ -1021,6 +1130,7 @@ function keyPressed() {
 }
 
 function mousePressed() {
+    menuButtonPressed();
     if (!mouseInMap()) return;
     var p = gridPos(mouseX, mouseY);
     var t = getTower(p.x, p.y);
@@ -1032,41 +1142,62 @@ function mousePressed() {
         updateInfo(selected);
     } else if (canPlace(p.x, p.y)) {
         buy(createTower(p.x, p.y, tower[towerType]));
+        selected = null;
+        clearInfo();
+    } else {
+        selected = null;
+        clearInfo();
     }
-
 
     if (mouseButton === RIGHT) {
         debugMap = !debugMap;
     }
 }
+function mouseReleased() {
+    menuButtonReleased();
+}
 
+// 游戏失败
+function gameover(isSurvival)
+{
+    endLevel(isSurvival);
+}
 
-function endLevel() {
+// 关卡结束
+function endLevel(isSurvival) {
     if (!gameEnded) {
+        console.log("endLevel");
         gameEnded = true;
         paused = true;
-        // 根据最终 health 更新当前关卡的星级
-        var levelId = document.getElementById("map").value;
-        var newRating = calculateRating(health, maxHealth);
-        var storedRating = parseInt(localStorage.getItem("rating_" + levelId)) || 0;
-        if (newRating > storedRating) {
-            localStorage.setItem("rating_" + levelId, newRating);
-        }
-        // 延时0.5秒后显示选关界面
-        setTimeout(function () {
-            // 清空游戏中的实体（根据需要可进一步清空）
-            wave = 1;
-            monsters = [];
-            projectiles = [];
-            systems = [];
-            towers = [];
-            newMonsters = [];
-            newProjectiles = [];
-            newTowers = [];
-            // 显示选关覆盖层，并重新生成关卡卡片（星级会更新）
-            document.getElementById("level-selection").style.display = "flex";
-            createLevelCards();
-        }, 500); // 延时0.5秒
+        onLevelFinished();
+
+        // 计算游戏结果
+        resultRating = calculateRating(health, maxHealth);
+        // 开启关卡结算页面
+        openResultMenu(isSurvival);
+        
+        // // 根据最终 health 更新当前关卡的星级
+        // var levelId = document.getElementById("map").value;
+        // var newRating = calculateRating(health, maxHealth);
+        // var storedRating = parseInt(localStorage.getItem("rating_" + levelId)) || 0;
+        // if (newRating > storedRating) {
+        //     localStorage.setItem("rating_" + levelId, newRating);
+        // }
+        // // 延时0.5秒后显示选关界面
+        // setTimeout(function () {
+        //     // 清空游戏中的实体（根据需要可进一步清空）
+        //     wave = 1;
+        //     monsters = [];
+        //     projectiles = [];
+        //     systems = [];
+        //     towers = [];
+        //     newMonsters = [];
+        //     newProjectiles = [];
+        //     newTowers = [];
+        //     // 显示选关覆盖层，并重新生成关卡卡片（星级会更新）
+        //     document.getElementById("level-selection").style.display = "flex";
+        //     createLevelCards();
+        // }, 500); // 延时0.5秒
     }
 }
 
@@ -1130,6 +1261,60 @@ function updateMonsterPanel() {
     }
 }
 
+let prevSelected = null;
+function checkSelected()
+{
+    if (selected != null)
+    {
+        if (prevSelected != null)
+        {
+            if (selected != prevSelected)
+            {
+                selected.selected = true;
+                prevSelected.selected = false;
+            }
+        }
+        else
+        {
+            selected.selected = true;
+        }
+    }
+    else
+    {
+        if (prevSelected != null)
+        {
+            prevSelected.selected = false;
+        }
+    }
+
+    prevSelected = selected;
+}
+
+function playStartBGM()
+{
+    if (bgm != null)
+    {
+        if (bgm != bgmStart){
+            bgm.stop();
+        }
+        else {
+            return;
+        }
+    }
+    bgm = bgmStart;
+    bgm.loop();
+    bgm.play();
+}
+
+function switchBGM() {
+    if (bgm != null) bgm.stop();
+    if (mapData.id === "customMap") bgm = bgmLevel1;
+    else if (mapData.id === "map2") bgm = bgmLevel2;
+    else if (mapData.id === "map3") bgm = bgmLevel3;
+    else bgm = bgmStart;
+    bgm.loop();
+    bgm.play();
+}
 
 class Tooltip {
     constructor(message, x, y) {
@@ -1185,4 +1370,3 @@ class Tooltip {
 
     }
 }
-
