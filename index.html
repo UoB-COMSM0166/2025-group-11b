@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="author" content="Siyuan Chen">
+    <meta name="author" content="Amelia Clarke">
     <title>Tower Defense</title>
     <link href="style.css" rel="stylesheet">
     <!-- 脚本依次加载 -->
@@ -36,14 +36,6 @@
       
       <!-- 侧边栏：包含状态、商店、塔信息 -->
       <div id="sidebar">
-        <!-- 状态面板
-        <div id="status-panel">
-          <h2>State</h2> -->
-        <!-- 新增敌人栏
-        <div id="monster-panel">
-          <h2>敌人栏</h2>
-          <div id="monster-list"></div>
-        </div> -->
         
         <!-- 商店面板 -->
         <div id="store-panel">
@@ -94,6 +86,104 @@
         { id: "map3", name: "LEVEL 3" }  // 新增的地图选项
       ];
       
+      // // 从 localStorage 取出关卡星级（假设 key 为 "rating_关卡ID"，值为 0~3）
+      // function getRating(levelId) {
+      //   const rating = localStorage.getItem("rating_" + levelId);
+      //   return rating ? parseInt(rating) : 0;
+      // }
+      
+      // // 根据评分生成星星 HTML（用 ★ 表示满星，用 ☆ 表示空星）
+      // function getStarHTML(rating) {
+      //   let stars = "";
+      //   for (let i = 0; i < 3; i++) {
+      //     stars += i < rating ? "&#9733;" : "&#9734;";
+      //   }
+      //   return stars;
+      // }
+      
+      // // 根据 levels 数组生成选关卡片
+      // function createLevelCards() {
+      //   const container = document.getElementById("level-cards-container");
+      //   container.innerHTML = ""; // 清空容器
+      //   levels.forEach(level => {
+      //     const card = document.createElement("div");
+      //     card.className = "level-card";
+      //     card.dataset.levelId = level.id;
+      //     card.innerHTML = `<h3>${level.name}</h3>
+      //                       <div class="stars">${getStarHTML(getRating(level.id))}</div>`;
+      //     // 点击卡片时设置关卡并启动游戏
+      //     card.addEventListener("click", function() {
+      //       document.getElementById("map").value = level.id;
+      //       document.getElementById("level-selection").style.display = "none";
+
+      //       mapData = maps[level.id] ;
+      //       if(mapData==maps["map2"]){
+      //         bgImg = loadImage("images/map2.png");
+      //       }
+      //       if(mapData==maps["map3"]){
+      //         bgImg = loadImage("images/map3.png");
+      //       }
+
+      //       if(mapData==maps["customMap"]){
+      //         bgImg = loadImage("images/your_background.png");
+      //       }
+      //       resetGame();
+      //       paused = true;
+      //     });
+      //     container.appendChild(card);
+      //   });
+      // }
+      
+      // // 页面加载完毕后自动启动游戏，并绑定“放弃退出”按钮事件
+      // document.addEventListener("DOMContentLoaded", function() {
+
+      //   // 找到加速按钮
+      //   var speedBtn = document.getElementById("speed-monster-button");
+
+      //   // 当鼠标按下（或触控开始）时，设置加速
+      //   speedBtn.addEventListener("mousedown", function() {
+      //     monsterSpeedMultiplier = 2;
+      //     speedBtn.innerHTML = "加速中...";
+      //   });
+      //   // 为了兼容触控设备，添加 touchstart 事件
+      //   speedBtn.addEventListener("touchstart", function(e) {
+      //     monsterSpeedMultiplier = 2;
+      //     speedBtn.innerHTML = "加速中...";
+      //     // 阻止后续模拟的 mouse 事件
+      //     e.preventDefault();
+      //   });
+
+      //   // 当鼠标松开、离开按钮区域或触控结束时，恢复正常速度
+      //   function resetSpeed() {
+      //     monsterSpeedMultiplier = 1;
+      //     speedBtn.innerHTML = "长按加速";
+      //   }
+      //   speedBtn.addEventListener("mouseup", resetSpeed);
+      //   speedBtn.addEventListener("mouseleave", resetSpeed);
+      //   speedBtn.addEventListener("touchend", resetSpeed);
+      //   speedBtn.addEventListener("touchcancel", resetSpeed);
+      //   // 生成选关卡片，让用户自行选择关卡
+      //   //createLevelCards();
+      //   // 调用更新敌人栏的函数
+      //   updateMonsterPanel();
+      //   // 不自动启动游戏，显示选关界面
+      //   document.getElementById("level-selection").style.display = "flex";
+        
+      //   // 放弃退出按钮的事件绑定依然有效
+      //   var exitButton = document.getElementById("exit-game-button");
+      //   exitButton.addEventListener("click", function() {
+      //     paused = true;
+      //     monsters = [];
+      //     projectiles = [];
+      //     systems = [];
+      //     towers = [];
+      //     NewMonsters = [];
+      //     newProjectiles = [];
+      //     newTowers = [];
+      //     document.getElementById("level-selection").style.display = "flex";
+      //     //createLevelCards();
+      //   });
+      // });
     </script>
   </body>
 </html>
