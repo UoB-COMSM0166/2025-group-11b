@@ -116,9 +116,9 @@ function preloadUIAssets()
     thumbAIMech = loadImage("images/thumb/thumb_ai_mech.png");
 
     levels.forEach(level => {
-        if (level.id === "customMap") levelMapsImage.push(loadImage("images/maps/map_Level1.png"));
-        else if (level.id === "map2") levelMapsImage.push(loadImage("images/maps/map_Level2.png"));
-        else if (level.id === "map3") levelMapsImage.push(loadImage("images/maps/map_Level3.png"));
+        if (level.id === "customMap") levelMapsImage.push(loadImage("images/maps/map_level1.png"));
+        else if (level.id === "map2") levelMapsImage.push(loadImage("images/maps/map_level2.png"));
+        else if (level.id === "map3") levelMapsImage.push(loadImage("images/maps/map_level3.png"));
     });
 
     // 加载字体
