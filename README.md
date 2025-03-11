@@ -457,9 +457,22 @@ Example: "As a player, I want to place towers on a gr
   
 
 ### Design
+1. **`Monster` 类**
+   - 负责怪物的行为（移动、攻击、受伤等）。
+   - 控制 `Tower`（怪物影响塔的行为）。
+   - 从 `Map` 读取路径。
 
-- 15% ~750 words 
-- System architecture. Class diagrams, behavioural diagrams. 
+2. **`Tower` 类**
+   - 玩家建造的防御设施。
+   - 负责攻击 `Monster`。
+
+3. **`Map` 类**
+   - 负责提供地图数据、路径、怪物出生点等。
+
+4. **关系**
+   - `Monster` **控制** `Tower`（怪物的行为影响塔的攻击）。
+   - `Monster` **加载** `Map`（地图提供路径给怪物）。
+   - `Tower` **攻击** `Monster`（防御塔攻击怪物）。
 
 ### Implementation
 
