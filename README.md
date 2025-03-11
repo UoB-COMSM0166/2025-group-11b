@@ -523,7 +523,7 @@ Refine UI interactions by improving button labels and adding confirmation prompt
 - One quantitative evaluation (of your choice) 
 - **Evaluation Results**
   ![image](https://github.com/user-attachments/assets/ec43e7c6-d779-4b49-88f1-519be9e43e66)
-** Final Evaluation and Future Improvements
+Final Evaluation and Future Improvements
 By combining Think Aloud (qualitative analysis) and Heuristic Evaluation (quantitative analysis), we obtained a comprehensive assessment of the game’s usability. Key takeaways include:
 
 Improve UI clarity by enhancing button labels and tooltips.
