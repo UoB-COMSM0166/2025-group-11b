@@ -403,11 +403,6 @@ Clicking the accessibility button on Linux causes an error message to show up (F
 <img src="Game/assets/Background/LinuxErr.png" width="75%">
 </p>
 
-### Introduction
-
-- 5% ~250 words 
-- Describe your game, what is based on, what makes it novel? 
-
 ### Requirements 
 
 - Requirements for Tower Defense Game
