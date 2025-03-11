@@ -457,22 +457,52 @@ Example: "As a player, I want to place towers on a gr
   
 
 ### Design
-1. **`Monster` 类**
-   - 负责怪物的行为（移动、攻击、受伤等）。
-   - 控制 `Tower`（怪物影响塔的行为）。
-   - 从 `Map` 读取路径。
+#### Class Descriptions and Relationships
+**1. `Monster` Class**  
+- Responsible for monster behavior (movement, attack, taking damage, etc.).  
+- Controls `Tower` (monsters influence tower behavior).  
+- Reads paths from the `Map`.  
 
-2. **`Tower` 类**
-   - 玩家建造的防御设施。
-   - 负责攻击 `Monster`。
+**2. `Tower` Class**  
+- Defensive structures built by the player.  
+- Responsible for attacking `Monster`.  
 
-3. **`Map` 类**
-   - 负责提供地图数据、路径、怪物出生点等。
+**3. `Map` Class**  
+- Provides map data, paths, monster spawn points, etc.  
 
-4. **关系**
-   - `Monster` **控制** `Tower`（怪物的行为影响塔的攻击）。
-   - `Monster` **加载** `Map`（地图提供路径给怪物）。
-   - `Tower` **攻击** `Monster`（防御塔攻击怪物）。
+**4. Relationships**  
+- `Monster` **controls** `Tower` (monster behavior affects tower attacks).  
+- `Monster` **loads** `Map` (the map provides paths for monsters).  
+- `Tower` **attacks** `Monster` (defensive towers attack monsters).
+#### Interaction Flow
+1. **User Places a Tower**  
+   - The user selects and places a tower, prompting `GameLoop` to initialize the tower and add it to the `towers` array.
+
+2. **Game Loop Starts**  
+   - `GameLoop` enters a loop, executing the following actions each frame:
+     - Updates all monsters (calls `move()` and `update()`).
+     - Checks if a monster is out of the map (if so, it is destroyed).
+     - If a monster reaches the exit, player health decreases (`health--`).
+
+3. **Tower Targets and Attacks Monsters**  
+   - `Tower` calls `target(monsters)` to find the nearest target.
+   - After selecting a target, the tower fires a bullet (`bullets.push()`).
+   - The bullet (`Bullet`) starts moving, executing `steer()` and `update()`.
+
+4. **Bullet Hit Detection**  
+   - The bullet continuously checks `reachedTarget()` to determine if it has hit a monster.
+   - If it hits, `explode()` is called, triggering the explosion effect and destroying the bullet.
+
+5. **Trigger Attack Effects**  
+   - When a bullet successfully hits its target:
+     - `particle.run()` is called to generate particle effects (such as explosions or sparks).
+
+6. **Checking for Remaining Monsters**  
+   - `CheckWaves` monitors the number of monsters in the game:
+     - If `noMoreMonster()` returns `true` (meaning all monsters are defeated), it triggers `NextWave` to start a new wave of enemies.
+
+7. **Start the Next Wave**  
+   - `NextWave` executes `nextWave()`, spawning new monsters and continuing the battle.
 
 ### Implementation
 
