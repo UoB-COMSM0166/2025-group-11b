@@ -196,7 +196,7 @@ class Monster {
     // 创建麻痹效果（由effects.stun调用）
     createStunnedEffect() {
         let sprites = imgAttackStun;
-        let frameWidth = sprites.width / this.stunFrameCount;
+        let frameWidth = sprites.gameWidth / this.stunFrameCount;
         let frameHeight = sprites.height;
         let frameX = this.stunFrameIndex * frameWidth;
         imageMode(CENTER);
@@ -231,14 +231,14 @@ class Monster {
         translate(this.pos.x, this.pos.y);
 
         var edge = 0.7 * ts / 2;
-        var width = edge * percent * 2;
+        var gameWidth = edge * percent * 2;
         var top = 0.2 * ts;
         var height = 0.15 * ts;
 
         // 血条
         noStroke();
         fill(207, 0, 15);
-        rect(-edge, top, width, height);
+        rect(-edge, top, gameWidth, height);
         // 血槽
         stroke(255);
         strokeWeight(2);

@@ -1,6 +1,6 @@
 // 初始默认生命值和金钱
-const defaultHealth = 40;
-const defaultCash = 150;
+const defaultHealth = 1;
+const defaultCash = 9999999;
 
 let mapData = maps.customMap;  // 获取自定义地图数据
 // let cellWidth = 1440 / mapData.cols;  // 每个网格的宽度
@@ -83,7 +83,7 @@ var sellConst = 0.8;  // 塔出售价格与购买价格的比例
 var waveCool = 120;  // 波次之间的冷却时间（单位：ticks）
 var weakness = 0.5;  // 弱点造成的伤害增加百分比
 
-var totalWaves = 10;  // 每一关固定总波数为2波
+var totalWaves = 1;  // 每一关固定总波数为2波
 var gameEnded = false;  // 游戏是否结束的标志
 var resultRating = 0;   // 关卡结算分（0~3 星）
 
@@ -93,6 +93,35 @@ let bgm;    // 背景音乐
 
 // 创建Tooltip对象
 let tooltip;  // 创建一个提示工具对象
+
+let cnvs;
+let towerY;
+let towerX;
+let towerWidth;
+let towerHeight;
+
+let gameWidth;
+let gameHeight;
+let gameY;
+let gameX;
+
+
+let towerTipPaneHeight;
+
+let leftArrowBtn, rightArrowBtn;
+let pages = []; // 用来存储多组按钮
+let currentPage = 0; // 当前显示的页面
+
+
+ let pageWidth;
+ let pageX ;
+ let arrowButtonWidth ;
+ let pageHeight ;
+
+
+ let towerInfoPane;
+
+
 
 
 // Misc functions
@@ -125,7 +154,10 @@ function buy(t) {                          // 定义购买函数，接收防御�
         selected = t;                      // 将当前选中对象设为该防御塔
         if (grid[t.gridPos.x][t.gridPos.y] === 0)  // 检查目标网格单元是否为空置状态
             toPathfind = true;              // 触发路径重新计算标志（地形变更需更新敌人路径）
-        updateInfo(t);                     // 更新界面显示的防御塔信息
+             // 更新界面显示的防御塔信息
+        towerInfoPane.t =t;
+        towerInfoPane.isExpanded =false;
+        towerInfoPane.toggle();
         newTowers.push(t);                 // 将新防御塔加入管理队列
     }
 }
@@ -315,7 +347,7 @@ function noMoreMonster() {
 }
 
 function outsideMap(e) {
-    return outsideRect(e.pos.x, e.pos.y, 0, 0, width, height);
+    return outsideRect(e.pos.x, e.pos.y, 0, 0, gameWidth, height);
 }
 
 // Toggle pause state
@@ -591,19 +623,7 @@ function resetGame() {
     tooltip = new Tooltip("Here comes the " + wave + " wave of enemies!", cols * ts / 2, rows * ts / 2);
 }
 
-// Changes tile size to fit everything onscreen
-//自适应屏幕
-function resizeFit() {
-    var div = document.getElementById('main-holder');
-    var ts1 = floor(div.offsetWidth / cols);
-    var ts2 = floor(div.offsetHeight / rows);
-    ts = Math.min(ts1, ts2);
-    resizeCanvas(cols * ts, rows * ts, true);
 
-    cellWidth = width / mapData.cols;  // 每个网格的宽度
-    cellHeight = height / mapData.rows;  // 每个网格的高度
-
-}
 
 
 // Resizes cols, rows, and canvas based on tile size
@@ -624,7 +644,7 @@ function resizeMax() {
 function sell(t) {
     selected = null;
     if (grid[t.gridPos.x][t.gridPos.y] === 0) toPathfind = true;
-    clearInfo();
+    // clearInfo();
     cash += t.sellPrice();
     t.kill();
 }
@@ -633,15 +653,21 @@ function sell(t) {
 function setPlace(t) {
     towerType = t;
     toPlace = true;
-    updateInfo(createTower(0, 0, tower[towerType]));
+    towerInfoPane.t= createTower(0, 0, tower[towerType]);
+    towerInfoPane.isExpanded=false;
+    towerInfoPane.toggle();
+
 }
 
 // Visualize range of tower
 function showRange(t, cx, cy) {
+    push();
+    // translate(gameX,gameY);
     stroke(255);
     fill(t.color[0], t.color[1], t.color[2], 63);
     var r = (t.range + 0.5) * ts * 2;
     ellipse(cx, cy, r, r);
+    pop();
 }
 
 // Display tower information
@@ -685,7 +711,11 @@ function upgrade(t) {      // 定义升级函数，接收升级配置对象t作�
         cash -= t.cost;      // 扣除升级消耗的资金
         selected.upgrade(t); // 执行目标对象的升级逻辑
         selected.upgrades = t.upgrades ? t.upgrades : [];  // 更新可用升级项列表（存在则继承，否则重置为空）
-        updateInfo(selected); // 刷新界面显示最新信息
+        //  // 刷新界面显示最新信息
+        towerInfoPane.t =selected;
+        towerInfoPane.isExpanded=false;
+        towerInfoPane.toggle();
+        towerInfoPane.isPlaceTower=true;
 
         // 绘制升级效果
         vfx.push(new UpgradeFX(60, selected.pos.x, selected.pos.y));
@@ -702,21 +732,32 @@ function walkable(col, row) {
 }
 
 
-// Main p5 functions
+function drawTower() {
+    fill(100);
+    rect(towerX,towerY,towerWidth,towerHeight);
+}
+
+// Main p5 functionsS
 function draw() {
+    push();
+
     updateMenuDisplay();
+
     if (!isStartGame) return;
     if(!grid) {
         console.log("没有地图");
         background(0);
         return;
     }
+    //遊戲地圖
+    push();
+
     background(50);
     // 镜头震动效果
     if(enableShakeEffect) drawShakeEffect();
     
     // 绘制背景图（覆盖整个画布）
-    image(bgImg, 0, 0, width, height);
+    image(bgImg, 0, 0, gameWidth, height);
 
     // for (let col = 0; col < mapData.cols; col++) {
     //     for (let row = 0; row < mapData.rows; row++) {
@@ -901,6 +942,7 @@ function draw() {
 // 绘制塔的射程范围
     if (doRange()) {
         var p = gridPos(mouseX, mouseY);  // 获取鼠标位置对应的网格位置
+        console.log(p);
         var c = center(p.x, p.y);  // 计算塔的中心位置
         var t = createTower(0, 0, tower[towerType]);  // 创建一个塔
         showRange(t, c.x, c.y);  // 显示塔的射程
@@ -1032,23 +1074,519 @@ function draw() {
     animationDraw();
     updateGameStateUI();
     lateUpdateMenuDisplay();
-
-    //调试模式
+    // //调试模式
     if (debugMap) {
         drawMapGrid();
     }
+    pop();
+
+    pop();
+
+
+    //塔那一栏
+    push();
+    drawTower();
+    //标题
+    fill(255);
+
+    rect(towerX,towerY,towerWidth,towerTipPaneHeight,15);
+    textAlign(CENTER,CENTER);
+    fill(0); // 设置白色文本，使其在黑色背景上可见
+
+
+    // 计算文本的中心位置
+    let textX = towerX + towerWidth / 2;
+    let textY = towerY + (towerTipPaneHeight) / 2;
+    // textFont(uiFont);
+    textSize(towerWidth/10);
+    noStroke();
+    text("TOWER", textX, textY);
+    // 显示当前页面
+    pages[currentPage].display();
+    fill(0);
+    stroke(0);
+    // 显示左右箭头按钮
+    leftArrowBtn.display();
+    rightArrowBtn.display();
+
+    // //塔信息
+    // fill(255);
+    // rect(towerX,pageHeight+towerTipPaneHeight+pageWidth/12,towerWidth,towerTipPaneHeight,15);
+    // textAlign(CENTER,CENTER);
+    // fill(0); // 设置白色文本，使其在黑色背景上可见
+    // // textFont(uiFont);
+    // textSize(towerWidth/10);
+    // // 计算文本的中心位置
+    //  textX = towerX + towerWidth / 2;
+    //  textY = pageHeight+towerTipPaneHeight+pageWidth/12+towerTipPaneHeight/2;
+    // noStroke();
+    // text("TOWER INFO", textX, textY);
+    towerInfoPane.update();
+    towerInfoPane.display();
+    pop();
+
+
+
+
+
+
 
 }
+
 let shakeAmount = 0;
+
+
+class SlidePane {
+    constructor(x, y, w, h, contentHeight) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h; // 面板最大展开高度
+        this.contentHeight = contentHeight; // 内容总高度
+        this.t =undefined;
+        this.isPlaceTower = true;
+
+        this.offsetY = 0;  // 当前滑动偏移量
+        this.targetY = 0;  // 目标滑动位置
+        this.scrollSpeed = 0.2; // 平滑滚动速度
+
+        this.isDragging = false;
+        this.lastY = 0;
+
+        this.isExpanded = false; // 是否展开
+        this.targetHeight = 50; // 目标高度（初始收起）
+        this.currentHeight = 50; // 实时面板高度
+    }
+
+    update() {
+        // **平滑调整面板高度**
+        this.currentHeight = lerp(this.currentHeight, this.targetHeight, 0.1);
+        this.offsetY = lerp(this.offsetY, this.targetY, this.scrollSpeed);
+    }
+
+    display() {
+        push();
+        translate(this.x, this.y); // **让整个面板随动**
+
+        // **绘制滑动面板**
+        fill(255);
+        stroke(180);
+        strokeWeight(2);
+        rect(0, 0, this.w, this.currentHeight, 15);
+
+        // **绘制标题栏**
+        fill(255);
+        rect(0, 0, this.w, 50, 15);
+
+        fill(0);
+        textFont(uiFont);
+        textSize(towerWidth/10);
+        textAlign(CENTER, CENTER);
+
+        text(this.isExpanded ? "🔼 TOWER INFO" : "🔽 TOWER INFO", this.w / 2, 25);
+
+        // **展开时显示内容**
+        if (this.isExpanded) {
+            if(this.t===undefined){
+                // fill(50);
+                // noStroke();
+                // textSize(18);
+                // textAlign(LEFT, TOP);
+                // text("📌 这里是内容区域", 20, 60); // **这里的 `y` 相对面板顶部**
+                //
+                // // **绘制按钮**
+                // fill(100, 150, 200);
+                // rect(20, 100, 120, 40, 10);
+                // rect(160, 100, 120, 40, 10);
+                //
+                // fill(255);
+                // textSize(16);
+                // textAlign(CENTER, CENTER);
+                // text("SELL", 80, 120);
+                // text("UPGRADE", 220, 120);
+            }else{
+                push();
+                let startX = towerWidth/12;
+                let startY=60;
+                let fontHeight = towerWidth/20;
+                fill(this.t.color);
+                noStroke();
+                textSize(towerWidth/20);
+
+                textAlign(LEFT, TOP);
+                text(this.t.title,startX, startY); // **这里的 `y` 相对面板顶部**
+                fill(0);
+                text("Cost:$"+this.t.totalCost,startX,startY+fontHeight);
+                text("Sell Price:$"+this.t.sellPrice(),startX,startY+fontHeight*2);
+                text("Upgrade Price:$"+ (this.t.upgrades.length > 0 ? '$' + this.t.upgrades[0].cost : 'N/A'),startX,startY+fontHeight*3);
+                text("Damage:"+ this.t.getDamage(),startX,startY+fontHeight*4);
+                text("Type:"+ this.t.type.toUpperCase(),startX,startY+fontHeight*5);
+                text("Range:"+ this.t.range,startX,startY+fontHeight*6);
+                text("Avg. Cooldown:"+ this.t.getCooldown().toFixed(2) + 's',startX,startY+fontHeight*7);
+                // text("Cost:$"+this.t.totalCost, 20, startY+index*towerHeight/10); // **这里的 `y` 相对面板顶部**
+
+                if(this.isPlaceTower){
+                    // **绘制按钮**
+                    fill(100, 150, 200);
+                    rect(startX, startY+fontHeight*9,towerWidth/3, towerWidth/10, 10);
+                    rect(startX+towerWidth/3+towerWidth/5, startY+fontHeight*9, towerWidth/3, towerWidth/10, 10);
+
+                    fill(255);
+                    // textSize(16);
+                    textAlign(CENTER, CENTER);
+                    text("SELL", startX+fontHeight*3.2, startY+fontHeight*10);
+                    text("UPGRADE", startX+towerWidth/3+towerWidth/10+fontHeight*5.5, startY+fontHeight*10);
+                }
+
+
+                pop();
+            }
+
+        }
+
+        pop();
+    }
+
+    toggle() {
+        if (this.isExpanded) {
+            this.targetHeight = 50; // 收起
+        } else {
+            this.targetHeight = this.h; // 展开
+        }
+        this.isExpanded = !this.isExpanded;
+    }
+
+    checkButtonClick(mx, my) {
+        if (this.isExpanded) {
+            if (this.isPlaceTower) {
+                let startX = towerWidth / 12;
+                let startY = 60;
+                let fontHeight = towerWidth / 20;
+
+
+                // let bx1 = startX;
+                // let by1 = startY+fontHeight*9;
+                let b1Width = towerWidth / 3;
+                let b1Height = towerWidth / 10;
+
+                let b2Width = towerWidth / 3;
+                let b2Height = towerWidth / 10;
+
+                let bx1 = this.x + startX;
+                let by1 = this.y + startY + fontHeight * 9;
+                let bx2 = this.x + startX + towerWidth / 3 + towerWidth / 5;
+                let by2 = this.y + startY + fontHeight * 9;
+
+                if (mx > bx1 && mx < bx1 + b1Width && my > by1 && my < by1 + b1Height) {
+                    // alert("你点击了按钮 1");
+
+
+
+                    if (selected){
+                        sell(selected);
+                    }
+
+                }
+                if (mx > bx2 && mx < bx2 + b2Width && my > by2 && my < by2 + b2Height) {
+                    // alert("你点击了按钮 2");
+                    if (selected && selected.upgrades.length > 0) upgrade(selected.upgrades[0]);
+                }
+            }
+        }
+    }
+}
+class Page {
+    constructor(x, y, w, h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.buttons = [];
+    }
+
+    // 添加按钮
+    addButton(row, col, label) {
+        let btnX = this.x + col * (this.w / 2 + towerWidth/20); // 设置按钮的X坐标
+        let btnY = this.y + row * (this.w / 2 + towerWidth/20); // 设置按钮的Y坐标
+        this.buttons.push(new Button(btnX, btnY, this.w / 2, this.w / 2, null, label));
+    }
+
+    // 显示页面上的所有按钮
+    display() {
+        for (let btn of this.buttons) {
+            btn.display();
+        }
+    }
+
+    // 检查点击事件
+    checkClicked() {
+        for (let btn of this.buttons) {
+            if (btn.clicked()) {
+                if(btn.label=="Archer Tower"){
+                    setPlace('gun');
+
+                }
+                if(btn.label=="Boiling Oil Tower"){
+                    setPlace('oil');
+                }
+
+                if(btn.label=="Cannon Tower"){
+                    setPlace('bomb');
+                }
+
+                if(btn.label=="Net Thrower Tower"){
+                    setPlace('slow');
+                }
+
+                if(btn.label=="Laser AA Tower"){
+                    setPlace('laser');
+                }
+                if(btn.label=="EMP Disruptor Tower"){
+                    setPlace('slow2');
+                }
+
+                if(btn.label=="Trebuchet Tower"){
+                    setPlace('trebuchet');
+                }
+
+                if(btn.label=="EMP Tower"){
+                    setPlace('emp');
+                }
+                towerInfoPane.isPlaceTower=false;
+                console.log(`按钮 ${btn.label} 被点击`);
+            }
+        }
+    }
+}
+
+class Button {
+    constructor(x, y, w, h, img, label) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+
+        // this.img = img;
+        this.imgSize = 0.8;
+        this.label = label;
+        this.isHovered = false;
+    }
+
+    display() {
+        this.isHovered = this.isMouseOver();
+        fill(this.isHovered ? color(200, 200, 255) : color(220));
+        stroke(180);
+        strokeWeight(2);
+        rect(this.x, this.y, this.w, this.h, 15);
+
+        // if (this.img) {
+        //     let imgW = this.w * this.imgSize;
+        //     let imgH = this.h * this.imgSize;
+        //     image(this.img, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        // }
+
+        if(this.label=="Archer Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(tower1Img, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }else if(this.label=="Boiling Oil Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(tower2Img, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+
+
+        else  if(this.label=="Cannon Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(t4_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+
+        else if(this.label=="Net Thrower Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(t3_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+
+        else if(this.label=="EMP Disruptor Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(t6_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+        else if(this.label=="Laser AA Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(t5_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+
+
+        else if(this.label=="Trebuchet Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(t4_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+
+        else if(this.label=="EMP Tower"){
+            let imgW = this.w * this.imgSize;
+            let imgH = this.h * this.imgSize;
+            image(t6_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+        }
+
+
+
+
+        else{
+            fill(0);
+            stroke(0);
+
+            textAlign(CENTER, CENTER);
+            textFont('Arial');
+            textSize(towerWidth/15);
+            text(this.label, this.x + this.w / 2, this.y + this.h / 2);
+        }
+
+
+
+
+
+    }
+
+    isMouseOver() {
+        return mouseX > this.x && mouseX < this.x + this.w && mouseY > this.y && mouseY < this.y + this.h;
+    }
+
+    clicked() {
+        return this.isHovered;
+    }
+}
+
+function windowResized() {
+
+    window.location.href = window.location.href;
+
+
+
+    let div = document.getElementById("game-area");
+    let rect = div.getBoundingClientRect();
+
+
+
+    gameWidth = windowWidth/5*4;
+    ts = min(gameWidth / cols, windowHeight / rows); // 取最小值，确保是正方形
+    gameWidth =ts*cols;
+    //宽比高小
+    if(gameWidth / cols<gameWidth / windowHeight/rows){
+        gameX = 0;
+        gameY=windowHeight - windowHeight/rows/2;
+    }
+    //宽比高大
+    if(gameWidth / cols>gameWidth / windowHeight/rows){
+        gameX =  windowWidth/5*4 - gameWidth/2;
+        gameY=0;
+    }
+
+
+
+    widthRatio = ts/110;
+    heightRatio =ts/110;
+    pageScale = ts/110;
+
+    resizeCanvas(windowWidth, rows * ts);  // 窗口大小改变时调整画布大小
+
+    // console.log(ts);
+    let  canvas = createCanvas(windowWidth, rows * ts);
+
+    gameHeight =rows * ts;
+    cnvs = canvas;
+
+    // 通过 position() 方法将 canvas 居中
+
+    // Add a class attribute to the canvas.
+    cnvs.class('pinkborder');
+
+
+    // Select the canvas by its class.
+    cnvs = select('.pinkborder');
+
+
+    // Style its border.
+    cnvs.style('display', 'block');  // 确保 canvas 被当作块级元素
+
+
+
+    // 创建按钮
+    var buttonHeight = gameY + 20*heightRatio;
+    btnQuit.remove();
+    btnReset.remove();
+    btnResume.remove(); // 删除按钮
+    btnPause.remove();
+    btnSpeed.remove();
+
+
+    btnQuit = createButton('');
+    btnQuit.position(0, buttonHeight);
+    btnQuit.size(60*widthRatio,50*heightRatio);
+    btnQuit.class('button-quit');
+
+    var btnSize = 50*widthRatio;
+    var space = 20*widthRatio;
+    //
+
+    btnReset = createButton('');
+    btnReset.position(gameWidth - btnSize - space, buttonHeight);
+    btnReset.size(btnSize,btnSize);
+    btnReset.class('button-reset');
+
+
+
+    btnResume = createButton('');
+    btnResume.position(btnReset.position().x - btnSize - space, buttonHeight)
+    btnResume.size(btnSize,btnSize);
+    btnResume.class('button-resume');
+
+    btnPause = createButton('');
+    btnPause.position(btnResume.position().x, buttonHeight)
+    btnPause.size(btnSize,btnSize);
+    btnPause.class('button-pause');
+
+    btnSpeed = createButton("x" + getCurrentSpeed().toString());
+    btnSpeed.position(btnPause.position().x - btnSize - space*5, buttonHeight + 5);
+    btnSpeed.size(80*widthRatio,40*heightRatio);
+    btnSpeed.class('button-speed');
+    //
+    //
+    // // 添加按钮点击事件
+    btnResume.mousePressed(onClickBtnResume);
+    btnPause.mousePressed(onClickBtnPause);
+    btnReset.mousePressed(onClickBtnReset);
+    btnQuit.mousePressed(onClickBtnQuit);
+    btnSpeed.mousePressed(onClickBtnSpeed);
+
+    if(isStartGame==false){
+        onLevelFinished();
+    }
+
+
+
+
+
+
+
+
+
+}
 
 // User input
 
 function keyPressed() {
+
     switch (keyCode) {
+
+
         case 27:
             // Esc
             toPlace = false;
-            clearInfo();
+            // clearInfo();
             break;
         case 32:
             // Space
@@ -1130,28 +1668,68 @@ function keyPressed() {
 }
 
 function mousePressed() {
+    // 左箭头：切换到上一组
+    if (leftArrowBtn.clicked() && currentPage > 0) {
+        currentPage--; // 向左切换页面
+    }
+
+    // 右箭头：切换到下一组
+    if (rightArrowBtn.clicked() && currentPage < pages.length - 1) {
+        currentPage++; // 向右切换页面
+    }
+
+    // 检查点击页面内的按钮
+    pages[currentPage].checkClicked();
+
+
+    if (mouseX > towerInfoPane.x && mouseX < towerInfoPane.x + towerInfoPane.w && mouseY > towerInfoPane.y && mouseY < towerInfoPane.y + 50) {
+        // **点击标题栏时展开/收起**
+        towerInfoPane.toggle();
+    } else if (mouseX > towerInfoPane.x && mouseX < towerInfoPane.x + towerInfoPane.w && mouseY > towerInfoPane.y && mouseY < towerInfoPane.y + towerInfoPane.currentHeight) {
+        // **检查按钮点击**
+        towerInfoPane.checkButtonClick(mouseX, mouseY);
+    }
+
     menuButtonPressed();
     if (!mouseInMap()) return;
     var p = gridPos(mouseX, mouseY);
+
     var t = getTower(p.x, p.y);
 
     if (t) {
         // Clicked on tower
         selected = t;
         toPlace = false;
-        updateInfo(selected);
+        towerInfoPane.t = t;
+        towerInfoPane.isExpanded=false;
+        towerInfoPane.toggle();
+        towerInfoPane.isPlaceTower=true;
     } else if (canPlace(p.x, p.y)) {
         buy(createTower(p.x, p.y, tower[towerType]));
         selected = null;
-        clearInfo();
+
+        towerInfoPane.isExpanded=true;
+        towerInfoPane.toggle();
+        towerInfoPane.t=undefined;
+
+
     } else {
         selected = null;
-        clearInfo();
+        towerInfoPane.isExpanded=true;
+        towerInfoPane.toggle();
+        towerInfoPane.t=undefined;
     }
 
     if (mouseButton === RIGHT) {
         debugMap = !debugMap;
     }
+
+
+
+
+
+
+
 }
 function mouseReleased() {
     menuButtonReleased();

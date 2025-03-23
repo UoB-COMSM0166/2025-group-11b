@@ -69,6 +69,12 @@ let bgmLevel1;
 let bgmLevel2;
 let bgmLevel3;
 
+
+let widthRatio = 0;
+let heightRatio = 0;
+let pageScale = 0;
+
+let pg; // 定义图层
 function preload() {
     // 加载塔图片（确保图片路径正确）
 
@@ -152,8 +158,38 @@ function loadImages() {
     imgUpgradeShine =  loadImage("images/tower/sprites_upgrade_shine.png");
 }
 
+
+
 function setup() {
-    var canvas = createCanvas(cols * ts, rows * ts);
+    let div = document.getElementById("game-area");
+    let rect = div.getBoundingClientRect();
+    console.log(`宽度: ${rect.width}, 高度: ${rect.height}`);
+
+    gameWidth = windowWidth/5*4;
+    ts = min(gameWidth / cols,windowHeight/rows); // 取最小值，确保是正方形
+    gameWidth =ts*cols;
+
+
+    //宽比高小
+    if(gameWidth / cols<gameWidth / windowHeight/rows){
+        gameX = 0;
+        gameY=(windowHeight - windowHeight/rows)/2;
+    }
+    //宽比高大
+    if(gameWidth / cols>gameWidth / windowHeight/rows){
+        gameX =  (windowWidth/5*4 - gameWidth)/2;
+        gameY=0;
+    }
+
+    // alert(ts);
+
+
+    // console.log(ts);
+    let  canvas = createCanvas(windowWidth, rows * ts);
+
+    gameHeight =rows * ts;
+    cnvs = canvas;
+
     background(255);
     canvas.parent('main-holder');
     // 通过 position() 方法将 canvas 居中
@@ -171,7 +207,7 @@ function setup() {
 
 
 
-    canvas.position(50, (windowHeight-height)/2);
+
 
 
     paused = true;
@@ -181,6 +217,49 @@ function setup() {
     playStartBGM();
     onGameSetup();
     loadMoster();
+
+    towerWidth = (rect.width/5);
+    towerY = 0;
+    towerX =  width -  towerWidth;
+    towerHeight = rows * ts;
+    towerTipPaneHeight = towerHeight/10;
+
+     pageWidth = (towerWidth/12*8) ;
+     pageX = (towerWidth-pageWidth)/2-towerWidth/40;
+     arrowButtonWidth = towerWidth/12;
+     pageHeight = 2 * (pageWidth/ 2 + towerWidth/20);
+
+    // 创建两组页面
+    let page1 = new Page(towerX+pageX,towerTipPaneHeight+towerWidth/24 , pageWidth, pageHeight);
+    let page2 = new Page(towerX+pageX, towerTipPaneHeight+towerWidth/24, pageWidth, pageHeight);
+
+
+
+    // 给每个页面添加按钮
+    let labels = ['Archer Tower', 'Boiling Oil Tower', 'Cannon Tower', 'Net Thrower Tower', ];
+    for (let i = 0; i < 4; i++) {
+        let row = Math.floor(i / 2);
+        let col = i % 2;
+        page1.addButton(row, col, labels[i]);
+    }
+
+    let labels2 = ['Laser AA Tower', 'EMP Disruptor Tower', 'Trebuchet Tower', 'EMP Tower'];
+    for (let i = 0; i < 4; i++) {
+        let row = Math.floor(i / 2);
+        let col = i % 2;
+        page2.addButton(row, col, labels2[i]);
+    }
+
+    // 将页面添加到页面数组
+    pages.push(page1, page2);
+
+    // 向左和向右的箭头按钮
+    leftArrowBtn = new Button(towerX+towerWidth/24, pageHeight/2+towerWidth/6/2+towerWidth/15, towerWidth/12, towerWidth/6, null, "<");
+    rightArrowBtn = new Button(width - towerWidth/12-towerWidth/24, pageHeight/2+towerWidth/6/2+towerWidth/15, towerWidth/12, towerWidth/6, null, ">");
+    towerInfoPane = new SlidePane(towerX,pageHeight+towerTipPaneHeight+pageWidth/12,towerWidth,towerHeight/2, towerHeight/2);
+
+    pg = createGraphics(gameWidth, gameHeight); // 创建一个新的图层
+
 }
 
 // Load all sounds

@@ -133,7 +133,7 @@ class Cannon extends Particle{
 
         let rad = this.radius * ts;
         let sprties = imgAttackCannonExplosion;
-        let frameWidth = sprties.width / this.frameNumbers;
+        let frameWidth = sprties.gameWidth / this.frameNumbers;
         let frameHeight = sprties.height;
         let frameX = this.frameIndex * frameWidth;
         imageMode(CENTER);

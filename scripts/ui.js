@@ -204,28 +204,33 @@ function uiSetup()
     initMenu();
     // 获取画布位置
     let canvasInfo = getCanvasInfo();
-    // 重新调整图片大小
-    bgTextHealth.resize(190, 50);
-    bgTextCash.resize(160, 45);
-    bgTextWave.resize(190, 50);
 
-    bgTextMonsterRemainBar.resize(800, 40);
-    bgTextMonsterRemainFill.resize(800, 40);
-    iconMonsterAttack.resize(60, 60);
+    console.log(canvasInfo);
+    widthRatio = ts/110;
+    heightRatio =widthRatio;
+    pageScale = widthRatio;
+    // 重新调整图片大小
+    bgTextHealth.resize(190*widthRatio, 50*heightRatio);
+    bgTextCash.resize(160*widthRatio, 45*heightRatio);
+    bgTextWave.resize(190*widthRatio, 50*heightRatio);
+
+    bgTextMonsterRemainBar.resize(800*widthRatio, 40*heightRatio);
+    bgTextMonsterRemainFill.resize(800*widthRatio, 40*heightRatio);
+    iconMonsterAttack.resize(60*widthRatio, 60*heightRatio);
 
     // 创建按钮
-    var buttonHeight = canvasInfo.top + 20;
+    var buttonHeight = canvasInfo.top + 20*heightRatio;
 
     btnQuit = createButton('');
-    btnQuit.position(canvasInfo.left, buttonHeight);
-    btnQuit.size(60,50);
+    btnQuit.position(0, buttonHeight);
+    btnQuit.size(60*widthRatio,50*heightRatio);
     btnQuit.class('button-quit');
 
-    var btnSize = 50;
-    var space = 20;
-
+    var btnSize = 50*widthRatio;
+    var space = 20*widthRatio;
+    //
     btnReset = createButton('');
-    btnReset.position(canvasInfo.right - btnSize - space, buttonHeight);
+    btnReset.position(gameWidth - btnSize - space, buttonHeight);
     btnReset.size(btnSize,btnSize);
     btnReset.class('button-reset');
 
@@ -233,19 +238,19 @@ function uiSetup()
     btnResume.position(btnReset.position().x - btnSize - space, buttonHeight)
     btnResume.size(btnSize,btnSize);
     btnResume.class('button-resume');
-    
+
     btnPause = createButton('');
     btnPause.position(btnResume.position().x, buttonHeight)
     btnPause.size(btnSize,btnSize);
     btnPause.class('button-pause');
-    
+
     btnSpeed = createButton("x" + getCurrentSpeed().toString());
     btnSpeed.position(btnPause.position().x - btnSize - space*5, buttonHeight + 5);
-    btnSpeed.size(80,40);
+    btnSpeed.size(80*widthRatio,40*heightRatio);
     btnSpeed.class('button-speed');
-    
-
-    // 添加按钮点击事件
+    //
+    //
+    // // 添加按钮点击事件
     btnResume.mousePressed(onClickBtnResume);
     btnPause.mousePressed(onClickBtnPause);
     btnReset.mousePressed(onClickBtnReset);
@@ -316,22 +321,33 @@ function updateGameStateUI()
 
     setFont();
 
-    var space = 50;
-    var cashXPos = width / 2 - bgTextCash.width / 2;
-    var healthXPos = cashXPos - space - bgTextHealth.width;
-    var waveXPos = cashXPos + bgTextCash.width + space;
-    var ypos = 20;
-    var textYOffest = 34;
+    var space = 50*pageScale;
+    var cashXPos = width / 2 - 160*widthRatio / 2;
+    var healthXPos = cashXPos*widthRatio - space*widthRatio  - 190*widthRatio;
+    var waveXPos = cashXPos*widthRatio + bgTextCash.width + space;
+    var ypos = 20*heightRatio;
+    var textYOffest = 34*heightRatio;
+
+
+    let startX = width*0.08;
 
     imageMode(CORNER);
-    image(bgTextHealth, healthXPos, ypos);
-    text(healthText, healthXPos + 110, ypos + textYOffest);
+    // image(bgTextHealth, healthXPos, ypos,190*widthRatio,50*heightRatio);
+    // text(healthText, healthXPos + 110*widthRatio, ypos + textYOffest);
+    image(bgTextHealth, startX, ypos,190*widthRatio,50*heightRatio);
+    text(healthText, startX + 110*widthRatio, ypos + textYOffest);
 
-    image(bgTextCash, cashXPos, ypos + 3);
-    text(cashText, cashXPos + 90, ypos + textYOffest);
 
-    image(bgTextWave, waveXPos, ypos);
-    text(waveText, waveXPos + 115, ypos + textYOffest);
+    let startX2 = width*0.08+190*widthRatio +width*0.01;
+    image(bgTextCash,startX2, ypos + 3*heightRatio,160*widthRatio,45*heightRatio);
+    text(cashText, startX2 + 90*widthRatio, ypos + textYOffest);
+
+    // image(bgTextCash, cashXPos*widthRatio, ypos + 3*heightRatio,160*widthRatio,45*heightRatio);
+    // text(cashText, cashXPos*widthRatio + 90*widthRatio, ypos + textYOffest);
+
+    let startX3 = width*0.08+190*widthRatio +width*0.01+160*widthRatio+width*0.01;
+    image(bgTextWave, startX3, ypos,190*widthRatio,50*heightRatio);
+    text(waveText, startX3 + 115*widthRatio, ypos + textYOffest);
 
 }
 
@@ -345,22 +361,25 @@ function updateMonsterStateUI()
     var ratio = newMonsters.length > 0 && totalMonster > 0
         ? float(newMonsters.length) / float(totalMonster)
         : 0.01;
-    var fillWidth = lerp(0, bgTextMonsterRemainBar.width, ratio);
+    var fillWidth = lerp(0, 800*widthRatio, ratio);
 
-    var xpos = width / 2 - bgTextMonsterRemainBar.width / 2;
-    var ypos = height - bgTextMonsterRemainBar.height - 30;
-    image(bgTextMonsterRemainBar, xpos, ypos);
-    image(bgTextMonsterRemainFill, xpos, ypos, fillWidth, bgTextMonsterRemainFill.height);
-    image(iconMonsterAttack, xpos - 20, ypos-10);
+    var xpos = gameWidth / 2 - 800*widthRatio / 2;
+    var ypos = height - bgTextMonsterRemainBar.height - 30*heightRatio;
+
+
+
+    image(bgTextMonsterRemainBar, xpos, ypos,800*widthRatio, 40*heightRatio);
+    image(bgTextMonsterRemainFill, xpos, ypos, fillWidth, 40*heightRatio);
+    image(iconMonsterAttack, xpos - 20, ypos-10,60*widthRatio, 60*heightRatio);
     var monsterRemain = newMonsters.length;
-    text("Remaining enemies: "+ monsterRemain, width/2, ypos + 28);
+    text("Remaining enemies: "+ monsterRemain, gameWidth/2, ypos + 28*heightRatio);
 }
 
 function setFont()
 {
     textFont(uiFont);
-    textSize(fontSize);
-    strokeWeight(4);
+    textSize(fontSize*widthRatio);
+    strokeWeight(4*widthRatio);
     stroke(0);
     fill(255);
     textAlign(CENTER, BASELINE);
@@ -458,7 +477,7 @@ function triggerAnimationEvent()
 function animationSetup() 
 {
     angle = 0;
-    colWidth = width / colNum;
+    colWidth = gameWidth / colNum;
     isAllowTween = false;
     isFadeIn = true;
     isCountingDown = false;
@@ -483,7 +502,7 @@ function animationDraw()
         }
         if (!isFadeIn) {
             fill(0);
-            rect(0, 0, width, height);
+            rect(0, 0, gameWidth, height);
         }
         onCountingDown(remainingTime / 1000);
         return;
@@ -542,7 +561,7 @@ function onCountingDown(remainingTime)
     var msg = "Next wave will arrive in " + remainingTime.toFixed(0) + "s";
     textSize(36);
     textAlign(LEFT, BASELINE);
-    text(msg, width / 2 - 275, height / 2 - 50);
+    text(msg, gameWidth / 2 - 275, height / 2 - 50);
 
     // 显示敌人信息
     if (showMonsterInfo.length <= 0) return;
@@ -551,7 +570,7 @@ function onCountingDown(remainingTime)
     var size = 80;
     var space = 20;
     var ypos = 400;
-    var startXpos = width / 2 - monsterNumber / 2 * size - space;
+    var startXpos = gameWidth / 2 - monsterNumber / 2 * size - space;
     
     for (var i = 0; i < monsterNumber; i++)
     {
@@ -647,7 +666,7 @@ function drawHeartbeatEffect()
     let c = color(r, 0, 0, alpha);
     noStroke();
     fill(c)
-    rect(0, 0, width, height);
+    rect(0, 0, gameWidth, height);
     
     hbAngle += speed;
 }

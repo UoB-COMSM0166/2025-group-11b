@@ -9,10 +9,13 @@
   
   /* 基本页面样式 */
   body {
+
+
     background-color: #1a1a2e;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
+
   }
   
   
@@ -24,7 +27,7 @@
   
   /* 游戏区域 */
   #game-area {
-    flex: 2;
+    flex: 4;
     background-color: #000000;
     position: relative;
   }
@@ -39,6 +42,9 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* 可选：确保容器有足够的高度 */
+  min-height: 100vh; /* 让内容至少撑满屏幕，但不会超出 */
+  width: 100%;
+  box-sizing: border-box; /* 防止 padding 影响尺寸计算 */
 }
   
   /* 侧边栏 */
@@ -47,46 +53,39 @@
     background-color: #edeeef;
     overflow-y: auto;
     z-index: 1000;
-    min-width: 300px; /* 设置最小宽度 */
-    max-width: 500px; /* 可以设定一个最大宽度以避免太大 */
+
 }
 
-  
-  /* 侧边栏内各面板 */
-  #status-panel, #store-panel, #info-panel {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 2px solid #3f72af;
-    border-radius: 8px;
-    background-color: #3f72af;
-  }
-  
-  /* 面板标题 */
-  #status-panel h2,
-  #store-panel h2,
-  #info-panel h2 {
-    margin-bottom: 10px;
-    font-size: 2em;
-    text-align: center;
-  }
-  
-  /* 状态面板文本 */
-  #status-panel p {
-    margin: 5px 0;
-  }
-  
-  /* 按钮组 */
-  /*.button-group {*/
-  /*  display: flex;*/
-  /*  flex-wrap: wrap;*/
-  /*  gap: 5px;*/
-  /*  margin-top: 10px;*/
-  /*}*/
+
+/* 侧边栏内各面板 */
+#status-panel, #store-panel, #info-panel {
+  margin-bottom: 2vh;        /* 根据屏幕高度调整间距 */
+  padding: 1vh 1vw;         /* 让 padding 适应屏幕大小 */
+  border: 0.2vw solid #3f72af; /* 边框大小按屏幕宽度适应 */
+  border-radius: 0.8vw;      /* 圆角 */
+  background-color: #3f72af;
+}
+
+/* 面板标题 */
+#status-panel h2,
+#store-panel h2,
+#info-panel h2 {
+  margin-bottom: 1vh;
+  font-size: 2vw;           /* 字体大小随屏幕宽度变化 */
+  text-align: center;
+}
+
+/* 状态面板文本 */
+#status-panel p {
+  margin: 0.5vh 0;
+}
+
+/* 按钮组 */
 .button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 10px;
+  gap: 0.5vw;              /* 按钮间距随屏幕变化 */
+  margin-top: 1vh;
 }
 
 
@@ -440,10 +439,10 @@ button:hover {
   background-repeat: no-repeat;
   border: none;
   color: white;
-  padding: 8px 14px;
+  padding: 0.74vh 0.73vw;
   text-align: right;
   font-family: 'UIFont', sans-serif;
-  font-size: 20px;
+  font-size: 1.04vw;
   cursor: pointer;
   transition: transform 0.2s ease;
 }

@@ -131,7 +131,7 @@ function getTaunting(entities) {
 
 // 返回网格坐标
 function gridPos(x, y) {
-    return createVector(floor(x / ts), floor(y / ts));
+    return createVector(floor((x) / ts), floor((y) / ts));
 }
 
 // 检查点是否在圆内
@@ -141,7 +141,7 @@ function insideCircle(x, y, cx, cy, r) {
 
 // 检查鼠标是否在地图内
 function mouseInMap() {
-    return between(mouseX, 0, width) && between(mouseY, 0, height);
+    return between(mouseX, 0, gameWidth) && between(mouseY, 0, height);
 }
 
 // 返回某个值的正交邻居

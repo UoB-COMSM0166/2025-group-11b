@@ -11,7 +11,7 @@ class Bullet {
         this.alive = true; // 子弹存活状态
 
         // 子弹尺寸（基于 ts 缩放）
-        this.width = ts * 0.5; // 子弹宽度
+        this.gameWidth = ts * 0.5; // 子弹宽度
         this.height = ts * 0.2; // 子弹高度
     }
 
@@ -49,13 +49,13 @@ class Bullet {
         //
         // // 绘制一个带圆角的矩形模拟子弹体
         // rectMode(CENTER);
-        // rect(0, 0, this.width, this.height, 3);
+        // rect(0, 0, this.gameWidth, this.height, 3);
         //
         // // 在前端绘制一个小三角形作为子弹尖
         // fill(255, 255, 100);
-        // triangle(this.width / 2, -this.height / 2, this.width / 2, this.height / 2, this.width / 2 + 4, 0);
+        // triangle(this.gameWidth / 2, -this.height / 2, this.gameWidth / 2, this.height / 2, this.gameWidth / 2 + 4, 0);
 
-        image(t1Image,0,0,this.width*1.5, this.height*1.5);
+        image(t1Image,0,0,this.gameWidth*1.5, this.height*1.5);
         pop();
     }
 
@@ -93,7 +93,7 @@ class Bullet2 {
         this.alive = true; // 子弹存活状态
 
         // 子弹尺寸（基于 ts 缩放）
-        this.width = ts * 0.5; // 子弹宽度
+        this.gameWidth = ts * 0.5; // 子弹宽度
         this.height = ts * 0.2; // 子弹高度
     }
 
@@ -131,11 +131,11 @@ class Bullet2 {
         //
         // // 绘制一个带圆角的矩形模拟子弹体
         // rectMode(CENTER);
-        // rect(0, 0, this.width, this.height, 3);
+        // rect(0, 0, this.gameWidth, this.height, 3);
         //
         // // 在前端绘制一个小三角形作为子弹尖
         // fill(255, 255, 100);
-        // triangle(this.width / 2, -this.height / 2, this.width / 2, this.height / 2, this.width / 2 + 4, 0);
+        // triangle(this.gameWidth / 2, -this.height / 2, this.gameWidth / 2, this.height / 2, this.gameWidth / 2 + 4, 0);
         fill(0);
         ellipse(0,0,10,10);
 
@@ -172,7 +172,7 @@ class FireBall extends Bullet{
         translate(this.pos.x, this.pos.y); // 移动坐标到子弹位置
         rotate(this.dir.heading()); // 旋转子弹方向
 
-        image(fireBallImage,0,0,this.width*3, this.height*3);
+        image(fireBallImage,0,0,this.gameWidth*3, this.height*3);
         pop();
     }
 
@@ -192,7 +192,7 @@ class Arrow extends Bullet{
       super(x, y, target, damage, speed);
       
       // 尺寸
-      this.width = ts * 0.5;
+      this.gameWidth = ts * 0.5;
       this.height = ts * 0.2;
     }
     // 重写绘制
@@ -202,7 +202,7 @@ class Arrow extends Bullet{
       rotate(this.dir.heading());
       
       // 绘制
-      image(imgAttackArrow, -this.width / 2, -this.height / 2, this.width, this.height);
+      image(imgAttackArrow, -this.gameWidth / 2, -this.height / 2, this.gameWidth, this.height);
       
       pop();
     }
@@ -213,7 +213,7 @@ constructor(x, y, target, damage, speed = 10) {
     super(x, y, target, damage, speed);
     
     // 尺寸
-    this.width = ts * 0.5;
+    this.gameWidth = ts * 0.5;
     this.height = ts * 0.2;
 }
 // 重写绘制
@@ -223,7 +223,7 @@ draw() {
     rotate(this.dir.heading());
     
     // 绘制
-    image(imgAttackBullet, -this.width / 2, -this.height / 2, this.width, this.height);
+    image(imgAttackBullet, -this.gameWidth / 2, -this.height / 2, this.gameWidth, this.height);
     
     pop();
 }

@@ -25,17 +25,17 @@ let btnGoBackForD;
 function initMenu()
 {
     // 主菜单的按钮初始化
-    btnPlay = new MenuButton(width / 2 - 100, height - 300, 200, 80, imgPlayButton, "PLAY", color(255), onPlayButtonClicked);
+    btnPlay = new MenuButton(gameWidth / 2 - 100, height - 300, 400, 160, imgPlayButton, "PLAY", color(255), onPlayButtonClicked);
     btnPlay.setTextSize(50);
     mainMenuButtons.push(btnPlay);
 
     // 关卡页面的按钮初始化
     levelSelectedIndex = 0;
     let space = 50;
-    btnLeft = new MenuButton(space, height / 2 - 75, 75, 150, imgLeftArrowButton, "", color(255), onLeftArrowButtonClicked);
-    btnRight = new MenuButton(width - space - 75, height / 2 - 75, 75, 150, imgRightArrowButton, "", color(255), onRightArrowButtonClicked);
-    btnStart = new MenuButton(width / 2 - 100, height - 250, 200, 100, imgStartButton, "START", color(255), onStartButtonClicked);
-    btnReturn = new MenuButton(0, 20, 60, 50, imgReturnButton, "", color(255), onReturnButtonClicked);
+    btnLeft = new MenuButton(space, height / 2 - 75, 75, 150, imgLeftArrowButton, "LEFT", color(255), onLeftArrowButtonClicked);
+    btnRight = new MenuButton(gameWidth - space - 75, height / 2 - 75, 75, 150, imgRightArrowButton, "RIGHT", color(255), onRightArrowButtonClicked);
+    btnStart = new MenuButton(gameWidth / 2 - 100, height - 250, 300, 150, imgStartButton, "START", color(255), onStartButtonClicked);
+    btnReturn = new MenuButton(0, 20, 60, 50, imgReturnButton, "RETURN", color(255), onReturnButtonClicked);
     btnStart.setTextSize(50);
     levelMenuButtons.push(btnLeft);
     levelMenuButtons.push(btnRight);
@@ -43,15 +43,15 @@ function initMenu()
     levelMenuButtons.push(btnReturn);
 
     // 胜利结算页面按钮初始化
-    btnContinue = new MenuButton(width / 2 - 100, height - 250, 200, 80, imgContinueButton, "CONTINUE", color(255), onContinueButtonClicked);
-    btnGoBackForV = new MenuButton(width / 2 - 100, height - 150, 200, 80, imgGoBackButton, "RETURN", color(255), onGoBackButtonClicked);
+    btnContinue = new MenuButton(gameWidth / 2 - 100, height - 250, 200, 80, imgContinueButton, "CONTINUE", color(255), onContinueButtonClicked);
+    btnGoBackForV = new MenuButton(gameWidth / 2 - 100, height - 150, 200, 80, imgGoBackButton, "RETURN", color(255), onGoBackButtonClicked);
     btnContinue.setTextSize(30);
     btnGoBackForV.setTextSize(30);
     victoryMenuButtons.push(btnContinue);
     victoryMenuButtons.push(btnGoBackForV);
     // 失败结算页面按钮初始化
-    btnRetry = new MenuButton(width / 2 - 100, height - 250, 200, 80, imgRetryButton, "RETRY", color(255), onRetryButtonClicked);
-    btnGoBackForD = new MenuButton(width / 2 - 100, height - 150, 200, 80, imgGoBackButton, "RETURN", color(255), onGoBackButtonClicked);
+    btnRetry = new MenuButton(gameWidth / 2 - 100, height - 250, 200, 80, imgRetryButton, "RETRY", color(255), onRetryButtonClicked);
+    btnGoBackForD = new MenuButton(gameWidth / 2 - 100, height - 150, 200, 80, imgGoBackButton, "RETURN", color(255), onGoBackButtonClicked);
     btnRetry.setTextSize(30);
     btnGoBackForD.setTextSize(30);
     defeatedMenuButtons.push(btnRetry);
@@ -152,6 +152,7 @@ function drawMainMenu()
     
     // 绘制封面
     image(mainMenuCover, 0, 0, width, height);
+
     // 绘制按钮
     for (let btn of mainMenuButtons) {
         btn.draw();
@@ -162,7 +163,7 @@ function drawMainMenu()
 function drawLevelMenu()
 {
     if (!showLevelMenu) return;
-
+    background(0);
     // 绘制背景
     imageMode(CORNER);
     levelMapRowCurXpos = lerp(levelMapRowCurXpos, levelMapRowTargetXpos, 0.1);
@@ -170,7 +171,11 @@ function drawLevelMenu()
     {
         var x = levelMapRowCurXpos + i * width;
         var img = levelMapsImage[i];
-        image(img, x, 0, width, height);
+
+
+            image(img, x, 0, width, height);
+
+
     }
     
     noStroke();
@@ -185,13 +190,16 @@ function drawLevelMenu()
     fill(255);
     textFont(uiFont);
     textAlign(CENTER, CENTER);
-    textSize(80);
-    text(levelName, width / 2, height / 2 + 100);
+    textSize(80*widthRatio);
+    text(levelName, width / 2, height / 2 + 150*heightRatio);
     
     // 绘制按钮
     for (let btn of levelMenuButtons) {
         btn.draw();
     }
+    //遮住地圖连接画面
+    // fill(0);
+    // rect(gameWidth,0,windowWidth,gameHeight);
 }
 
 // 绘制胜利结算页面
@@ -202,15 +210,15 @@ function drawVictoryMenu()
     // 背景
     noStroke();
     fill(0, 80);
-    rect(0, 0, width, height);
+    rect(0, 0, gameWidth, height);
 
     // 图标
     imageMode(CENTER);
     let scale = 0.5;
-    image(imgResultVictory, width/2, height/2, imgResultVictory.width * scale, imgResultVictory.height * scale);
+    image(imgResultVictory, gameWidth/2, height/2, imgResultVictory.gameWidth * scale, imgResultVictory.height * scale);
     // 评分
     let ratingImg = getRatingImage();
-    image(ratingImg, width/2, height/2 - 200, ratingImg.width * scale, ratingImg.height * scale);
+    image(ratingImg, gameWidth/2, height/2 - 200, ratingImg.gameWidth * scale, ratingImg.height * scale);
     
     // 绘制按钮
     for (let btn of victoryMenuButtons) {
@@ -225,15 +233,15 @@ function drawDefeatedMenu()
     // 背景
     noStroke();
     fill(0, 80);
-    rect(0, 0, width, height);
+    rect(0, 0, gameWidth, height);
 
     // 图标
     imageMode(CENTER);
     let scale = 0.5;
-    image(imgResultDefeated, width/2, height/2, imgResultDefeated.width * scale, imgResultDefeated.height * scale);
+    image(imgResultDefeated, gameWidth/2, height/2, imgResultDefeated.gameWidth * scale, imgResultDefeated.height * scale);
     // 评分
     let ratingImg = getRatingImage();
-    image(ratingImg, width/2, height/2 - 200, ratingImg.width * scale, ratingImg.height * scale);
+    image(ratingImg, gameWidth/2, height/2 - 200, ratingImg.gameWidth * scale, ratingImg.height * scale);
 
     for (let btn of defeatedMenuButtons) {
         btn.draw();
@@ -418,8 +426,8 @@ class MenuButton {
 
     // 检测鼠标是否在按钮内
     isMouseOver() {
-      return mouseX > this.x && mouseX < this.x + this.w &&
-             mouseY > this.y && mouseY < this.y + this.h;
+      return mouseX > this.x-this.tarWidth/2 && mouseX < this.x + this.tarWidth/2 &&
+             mouseY > this.y-this.tarHeight/2 && mouseY < this.y + this.tarHeight/2;
     }
   
     
@@ -427,7 +435,7 @@ class MenuButton {
     draw() {
         if (!this.isVisible) return;
         push();
-        translate(this.x, this.y);
+
         
         var imgOffset = 0;
         var textOffset = 0;
@@ -442,24 +450,117 @@ class MenuButton {
             imgOffset = 0;
             textOffset = 0;
         }
-        
-        this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-        this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-        this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
-        
-        imageMode(CENTER);
-        image(this.bg, this.w/2, this.h/2, this.tarWidth, this.tarHeight);
+        if(this.label=="PLAY"){
+            this.x = width/2;
+            this.y = height/2;
+            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
 
-        // 绘制按钮文本
-        if (this.label.lenght === 0) return;
-        stroke(0);
-        strokeWeight(this.tarFontSize / 6);
-        fill(this.labelColor);
-        textFont(uiFont);
-        textAlign(CENTER, CENTER);
-        textSize(this.tarFontSize);
-        text(this.label, this.w / 2, this.h / 2 - this.tarFontSize / 5);
-        pop();
+            imageMode(CENTER);
+            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+
+            // 绘制按钮文本
+            if (this.label.lenght === 0) return;
+            stroke(0);
+            strokeWeight(this.tarFontSize / 6*widthRatio);
+            fill(this.labelColor);
+            textFont(uiFont);
+            textAlign(CENTER, CENTER);
+            textSize(this.tarFontSize*widthRatio);
+            text(this.label,  this.x,this.y);
+            pop();
+
+        }else if(this.label=="START"){
+            this.x = width/2;
+            this.y = height/2;
+            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+
+            imageMode(CENTER);
+            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+
+            // 绘制按钮文本
+            if (this.label.lenght === 0) return;
+            stroke(0);
+            strokeWeight(this.tarFontSize / 6*widthRatio);
+            fill(this.labelColor);
+            textFont(uiFont);
+            textAlign(CENTER, CENTER);
+            textSize(this.tarFontSize*widthRatio);
+            text(this.label,  this.x,this.y);
+            pop();
+
+        }
+
+        else if(this.label=="RIGHT"){
+            this.x = width-this.tarWidth*widthRatio;
+            this.y = height/2;
+            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+
+            imageMode(CENTER);
+            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+
+
+            pop();
+
+        }
+
+        else if(this.label=="LEFT"){
+            this.x = this.tarHeight*widthRatio/2
+            this.y = height/2;
+            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+
+            imageMode(CENTER);
+            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+
+
+            pop();
+
+        }
+
+        else if(this.label=="RETURN"){
+            this.x = this.tarWidth*widthRatio/2;
+            this.y =  this.tarHeight*widthRatio;
+            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+
+            imageMode(CENTER);
+            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+
+
+            pop();
+
+        }
+
+
+            else{
+            // translate(this.x, this.y);
+            // this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+            // this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+            // this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+            //
+            // imageMode(CENTER);
+            // image(this.bg, this.w/2, this.h/2, this.tarWidth, this.tarHeight);
+            //
+            // // 绘制按钮文本
+            // if (this.label.lenght === 0) return;
+            // stroke(0);
+            // strokeWeight(this.tarFontSize / 6);
+            // fill(this.labelColor);
+            // textFont(uiFont);
+            // textAlign(CENTER, CENTER);
+            // textSize(this.tarFontSize);
+            // text(this.label, this.w / 2, this.h / 2 - this.tarFontSize / 5);
+            // pop();
+        }
+
     }
   
     // 按钮按下
