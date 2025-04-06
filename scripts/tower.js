@@ -60,6 +60,66 @@ class Tower {  // 创建塔的类
         return this.cd === 0;  // 如果冷却时间为0，表示可以攻击
     }
 
+    // 辅助深克隆方法
+    deepClone(obj, hash = new WeakMap()) {
+        // 基本类型直接返回
+        if (obj === null || typeof obj !== 'object') return obj;
+
+        // 如果已经克隆过，直接返回克隆后的对象
+        if (hash.has(obj)) return hash.get(obj);
+
+        let clone;
+
+        // 处理数组
+        if (Array.isArray(obj)) {
+            clone = [];
+            hash.set(obj, clone); // 记录当前对象
+            clone = obj.map(item => this.deepClone(item, hash));
+            return clone;
+        }
+
+        // 处理普通对象
+        clone = {};
+        hash.set(obj, clone); // 记录当前对象
+
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                clone[key] = this.deepClone(obj[key], hash);
+            }
+        }
+
+        return clone;
+    }
+    copyTower(template) {
+        // 如果没有传入模板，使用空对象
+        template = typeof template === 'undefined' ? {} : template;
+
+        // 获取模板的所有键
+        var keys = Object.keys(template);
+
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            var value = template[key];
+
+            // 深克隆逻辑
+            if (value && typeof value === 'object') {
+                // 如果是数组，创建新数组并递归克隆元素
+                if (Array.isArray(value)) {
+                    this[key] = value.map(item =>
+                        item && typeof item === 'object' ? this.deepClone(item) : item
+                    );
+                }
+                // 如果是普通对象，递归克隆
+                else {
+                    this[key] = this.deepClone(value);
+                }
+            }
+            // 基本类型直接赋值
+            else {
+                this[key] = value;
+            }
+        }
+    }
     draw() {  // 绘制塔
         // Draw turret base  // 绘制塔基
         if (this.hasBase && !this.baseOnTop) this.drawBase();
@@ -172,7 +232,9 @@ class Tower {  // 创建塔的类
         var keys = Object.keys(template);  // 获取模板的所有键
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];  // 遍历模板键
+
             this[key] = template[key];  // 设置属性
+            console.log(key);
         }
         if (template.cost) this.totalCost += template.cost;  // 如果有成本，增加总成本
     }

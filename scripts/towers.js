@@ -34,7 +34,7 @@ tower.gun = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -124,7 +124,7 @@ tower.oil = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -222,7 +222,7 @@ tower.trebuchet = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -310,7 +310,7 @@ tower.laser = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -652,7 +652,7 @@ tower.slow = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -788,7 +788,7 @@ tower.bomb = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -803,7 +803,7 @@ tower.bomb = {
 
         // push();
         // imageMode(CENTER);
-        // image(t3_1Image, 0, 0, cellWidth,cellHeight);
+        // image(t3_1Image, 0, 0, ts,ts);
         // pop();
     },
     onHit: function(e) {
@@ -887,7 +887,7 @@ tower.slow2 = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
         pop();
@@ -1032,7 +1032,7 @@ tower.emp = {
         imageMode(CENTER);
         if (this.selected == true) this.diaplayRange(this.pos.x, this.pos.y); // 被选中时效果
         // 根据塔的 radius 和全局 ts 缩放绘制贴图
-        image(this.visual, this.pos.x, this.pos.y, cellWidth, cellHeight);
+        image(this.visual, this.pos.x, this.pos.y, ts, ts);
         this.displayCD(this.pos.x, this.pos.y);   // 绘制cd
         this.displayUpgrade(this.pos.x + ts/3, this.pos.y - ts/3);  //绘制升级按钮
     },

@@ -82,9 +82,11 @@ function getInRange(cx, cy, radius, entities) {
     var results = [];
     for (var i = 0; i < entities.length; i++) {
         var e = entities[i];
-        if (insideCircle(e.pos.x, e.pos.y, cx, cy, (radius + 1) * ts)) {
+
+        if(dist(e.pos.x, e.pos.y, cx, cy)<radius*ts){
             results.push(e);
         }
+
     }
     return results;
 }
@@ -129,9 +131,36 @@ function getTaunting(entities) {
     return results;
 }
 
+//检测两个居中矩形的碰撞，重叠
+function checkRectCollision(rect1, rect2) {
+    // rect1和rect2都是包含x,y,width,height属性的对象
+    // x,y表示中心点坐标
+
+    // 计算两个矩形在x轴和y轴上的半宽高
+    let rect1HalfWidth = rect1.width / 2;
+    let rect1HalfHeight = rect1.height / 2;
+    let rect2HalfWidth = rect2.width / 2;
+    let rect2HalfHeight = rect2.height / 2;
+
+    // 检查x轴和y轴上是否有重叠
+    let xCollision = abs(rect1.x - rect2.x) < (rect1HalfWidth + rect2HalfWidth);
+    let yCollision = abs(rect1.y - rect2.y) < (rect1HalfHeight + rect2HalfHeight);
+
+    // 只有当x轴和y轴都有重叠时才发生碰撞
+    return xCollision && yCollision;
+}
+
 // 返回网格坐标
 function gridPos(x, y) {
     return createVector(floor((x) / ts), floor((y) / ts));
+}
+
+function gridPosByLastest(x, y) {
+
+    return createVector(floor((x-gameX) / ts), floor((y-gameY) / ts));
+
+
+
 }
 
 // 检查点是否在圆内
@@ -141,7 +170,7 @@ function insideCircle(x, y, cx, cy, r) {
 
 // 检查鼠标是否在地图内
 function mouseInMap() {
-    return between(mouseX, 0, gameWidth) && between(mouseY, 0, height);
+    return between(mouseX, gameX, gameX+gameWidth) && between(mouseY, gameY, gameY+gameHeight);
 }
 
 // 返回某个值的正交邻居

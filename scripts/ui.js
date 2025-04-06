@@ -222,7 +222,7 @@ function uiSetup()
     var buttonHeight = canvasInfo.top + 20*heightRatio;
 
     btnQuit = createButton('');
-    btnQuit.position(0, buttonHeight);
+    btnQuit.position(gameX, buttonHeight);
     btnQuit.size(60*widthRatio,50*heightRatio);
     btnQuit.class('button-quit');
 

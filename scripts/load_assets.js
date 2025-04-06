@@ -75,12 +75,19 @@ let heightRatio = 0;
 let pageScale = 0;
 
 let pg; // 定义图层
+
+//英雄行动
+let walkSprites = {};
+
+let hero;
 function preload() {
     // 加载塔图片（确保图片路径正确）
 
     loadImages();
     loadSounds();
     preloadUIAssets();
+
+
 }
 
 function loadImages() {
@@ -156,6 +163,21 @@ function loadImages() {
     imgAttackLightning =  loadImage("images/tower/sprites_lightning.png");
     imgAttackStun =  loadImage("images/tower/sprites_stun.png");
     imgUpgradeShine =  loadImage("images/tower/sprites_upgrade_shine.png");
+
+    //英雄图片
+    walkSprites.walk = [
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_000.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_001.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_002.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_003.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_004.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_005.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_006.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_007.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_008.png'),
+        loadImage('images/hero/1_KNIGHT/Knight_01__WALK_009.png'),
+    ];
+
 }
 
 
