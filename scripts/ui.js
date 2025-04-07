@@ -62,9 +62,9 @@ var curWaveMonstersNumber;      // 当前波次要生成怪物数量
 var showMonsterInfo = [];       // 过场动画显示的怪物信息
 
 // 过场动画可调参数：
-let colNum = 15;                        // 列数
-let stopTime = 5;                       // 等待时间
-let spd = 0.05;                         // 动效速度
+let colNum = 1;                        // 列数
+let stopTime = 1;                       // 等待时间
+let spd = 0.5;                         // 动效速度
 let offsetFactor = Math.PI / (colNum * 4);  // 偏移量
 let loopTime = 1;                       // 动画循环次数（一般为1次）
 

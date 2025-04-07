@@ -1082,7 +1082,7 @@ function draw() {
     lateUpdateMenuDisplay();
     // //调试模式
     if (debugMap) {
-        drawMapGrid();
+        //drawMapGrid();
     }
     pop();
 

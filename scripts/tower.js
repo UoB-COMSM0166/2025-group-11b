@@ -270,16 +270,12 @@ class Tower {  // 创建塔的类
         let wid = lerp(0, 2 * ts / 3, cdRatio);
         rect(cx - ts / 3, cy + ts / 5, wid, ts / 5);
     }
-
-    displayUpgrade(cx, cy)
-    {
+    displayUpgrade(cx, cy) {
         let hasUpgrade = this.upgrades.length > 0;
         if (!hasUpgrade) return;
         let enoughCash = cash > this.upgrades[0].cost;
         let icon = enoughCash ? iconUpgrade : iconUpgradeGrey;
         let scale = 0.2;
-        let floatRange = enoughCash ? ts * scale : 0;
-        let anlge = frameCount * 0.1;
-        image(icon, cx, cy + sin(anlge) * floatRange, ts * scale, ts * scale);
+        image(icon, cx, cy, ts * scale, ts * scale); // 移除 sin(angle) 浮动计算
     }
 }

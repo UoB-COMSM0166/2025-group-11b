@@ -541,9 +541,7 @@ class Hero {  // 创建塔的类
         let enoughCash = cash > this.upgrades[0].cost;
         let icon = enoughCash ? iconUpgrade : iconUpgradeGrey;
         let scale = 0.2;
-        let floatRange = enoughCash ? ts * scale : 0;
-        let anlge = frameCount * 0.1;
-        image(icon, cx, cy + sin(anlge) * floatRange, ts * scale, ts * scale);
+        image(icon, cx, cy, ts * scale, ts * scale); // 移除了浮动效果
     }
 
 
