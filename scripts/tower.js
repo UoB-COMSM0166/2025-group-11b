@@ -234,7 +234,6 @@ class Tower {  // 创建塔的类
             var key = keys[i];  // 遍历模板键
 
             this[key] = template[key];  // 设置属性
-            console.log(key);
         }
         if (template.cost) this.totalCost += template.cost;  // 如果有成本，增加总成本
     }

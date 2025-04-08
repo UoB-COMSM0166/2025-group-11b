@@ -9,7 +9,7 @@ function atTileCenter(x, y, col, row) {
 
 // 检查数字是否在范围内（不包含边界）
 function between(num, min, max) {
-    return num > Math.min(min, max) && num < Math.max(min, max);
+    return num >= Math.min(min, max) && num <= Math.max(min, max);
 }
 
 // 构建一个二维数组，填充指定值
@@ -170,9 +170,12 @@ function insideCircle(x, y, cx, cy, r) {
 
 // 检查鼠标是否在地图内
 function mouseInMap() {
-    return between(mouseX, gameX, gameX+gameWidth) && between(mouseY, gameY, gameY+gameHeight);
-}
+    const inX = between(mouseX, gameX, gameX + gameWidth);
+    const inY = between(mouseY, gameY, gameY + gameHeight);
+    const inside = inX && inY;
 
+    return inside;
+}
 // 返回某个值的正交邻居
 function neighbors(grid, col, row, val) {
     var neighbors = [];

@@ -300,7 +300,7 @@ class Hero {  // 创建塔的类
 
                     //已经有能力，相同位置的塔升级了 可以重新获取
                     if (checkRectCollision(rect1, this.powerTowerPostionRect) && this.createPower == false) {
-                        console.log("生成")
+                        
 
                         if (this.tower.name != t.name) {
                             this.resetPowerCoolDown();

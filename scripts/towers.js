@@ -1,10 +1,10 @@
 function createTower(x, y, template) {
-    var t = new Tower(x, y);
+    const t = new Tower(x, y);
+    t.gridPos = createVector(x, y); 
     t.upgrade(template);
     t.onCreate();
     return t;
 }
-
 
 var tower = {};
 

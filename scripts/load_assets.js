@@ -187,45 +187,53 @@ function setup() {
     let rect = div.getBoundingClientRect();
     console.log(`宽度: ${rect.width}, 高度: ${rect.height}`);
 
+    cols = 12;
+    rows = 8;
+
+
+    console.log("[setup] windowWidth:", windowWidth, "windowHeight:", windowHeight);
+    console.log("[setup] cols:", cols, "rows:", rows);
     gameWidth = windowWidth/5*4;
     ts = min(gameWidth / cols,windowHeight/rows); // 取最小值，确保是正方形
     gameWidth =ts*cols;
-
-
+    gameX = 0; // 补上这一
+    console.log("[setup] ts:", ts);
+    console.log("[setup] gameWidth:", gameWidth);
     //宽比高小
-    if(gameWidth / cols<gameWidth / windowHeight/rows){
+    let mapRatio = gameWidth / cols;
+    let screenRatio = windowHeight / rows;
+    
+    if (mapRatio < screenRatio) {
         gameX = 0;
-        gameY=(windowHeight - windowHeight/rows)/2;
+        gameY = (windowHeight - rows * mapRatio) / 2;
+    } else {
+        gameX = (windowWidth / 5 * 4 - cols * screenRatio) / 2;
+        gameY = 0;
     }
-    //宽比高大
-    if(gameWidth / cols>gameWidth / windowHeight/rows){
-        gameX =  (windowWidth/5*4 - gameWidth)/2;
-        gameY=0;
-    }
-
+    console.log("[setup] gameX:", gameX, "gameY:", gameY);
     // alert(ts);
 
 
     // console.log(ts);
-    let  canvas = createCanvas(windowWidth, rows * ts);
+    let  cnvs = createCanvas(windowWidth, rows * ts);
 
     gameHeight =rows * ts;
-    cnvs = canvas;
+ 
 
     background(255);
-    canvas.parent('main-holder');
+    cnvs.parent('main-holder');
     // 通过 position() 方法将 canvas 居中
 
     // Add a class attribute to the canvas.
-    canvas.class('pinkborder');
+    cnvs.class('pinkborder');
 
 
     // Select the canvas by its class.
-    canvas = select('.pinkborder');
+  
 
 
     // Style its border.
-    canvas.style('display', 'block');  // 确保 canvas 被当作块级元素
+    cnvs.style('display', 'block');  // 确保 canvas 被当作块级元素
 
 
 
@@ -281,6 +289,7 @@ function setup() {
     towerInfoPane = new SlidePane(towerX,pageHeight+towerTipPaneHeight+pageWidth/12,towerWidth,towerHeight/2, towerHeight/2);
 
     pg = createGraphics(gameWidth, gameHeight); // 创建一个新的图层
+    
 
 }
 

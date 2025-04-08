@@ -53,7 +53,6 @@ effects.slow2 = { // 定义减速效果
         }
 
         e.count++; // 每次调用 onStart 时，count 增加
-        console.log(e.count + " --------- " + e.isSlow2);
 
         // 判断是否达到2000次
         if (e.count < 10) {

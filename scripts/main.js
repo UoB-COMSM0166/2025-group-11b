@@ -5,7 +5,7 @@ const defaultCash = 9999999;
 let mapData = maps.customMap;  // 获取自定义地图数据
 
 
-let debugMap = true;  // 是否显示调试地图
+let debugMap = false;  // 是否显示调试地图
 let enableShakeEffect = true;   // 是否开启画面震动
 let enableHeartbeatEffect = true;   // 是否开启心跳效果
 
@@ -141,20 +141,38 @@ function addWave(pattern) {
 }
 
 // 购买并放置防御塔（当玩家资金充足时）
-function buy(t) {                          // 定义购买函数，接收防御塔配置对象t作为参数
-    if (cash >= t.cost) {                  // 校验玩家当前资金是否足够购买该防御塔
-        cash -= t.cost;                    // 扣除购买消耗的金额
-        toPlace = false;                   // 关闭防御塔放置状态指示器
-        selected = t;                      // 将当前选中对象设为该防御塔
-        if (grid[t.gridPos.x][t.gridPos.y] === 0)  // 检查目标网格单元是否为空置状态
-            toPathfind = true;              // 触发路径重新计算标志（地形变更需更新敌人路径）
-        // 更新界面显示的防御塔信息
+function buy(t) {
+    const { x, y } = t.gridPos || {};
+    const canPlaceHere = typeof x !== 'undefined' && typeof y !== 'undefined' && canPlace(x, y);
+
+    if (t && canPlaceHere && cash >= t.cost) {
+        cash -= t.cost;
+        toPlace = false;
+        selected = t;
+        toPathfind = true;
+
         towerInfoPane.t = t;
         towerInfoPane.isExpanded = false;
         towerInfoPane.toggle();
-        newTowers.push(t);                 // 将新防御塔加入管理队列
+        towerInfoPane.isPlaceTower = true;
+
+        newTowers.push(t);
+        grid[x][y] = 3;
+
+        console.log("[buy] 成功放置塔", t);
+    } else {
+        console.warn("[buy] 放置失败，条件不足", {
+            tower: t,
+            canPlaceHere,
+            hasCash: cash >= (t?.cost || 0),
+            gridVal: grid?.[x]?.[y],
+        });
     }
 }
+
+
+
+
 
 function canPlace(col, row) {
     if (!toPlace) return false;
@@ -454,102 +472,6 @@ function randomWave() {
     }
 
 
-    // if (isWave(0, 3)) {
-    //     waves.push([120, ['BatteringRam',100]]);
-    // }
-    // if (isWave(3, 4)) {
-    //     waves.push([100, ['BatteringRam', 100]]);
-    // }
-    // if (isWave(2, 7)) {
-    //     waves.push([30, ['weak', 25], ['strong', 25]]);
-    //     waves.push([20, ['strong', 25]]);
-    // }
-    // if (isWave(3, 7)) {
-    //     waves.push([40, ['fast', 25]]);
-    // }
-    // if (isWave(4, 14)) {
-    //     waves.push([20, ['fast', 50]]);
-    // }
-    // if (isWave(5, 6)) {
-    //     waves.push([20, ['strong', 50], ['fast', 25]]);
-    // }
-    // if (isWave(8, 12)) {
-    //     waves.push([20, ['medic', 'strong', 'strong', 25]]);
-    // }
-    // if (isWave(10, 13)) {
-    //     waves.push([20, ['medic', 'strong', 'strong', 50]]);
-    //     waves.push([30, ['medic', 'strong', 'strong', 50], ['fast', 50]]);
-    //     waves.push([5, ['fast', 50]]);
-    // }
-    // if (isWave(12, 16)) {
-    //     waves.push([20, ['medic', 'strong', 'strong', 50], ['strongFast', 50]]);
-    //     waves.push([10, ['strong', 50], ['strongFast', 50]]);
-    //     waves.push([10, ['medic', 'strongFast', 50]]);
-    //     waves.push([10, ['strong', 25], ['stronger', 25], ['strongFast', 50]]);
-    //     waves.push([10, ['strong', 25], ['medic', 25], ['strongFast', 50]]);
-    //     waves.push([20, ['medic', 'stronger', 'stronger', 50]]);
-    //     waves.push([10, ['medic', 'stronger', 'strong', 50]]);
-    //     waves.push([10, ['medic', 'strong', 50], ['medic', 'strongFast', 50]]);
-    //     waves.push([5, ['strongFast', 100]]);
-    //     waves.push([20, ['stronger', 50]]);
-    // }
-    // if (isWave(13, 20)) {
-    //     waves.push([40, ['tank', 'stronger', 'stronger', 'stronger', 10]]);
-    //     waves.push([10, ['medic', 'stronger', 'stronger', 50]]);
-    //     waves.push([40, ['tank', 25]]);
-    //     waves.push([20, ['tank', 'stronger', 'stronger', 50]]);
-    //     waves.push([20, ['tank', 'medic', 50], ['strongFast', 25]]);
-    // }
-    // if (isWave(14, 20)) {
-    //     waves.push([20, ['tank', 'stronger', 'stronger', 50]]);
-    //     waves.push([20, ['tank', 'medic', 'medic', 50]]);
-    //     waves.push([20, ['tank', 'medic', 50], ['strongFast', 25]]);
-    //     waves.push([10, ['tank', 50], ['strongFast', 25]]);
-    //     waves.push([10, ['faster', 50]]);
-    //     waves.push([20, ['tank', 50], ['faster', 25]]);
-    // }
-    // if (isWave(17, 25)) {
-    //     waves.push([20, ['taunt', 'stronger', 'stronger', 'stronger', 25]]);
-    //     waves.push([20, ['spawner', 'stronger', 'stronger', 'stronger', 25]]);
-    //     waves.push([20, ['taunt', 'tank', 'tank', 'tank', 25]]);
-    //     waves.push([40, ['taunt', 'tank', 'tank', 'tank', 25]]);
-    // }
-    // if (isWave(19)) {
-    //     waves.push([20, ['spawner', 1], ['tank', 20], ['stronger', 25]]);
-    //     waves.push([20, ['spawner', 1], ['faster', 25]]);
-    // }
-    // if (isWave(23)) {
-    //     waves.push([20, ['taunt', 'medic', 'tank', 25]]);
-    //     waves.push([20, ['spawner', 2], ['taunt', 'medic', 'tank', 25]]);
-    //     waves.push([10, ['spawner', 1], ['faster', 100]]);
-    //     waves.push([5, ['faster', 100]]);
-    //     waves.push([
-    //         20, ['tank', 100], ['faster', 50],
-    //         ['taunt', 'tank', 'tank', 'tank', 50]
-    //     ]);
-    //     waves.push([
-    //         10, ['taunt', 'stronger', 'tank', 'stronger', 50],
-    //         ['faster', 50]
-    //     ]);
-    // }
-    // if (isWave(25)) {
-    //     waves.push([5, ['taunt', 'medic', 'tank', 50], ['faster', 50]]);
-    //     waves.push([5, ['taunt', 'faster', 'faster', 'faster', 50]]);
-    //     waves.push([
-    //         10, ['taunt', 'tank', 'tank', 'tank', 50],
-    //         ['faster', 50]
-    //     ]);
-    // }
-    // if (isWave(30)) {
-    //     waves.push([5, ['taunt', 'faster', 'faster', 'faster', 50]]);
-    //     waves.push([5, ['taunt', 'tank', 'tank', 'tank', 50]]);
-    //     waves.push([5, ['taunt', 'medic', 'tank', 'tank', 50]]);
-    //     waves.push([1, ['faster', 200]]);
-    // }
-    // if (isWave(35)) {
-    //     waves.push([0, ['taunt', 'faster', 200]]);
-    // }
-
     return random(waves);
 }
 
@@ -642,14 +564,15 @@ function sell(t) {
 
 // Set a tower to place
 function setPlace(t) {
-
     towerType = t;
     toPlace = true;
     towerInfoPane.t = createTower(0, 0, tower[towerType]);
     towerInfoPane.isExpanded = false;
     towerInfoPane.toggle();
-
+    towerInfoPane.isPlaceTower = false;
+    console.log("[setPlace] 设置塔类型为:", t);
 }
+
 
 // Visualize range of tower
 function showRange(t, cx, cy) {
@@ -688,16 +611,7 @@ function updatePause() {
     // document.getElementById('pause').innerHTML = paused ? 'Start' : 'Pause';
 }
 
-// // Update game status display with wave, health, and cash
-// function updateStatus() {
-//     // 如果当前波数超过总波数，则显示总波数（例如在最后一波中显示“2/2”）
-//     var displayWave = wave > totalWaves ? totalWaves : wave;
-//     document.getElementById('wave').innerHTML = '波数: ' + displayWave + '/' + totalWaves;
-//     document.getElementById('health').innerHTML = 'Health: ' + health + '/' + maxHealth;
-//     document.getElementById('cash').innerHTML = '$' + cash;
-// }
 
-// Upgrade tower
 function upgrade(t) {      // 定义升级函数，接收升级配置对象t作为参数
     if (cash >= t.cost) {    // 校验当前资金是否满足升级所需费用
         cash -= t.cost;      // 扣除升级消耗的资金
@@ -753,25 +667,7 @@ function draw() {
     // 绘制背景图（覆盖整个画布）
     image(bgImg, 0, 0, gameWidth, height);
 
-    // for (let col = 0; col < mapData.cols; col++) {
-    //     for (let row = 0; row < mapData.rows; row++) {
-    //         let value = mapData.grid[col][row];
-    //         let alpha = 200;
-    //         // 根据值设置不同颜色
-    //         let colors = {
-    //             0: color(255, 0, 0, alpha),   // 红色：起点
-    //             1: color(200, 200, 0, alpha), // 黄色：路径
-    //             3: color(0, 255, 0, alpha),   // 绿色：可放塔
-    //             2: color(100, alpha),         // 灰色：不可放塔
-    //             4: color(0, 0, 255, alpha)    // 蓝色：终点
-    //         };
 
-    //         fill(colors[value] || color(255));
-    //         stroke(0);
-    //         rect(col * ts, row * ts, ts, ts);
-
-    //     }
-    // }
 
 
     // Update game status
@@ -783,41 +679,7 @@ function draw() {
         if (scd > 0) scd--;
         if (wcd > 0 && toWait) wcd--;
     }
-    //绘制出入口
-    // Draw spawnpoints
-    // for (var i = 0; i < spawnpoints.length; i++) {
-    //     stroke(255);
-    //     fill(0, 230, 64);
-    //     var s = spawnpoints[i];
-    //     rect(s.x * ts, s.y * ts, ts, ts);
-    // }
-
-    // Draw exit
-    // stroke(255);
-    // fill(207, 0, 15);
-    // rect(exit.x * ts, exit.y * ts, ts, ts);
-    //
-    // // 绘制出生点
-    // for (var i = 0; i < spawnpoints.length; i++) {
-    //     stroke(255); // 设置描边颜色为白色
-    //     fill(0, 230, 64); // 设置填充颜色为绿色
-    //     var s = spawnpoints[i]; // 获取当前出生点
-    //     rect(s.x * ts, s.y * ts, ts, ts); // 绘制出生点矩形
-    // }
-
-// 绘制出口
-//     stroke(255); // 设置描边颜色为白色
-    // fill(207, 0, 15); // 设置填充颜色为红色
-    // rect(exit.x * ts, exit.y * ts, ts, ts); // 绘制出口矩形
-
-// 绘制临时出生点
-//     for (var i = 0; i < tempSpawns.length; i++) {
-//         stroke(255); // 设置描边颜色为白色
-//         fill(155, 32, 141); // 设置填充颜色为紫色
-    // var s = tempSpawns[i][0]; // 获取当前临时出生点
-    // rect(s.x * ts, s.y * ts, ts, ts); // 绘制临时出生点矩形
-    // }
-
+   
     hero.draw();
     if (!paused) {
         // hero.target(monsters);  // 塔攻击目标
@@ -945,7 +807,6 @@ function draw() {
         if (doRange()) {
             var p = gridPosByLastest(mouseX, mouseY);  // 获取鼠标位置对应的网格位置
 
-            console.log(p);
             var c = center(p.x, p.y);  // 计算塔的中心位置
             var t = createTower(0, 0, tower[towerType]);  // 创建一个塔
             showRange(t, c.x, c.y);  // 显示塔的射程
@@ -1014,65 +875,6 @@ function draw() {
         toCooldown = false;  // 设置冷却完成
     }
 
-
-    // //绘制最上层界面
-    // image(moneyBarImg, ts, ts / 2, ts * 2, ts * (moneyBarImg.height / moneyBarImg.width) * 1.8);
-
-    // noStroke();
-    // fill(0, 255);
-    // textSize(ts / 5);
-    // textAlign(LEFT, BASELINE);
-    // text(cash, ts * 1.8, ts * 0.85);
-    // image(healthBarImg, ts * 4, ts / 2, ts * 2, ts * (moneyBarImg.height / moneyBarImg.width) * 1.8);
-
-    // text(health + '/' + maxHealth, ts * 4 * 1.2, ts / 2 * 1.7);
-
-    // image(monsterBarImg, ts * 6.5, ts / 2 * 0.8, ts * 2.5, ts * (moneyBarImg.height / moneyBarImg.width) * 2.5);
-
-    // var displayWave = wave > totalWaves ? totalWaves : wave;
-    // text(displayWave + '/' + totalWaves, ts * 7.8, ts / 2 * 1.65);
-
-
-    // tooltip.update();  // 更新提示状态
-    // tooltip.display();  // 显示提示文本
-
-
-    // if (tooltip.isVisible == false) {
-    //     if (isStartGame == false) {
-    //         isStartGame = true;
-    //         paused = false;
-    //     }
-
-    // }
-
-    // //底座敌人生物显示
-
-    // let x = 5; // 初始 x 坐标
-    // let y = height - ts; // 初始 y 坐标
-    // let itemWidth = ts * 2; // 每个怪物项的间隔宽度
-
-    // for (let key in monster) {
-
-
-    //     if (monster.hasOwnProperty(key)) {
-    //         fill(0);
-    //         rect(x + ts * 0.3, y + ts / 2 * 0.3, ts * 1.5, ts / 2, ts);
-    //         // 绘制怪物图像或颜色圆点
-    //         if (monster[key].image) {
-    //             // 如果有图像，加载并绘制图像
-
-    //             image(monster[key].image, x, y, ts, ts); // 绘制图像
-    //         }
-    //         textAlign(CENTER, CENTER);
-    //         // 绘制怪物名称
-    //         fill(255); // 设置文本颜色为黑色
-    //         textSize(16); // 设置文本大小
-    //         text(key, x + ts * 1.2, y + ts / 2); // 绘制文本
-
-    //         x += itemWidth; // 更新 y 坐标以绘制下一个怪物项
-    //     }
-    // }
-
     // 画面心跳效果
     if (enableHeartbeatEffect) drawHeartbeatEffect();
     // 更新UI
@@ -1082,7 +884,7 @@ function draw() {
     lateUpdateMenuDisplay();
     // //调试模式
     if (debugMap) {
-        //drawMapGrid();
+        drawMapGrid();
     }
     pop();
 
@@ -1189,22 +991,6 @@ class SlidePane {
         // **展开时显示内容**
         if (this.isExpanded) {
             if (this.t === undefined) {
-                // fill(50);
-                // noStroke();
-                // textSize(18);
-                // textAlign(LEFT, TOP);
-                // text("📌 这里是内容区域", 20, 60); // **这里的 `y` 相对面板顶部**
-                //
-                // // **绘制按钮**
-                // fill(100, 150, 200);
-                // rect(20, 100, 120, 40, 10);
-                // rect(160, 100, 120, 40, 10);
-                //
-                // fill(255);
-                // textSize(16);
-                // textAlign(CENTER, CENTER);
-                // text("SELL", 80, 120);
-                // text("UPGRADE", 220, 120);
             } else {
                 push();
                 let startX = towerWidth / 12;
@@ -1452,17 +1238,21 @@ function windowResized() {
     gameWidth = windowWidth / 5 * 4;
     ts = min(gameWidth / cols, windowHeight / rows); // 取最小值，确保是正方形
     gameWidth = ts * cols;
+    console.log("[debug] windowWidth =", windowWidth);
+    console.log("[debug] windowHeight =", windowHeight);
+    console.log("[debug] cols =", cols);
+    console.log("[debug] rows =", rows);
+    console.log("[debug] ts =", ts);
     //宽比高小
-    if (gameWidth / cols < gameWidth / windowHeight / rows) {
+    if (gameWidth / cols < gameWidth / (windowHeight / rows)) {
         gameX = 0;
-        gameY = windowHeight - windowHeight / rows / 2;
-    }
-    //宽比高大
-    if (gameWidth / cols > gameWidth / windowHeight / rows) {
-        gameX = windowWidth / 5 * 4 - gameWidth / 2;
+        gameY = (windowHeight - windowHeight / rows) / 2;
+    } else {
+        gameX = (windowWidth / 5 * 4 - gameWidth) / 2;
         gameY = 0;
     }
-
+    console.log("[debug] gameWidth =", gameWidth);
+    console.log("[debug] gameX =", gameX);
 
     widthRatio = ts / 110;
     heightRatio = ts / 110;
@@ -1640,65 +1430,90 @@ function keyReleased() {
 
 }
 
+
 function mousePressed() {
-    // 左箭头：切换到上一组
-    if (leftArrowBtn.clicked() && currentPage > 0) {
-        currentPage--; // 向左切换页面
-    }
-
-    // 右箭头：切换到下一组
-    if (rightArrowBtn.clicked() && currentPage < pages.length - 1) {
-        currentPage++; // 向右切换页面
-    }
-
-    // 检查点击页面内的按钮
+    console.log("[mousePressed] 全局点击触发");
+  
+    if (leftArrowBtn.clicked() && currentPage > 0) currentPage--;
+    if (rightArrowBtn.clicked() && currentPage < pages.length - 1) currentPage++;
+  
     pages[currentPage].checkClicked();
-
-    //点击塔信息按钮
-    if (mouseX > towerInfoPane.x && mouseX < towerInfoPane.x + towerInfoPane.w && mouseY > towerInfoPane.y && mouseY < towerInfoPane.y + 50) {
-        // **点击标题栏时展开/收起**
-        towerInfoPane.toggle();
-    } else if (mouseX > towerInfoPane.x && mouseX < towerInfoPane.x + towerInfoPane.w && mouseY > towerInfoPane.y && mouseY < towerInfoPane.y + towerInfoPane.currentHeight) {
-        // **检查按钮点击**
-        towerInfoPane.checkButtonClick(mouseX, mouseY);
+  
+    const inTowerHeader =
+      mouseX > towerInfoPane.x && mouseX < towerInfoPane.x + towerInfoPane.w &&
+      mouseY > towerInfoPane.y && mouseY < towerInfoPane.y + 50;
+  
+    const inTowerPane =
+      mouseX > towerInfoPane.x && mouseX < towerInfoPane.x + towerInfoPane.w &&
+      mouseY > towerInfoPane.y && mouseY < towerInfoPane.y + towerInfoPane.currentHeight;
+  
+    if (inTowerHeader) {
+      towerInfoPane.toggle();
+      return;
+    } else if (inTowerPane) {
+      towerInfoPane.checkButtonClick(mouseX, mouseY);
+      return;
     }
-
+  
     menuButtonPressed();
-    if (!mouseInMap()) return;
-    var p = gridPosByLastest(mouseX, mouseY);
-
-    var t = getTower(p.x, p.y);
-
+  
+    if (!mouseInMap()) {
+      console.warn("[mousePressed] 鼠标不在地图区域");
+      return;
+    }
+  
+    
+  
+    const p = gridPosByLastest(mouseX, mouseY);
+    const t = getTower(p.x, p.y);
+  
+    console.log("[mousePressed] 点击位置:", p);
+    console.log("[mousePressed] grid 值:", grid?.[p.x]?.[p.y]);
+    console.log("[mousePressed] towerType:", towerType);
+    console.log("[mousePressed] toPlace:", toPlace);
+  
     if (t) {
-        // Clicked on tower
-        selected = t;
-        toPlace = false;
-        towerInfoPane.t = t;
-        towerInfoPane.isExpanded = false;
-        towerInfoPane.toggle();
-        towerInfoPane.isPlaceTower = true;
-    } else if (canPlace(p.x, p.y)) {
-        buy(createTower(p.x, p.y, tower[towerType]));
+      // 点击了已有塔
+      selected = t;
+      toPlace = false;
+      towerInfoPane.t = t;
+      towerInfoPane.isExpanded = false;
+      towerInfoPane.toggle();
+      towerInfoPane.isPlaceTower = true;
+      console.log("[mousePressed] 点击了已有塔，展示信息");
+    } else if (typeof towerType !== 'undefined' && toPlace && [0, 3].includes(grid?.[p.x]?.[p.y])) {
+        console.log("[mousePressed] 点击格子位置:", p);
+console.log("[mousePressed] towerType:", towerType);
+console.log("[mousePressed] toPlace:", toPlace);
+console.log("[mousePressed] grid at pos:", grid?.[p.x]?.[p.y]);
+      let newTower = createTower(p.x, p.y, tower[towerType]);
+      newTower.gridPos = createVector(p.x, p.y);
+      buy(newTower);
+  
+      if (!toPlace) {
         selected = null;
-
+        towerInfoPane.t = undefined;
         towerInfoPane.isExpanded = true;
         towerInfoPane.toggle();
-        towerInfoPane.t = undefined;
-
-
+      }
     } else {
-        selected = null;
-        towerInfoPane.isExpanded = true;
-        towerInfoPane.toggle();
-        towerInfoPane.t = undefined;
+      console.warn("[mousePressed] 不能放置塔", {
+        gridVal: grid?.[p.x]?.[p.y],
+        towerType,
+        toPlace
+      });
+  
+      selected = null;
+      towerInfoPane.isExpanded = true;
+      towerInfoPane.toggle();
+      towerInfoPane.t = undefined;
     }
-
+  
     if (mouseButton === RIGHT) {
-        debugMap = !debugMap;
+      debugMap = !debugMap;
     }
-
-
-}
+  }
+  
 
 function mouseReleased() {
     menuButtonReleased();
@@ -1721,29 +1536,6 @@ function endLevel(isSurvival) {
         resultRating = calculateRating(health, maxHealth);
         // 开启关卡结算页面
         openResultMenu(isSurvival);
-
-        // // 根据最终 health 更新当前关卡的星级
-        // var levelId = document.getElementById("map").value;
-        // var newRating = calculateRating(health, maxHealth);
-        // var storedRating = parseInt(localStorage.getItem("rating_" + levelId)) || 0;
-        // if (newRating > storedRating) {
-        //     localStorage.setItem("rating_" + levelId, newRating);
-        // }
-        // // 延时0.5秒后显示选关界面
-        // setTimeout(function () {
-        //     // 清空游戏中的实体（根据需要可进一步清空）
-        //     wave = 1;
-        //     monsters = [];
-        //     projectiles = [];
-        //     systems = [];
-        //     towers = [];
-        //     newMonsters = [];
-        //     newProjectiles = [];
-        //     newTowers = [];
-        //     // 显示选关覆盖层，并重新生成关卡卡片（星级会更新）
-        //     document.getElementById("level-selection").style.display = "flex";
-        //     createLevelCards();
-        // }, 500); // 延时0.5秒
     }
 }
 
