@@ -24,7 +24,7 @@ Add a group photo here!
 # Video Demonstration
 
 
-# ✨ 1. Introduction 🎮🏰
+# ✨ 1. Introduction 🎮
 
 <div style="text-align: center;">
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
@@ -64,7 +64,7 @@ Add a group photo here!
 </div>
 
 
-## 🏛️ Bringing History to Life 🎮⏳  
+## 🏛️ Bringing History to Life 🏰  
 
 To enhance immersion, we carefully incorporated **real historical landmarks** from Bristol, such as:  
 
@@ -103,7 +103,7 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 
 
 
-Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄, allowing players to evolve their defenses in historically meaningful ways.
+Beyond this, we have also implemented a distinctive tower upgrade mode 🔄, allowing players to evolve their defenses in historically meaningful ways.
 
 <div align="center">
   <table style="border-collapse: collapse; width: 60%; max-width: 600px;">
