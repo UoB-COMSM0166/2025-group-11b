@@ -30,7 +30,7 @@ Add a group photo here!
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 
-🛡️ In designing our game, we set out to create a historically immersive tower defense experience that is both engaging and educational. 🌍 Our vision was to craft a game that combines strategy, progression, and cultural significance, allowing players to explore the rich history of Bristol while defending the city from various threats across different time periods.
+🛡️ In designing our game, we set out to create a historically immersive tower defense experience that is both engaging and educational. 🌍 Our vision was to craft a game that combines strategy ♟️, progression 📈, and cultural significance 🏛️, allowing players to explore the rich history of Bristol while defending the city from various threats ⚔️ across different time periods ⏳.
 
 ---
 ## ⚔️ A Unique Twist on Tower Defense 🏹  
