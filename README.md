@@ -46,7 +46,7 @@ Add a group photo here!
   <table>
     <tr>
       <td align="center" style="padding: 10px;">
-        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Middle%20Ages.jpg" width="300"><br>
+        <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/maps/map_level1.png" width="300"><br>
         <b>Figure 1</b><br>
         <i>Medieval Map</i>
       </td>
