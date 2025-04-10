@@ -1,72 +1,166 @@
-new p5();
+new p5();   // p5.js global mode
 
+// 检查是否大致在格子的中心
 function atTileCenter(x, y, col, row) {
-    const c = center(col, row);
-    const t = ts / 24;
+    var c = center(col, row);
+    var t = ts / 24;
     return between(x, c.x - t, c.x + t) && between(y, c.y - t, c.y + t);
 }
 
+// 检查数字是否在范围内（不包含边界）
 function between(num, min, max) {
     return num >= Math.min(min, max) && num <= Math.max(min, max);
 }
 
+// 构建一个二维数组，填充指定值
 function buildArray(cols, rows, val) {
-    return Array(cols).fill().map(() => Array(rows).fill(val));
+    var arr = [];
+    for (var x = 0; x < cols; x++) {
+        arr[x] = [];
+        for (var y = 0; y < rows; y++) {
+            arr[x][y] = val;
+        }
+    }
+    return arr;
 }
 
+// 返回格子中心的位置
 function center(col, row) {
-    return createVector(col * ts + ts / 2, row * ts + ts / 2);
+    return createVector(col*ts + ts/2, row*ts + ts/2);
 }
 
+// 复制二维数组
 function copyArray(arr) {
-    return arr.map(row => [...row]);
+    var newArr = [];
+    for (var x = 0; x < arr.length; x++) {
+        newArr[x] = [];
+        for (var y = 0; y < arr[x].length; y++) {
+            newArr[x][y] = arr[x][y];
+        }
+    }
+    return newArr;
 }
 
+// 将网格坐标转换为字符串
 function cts(col, row) {
-    return `${col},${row}`;
+    return col + ',' + row;
 }
 
+// 返回具有特定名称的实体数组
 function getByName(entities, names) {
-    const nameList = Array.isArray(names) ? names : [names];
-    return entities.filter(e => nameList.includes(e.name));
+    var results = [];
+    if (typeof names === 'string') names = [names];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        for (var j = 0; j < names.length; j++) {
+            if (e.name === names[j]) results.push(e);
+        }
+    }
+    return results;
 }
 
+// 获取第一个怪物（即离出口最近的怪物）
+// TODO 确定更准确的选择系统，避免被循环迷惑
 function getFirst(entities) {
-    return entities.reduce((a, e) => {
-        const p = gridPos(e.pos.x, e.pos.y);
-        return dists[p.x][p.y] < dists[a.pos.x][a.pos.y] ? e : a;
-    }, entities[0]);
+    var leastDist = 10000;
+    var chosen = entities[0];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        var t = gridPos(e.pos.x, e.pos.y);
+        var dist = dists[t.x][t.y];
+        if (dist < leastDist) {
+            leastDist = dist;
+            chosen = e;
+        }
+    }
+    return chosen;
 }
 
+// 获取范围内的实体（半径以格子为单位）
+// TODO 设置最小和最大范围
 function getInRange(cx, cy, radius, entities) {
-    return entities.filter(e => dist(e.pos.x, e.pos.y, cx, cy) < radius * ts);
+    var results = [];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+
+        if(dist(e.pos.x, e.pos.y, cx, cy)<radius*ts){
+            results.push(e);
+        }
+
+    }
+    return results;
 }
 
-function getNearest(entities, pos, ignore = []) {
-    return entities.reduce((a, e) => 
-        !ignore.includes(e) && pos.dist(e.pos) < pos.dist(a.pos) ? e : a, 
-    entities[0]);
+// 获取离实体最近的实体
+function getNearest(entities, pos, ignore) {
+    var lowestDist = 10000;
+    var chosen = entities[0];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (typeof ignore !== 'undefined' && ignore.includes(e)) continue;
+        var dist = pos.dist(e.pos);
+        if (dist < lowestDist) {
+            lowestDist = dist;
+            chosen = e;
+        }
+    }
+    return chosen;
 }
 
+// 获取血量最多的怪物
 function getStrongest(entities) {
-    return entities.reduce((a, e) => e.health > a.health ? e : a, entities[0]);
+    var mostHealth = 0;
+    var chosen = entities[0];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (e.health > mostHealth) {
+            mostHealth = e.health;
+            chosen = e;
+        }
+    }
+    return chosen;
 }
 
+// 获取所有嘲讽的怪物
 function getTaunting(entities) {
-    return entities.filter(e => e.taunt);
+    var results = [];
+    for (var i = 0; i < entities.length; i++) {
+        var e = entities[i];
+        if (e.taunt) results.push(e);
+    }
+    return results;
 }
 
+//检测两个居中矩形的碰撞，重叠
 function checkRectCollision(rect1, rect2) {
-    return abs(rect1.x - rect2.x) < (rect1.width + rect2.width)/2 && 
-           abs(rect1.y - rect2.y) < (rect1.height + rect2.height)/2;
+    // rect1和rect2都是包含x,y,width,height属性的对象
+    // x,y表示中心点坐标
+
+    // 计算两个矩形在x轴和y轴上的半宽高
+    let rect1HalfWidth = rect1.width / 2;
+    let rect1HalfHeight = rect1.height / 2;
+    let rect2HalfWidth = rect2.width / 2;
+    let rect2HalfHeight = rect2.height / 2;
+
+    // 检查x轴和y轴上是否有重叠
+    let xCollision = abs(rect1.x - rect2.x) < (rect1HalfWidth + rect2HalfWidth);
+    let yCollision = abs(rect1.y - rect2.y) < (rect1HalfHeight + rect2HalfHeight);
+
+    // 只有当x轴和y轴都有重叠时才发生碰撞
+    return xCollision && yCollision;
 }
 
+// 返回网格坐标
 function gridPos(x, y) {
-    return createVector(floor(x / ts), floor(y / ts));
+    return createVector(floor((x) / ts), floor((y) / ts));
 }
 
 function gridPosByLastest(x, y) {
-    return createVector(floor((x - gameX) / ts), floor((y - gameY) / ts));
+
+    return createVector(floor((x-gameX) / ts), floor((y-gameY) / ts));
+
+
+
 }
 
 // 检查点是否在圆内
