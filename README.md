@@ -39,7 +39,7 @@ Add a group photo here!
 - 🏴‍☠️ **Pirate raids**  
 - 🖥️ **High-tech cyber warfare**  
 
-🔥 Get ready to **defend, strategize, and experience history like never before!** 🚀🔥  
+🔥 Get ready to **defend, strategize, and experience history like never before!** 🔥  
 
 <div align="center">
   <table>
