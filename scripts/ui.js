@@ -670,19 +670,30 @@ function drawHeartbeatEffect()
     
     hbAngle += speed;
 }
-
-// 画面震动效果（扣血时触发）
-function drawShakeEffect()
-{
-    if (prevHealth != health)
-    {
+let redFlashAlpha = 0;  // 屏幕红光透明度控制
+function drawShakeEffect() {
+    if (prevHealth != health) {
         shakeAmount = 10;
+        redFlashAlpha = 150;
     }
+
     if (shakeAmount > 0) {
         let offsetX = random(-shakeAmount, shakeAmount);
         let offsetY = random(-shakeAmount, shakeAmount);
         translate(offsetX, offsetY);
         shakeAmount -= 0.5;
     }
+
     prevHealth = health;
+}
+function drawRedFlashOverlay() {
+    if (redFlashAlpha > 0) {
+        push();
+        resetMatrix();  // 重置所有 translate / scale 等，画到原始屏幕坐标
+        noStroke();
+        fill(255, 0, 0, redFlashAlpha);
+        rect(0, 0, width, height);
+        redFlashAlpha -= 10;  // 渐隐
+        pop();
+    }
 }

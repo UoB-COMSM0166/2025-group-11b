@@ -697,6 +697,7 @@ function drawGameView() {
 
     if (debugMap) drawMapGrid();
     pop();
+    drawRedFlashOverlay();
 }
 
 // === 英雄绘制与更新 ===
