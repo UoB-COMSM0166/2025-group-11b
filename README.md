@@ -215,10 +215,7 @@ To better understand and test the game mechanics, we created two paper prototype
   We referred to our Onion Model of Stakeholders to anticipate who would be most invested in each idea. We also considered which concept might have broader appeal and educational potential.
 
 - Final Team Vote & Milestone Check:  
-  After considering feedback, testing the paper prototypes, and reviewing our resources, the team held a final vote. We chose the Tower Defense concept because it allowed for:  
-  - Engaging gameplay  
-  - Scalability (adding new historical eras/towers)  
-  - Alignment with our team skill sets
+  After considering feedback, testing the paper prototypes, and reviewing our resources, the team held a final vote. We chose the Tower Defense concept.
 
 
 
