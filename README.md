@@ -199,7 +199,7 @@ To better understand and test the game mechanics, we created two paper prototype
        style="max-width: 100%; height: auto;">
 </p>
 
-### 🤝 How We Decided as a Team What to Develop  
+### 🤝 How We Decided as a Team What to Develop  (**which initially had 6 members**) 
 
 - Open Brainstorming Sessions:  
   We first conducted open discussions where every team member pitched ideas, focusing on gameplay mechanics, target audiences, and possible historical or educational elements.
