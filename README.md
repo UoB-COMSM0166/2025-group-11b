@@ -237,7 +237,7 @@ The model illustrates four concentric layers:
 </p>
 
 
-### 🧩 Identify Top-Level User Needs (Epics / Initiatives)
+### 🧩 Identify Top-Level User Needs
 
 After analysing the project context and stakeholders' needs, we identified the top-level user requirements (Epics) that would guide our game development:
 
