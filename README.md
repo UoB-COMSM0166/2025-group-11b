@@ -197,7 +197,7 @@ To better understand and test the game mechanics, we created two paper prototype
 
 #### ✈️ Aircraft Shooter Game Paper Prototype  
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly2.gif" 
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly.gif" 
        alt="Aircraft Shooter Paper Prototype" 
        width="500" 
        style="max-width: 100%; height: auto;">
