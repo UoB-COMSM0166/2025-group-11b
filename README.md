@@ -252,16 +252,16 @@ After analysing the project context and stakeholders' needs, we identified the t
 
 In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
 
-- 🎮 **Players**: The main users who play the game.
-- 🎨 **Game Designers**: Those who design levels and mechanics.
-- 👩‍💻 **Developers**: Programmers implementing the game.
-- 🐞 **QA Testers**: People testing for bugs and balance.
-- 🖌️ **Artists**: Designers of game assets (characters, towers, environment).
-- 🎶 **Sound Designers**: Those who create sound effects and music.
-- 📅 **Project Managers**: Oversee development progress.
-- 📢 **Marketing Team**: Promote the game to players.
-- 💰 **Investors/Publishers**: Fund the project.
-- 🧑‍⚖️ **Community Moderators**: Manage player discussions and feedback.
+- **Players**: The main users who play the game.
+- **Game Designers**: Those who design levels and mechanics.
+- **Developers**: Programmers implementing the game.
+- **QA Testers**: People testing for bugs and balance.
+- **Artists**: Designers of game assets (characters, towers, environment).
+- **Sound Designers**: Those who create sound effects and music.
+- **Project Managers**: Oversee development progress.
+- **Marketing Team**: Promote the game to players.
+- **Investors/Publishers**: Fund the project.
+- **Community Moderators**: Manage player discussions and feedback.
 
 As we refined our ideas, we began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
 
