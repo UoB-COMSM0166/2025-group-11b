@@ -283,7 +283,7 @@ With these concepts in mind, we developed an early prototype, testing core mecha
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/user%20case.jpg" width="700"><br>
-  <b>Figure 5</b><br>
+  <b>Figure 6</b><br>
   <i>Use case diagrams</i>
 </p>
 
