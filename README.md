@@ -215,9 +215,9 @@ The model illustrates four concentric layers:
 - The outermost layer features **External Stakeholders** — Marketing Team, Investors, Publishers, and Potential Partners — who promote, fund, and expand the game's reach.
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Onion%20model.png" width="500" style="max-height:400px; height:auto;"><br>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Onion%20model%20new.png" width="500" style="max-height:400px; height:auto;"><br>
   <b>Figure 4</b><br>
-  <i>Onion Model of Stakeholders for the Tower Defense Game Project</i>
+  <i>Onion Model</i>
 </p>
 
 ### 🧑‍🤝‍🧑 User Stories & Stakeholders
