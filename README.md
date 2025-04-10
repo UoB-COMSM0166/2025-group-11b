@@ -70,17 +70,6 @@ Add a group photo here!
   </table>
 </div>
 
-
-## ⚔️ Strategic Depth & Progression 📈🔧  
-
-What makes our game unique is its **evolving technology system** 🔄—as players progress through the game, they unlock **era-specific defenses** 🏰🔫 such as:  
-
-- 🏹 **Medieval archer towers**  
-- ⚓ **18th-century naval cannons**  
-- 🤖 **Futuristic AI-controlled drones**  
-
-Each era presents its own **challenges** 🎯, requiring players to **adapt their strategies** 🧠 while leveraging **historical innovations** 🏛️ to fortify their defenses.  
-
 ---
 
 ## 🏛️ Bringing History to Life 🎮⏳  
