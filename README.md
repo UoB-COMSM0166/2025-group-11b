@@ -18,12 +18,6 @@ Add a group photo here!
 
 ## Project Report
 
-# Game Setup Instructions
-
-
-# Video Demonstration
-
-
 # ✨ 1. Introduction 🎮
 
 <div style="text-align: center;">
