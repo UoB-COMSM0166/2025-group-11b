@@ -30,17 +30,12 @@ Add a group photo here!
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 
-🛡️ In designing our game, we set out to create a **historically immersive** tower defense experience that is both **engaging🎯 and educational📚**.  
-🌍 Our vision was to craft a game that combines **strategy ♟️, progression 📈, and cultural significance 🏛️**, allowing players to explore the **rich history of Bristol** while defending the city from various threats across different time periods.
+🛡️ In designing our game, we set out to create a historically immersive tower defense experience that is both engaging and educational. 🌍 Our vision was to craft a game that combines strategy, progression, and cultural significance, allowing players to explore the rich history of Bristol while defending the city from various threats across different time periods.
 
 ---
 ## ⚔️ A Unique Twist on Tower Defense 🏹  
 
-🕰️ Most tower defense games focus purely on mechanics, but we wanted to **integrate historical storytelling 📖** into the gameplay.  
-
-⏳ Our game spans **multiple eras**, from the **medieval period ⚒️** to the **high-tech future 🤖**, each with **distinct monsters 👹, architectural styles 🏰, and defense technologies 🔫**.  
-
-👑 Players take on the role of a **"Guardian" 🦸**, protecting Bristol from **historical and futuristic threats**, including:  
+🕰️ Most tower defense games focus purely on mechanics, but we wanted to integrate historical storytelling into the gameplay. Our game spans multiple eras, from the medieval period to the high-tech future, each with distinct monsters, architectural styles, and defense technologies. 👑 Players take on the role of a Guardian, protecting Bristol from various historical and futuristic threats, including invading armies, pirate raids, and cyber warfare.
 
 - ⚔️ **Invading armies**  
 - 🏴‍☠️ **Pirate raids**  
