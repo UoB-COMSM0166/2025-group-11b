@@ -35,7 +35,7 @@ Add a group photo here!
 ---
 ## ⚔️ A Unique Twist on Tower Defense 🏹  
 
-🕰️ Most tower defense games focus purely on mechanics, but we wanted to integrate historical storytelling into the gameplay. Our game spans multiple eras, from the medieval period to the high-tech future, each with distinct monsters, architectural styles, and defense technologies. 👑 Players take on the role of a Guardian, protecting Bristol from various historical and futuristic threats, including invading armies, pirate raids, and cyber warfare.
+🕰️ Unlike traditional tower defense games that focus only on mechanics, our game integrates historical storytelling into the experience. Spanning multiple eras, from the medieval period ⚔️ to the high-tech future 🤖, players take on the role of a Guardian 👑, defending Bristol from invading armies, pirate raids, and cyber warfare across time.
 
 - ⚔️ **Invading armies**  
 - 🏴‍☠️ **Pirate raids**  
