@@ -164,7 +164,7 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄,
        style="max-width: 100%; height: auto;">
 </p>
 
-
+---
 
 # 🎯 2. Requirements  
 
@@ -217,7 +217,6 @@ The model illustrates four concentric layers:
   <i>Onion Model</i>
 </p>
 
----
 
 ### 🧩 Identify Top-Level User Needs (Epics / Initiatives)
 
@@ -229,9 +228,7 @@ After analysing the project context and stakeholders' needs, we identified the t
 - Epic 4: Optimize game performance and stability across different devices.
 - Epic 5: Create a scalable backend and infrastructure to support future updates and multiplayer functionality.
 
-These Epics reflect the core objectives of our project from both a player experience and system performance perspective.
 
----
 ### 🧑‍🤝‍🧑 User Stories & Stakeholders
 
 In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
@@ -268,9 +265,6 @@ To further refine our user needs, we specified atomic requirements based on our 
 | AR-03 | The system shall spawn enemy waves with increasing difficulty. | Given the player starts a new wave, when the wave spawns, then enemy stats (speed, health, number) should increase. |
 | AR-04 | The system shall display earned in-game currency when enemies are defeated. | Given an enemy is defeated, when the player views their resources, then the currency value should update accordingly. |
 
----
-
-These atomic requirements were derived from our Epics and User Stories and will be used as a basis for testing and validation in later development stages.
 
 
 ### 🎨 Early Design & Prototyping  
