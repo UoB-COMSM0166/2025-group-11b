@@ -203,9 +203,7 @@ To better understand and test the game mechanics, we created two paper prototype
        style="max-width: 100%; height: auto;">
 </p>
 
-After discussions, we collectively chose to develop the **Tower Defense Game** due to its greater potential for level design creativity, historical education value, and gameplay variety.
 
----
 ### 🧅 Onion Model of Stakeholders  
 
 To better visualize the relationship between different stakeholders in our game project, we created an **Onion Model** to represent their roles and levels of involvement.
@@ -223,6 +221,21 @@ The model illustrates four concentric layers:
   <i>Onion Model</i>
 </p>
 
+---
+
+### 🧩 Identify Top-Level User Needs (Epics / Initiatives)
+
+After analysing the project context and stakeholders' needs, we identified the top-level user requirements (Epics) that would guide our game development:
+
+- Epic 1: Provide engaging gameplay with progressive difficulty.
+- Epic 2: Allow players to explore historical periods through gameplay.
+- Epic 3: Offer a variety of towers and enemy types to ensure diversity and replayability.
+- Epic 4: Optimize game performance and stability across different devices.
+- Epic 5: Create a scalable backend and infrastructure to support future updates and multiplayer functionality.
+
+These Epics reflect the core objectives of our project from both a player experience and system performance perspective.
+
+---
 ### 🧑‍🤝‍🧑 User Stories & Stakeholders
 
 In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
@@ -245,6 +258,24 @@ As we refined our ideas, we began developing **user stories** to ensure that our
   <b>Figure 5</b><br>
   <i>Stakeholder Requirements</i>
 </p>
+
+### 🧾 Specify Atomic Requirements  
+
+To further refine our user needs, we specified atomic requirements based on our user stories. These requirements are clear, testable, and independent to ensure traceability and system verification.
+
+#### Example Atomic Requirements:
+
+| Requirement ID | Requirement Description | Acceptance Criteria |
+|----------------|-------------------------|--------------------|
+| AR-01 | The system shall allow the player to place a tower on an empty grid. | Given the player has enough resources, when they select a grid, then the tower should be placed successfully. |
+| AR-02 | The system shall allow the player to upgrade a tower to increase its attack damage. | Given the player selects an existing tower, when they choose upgrade, then the tower’s attack stats should increase. |
+| AR-03 | The system shall spawn enemy waves with increasing difficulty. | Given the player starts a new wave, when the wave spawns, then enemy stats (speed, health, number) should increase. |
+| AR-04 | The system shall display earned in-game currency when enemies are defeated. | Given an enemy is defeated, when the player views their resources, then the currency value should update accordingly. |
+
+---
+
+These atomic requirements were derived from our Epics and User Stories and will be used as a basis for testing and validation in later development stages.
+
 
 ### 🎨 Early Design & Prototyping  
 
