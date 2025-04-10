@@ -161,7 +161,7 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄,
 
 ## 🏇 Knight Mechanic: Absorbing Tower Abilities ⚔️  
 
-To tackle the common lack of player interaction in tower defense games, we introduced a medieval knight who, by staying near a tower for five seconds, can absorb that tower’s unique ability and then join forces with it in combat, adding a dynamic layer of real-time strategy as players direct the knight between different towers.
+🏇 To tackle the common lack of player interaction in tower defense games, we introduced a medieval knight ⚔️ who can absorb a tower’s ability ✨ by staying nearby for 5 seconds ⏱️. The knight then fights alongside the tower, adding a dynamic and strategic layer as players guide him between different towers to combine powers and defeat enemies.
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" 
        alt="Knight Mechanic" 
