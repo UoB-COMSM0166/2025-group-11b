@@ -646,7 +646,6 @@ function drawTower() {
 // Main p5 functionsS
 function draw() {
     push();
-
     updateMenuDisplay();
 
     if (!isStartGame) return;
@@ -656,122 +655,127 @@ function draw() {
         return;
     }
 
-    //遊戲地圖
+    drawGameView();
+    drawTowerPane();
+
+    pop();
+}
+
+// === 游戏主画面逻辑 ===
+function drawGameView() {
     push();
     translate(gameX, gameY);
-
     background(50);
-    // 镜头震动效果
-    if (enableShakeEffect) drawShakeEffect();
 
-    // 绘制背景图（覆盖整个画布）
+    if (enableShakeEffect) drawShakeEffect();
     image(bgImg, 0, 0, gameWidth, height);
 
-
-
-
-    // Update game status
     updatePause();
-    // updateStatus();
 
-    // Update spawn and wave cooldown
     if (!paused) {
         if (scd > 0) scd--;
         if (wcd > 0 && toWait) wcd--;
     }
-   
+
+    drawHero();
+    spawnMonsters();
+    updateMonsters();
+    updateTowers();
+    updateParticles();
+    updateProjectiles();
+    handlePlacementPreview();
+    checkSelected();
+    removeTempSpawns();
+    appendNewEntities();
+    checkGameState();
+    drawHeartbeatEffectIfEnabled();
+
+    updateMonsterStateUI();
+    animationDraw();
+    updateGameStateUI();
+    lateUpdateMenuDisplay();
+
+    if (debugMap) drawMapGrid();
+    pop();
+}
+
+// === 英雄绘制与更新 ===
+function drawHero() {
     hero.draw();
     if (!paused) {
-        // hero.target(monsters);  // 塔攻击目标
-        hero.getPowerByTowers(towers);//获得塔的能力
-        hero.updateTowerPower();//使用塔的能力
-        // hero.update();  // 更新塔的状态
+        hero.getPowerByTowers(towers);
+        hero.updateTowerPower();
     }
+}
 
-// 生成怪物
-    if (canSpawn() && !paused) { // 如果可以生成怪物且游戏未暂停
-        var name = newMonsters.shift(); // 取出新怪物的名称
+// === 生成怪物 ===
+function spawnMonsters() {
+    if (canSpawn() && !paused) {
+        var name = newMonsters.shift();
 
-        // 在所有出生点生成相同的怪物
         for (var i = 0; i < spawnpoints.length; i++) {
-            var s = spawnpoints[i]; // 获取当前出生点
-            var c = center(s.x, s.y); // 计算出生点的中心坐标
-            monsters.push(createMonster(c.x, c.y, monster[name])); // 创建并添加怪物
+            var s = spawnpoints[i];
+            var c = center(s.x, s.y);
+            monsters.push(createMonster(c.x, c.y, monster[name]));
         }
 
-        // 处理临时出生点
         for (var i = 0; i < tempSpawns.length; i++) {
-            var s = tempSpawns[i]; // 获取当前临时出生点
-            if (s[1] === 0) continue; // 如果计数为 0，则跳过
-            s[1]--; // 递减计数
-            var c = center(s[0].x, s[0].y); // 计算临时出生点的中心坐标
-            monsters.push(createMonster(c.x, c.y, monster[name])); // 创建并添加怪物
+            var s = tempSpawns[i];
+            if (s[1] === 0) continue;
+            s[1]--;
+            var c = center(s[0].x, s[0].y);
+            monsters.push(createMonster(c.x, c.y, monster[name]));
         }
 
-        // 触发冷却状态，防止立即再次生成怪物
         toCooldown = true;
     }
+}
 
-
-    // 更新并绘制怪物
+// === 怪物更新与绘制 ===
+function updateMonsters() {
     for (let i = monsters.length - 1; i >= 0; i--) {
         let e = monsters[i];
 
-        // 更新方向和位置
         if (!paused) {
-            e.move();  // 移动怪物
-            // 选择目标并更新塔的冷却时间
-
-            e.target(towers);  // 塔攻击目标
-
-            e.draw();    // 绘制怪物
-            e.update();  // 更新怪物状态
-            e.onTick();  // 每帧更新怪物的逻辑
+            e.move();
+            e.target(towers);
+            e.draw();
+            e.update();
+            e.onTick();
         }
 
-        // 如果怪物超出地图范围，击杀怪物
         if (outsideMap(e)) e.kill();
-
-        // 如果怪物到达出口格子，击杀并减少玩家生命
         if (atTileCenter(e.pos.x, e.pos.y, exit.x, exit.y)) e.quit();
-
-        // // 绘制怪物
-        // e.draw();
-
-        // 如果怪物死亡，从怪物数组中移除
         if (e.ifDie()) monsters.splice(i, 1);
     }
 
-// 绘制怪物的血条
     for (var i = 0; i < monsters.length; i++) {
-        monsters[i].showHealth();  // 显示每个怪物的血条
+        monsters[i].showHealth();
     }
+}
 
-// 更新并绘制塔
+// === 塔更新与绘制 ===
+function updateTowers() {
     for (let i = 0; i < towers.length; i++) {
         let t = towers[i];
 
-        // 选择目标并更新塔的冷却时间
         if (!paused) {
-            t.target(monsters);  // 塔攻击目标
-            t.update();  // 更新塔的状态
+            t.target(monsters);
+            t.update();
         }
 
-        // 如果塔超出地图范围，摧毁塔
         if (outsideMap(t)) t.kill();
-
-        // 绘制塔
         t.draw();
-
-        // 如果塔死亡，从塔数组中移除
         if (t.isDead()) towers.splice(i, 1);
     }
+}
 
-// 更新并绘制粒子系统
+// === 粒子系统 ===
+function updateParticles() {
     for (let i = systems.length - 1; i >= 0; i--) {
         let ps = systems[i];
-        ps.run();  // 执行粒子系统
-        if (ps.isDead()) systems.splice(i, 1);  // 如果粒子系统已死，从系统数组中移除
+        ps.run();
+        if (ps.isDead()) systems.splice(i, 1);
     }
 
     for (let i = vfx.length - 1; i >= 0; i--) {
@@ -779,162 +783,111 @@ function draw() {
         v.update();
         if (v.isDead()) vfx.splice(i, 1);
     }
+}
 
-// 更新并绘制子弹
+// === 子弹系统 ===
+function updateProjectiles() {
     for (let i = projectiles.length - 1; i >= 0; i--) {
         let p = projectiles[i];
 
-        // 如果未暂停，更新子弹
         if (!paused) {
-            p.steer();  // 控制子弹的运动
-            p.update();  // 更新子弹的位置
+            p.steer();
+            p.update();
         }
 
-        // 如果子弹到达目标，爆炸
         if (p.reachedTarget()) p.explode();
-
-        // 如果子弹超出地图范围，摧毁子弹
         if (outsideMap(p)) p.kill();
-
-        // 绘制子弹
         p.draw();
-
-        // 如果子弹死亡，从子弹数组中移除
         if (p.isDead()) projectiles.splice(i, 1);
     }
+}
+
+// === 鼠标放置塔显示范围 ===
+function handlePlacementPreview() {
     if (mouseX >= gameX && mouseY >= gameY && mouseX <= gameX + gameWidth && mouseY <= gameY + gameHeight) {
-
         if (doRange()) {
-            var p = gridPosByLastest(mouseX, mouseY);  // 获取鼠标位置对应的网格位置
+            var p = gridPosByLastest(mouseX, mouseY);
+            var c = center(p.x, p.y);
+            var t = createTower(0, 0, tower[towerType]);
+            showRange(t, c.x, c.y);
 
-            var c = center(p.x, p.y);  // 计算塔的中心位置
-            var t = createTower(0, 0, tower[towerType]);  // 创建一个塔
-            showRange(t, c.x, c.y);  // 显示塔的射程
-
-            // 如果塔无法放置，绘制红色的 X
             if (!canPlace(p.x, p.y)) {
                 push();
-                translate(c.x, c.y);  // 平移到塔的中心位置
-                rotate(PI / 4);  // 旋转 45 度
-
-                // 绘制红色的 X
+                translate(c.x, c.y);
+                rotate(PI / 4);
                 noStroke();
-                fill(207, 0, 15);  // 设置颜色为红色
-                var edge = 0.1 * ts;  // 边缘的大小
-                var len = 0.9 * ts / 2;  // 线段的长度
-                rect(-edge, len, edge * 2, -len * 2);  // 绘制 X 的一部分
-                rotate(PI / 2);  // 旋转 90 度
-                rect(-edge, len, edge * 2, -len * 2);  // 绘制 X 的另一部分
-
+                fill(207, 0, 15);
+                var edge = 0.1 * ts;
+                var len = 0.9 * ts / 2;
+                rect(-edge, len, edge * 2, -len * 2);
+                rotate(PI / 2);
+                rect(-edge, len, edge * 2, -len * 2);
                 pop();
             }
         }
     }
-// 绘制塔的射程范围
+}
 
+// === 合并新生成实体 ===
+function appendNewEntities() {
+    projectiles = projectiles.concat(newProjectiles);
+    towers = towers.concat(newTowers);
+    newProjectiles = [];
+    newTowers = [];
+}
 
-    // 更新塔是否被选中的状态
-    checkSelected();
-
-// 移除临时生成的怪物
-    removeTempSpawns();
-
-// 将新生成的子弹和塔加入到原数组中
-    projectiles = projectiles.concat(newProjectiles);  // 添加新子弹
-    towers = towers.concat(newTowers);  // 添加新塔
-    newProjectiles = [];  // 清空新子弹数组
-    newTowers = [];  // 清空新塔数组
-
-// 如果玩家死亡，结束游戏
+// === 游戏状态判定与切换波次 ===
+function checkGameState() {
     if (health <= 0) gameover(false);
 
-    // 检测并等待下一波
     if ((toWait && wcd === 0) || (skipToNext && newMonsters.length === 0)) {
         if (wave < totalWaves) {
             toWait = false;
             wcd = 0;
-            //nextWave();  // 开始下一波
-            //paused = true;  // 暂停游戏
-            //tooltip = new Tooltip("Here comes the " + wave + " wave of enemies!", width / 2, height / 2);  // 显示提示框
             onBeforeNextwave();
         } else {
-            // 如果已经是最后一波，结束游戏并跳转到选关界面
             endLevel(true);
         }
     }
 
-// 等待下一波
     if (noMoreMonster() && !toWait) {
-        wcd = waveCool;  // 重置波次冷却时间
-        toWait = true;  // 设置等待下一波
+        wcd = waveCool;
+        toWait = true;
     }
 
-// 重置生成怪物的冷却时间
     if (toCooldown) {
-        scd = spawnCool;  // 重置生成冷却时间
-        toCooldown = false;  // 设置冷却完成
+        scd = spawnCool;
+        toCooldown = false;
     }
+}
 
-    // 画面心跳效果
+// === 画面心跳效果 ===
+function drawHeartbeatEffectIfEnabled() {
     if (enableHeartbeatEffect) drawHeartbeatEffect();
-    // 更新UI
-    updateMonsterStateUI();
-    animationDraw();
-    updateGameStateUI();
-    lateUpdateMenuDisplay();
-    // //调试模式
-    if (debugMap) {
-        drawMapGrid();
-    }
-    pop();
+}
 
-    pop();
-
-
-    //塔那一栏
+// === 塔界面UI ===
+function drawTowerPane() {
     push();
     drawTower();
-    //标题
-    fill(255);
 
+    fill(255);
     rect(towerX, towerY, towerWidth, towerTipPaneHeight, 15);
     textAlign(CENTER, CENTER);
-    fill(0); // 设置白色文本，使其在黑色背景上可见
-
-
-    // 计算文本的中心位置
-    let textX = towerX + towerWidth / 2;
-    let textY = towerY + (towerTipPaneHeight) / 2;
-    // textFont(uiFont);
+    fill(0);
     textSize(towerWidth / 10);
     noStroke();
-    text("TOWER", textX, textY);
-    // 显示当前页面
+    text("TOWER", towerX + towerWidth / 2, towerY + towerTipPaneHeight / 2);
+
     pages[currentPage].display();
-    fill(0);
-    stroke(0);
-    // 显示左右箭头按钮
     leftArrowBtn.display();
     rightArrowBtn.display();
 
-    // //塔信息
-    // fill(255);
-    // rect(towerX,pageHeight+towerTipPaneHeight+pageWidth/12,towerWidth,towerTipPaneHeight,15);
-    // textAlign(CENTER,CENTER);
-    // fill(0); // 设置白色文本，使其在黑色背景上可见
-    // // textFont(uiFont);
-    // textSize(towerWidth/10);
-    // // 计算文本的中心位置
-    //  textX = towerX + towerWidth / 2;
-    //  textY = pageHeight+towerTipPaneHeight+pageWidth/12+towerTipPaneHeight/2;
-    // noStroke();
-    // text("TOWER INFO", textX, textY);
     towerInfoPane.update();
     towerInfoPane.display();
     pop();
-
-
 }
+
 
 let shakeAmount = 0;
 
