@@ -203,6 +203,9 @@ To better understand and test the game mechanics, we created two paper prototype
        style="max-width: 100%; height: auto;">
 </p>
 
+After discussions, we collectively chose to develop the **Tower Defense Game** due to its greater potential for level design creativity, historical education value, and gameplay variety.
+
+---
 ### 🧅 Onion Model of Stakeholders  
 
 To better visualize the relationship between different stakeholders in our game project, we created an **Onion Model** to represent their roles and levels of involvement.
