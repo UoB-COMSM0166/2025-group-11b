@@ -111,7 +111,6 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 
 ---
 
-These landmarks are not just **visual elements** 👀 but play a **strategic role in defense** 🛡️, with some offering **unique defensive abilities** 🔥.  
 
 Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄, allowing players to evolve their defenses in historically meaningful ways.
 
