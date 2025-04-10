@@ -203,6 +203,23 @@ To better understand and test the game mechanics, we created two paper prototype
        style="max-width: 100%; height: auto;">
 </p>
 
+### 🧅 Onion Model of Stakeholders  
+
+To better visualize the relationship between different stakeholders in our game project, we created an **Onion Model** to represent their roles and levels of involvement.
+
+The model illustrates four concentric layers:  
+
+- The innermost layer represents the **Players**, who directly interact with the game system.  
+- The second layer includes the **Core Development Team** — Designers, Developers, Artists, and QA Testers — who build and test the game.  
+- The third layer consists of the **Support & Management Team** — Project Managers, Sound Designers, and Community Moderators — who ensure project progress and community engagement.  
+- The outermost layer features **External Stakeholders** — Marketing Team, Investors, Publishers, and Potential Partners — who promote, fund, and expand the game's reach.
+
+<p align="center">
+  <img src="https://your-upload-link/onion_model_rich_version.png" width="700"><br>
+  <b>Figure 4a</b><br>
+  <i>Onion Model of Stakeholders for the Tower Defense Game Project</i>
+</p>
+
 ### 🧑‍🤝‍🧑 User Stories & Stakeholders
 
 In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
