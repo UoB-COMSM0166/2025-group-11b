@@ -187,7 +187,7 @@ During **Week 2**, our team (**which initially had 6 members**) brainstormed **t
 
 ### 📜 Paper Prototype Development  
 To better understand and test the game mechanics, we created two paper prototypes 📄🎲 for this as part of the early validation process：
-- #### 🛡️ Tower Defense Game Paper Prototype  
+- #### Tower Defense Game Paper Prototype  
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Early%20Design.gif" 
        alt="Tower Defense Paper Prototype" 
@@ -195,7 +195,7 @@ To better understand and test the game mechanics, we created two paper prototype
        style="max-width: 100%; height: auto;">
 </p>
 
-- #### ✈️ Aircraft Shooter Game Paper Prototype  
+- #### Aircraft Shooter Game Paper Prototype  
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly.gif" 
        alt="Aircraft Shooter Paper Prototype" 
