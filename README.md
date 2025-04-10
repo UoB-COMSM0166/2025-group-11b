@@ -176,6 +176,10 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄,
 
 By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
 
+
+🏇 Knight Mechanic: Absorbing Tower Abilities ⚔️
+To tackle the common lack of player interaction in tower defense games, we introduced a medieval knight who, by staying near a tower for five seconds, can absorb that tower’s unique ability and then join forces with it in combat, adding a dynamic layer of real-time strategy as players direct the knight between different towers.
+
 # 🎯 3. Requirements  
 
 ## 🏗️ Ideation Process - Game Concept Development 🎯  
