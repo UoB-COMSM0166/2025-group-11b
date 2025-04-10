@@ -221,7 +221,7 @@ In this phase, we identified the key **stakeholders** whose input and needs woul
 As we refined our ideas, we began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Stakeholder%20Requirements.png" width="1000"><br>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Stakeholder%20Requirements%20new.png" width="1000"><br>
   <b>Figure 4</b><br>
   <i>Stakeholder Requirements</i>
 </p>
