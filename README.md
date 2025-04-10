@@ -201,30 +201,25 @@ To better understand and test the game mechanics, we created two paper prototype
 
 ### 🤝 How We Decided as a Team What to Develop  
 
-#### Open Brainstorming Sessions  
+- Open Brainstorming Sessions:  
+  We first conducted open discussions where every team member pitched ideas, focusing on gameplay mechanics, target audiences, and possible historical or educational elements.
 
-We first conducted open discussions where every team member pitched ideas, focusing on gameplay mechanics, target audiences, and possible historical or educational elements.
+- Paper Prototype Feedback:  
+  We created paper prototypes (see below) for both the Tower Defense Game and the Aircraft Shooter Game. By testing these prototypes in small play sessions, we gathered direct feedback on fun factor, ease of learning, and potential for expansion.
 
-#### Paper Prototype Feedback  
+- Feasibility & Resource Assessment:  
+  Given our team size and the complexity of each concept, we weighed the required development effort (e.g., coding complexity, art assets, AI pathfinding) against our available skills and time constraints.  
+  The Tower Defense concept was deemed more feasible due to clearer scope definition and manageable AI requirements.
 
-We created paper prototypes (see below) for both the Tower Defense Game and the Aircraft Shooter Game. By testing these prototypes in small play sessions, we gathered direct feedback on fun factor, ease of learning, and potential for expansion.
+- Stakeholder & Audience Considerations:  
+  We referred to our Onion Model of Stakeholders to anticipate who would be most invested in each idea. We also considered which concept might have broader appeal and educational potential.
 
-#### Feasibility & Resource Assessment  
+- Final Team Vote & Milestone Check:  
+  After considering feedback, testing the paper prototypes, and reviewing our resources, the team held a final vote. We chose the Tower Defense concept because it allowed for:  
+  - Engaging gameplay  
+  - Scalability (adding new historical eras/towers)  
+  - Alignment with our team skill sets
 
-Given our team size and the complexity of each concept, we weighed the required development effort (e.g., coding complexity, art assets, AI pathfinding) against our available skills and time constraints.
-
-The Tower Defense concept was deemed more feasible due to clearer scope definition and manageable AI requirements.
-
-#### Stakeholder & Audience Considerations  
-
-We referred to our **Onion Model of Stakeholders** to anticipate who would be most invested in each idea. We also considered which concept might have broader appeal and educational potential.
-
-#### Final Team Vote & Milestone Check  
-
-After considering feedback, testing the paper prototypes, and reviewing our resources, the team held a final vote. We chose the **Tower Defense** concept because it allowed for:  
-- Engaging gameplay  
-- Scalability (adding new historical eras/towers)  
-- Alignment with our team skill sets  
 
 
 ### 🧅 Onion Model of Stakeholders  
