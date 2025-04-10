@@ -169,7 +169,6 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🏰🔄,
        style="max-width: 100%; height: auto;">
 </p>
 
-By combining **historical authenticity** 📜 with **engaging gameplay** 🎮, we have created a **tower defense game unlike any other**—one that **challenges players strategically** 🧠 while also offering an **educational journey through time** ⏳📚.  
 
 
 # 🎯 3. Requirements  
