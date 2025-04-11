@@ -867,7 +867,7 @@ tower.slow2 = {
     radius: 0.9,
     secondary: [189, 195, 199], // 次要颜色
     width: 0.3,
-    get visual() { return t6_1Image; }, // 防御塔的样式图片
+    get visual() { return t7_1Image; }, // 防御塔的样式图片
     // Misc
     name: 'slow2',
     title: 'Slow Tower',
@@ -959,7 +959,7 @@ tower.slow2 = {
     upgrades: [
         {
             // Display
-            get visual() { return t6_2Image; }, // 防御塔的样式图片
+            get visual() { return t7_2Image; }, // 防御塔的样式图片
             // Misc
             name: 'slow2',
             title: 'Slow Tower',
@@ -975,7 +975,7 @@ tower.slow2 = {
             upgrades: [
                 {
                     // Display
-                    get visual() { return t6_3Image; }, // 防御塔的样式图片
+                    get visual() { return t7_3Image; }, // 防御塔的样式图片
                     // Misc
                     name: 'slow',
                     title: 'Slow Tower',

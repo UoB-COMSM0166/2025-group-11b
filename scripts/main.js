@@ -1145,7 +1145,7 @@ class Button {
         } else if (this.label == "EMP Disruptor Tower") {
             let imgW = this.w * this.imgSize;
             let imgH = this.h * this.imgSize;
-            image(t6_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
+            image(t7_1Image, this.x + (this.w - imgW) / 2, this.y + (this.h - imgH) / 2, imgW, imgH);
         } else if (this.label == "Laser AA Tower") {
             let imgW = this.w * this.imgSize;
             let imgH = this.h * this.imgSize;

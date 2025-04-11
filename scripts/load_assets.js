@@ -55,6 +55,10 @@ let t6_1Image;
 let t6_2Image;
 let t6_3Image;
 
+let t7_1Image;
+let t7_2Image;
+let t7_3Image;
+
 let imgAttackAim;
 let imgAttackArrow;
 let imgAttackStone;
@@ -103,6 +107,9 @@ function loadImages() {
     t6_1Image = loadImage("images/t6_1.png");
     t6_2Image = loadImage("images/t6_2.png");
     t6_3Image = loadImage("images/t6_3.png");
+    t7_1Image = loadImage("images/t7_1.png");
+    t7_2Image = loadImage("images/t7_2.png");
+    t7_3Image = loadImage("images/t7_3.png");
 
     t1_2Image = loadImage("images/t1_2.png");
     t1_3Image = loadImage("images/t1_3.png");
