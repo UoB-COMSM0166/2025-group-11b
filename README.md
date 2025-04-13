@@ -425,7 +425,6 @@ After a long period of consideration, we ultimately decided to convert the image
 ### Why Evaluation Is Important  
 Conducting thorough evaluations is a crucial step in user-centered game development. By collecting qualitative feedback early and iteratively, we can rapidly identify usability obstacles, refine our mechanics, and ensure that **Defend Bristol** meets real player expectations. It also helps prevent costly redesigns later on, aligning with industry best practices for delivering polished gaming experiences.
 
----
 
 ### 🔎 Choosing a Qualitative Evaluation Method  
 
@@ -440,14 +439,12 @@ To explore how players truly experience our game, we considered two commonly use
 > After weighing these methods, we concluded that observing actual players would yield richer, more actionable feedback.  
 > Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
 
----
 
 ### 🗣️ Think Aloud Evaluation  
 
 #### What Is Think Aloud?  
 Think Aloud involves inviting participants to share their thoughts, feelings, and decision-making processes aloud as they perform tasks in the game. We observe them in real time, noting points of confusion, frustration, or excitement to understand how our design is interpreted by actual players.
 
----
 
 #### Pros and Cons  
 
@@ -455,9 +452,7 @@ Think Aloud involves inviting participants to share their thoughts, feelings, an
 |---------------------------------------------|----------------------------------------------------------------------|
 | **Rich, Immediate Feedback** <br> See exactly where players stumble or succeed. | **Reliance on Participant Disclosure** <br> Shy players may hold back thoughts. |
 | **Cost-Effective** <br> Requires minimal equipment and small participant groups. | **Less Natural Playing** <br> Continuous talking may break immersion. |
-| **Reveals Emotional Reactions** <br> Valuable for game entertainment factor. |                                                                      |
 
----
 
 ### 1. Planning a Think Aloud Evaluation  
 
@@ -473,7 +468,6 @@ Each session lasted 20–30 minutes with three participants:
 - 2 familiar with tower defense games  
 - 1 completely new to the genre  
 
----
 
 ### 2. Carrying Out a Think Aloud Evaluation  
 
@@ -487,7 +481,6 @@ Facilitator instructions example:
 Prompt example (if silent too long):  
 > "Could you talk me through your decision here?"
 
----
 
 ### 3. Analyzing a Think Aloud Evaluation  
 
@@ -504,7 +497,6 @@ We collected observation notes and categorized feedback into:
 | "The historical vibe is awesome; it really makes the game stand out." | "Sometimes I wasn’t sure if the enemies had spawned yet."          | Add a countdown or alert at the start of each wave.                   |
 | "Being able to place towers on a grid is intuitive."        | "I never realized how long the Knight must stand to absorb."       | Show a progress bar or timer for ability absorption.                  |
 
----
 
 ### 🎬 Conclusion and Next Steps  
 
