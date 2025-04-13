@@ -427,17 +427,38 @@ Evaluation is a crucial step in user-centered game development. By gathering and
 
 In this section, we adopted two qualitative evaluation methods to assess the usability and user experience of our game **Defend Bristol**:
 
-- 🗣️ Think Aloud Evaluation  
-- 🔍 Heuristic Evaluation (based on Nielsen’s 10 Usability Heuristics)
+- 🗣️ **Think Aloud Evaluation**  
+- 🔍 **Heuristic Evaluation** (based on Nielsen’s 10 Usability Heuristics)
 
 ---
 
 ### 🗣️ Think Aloud Evaluation  
 
+#### What Is Think Aloud?
+The Think Aloud method (also known as a “think-aloud protocol”) involves asking participants to verbalize their thoughts, feelings, and reasoning in real time as they interact with the product. By listening to what users are thinking and how they navigate through tasks, we gain direct insight into potential usability barriers and users’ overall experience.
+
+#### Pros and Cons
+- **Pros**:  
+  - **Low Cost**: Requires minimal setup and few resources.  
+  - **Easy to Conduct**: Facilitators only need basic instructions to guide users.  
+  - **Rich Insights**: Captures users’ impressions and mental models as they perform tasks.  
+  - **Small Samples Work**: Even testing with a handful of participants can uncover major usability issues.  
+- **Cons**:  
+  - **Reliance on Self-Reporting**: Participants might omit or misrepresent thoughts (e.g., social desirability bias).  
+  - **Less Objective**: Observations are more qualitative and interpretive rather than purely metrics-based.  
+  - **Potential Disruption**: Some users find it unnatural to verbalize thoughts while concentrating on a task.
+
+#### Planning a Think Aloud Evaluation
+Before conducting the Think Aloud sessions, we followed these planning steps:
+1. **Define Objectives**: Identify key research questions (e.g., Can players easily upgrade towers? Do they understand the Knight mechanic?).  
+2. **Design Tasks**: Write out specific tasks that reflect common player actions in Defend Bristol.  
+3. **Decide Participant Criteria**: Pick a diverse range of users (e.g., both gamers and non-gamers) to cover different perspectives.  
+4. **Set Session Length**: Aim for 15–30 minutes per session for focused yet manageable feedback.  
+5. **Prepare Materials**: Have a notetaker or recording method ready; ensure the game build is stable.
+
 #### 🎮 Method:  
-We recruited 3 participants (2 students from our course and 1 non-gamer friend) to play *Defend Bristol*.  
-They were asked to verbalize their thoughts, feelings, and decisions while playing the game.  
-We observed and recorded their feedback.
+Following our plan, we recruited 3 participants (2 students from our course and 1 non-gamer friend) to play *Defend Bristol*.  
+They were asked to verbalize their thoughts, feelings, and decisions while playing the game. We observed and recorded their feedback without interrupting unless needed to prompt them to keep talking.
 
 #### 📝 Tasks given to participants:  
 - Start a new game and build towers.  
@@ -447,11 +468,11 @@ We observed and recorded their feedback.
 
 #### 💡 Key Findings:  
 
-| 😊 Positive Feedback | ⚠️ Issues Identified | 💡 Suggestions from Participants |
-|---------------------|----------------------|---------------------------------|
-| "The map is beautiful, I like seeing real Bristol landmarks." | "I was confused about where to click when I wanted to upgrade a tower." | Add a clearer visual indicator (icon or animation) for the upgrade button. |
-| "The knight mechanic is very unique and fun!" | "Sometimes I forgot where the enemies would spawn from." | Add an arrow or flashing light before the enemy wave starts. |
-| "I like the historical elements, makes it more interesting." | "The game is hard to understand at first." | Consider adding a tutorial or in-game tips for beginners. |
+| 😊 Positive Feedback                                         | ⚠️ Issues Identified                                                              | 💡 Suggestions from Participants                                                          |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| "The map is beautiful, I like seeing real Bristol landmarks." | "I was confused about where to click when I wanted to upgrade a tower."           | Add a clearer visual indicator (icon or animation) for the upgrade button.                |
+| "The knight mechanic is very unique and fun!"               | "Sometimes I forgot where the enemies would spawn from."                          | Add an arrow or flashing light before the enemy wave starts.                              |
+| "I like the historical elements, makes it more interesting." | "The game is hard to understand at first."                                        | Consider adding a tutorial or in-game tips for beginners.                                 |
 
 #### 🧾 Summary:  
 > Most participants enjoyed the game atmosphere and historical elements. However, some usability issues were identified, particularly around tower upgrading, wave spawn clarity, and the initial learning curve.
@@ -466,13 +487,13 @@ Each team member inspected the game independently and recorded potential usabili
 
 #### 🗂️ Key Issues & Heuristic Violations:  
 
-| 🔑 Heuristic Principle | ⚠️ Issue Identified | 💡 Suggestion for Improvement |
-|------------------------|--------------------|--------------------------------|
-| Visibility of System Status | No clear indicator of wave start time or enemy spawn points. | Add countdown timers and direction arrows before waves start. |
-| Match Between System and Real World | Some icons (e.g., for upgrades) were unclear to new users. | Use universally recognized symbols (e.g., up arrow for upgrades). |
-| User Control and Freedom | No 'Undo' option for misplaced towers. | Allow players to sell towers at a small refund. |
-| Consistency and Standards | Different button styles on different menus. | Standardize all buttons (size, color, hover effect). |
-| Help and Documentation | No in-game tutorial or help section. | Add a short tutorial level or in-game help tips. |
+| 🔑 Heuristic Principle              | ⚠️ Issue Identified                                                   | 💡 Suggestion for Improvement                                                    |
+|------------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| Visibility of System Status        | No clear indicator of wave start time or enemy spawn points.          | Add countdown timers and direction arrows before waves start.                    |
+| Match Between System and Real World | Some icons (e.g., for upgrades) were unclear to new users.            | Use universally recognized symbols (e.g., up arrow for upgrades).                |
+| User Control and Freedom           | No 'Undo' option for misplaced towers.                                | Allow players to sell towers at a small refund.                                  |
+| Consistency and Standards          | Different button styles on different menus.                           | Standardize all buttons (size, color, hover effect).                              |
+| Help and Documentation             | No in-game tutorial or help section.                                  | Add a short tutorial level or in-game help tips.                                 |
 
 #### 🧾 Summary:  
 > Most usability issues were minor and related to interface clarity and feedback.  
@@ -495,7 +516,6 @@ Meanwhile, the *Heuristic Evaluation* helped us systematically identify UI/UX is
 > *These evaluation methods were low-cost and effective, aligning well with industry best practices in user-centered design.*  
 > *We believe that implementing these improvements will significantly enhance the player experience of Defend Bristol.*
 
----
 
 
 
