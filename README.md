@@ -422,73 +422,111 @@ After a long period of consideration, we ultimately decided to convert the image
 
 ## 🎯 5. Evaluation  
 
-### Why Evaluation Is Important
-Conducting thorough evaluations is a crucial step in user-centered game development. By collecting qualitative feedback early and iteratively, we can rapidly identify usability obstacles, refine our mechanics, and ensure that **Defend Bristol** meets real player expectations. It also helps prevent costly redesigns later on, aligning with industry best practices for delivering polished gaming experiences.
+### ❓ Why Evaluation Is Important  
+Evaluation is a crucial step in user-centered game development.  
+By collecting qualitative feedback early and iteratively, we can:  
+- 🔍 Identify usability problems before they affect the player experience.  
+- 🛠️ Refine mechanics and interaction flows.  
+- 💰 Save time and development costs by avoiding late-stage rework.  
+- 🎮 Ensure that *Defend Bristol* delivers a polished, enjoyable experience for players.  
 
-### Choosing a Qualitative Evaluation Method
-To explore how players truly experience our game, we considered two commonly used qualitative approaches:
+---
 
-1. **Heuristic Evaluation**  
-   - **Definition**: Experts (or team members) inspect the game against established usability principles (e.g., Nielsen’s 10 Usability Heuristics).  
-   - **Advantages**: Fast, low-cost, requires no external users, and systematically checks for known interface issues.  
-   - **Limitations**: May miss authentic user reactions and context-specific pain points; relies on expert assumptions rather than real user behavior.
+### 🧪 Our Evaluation Method  
 
-2. **Think Aloud Evaluation**  
-   - **Definition**: Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game.  
-   - **Advantages**: Provides direct insight into genuine user experiences and mental models; small samples can reveal major usability hurdles.  
-   - **Limitations**: Heavily reliant on participants’ willingness to speak openly; some may find it awkward to talk while playing.
+To evaluate the user experience of *Defend Bristol*, we explored two widely used qualitative methods in the game industry:  
 
-After weighing these methods, we concluded that **observing actual players** would yield richer, more actionable feedback. While heuristic evaluations can quickly highlight certain interface-level issues, they don’t always capture the subtleties of user confusion or delight. By contrast, think-aloud protocols let us witness real-time reactions—critical for a game’s engagement and fun factor. Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
+#### 1. 🧑‍💻 Heuristic Evaluation  
+Experts inspect the interface based on established usability principles (like Nielsen’s 10 Usability Heuristics).  
+- ✅ Fast & low-cost  
+- ✅ Systematic & principle-based  
+- ⚠️ May miss real player reactions or emotional responses  
 
-### 🗣️ Think Aloud Evaluation  
+#### 2. 🗣️ Think Aloud Evaluation  
+Real players are invited to verbalize their thoughts and feelings while interacting with the game.  
+- ✅ Captures real-time player reactions  
+- ✅ Reveals both interface and emotional feedback  
+- ⚠️ Relies on users being comfortable speaking aloud  
 
-#### What Is Think Aloud?
-Think Aloud involves inviting participants to share their thoughts, feelings, and decision-making processes aloud as they perform tasks in the game. We observe them in real time, noting points of confusion, frustration, or excitement to understand how our design is interpreted by actual players.
+---
 
-#### Pros and Cons
-- **Pros**  
-  - **Rich, Immediate Feedback**: Lets us see exactly where players stumble or succeed.  
-  - **Cost-Effective**: Requires minimal equipment and can be done with small participant groups.  
-  - **Reveals Emotional Reactions**: Particularly valuable for a game’s entertainment factor.  
-- **Cons**  
-  - **Reliance on Participant Disclosure**: Shy or reserved players may hold back thoughts.  
-  - **Less Natural Playing**: Some users find continuous talking breaks immersion.
+### 💡 Why We Chose Think Aloud Evaluation  
+Since *Defend Bristol* focuses on delivering a strategic and immersive experience, we wanted to go beyond expert assumptions and observe how real players engage with our game world.  
 
-#### Planning
-Before conducting the sessions, we:
-1. **Outlined Objectives**: For instance, to see if players understand how to upgrade towers or use the Knight mechanic effectively.  
-2. **Scripted Tasks**: Designed key tasks such as “Build your first tower” or “Absorb a tower ability via the Knight.”  
-3. **Selected Participants**: Recruited a mix of gaming backgrounds (2 students in our course and 1 non-gamer).  
-4. **Set Session Duration**: Targeted ~20 minutes each to avoid fatigue and keep focus.  
-5. **Prepared Materials**: Ensured the game build was stable and we had a straightforward way to record notes.
+Think Aloud Evaluation allows us to:  
+- 🎯 Identify usability issues in context  
+- 🎮 Understand how players learn and experience new mechanics  
+- ❤️ Capture emotional feedback on game atmosphere and narrative  
 
-#### Method  
-During the play sessions, participants were instructed to continually “think aloud” about what they were doing, why they were doing it, and how they felt at each step. We only intervened when they fell silent for an extended period, gently prompting them to keep sharing their thoughts.
+> Therefore, we adopted the *Think Aloud* method as our primary evaluation approach.
 
-#### Tasks Given to Participants  
-1. Start a new game and build towers.  
-2. Upgrade a tower.  
-3. Use the Knight mechanic to absorb tower abilities.  
-4. Complete a full level.
+---
 
-#### Key Findings
+## 🗣️ Think Aloud Evaluation  
+
+### 📝 What Is Think Aloud?  
+Players are asked to “think aloud” while playing — sharing their thoughts, feelings, and decisions in real-time.  
+We observe how they interact with the game, noting points of:  
+- Confusion 😕  
+- Frustration 😤  
+- Surprise 😲  
+- Enjoyment 😄  
+
+---
+
+### 🏗️ Planning Our Evaluation  
+
+#### 🎯 Objectives  
+- Can players easily place and upgrade towers?  
+- Do they understand the Knight mechanic?  
+- Are enemy waves clear and predictable?  
+
+#### 🛠️ Tasks Designed for Participants  
+1. Start a new game and build towers 🏰  
+2. Upgrade a tower ⬆️  
+3. Use the Knight mechanic 🛡️  
+4. Complete a full level 🏆  
+
+#### 👥 Participants  
+- 2 students from our course 🎓  
+- 1 non-gamer friend 🧑‍🌾  
+
+#### ⏲️ Session Length  
+Each session lasted around 20 minutes.
+
+#### 🗂️ Preparation  
+- Stable game build 🎮  
+- Recording tools for note-taking 📝  
+- Observation sheet for findings 📄  
+
+---
+
+## 🔍 Key Findings from Think Aloud  
+
 | 😊 Positive Feedback                                         | ⚠️ Issues Identified                                                              | 💡 Suggestions from Participants                                                          |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | "The map is beautiful, I like seeing real Bristol landmarks." | "I was confused about where to click when I wanted to upgrade a tower."           | Add a clearer visual indicator (icon or animation) for the upgrade button.                |
 | "The knight mechanic is very unique and fun!"               | "Sometimes I forgot where the enemies would spawn from."                          | Add an arrow or flashing light before the enemy wave starts.                              |
 | "I like the historical elements, makes it more interesting." | "The game is hard to understand at first."                                        | Consider adding a tutorial or in-game tips for beginners.                                 |
 
-#### Summary
-> Overall, participants praised the blend of historical flavor and strategic gameplay. However, they noted challenges such as unclear upgrade actions, vague enemy wave indicators, and a steep learning curve at the start.
+---
 
-## 🎉 Evaluation Conclusion
-By opting for **Think Aloud Evaluation**, we captured authentic user experiences that might have been overlooked in an expert-driven review. This method highlighted clear opportunities to improve **Defend Bristol**, including:
+### 🧾 Summary of Findings  
+> Overall, participants enjoyed the atmosphere, the historical elements, and the strategic gameplay of *Defend Bristol*. However, they encountered usability issues such as unclear upgrade interactions, vague enemy wave indicators, and a steep learning curve for first-time players.
 
-- **Enhancing UI Feedback** (e.g., tower upgrade prompts, wave spawn warnings)  
-- **Providing a Smoother Onboarding** (perhaps through in-game tutorials or tooltips)  
-- **Refining Core Mechanics** (ensuring the Knight mechanic remains intuitive and satisfying)
+---
 
-*We believe that addressing these issues will significantly enhance the overall player experience, ensuring Defend Bristol is both engaging and accessible.*
+## 🎉 Evaluation Conclusion  
+
+The *Think Aloud Evaluation* provided us with rich, real-time insights into player experiences — both the good and the challenging.  
+
+### 🔧 Key Improvements Planned:  
+- Enhance UI feedback (tower upgrade prompts, wave spawn indicators)  
+- Provide a smoother onboarding (add tutorial or in-game tips)  
+- Refine core mechanics for better clarity and flow  
+
+> *By addressing these issues, we believe *Defend Bristol* will offer a more engaging, accessible, and polished experience for all players.*
+
 
 
 
