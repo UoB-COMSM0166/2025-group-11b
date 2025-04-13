@@ -538,12 +538,11 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 ### 🔬 Choosing a Quantitative Evaluation Method  
 
-While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated two standardized **quantitative** methods to validate and measure specific aspects of player perception:
+While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated a standardized quantitative method to validate and measure specific aspects of player perception:
 
-1. **NASA Task Load Index (NASA TLX)**  
-2. **System Usability Scale (SUS)**
+1. **NASA Task Load Index (NASA TLX)**
 
-These tools help us obtain numeric scores that allow for straightforward comparison between difficulty levels, interface iterations, or any other key design variations.
+This tool helps us obtain numeric scores that allow for straightforward comparison between difficulty levels, interface iterations, or any other key design variations.
 
 ---
 
@@ -554,77 +553,81 @@ Measure the perceived workload that players experience while performing core tas
 
 ##### Method  
 
-**NASA TLX** involves two main steps:
+**NASA TLX** is computed in two main steps:
 
-1. **Determine Dimension Weights** (Pairwise Comparisons)  
-   Each participant compares the 6 dimensions (Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, Frustration) in pairs (15 comparisons total) to decide which dimension contributes more to their personal sense of workload. Each time a dimension “wins,” it gets 1 point. The total points range 0–5 for each dimension, and the sum of all dimension weights equals 15.
+1. **Determine Dimension Weights (Pairwise Comparisons)**  
+   - Each participant performs 15 pairwise comparisons between the six dimensions: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
+   - In each comparison, if a dimension is considered more important, it earns 1 point. Thus, each dimension’s weight is between 0 and 5, and the total weight across all dimensions is 15.
+   - **Important:** Each participant will have a unique weight vector based on their own comparisons.
 
-2. **Rate Each Dimension** (0–100 scale)  
-   Participants mark each of the 6 dimensions on a scale from 0 (lowest) to 100 (highest). Then, to calculate the **Weighted NASA TLX**, we multiply each dimension’s rating by its dimension weight, sum across all 6 dimensions, and divide by 15.
+2. **Rate Each Dimension (0–100 Scale)**  
+   - Each participant provides a rating (0–100) for each of the six dimensions (often in increments of 5).
+   - The **Weighted NASA TLX** for a participant is calculated by multiplying each dimension’s rating by its corresponding weight, summing these values, and then dividing by 15.
 
-**Formula** (per participant):  
+The formula for a single participant is:
 
 \[
-\text{Weighted TLX} 
-= \frac{ (MD \times w_{MD}) + (PD \times w_{PD}) + (TD \times w_{TD}) + (Perf \times w_{Perf}) + (Effort \times w_{Effort}) + (Frust \times w_{Frust}) }{15}
+\text{Weighted TLX} = \frac{ (\text{MD} \times w_{\text{MD}}) + (\text{PD} \times w_{\text{PD}}) + (\text{TD} \times w_{\text{TD}}) + (\text{Perf} \times w_{\text{Perf}}) + (\text{Effort} \times w_{\text{Effort}}) + (\text{Frust} \times w_{\text{Frust}}) }{15}
 \]
 
-*(If you ignore the weighting step and simply average or sum the dimension ratings, that becomes the **Raw TLX**.)*
+*If the weighting step is skipped (i.e. using a simple average of the ratings), this is called the Raw TLX.*
 
 ---
 
-##### Pairwise Comparisons & Dimension Weights (Example)
+##### Example: Pairwise Comparisons & Dimension Weights
 
-In our example, suppose the **average weights** (from all participants) turned out to be:
+For demonstration, suppose that after completing pairwise comparisons across participants the **average weights** for each dimension were as follows (for illustration only):
 
 <div align="center">
 
-| Dimension       | Times Chosen | Weight |
-|-----------------|-------------:|-------:|
-| Mental Demand   | 4           | 4      |
-| Physical Demand | 1           | 1      |
-| Temporal Demand | 2           | 2      |
-| Performance     | 3           | 3      |
-| Effort          | 3           | 3      |
-| Frustration     | 2           | 2      |
-| **Sum**         | –           | 15     |
-
+| Dimension       | Times Chosen (Example) | Weight (Example) |
+|-----------------|------------------------:|-----------------:|
+| **Mental Demand**   | 4                  | 4                |
+| **Physical Demand** | 1                  | 1                |
+| **Temporal Demand** | 2                  | 2                |
+| **Performance**     | 3                  | 3                |
+| **Effort**          | 3                  | 3                |
+| **Frustration**     | 2                  | 2                |
+| **Total**           | –                  | 15               |
+  
 </div>
 
-> *Note:* Each participant might have a unique set of weights; you can average them for a group-level analysis.
+> **Note:** In practice, each participant’s weight vector should be calculated individually and used for their own Weighted TLX computation.
 
 ---
 
 ##### 🎮 Easy Difficulty (N=10)
 
+The table below shows example ratings for each of the six dimensions (0–100) from 10 participants and the resulting **Weighted TLX Scores** calculated using their individual weights (here, for simplicity, all users are shown with the example average weights):
+
 <div align="center">
 
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
-|------|--------------:|----------------:|----------------:|------------:|-------:|------------:|--------------------|
-| 1    | 20           | 10             | 15             | 85          | 25     | 5           | 30.7               |
-| 2    | 25           | 15             | 20             | 80          | 30     | 10          | 34.0               |
-| 3    | 15           | 5              | 10             | 90          | 20     | 5           | 27.3               |
-| 4    | 30           | 20             | 25             | 70          | 35     | 10          | 35.3               |
-| 5    | 20           | 15             | 20             | 80          | 25     | 10          | 31.3               |
-| 6    | 10           | 10             | 15             | 85          | 20     | 5           | 26.7               |
-| 7    | 25           | 15             | 30             | 75          | 30     | 15          | 36.7               |
-| 8    | 20           | 15             | 25             | 80          | 25     | 10          | 32.7               |
-| 9    | 15           | 10             | 10             | 90          | 20     | 5           | 28.0               |
-| 10   | 30           | 20             | 30             | 75          | 35     | 15          | 37.3               |
+|------|---------------|-----------------|-----------------|-------------|--------|-------------|--------------------|
+| 1    | 20            | 10              | 15              | 85          | 25     | 5           | 30.7               |
+| 2    | 25            | 15              | 20              | 80          | 30     | 10          | 34.0               |
+| 3    | 15            | 5               | 10              | 90          | 20     | 5           | 27.3               |
+| 4    | 30            | 20              | 25              | 70          | 35     | 10          | 35.3               |
+| 5    | 20            | 15              | 20              | 80          | 25     | 10          | 31.3               |
+| 6    | 10            | 10              | 15              | 85          | 20     | 5           | 26.7               |
+| 7    | 25            | 15              | 30              | 75          | 30     | 15          | 36.7               |
+| 8    | 20            | 15              | 25              | 80          | 25     | 10          | 32.7               |
+| 9    | 15            | 10              | 10              | 90          | 20     | 5           | 28.0               |
+| 10   | 30            | 20              | 30              | 75          | 35     | 15          | 37.3               |
 
 </div>
 
-> **Example Calculation** (User #1, Easy):  
-> - MD=20×4 = 80  
-> - PD=10×1 = 10  
-> - TD=15×2 = 30  
-> - Perf=85×3 = 255  
-> - Effort=25×3 = 75  
-> - Frust=5×2 = 10  
-> - Sum=80+10+30+255+75+10 = 460  
-> - Weighted TLX = 460 / 15 ≈ 30.7
+**Example Calculation (User 1, Easy):**
+- Mental Demand: 20 × 4 = 80  
+- Physical Demand: 10 × 1 = 10  
+- Temporal Demand: 15 × 2 = 30  
+- Performance: 85 × 3 = 255  
+- Effort: 25 × 3 = 75  
+- Frustration: 5 × 2 = 10  
+- **Total = 80 + 10 + 30 + 255 + 75 + 10 = 460**  
+- **Weighted TLX = 460 / 15 ≈ 30.7**
 
-**Average Weighted Score (Easy)** ≈ 32.3
+**Average Weighted Score (Easy) ≈ 32.3**
 
 ---
 
@@ -633,21 +636,21 @@ In our example, suppose the **average weights** (from all participants) turned o
 <div align="center">
 
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
-|------|--------------:|----------------:|----------------:|------------:|-------:|------------:|--------------------|
-| 1    | 40           | 30             | 35             | 80          | 40     | 15          | 47.3               |
-| 2    | 35           | 25             | 30             | 75          | 45     | 20          | 46.0               |
-| 3    | 30           | 20             | 25             | 85          | 35     | 10          | 41.3               |
-| 4    | 45           | 40             | 40             | 65          | 50     | 25          | 51.3               |
-| 5    | 35           | 25             | 35             | 75          | 40     | 15          | 45.3               |
-| 6    | 25           | 30             | 30             | 80          | 35     | 20          | 43.3               |
-| 7    | 40           | 35             | 45             | 70          | 55     | 25          | 52.7               |
-| 8    | 35           | 30             | 40             | 75          | 45     | 20          | 49.3               |
-| 9    | 30           | 20             | 25             | 85          | 35     | 10          | 41.3               |
-| 10   | 45           | 40             | 50             | 65          | 55     | 25          | 54.0               |
+|------|---------------|-----------------|-----------------|-------------|--------|-------------|--------------------|
+| 1    | 40            | 30              | 35              | 80          | 40     | 15          | 47.3               |
+| 2    | 35            | 25              | 30              | 75          | 45     | 20          | 46.0               |
+| 3    | 30            | 20              | 25              | 85          | 35     | 10          | 41.3               |
+| 4    | 45            | 40              | 40              | 65          | 50     | 25          | 51.3               |
+| 5    | 35            | 25              | 35              | 75          | 40     | 15          | 45.3               |
+| 6    | 25            | 30              | 30              | 80          | 35     | 20          | 43.3               |
+| 7    | 40            | 35              | 45              | 70          | 55     | 25          | 52.7               |
+| 8    | 35            | 30              | 40              | 75          | 45     | 20          | 49.3               |
+| 9    | 30            | 20              | 25              | 85          | 35     | 10          | 41.3               |
+| 10   | 45            | 40              | 50              | 65          | 55     | 25          | 54.0               |
 
 </div>
 
-**Average Weighted Score (Mid)** ≈ 47.2
+**Average Weighted Score (Mid) ≈ 47.2**
 
 ---
 
@@ -656,25 +659,25 @@ In our example, suppose the **average weights** (from all participants) turned o
 <div align="center">
 
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
-|------|--------------:|----------------:|----------------:|------------:|-------:|------------:|--------------------|
-| 1    | 60           | 50             | 55             | 70          | 65     | 35          | 68.7               |
-| 2    | 55           | 45             | 50             | 65          | 70     | 40          | 65.3               |
-| 3    | 50           | 40             | 45             | 75          | 60     | 30          | 60.0               |
-| 4    | 65           | 60             | 60             | 55          | 75     | 45          | 72.7               |
-| 5    | 55           | 50             | 55             | 70          | 65     | 40          | 66.7               |
-| 6    | 45           | 40             | 50             | 75          | 55     | 30          | 58.7               |
-| 7    | 60           | 55             | 65             | 60          | 80     | 50          | 76.0               |
-| 8    | 55           | 50             | 60             | 65          | 70     | 40          | 69.3               |
-| 9    | 50           | 40             | 45             | 75          | 60     | 30          | 60.0               |
-| 10   | 65           | 60             | 65             | 55          | 75     | 45          | 74.0               |
+|------|---------------|-----------------|-----------------|-------------|--------|-------------|--------------------|
+| 1    | 60            | 50              | 55              | 70          | 65     | 35          | 68.7               |
+| 2    | 55            | 45              | 50              | 65          | 70     | 40          | 65.3               |
+| 3    | 50            | 40              | 45              | 75          | 60     | 30          | 60.0               |
+| 4    | 65            | 60              | 60              | 55          | 75     | 45          | 72.7               |
+| 5    | 55            | 50              | 55              | 70          | 65     | 40          | 66.7               |
+| 6    | 45            | 40              | 50              | 75          | 55     | 30          | 58.7               |
+| 7    | 60            | 55              | 65              | 60          | 80     | 50          | 76.0               |
+| 8    | 55            | 50              | 60              | 65          | 70     | 40          | 69.3               |
+| 9    | 50            | 40              | 45              | 75          | 60     | 30          | 60.0               |
+| 10   | 65            | 60              | 65              | 55          | 75     | 45          | 74.0               |
 
 </div>
 
-**Average Weighted Score (Hard)** ≈ 67.2
+**Average Weighted Score (Hard) ≈ 67.2**
 
 ---
 
-##### 🧮 Mean Weighted NASA TLX by Difficulty
+##### Group-Level Mean Weighted TLX by Difficulty
 
 <div align="center">
 
@@ -683,54 +686,43 @@ In our example, suppose the **average weights** (from all participants) turned o
 | **Easy**   | 32.3              |
 | **Mid**    | 47.2              |
 | **Hard**   | 67.2              |
-
+  
 </div>
 
 ---
 
-##### 📊 Visualization of Weighted NASA TLX
+##### Visualization of Weighted NASA TLX
 
-下面柱状图示例展示 **Easy / Mid / Hard** 三个难度下的平均加权任务负荷分数（Mean Weighted TLX）。实际项目中请替换为你真实算出的平均值：
+Below is a sample bar chart comparing the average Weighted NASA TLX scores across difficulty levels. Replace the image link with your actual chart if available.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/xxxxxx/NASA_weighted_bar.png" width="550" alt="Weighted NASA TLX by Difficulty">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/NASA.png" width="600" alt="Weighted NASA TLX by Difficulty">
 </p>
 
-*Figure: Comparison of Weighted NASA TLX (0–100 scale) across Easy, Mid, and Hard.*
+*Figure: Comparison of average Weighted NASA TLX scores (0–100 scale) for Easy, Mid, and Hard difficulty levels (sample data).*
 
 ---
 
-##### Key Observations  
+##### Key Observations
 
-- **Increasing Difficulty**: Hard mode shows a significantly higher mean Weighted TLX (~67.2), indicating players perceive a much heavier workload compared to Easy (~32.3).  
-- **Performance vs. Effort**: As difficulty increases, Performance scores drop while Effort rises, suggesting tasks become more challenging.  
-- **Benefit of Weighting**: Some dimensions (e.g., Mental Demand, Effort) have higher weights (≥3–4) and thus strongly influence overall workload. This highlights exactly which aspects of the game design may need refinement to reduce player burden.
-
----
-
-#### System Usability Scale (SUS)
-
-*(你可以在这里保留或插入 SUS 的评估结果，和 Weighted NASA TLX 一起对游戏进行整体评估。)*
-
----
-
-### ✨ Key Findings from Quantitative Evaluations
-
-- **Weighted NASA TLX**: By incorporating dimension weights, we identify which factors (e.g., Mental Demand, Effort) most strongly affect the overall perceived workload. Difficulty level significantly impacts these scores.  
-- **Overall Usability**: SUS scores (if above ~68) confirm the system is relatively user-friendly, though UI and clarity improvements can still help.
+- **Individual Calculation:**  
+  Each participant’s weighted score must be calculated using their own pairwise comparison weights. Only after computing individual scores can we average them to obtain group-level means.
+- **Increasing Difficulty:**  
+  Hard mode shows a significantly higher mean weighted score (~67.2) compared to Easy (~32.3), reflecting a much heavier perceived workload.
+- **Dimension Impact:**  
+  Dimensions with higher weights (e.g., Mental Demand and Effort) contribute more strongly to the overall score, which highlights areas in the design that may require improvement.
+- **Advantage of Weighting:**  
+  The weighted approach distinguishes which aspects of the game contribute most to the overall workload, providing actionable insights for refining the game experience.
 
 ---
 
-### Integrating Qualitative and Quantitative Insights
+### Integrating the Findings
 
-By combining **Think Aloud** observations with **Weighted NASA TLX** and **SUS** scores, we gain a holistic understanding of **Defend Bristol**’s player experience:
+By combining our qualitative Think Aloud observations with the quantitative Weighted NASA TLX scores (calculated individually and aggregated), we gain a comprehensive understanding of the player experience in **Defend Bristol**. This approach allows us to pinpoint design elements—such as UI clarity, tower upgrade feedback, and enemy pacing—that may need refinement, especially under higher difficulty settings.
 
-1. **Qualitative (Think Aloud)**:  
-   - Rich, real-time feedback on confusion points, emotional responses, and user motivations.
-2. **Quantitative (Weighted NASA TLX & SUS)**:  
-   - Objectively measured workload and usability benchmarks.
+**Conclusion:**  
+The use of weighted TLX not only validates the overall user experience but also identifies specific workload components that heavily impact gameplay. Future iterations will target reducing excessive mental and physical demands while maintaining the desired challenge level.
 
-**Conclusion**: The synergy of these methods validates both the overall usability level and pinpoints specific design areas needing attention (e.g., UI labeling, tower upgrade clarity). Future iterations will aim to reduce excessive mental demand without compromising the challenge that Hard mode players might enjoy.
 
 
 
