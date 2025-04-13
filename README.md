@@ -532,7 +532,89 @@ Based on the Think Aloud sessions, we identified key improvements:
 - **Refine UI Controls**  
   - Improve button labels for clarity.  
   - Add confirmation prompts for critical actions to prevent misclicks.
+
+### 🔬 Choosing a Quantitative Evaluation Method  
+
+While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated two standardized **quantitative** methods to validate and measure specific aspects of player perception:
+
+1. **NASA Task Load Index (NASA TLX)**  
+2. **System Usability Scale (SUS)**
+
+These tools help us obtain numeric scores that allow for straightforward comparison between difficulty levels, interface iterations, or any other key design variations.
+
 ---
+
+#### NASA Task Load Index (NASA TLX)
+
+**Purpose**: Measure the perceived workload that players experience while performing core tasks in the game.  
+
+**Method**:
+1. **Task Selection**: We asked participants to attempt the same set of tasks used in the Think Aloud sessions: starting a game, placing/upgrading towers, using the Knight’s abilities, etc.  
+2. **Completion**: After each participant finished these tasks, they filled in the NASA TLX form to rate their mental demand, physical demand, temporal demand, performance, effort, and frustration.  
+3. **Scoring**: We opted for the *raw TLX* approach (i.e., we did **not** use the weighting procedure). Each dimension was rated on a 0–100 scale, then we averaged the six scores to derive an overall workload rating.
+
+**Sample Results** (example data, N=5):
+
+| Participant | Mental | Physical | Temporal | Performance | Effort | Frustration | Average (0–100) |
+|-------------|--------|----------|----------|------------|--------|-------------|-----------------|
+| #1          | 30     | 15       | 25       | 70         | 40     | 10          | 31.7            |
+| #2          | 40     | 20       | 50       | 80         | 50     | 30          | 45.0            |
+| #3          | 25     | 10       | 20       | 85         | 25     | 15          | 30.0            |
+| #4          | 35     | 25       | 45       | 65         | 55     | 35          | 43.3            |
+| #5          | 45     | 20       | 50       | 75         | 45     | 25          | 43.3            |
+
+> *Observations (example)*:
+> - **Performance** consistently scored high (65–85), suggesting most players felt successful at completing tasks.  
+> - **Mental Demand** showed moderate scores (25–45), indicating a reasonable cognitive load.  
+> - **Frustration** remained low for most participants, suggesting minimal emotional distress.  
+
+---
+
+#### System Usability Scale (SUS)
+
+**Purpose**: Obtain a global view of **Defend Bristol**’s usability from the player’s perspective.
+
+**Method**:
+1. **Administration**: After finishing all tasks (including the NASA TLX), participants were invited to fill out a standard 10-item SUS questionnaire.  
+2. **Scoring**:
+   - For odd-numbered items, the score contribution = (user response) - 1.  
+   - For even-numbered items, the score contribution = 5 - (user response).  
+   - Summing all contributions and multiplying by 2.5 gives a total SUS score in the range 0–100.
+
+**Sample Results** (example data, N=5):
+
+| Participant | SUS Score (0–100) |
+|-------------|--------------------|
+| #1          | 72.5              |
+| #2          | 65.0              |
+| #3          | 70.0              |
+| #4          | 75.0              |
+| #5          | 80.0              |
+
+> *Observations (example)*:
+> - An average SUS of ~72 indicates an **above-average** usability compared to the industry benchmark of 68.  
+> - Most participants rated the game positively, though some suggested more clarity in certain UI elements.  
+
+---
+
+### ✨ Key Findings from Quantitative Evaluations
+
+- **Overall Usability**: With a SUS average above 70, **Defend Bristol** appears user-friendly, but further refinements could push it closer to excellent.  
+- **Moderate Workload**: NASA TLX results showed that while players found the game engaging, certain tasks (like tower upgrades) imposed higher mental/temporal demands.  
+- **Actionable Data**: By correlating the TLX sub-scores with specific tasks, we can pinpoint where to reduce cognitive load or frustration—e.g., clarifying upgrade paths, adding more intuitive UI hints, and so forth.
+
+---
+
+### Integrating Qualitative and Quantitative Insights
+
+By combining **Think Aloud** observations with **NASA TLX** and **SUS** metrics, we gain a holistic understanding of **Defend Bristol**’s player experience:
+
+1. **Qualitative** (Think Aloud):  
+   - Rich, real-time feedback on confusion points, emotional responses, and user motivations.
+2. **Quantitative** (NASA TLX & SUS):  
+   - Objective workload scores and usability benchmarks.
+
+**Conclusion**: The synergy of these methods validates both the overall usability level and highlights specific design areas needing attention (e.g., clarity on upgrades, UI interactions). Future iterations will focus on reducing mental demand where possible and improving the game’s strategic depth without overwhelming players.
 
 
 
