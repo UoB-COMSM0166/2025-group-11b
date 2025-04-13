@@ -512,29 +512,27 @@ We collected observation notes and categorized feedback into:
 
 Based on the Think Aloud sessions, we identified key improvements:  
 
-#### 1. Improve Map Interaction
-- Highlight walkable areas to improve map readability and reduce player confusion about where characters can move.
+- **Improve Map Interaction**  
+  - Highlight walkable areas to improve map readability and reduce player confusion.
 
-#### 2. Refine Tower Management Feedback
-- Add visible or audible cues when a tower upgrade is complete.  
-- Improve visual differentiation between tower types and upgrade paths (e.g., color-coding or distinct icons).
+- **Refine Tower Management Feedback**  
+  - Add visible or audible cues when a tower upgrade is complete.  
+  - Improve visual differentiation between tower types and upgrade paths (e.g., color-coding).
 
-#### 3. Clarify Enemy Speed Adjustment
-- Provide clear in-game feedback about the effect of speed adjustments (e.g., whether it applies to all enemies or only new waves).  
-- Add a tooltip or message when activating speed-up.
+- **Clarify Enemy Speed Adjustment**  
+  - Provide clear feedback about the effect of speed-up (e.g., whether it applies to all enemies or only new waves).  
+  - Add tooltips or hints when activating speed-up.
 
-#### 4. Optimize Wave Alerts
-- Add a countdown timer or clearer visual indicators before enemy waves spawn, helping players better prepare for incoming attacks.
+- **Refine Wave Alerts**  
+  - Provide clearer indicators or countdowns before enemy spawning to help players prepare.
 
-#### 5. Improve Knight Ability Feedback
-- Add a progress bar or timer to show the Knight’s ability absorption duration, giving players a better understanding of the mechanic.
+- **Clarify Knight Ability Absorption**  
+  - Incorporate a progress bar or timer to show the absorption duration for better player feedback.
 
-#### 6. Refine UI Controls
-- Improve button labels for clarity (e.g., differentiate between "Sell" and "Upgrade").  
-- Add confirmation prompts for critical actions like selling or upgrading towers to avoid accidental mistakes.
-
-
-
+- **Refine UI Controls**  
+  - Improve button labels for clarity (e.g., differentiate between "Sell" and "Upgrade").  
+  - Add confirmation prompts for critical actions to prevent misclicks.
+---
 
 
 
@@ -554,10 +552,7 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 
 
-
-
-
-- One qualitative evaluation (your choice)
+  One qualitative evaluation (your choice)
    - **Key Findings**
    ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
  Recommendations for Improvement
