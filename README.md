@@ -459,75 +459,46 @@ Think Aloud involves inviting participants to share their thoughts, feelings, an
 
 ### 1. Planning a Think Aloud Evaluation
 
-1. **Define Research Questions**  
-   We wanted to see if users could easily locate and upgrade towers, understand where to build defenses, and grasp how the Knight mechanic works. In short, our key questions were:  
-   - Do players know how to start placing towers?  
-   - Can players upgrade a tower without confusion?  
-   - How do players interpret the Knight’s “ability absorption” mechanic?
+We began by clarifying our key questions:  
+- ⚔️ *Can players figure out how to place and upgrade towers on their own?*  
+- 🤔 *Do they understand how the Knight absorbs a tower’s ability?*  
+- ❓ *Are there any points of confusion about the interface or objectives?*
 
-2. **Design Tasks**  
-   We chose specific tasks that reflect core gameplay actions in *Defend Bristol*:  
-   1. Start a new game and place a basic tower.  
-   2. Upgrade that tower to the next level.  
-   3. Use the Knight to absorb a tower’s ability.  
-   4. Complete a full enemy wave.  
+From these questions, we created a brief list of tasks covering each core mechanic—such as starting a new game, placing a tower, upgrading it, using the Knight to absorb abilities, and completing a full enemy wave.
 
-3. **Decide Participants & Session Length**  
-   We recruited 3 participants for this round of testing (2 players with some tower defense experience, 1 who had never played a tower defense game). Each session was scheduled for about 20–30 minutes to keep participants engaged while still allowing them to complete the tasks.
-
----
+Each testing session lasted about 20–30 minutes, giving participants enough time to explore without feeling rushed. We invited three individuals: two were already familiar with tower defense games, and one was completely new to the genre. This allowed us to see how both seasoned players and beginners approached the game’s systems.
 
 ### 2. Carrying Out a Think Aloud Evaluation
 
-**Step 1: Facilitator & Observers**  
-- We assigned one facilitator to guide the session and answer any clarifying questions. The facilitator introduced the Think Aloud method:  
-  > “As you play, please say out loud what you’re thinking, why you’re making certain decisions, and how you feel. There’s no right or wrong answer, and please feel free to critique anything.”  
-- One observer took notes on the participant’s spoken thoughts; another observer noted any notable in-game actions, errors, or confusion.
+We assigned one facilitator to explain the Think Aloud method and keep the session running smoothly. They began by telling participants:  
+> “There are no right or wrong answers—please share any thoughts or feelings you have as you play. If you fall silent for a while, I might gently ask what you’re thinking.”
 
-**Step 2: User Task Execution**  
-- Participants then attempted the tasks (placing and upgrading towers, using the Knight mechanic, completing a wave). We avoided interrupting or offering hints so we could see natural user behavior.  
-- If a participant went silent for an extended period, the facilitator gently prompted with:  
-  > “What are you thinking right now?”
+Meanwhile, one or two observers took notes on everything participants said or seemed to feel during gameplay. Once a session started, participants attempted the tasks independently while we listened for signs of confusion or delight. Only if someone stopped speaking for too long did we nudge them with a quick prompt—like,  
+> “Could you talk me through your decision here?”  
 
----
+This helped maintain a steady flow of verbalized thought without being intrusive.
 
 ### 3. Analyzing a Think Aloud Evaluation
 
-1. **Collect Notes**  
-   After the sessions ended, we gathered the observers’ written notes into one shared document.
+After each session, we collected all notes from the facilitator and observers, then sorted them by common themes. We often grouped feedback into categories like **helpful features**, **confusing elements**, and **suggestions for improvement**, counting how frequently each type of comment arose. This method pinpointed which issues affected multiple participants versus ones that occurred rarely.
 
-2. **Categorize Feedback**  
-   We divided all observations into meaningful categories, such as:  
-   - **Helpful Features**: Elements that players praised or found intuitive (e.g., clear tower icons).  
-   - **Problematic Features**: Areas where confusion or errors frequently arose (e.g., upgrade button placement).  
-   - **User Suggestions**: Ideas or feature requests mentioned by participants (e.g., a tutorial for new players).
+Below is a quick snapshot of what emerged from our Think Aloud sessions:
 
-3. **Identify Key Issues**  
-   We counted how often each type of comment appeared to find the biggest pain points. For instance, if multiple participants struggled with the same tower-upgrade interface, we flagged it as a high-priority fix.
+| 😊 Positive Feedback                                        | ⚠️ Issues Identified                                              | 💡 Suggestions for Improvement                                       |
+|------------------------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------------------|
+| “I love the Knight mechanic—it adds a fun strategic twist.” | “I didn’t notice when the tower had finished upgrading.”          | Include a clear sound effect or pop-up when an upgrade completes.     |
+| “The historical vibe is awesome; it really makes the game stand out.” | “Sometimes I wasn’t sure if the enemies had spawned yet.”          | Add a short countdown or alert at the start of each wave.             |
+| “Being able to place towers on a grid is intuitive.”        | “I never realized how long the Knight must stand to absorb.”       | Provide a small progress bar or timer to show how absorption works.   |
 
----
+### Conclusion and Next Steps
 
-### Summary of Our Think Aloud Findings
+Overall, participants enjoyed the game’s unique historical flair and the Knight’s absorbing mechanic. However, a few usability gaps stood out:
 
-| Positive Feedback                                          | Issues Identified                                               | Suggestions from Participants                     |
-|------------------------------------------------------------|-----------------------------------------------------------------|---------------------------------------------------|
-| “The Knight mechanic adds a fun, interactive layer.”       | “I wasn’t sure if I had upgraded my tower successfully.”        | Provide a clear visual cue when an upgrade occurs |
-| “I like how the historical elements are woven into levels.”| “Where do I click to place the tower? I’m confused by the grid.”| Add a grid highlight or a pop-up arrow tutorial   |
-| “Feels good seeing the wave countdown. I know what's next.”| “It’s unclear how long the Knight must stand by a tower.”       | Show a small timer or progress bar for absorption |
+- **Improve Upgrade Feedback**: Adding more visible or audible cues to confirm an upgrade has completed.  
+- **Refine Wave Alerts**: Providing clearer indicators or countdowns so players know exactly when enemies will spawn.  
+- **Clarify Knight Absorption**: Incorporating a brief timer or progress bar to illustrate how (and when) the Knight gains power.
 
-> Overall, participants enjoyed the historical theme and praised the strategic depth added by the Knight mechanic. However, they sometimes struggled with tower placement cues and lacked clarity on upgrade feedback.
-
----
-
-### Conclusion & Next Steps
-
-By following these three phases—**Planning**, **Carrying Out**, and **Analyzing**—we obtained authentic user perspectives on the core features of our tower defense game. Moving forward, we plan to:
-
-- **Enhance Tower Placement Cues**: Implement clearer grid highlights or step-by-step tutorials for first-time players.  
-- **Improve Upgrade Feedback**: Add a visual or audio cue indicating successful upgrades.  
-- **Refine Knight Mechanic Indicators**: Provide a brief timer or progress bar to show how and when ability absorption occurs.
-
-> We believe incorporating these improvements will substantially enhance the user experience in **Defend Bristol**, making the gameplay more intuitive, engaging, and satisfying for both new and experienced players.
+By addressing these areas, we believe **Defend Bristol** will offer an even more accessible and engaging tower defense experience, delighting both new and experienced players alike.
 
 
 
