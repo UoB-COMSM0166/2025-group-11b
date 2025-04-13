@@ -567,7 +567,10 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 ---
 
 ##### 🎮 Easy Difficulty
+
+
 <div align="center">
+
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
 |------|---------------|-----------------|-----------------|-------------|--------|-------------|
 | 1    | 20            | 10              | 15              | 85          | 25     | 5           |
