@@ -530,3 +530,37 @@ The *Think Aloud Evaluation* provided us with rich, real-time insights into play
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+- One qualitative evaluation (your choice)
+   - **Key Findings**
+   ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
+ Recommendations for Improvement
+ Enhance UI feedback, such as highlighting walkable areas to improve map readability.
+ Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
+ Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
+ Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.
+ 
+ 
+ - One quantitative evaluation (of your choice) 
+ - **Evaluation Results**
+   ![image](https://github.com/user-attachments/assets/ec43e7c6-d779-4b49-88f1-519be9e43e66)
+ Final Evaluation and Future Improvements
+ By combining Think Aloud (qualitative analysis) and Heuristic Evaluation (quantitative analysis), we obtained a comprehensive assessment of the game’s usability. Key takeaways include:
+ 
+ Improve UI clarity by enhancing button labels and tooltips.
+ Enhance system feedback for player actions, particularly speed changes and tower upgrades.
+ Implement a tutorial to guide new players through gameplay mechanics.
+ Introduce an undo function to prevent frustration from accidental tower placements.
+ Optimize map interactions to ensure players can easily differentiate walkable areas.
+
+
