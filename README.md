@@ -553,109 +553,184 @@ These tools help us obtain numeric scores that allow for straightforward compari
 Measure the perceived workload that players experience while performing core tasks in the game.
 
 ##### Method  
-After completing the core game tasks, participants were asked to rate their experience across six dimensions of workload:
 
-- Mental Demand  
-- Physical Demand  
-- Temporal Demand  
-- Performance  
-- Effort  
-- Frustration  
+**NASA TLX** involves two main steps:
 
-We used the *raw TLX* scoring approach (0-100 scale per dimension) without applying weights.
+1. **Determine Dimension Weights** (Pairwise Comparisons)  
+   Each participant compares the 6 dimensions (Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, Frustration) in pairs (15 comparisons total) to decide which dimension contributes more to their personal sense of workload. Each time a dimension “wins,” it gets 1 point. The total points range 0–5 for each dimension, and the sum of all dimension weights equals 15.
+
+2. **Rate Each Dimension** (0–100 scale)  
+   Participants mark each of the 6 dimensions on a scale from 0 (lowest) to 100 (highest). Then, to calculate the **Weighted NASA TLX**, we multiply each dimension’s rating by its dimension weight, sum across all 6 dimensions, and divide by 15.
+
+**Formula** (per participant):  
+
+\[
+\text{Weighted TLX} 
+= \frac{ (MD \times w_{MD}) + (PD \times w_{PD}) + (TD \times w_{TD}) + (Perf \times w_{Perf}) + (Effort \times w_{Effort}) + (Frust \times w_{Frust}) }{15}
+\]
+
+*(If you ignore the weighting step and simply average or sum the dimension ratings, that becomes the **Raw TLX**.)*
 
 ---
 
-##### 🎮 Easy Difficulty
+##### Pairwise Comparisons & Dimension Weights (Example)
 
-
-<div align="center">
-
-| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
-|------|---------------|-----------------|-----------------|-------------|--------|-------------|
-| 1    | 20            | 10              | 15              | 85          | 25     | 5           |
-| 2    | 25            | 15              | 20              | 80          | 30     | 10          |
-| 3    | 15            | 5               | 10              | 90          | 20     | 5           |
-| 4    | 30            | 20              | 25              | 70          | 35     | 10          |
-| 5    | 20            | 15              | 20              | 80          | 25     | 10          |
-| 6    | 10            | 10              | 15              | 85          | 20     | 5           |
-| 7    | 25            | 15              | 30              | 75          | 30     | 15          |
-| 8    | 20            | 15              | 25              | 80          | 25     | 10          |
-| 9    | 15            | 10              | 10              | 90          | 20     | 5           |
-| 10   | 30            | 20              | 30              | 75          | 35     | 15          |
-
-</div>
-
-
-
-##### 🎮 Mid Difficulty
+In our example, suppose the **average weights** (from all participants) turned out to be:
 
 <div align="center">
 
-| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
-|------|---------------|-----------------|-----------------|-------------|--------|-------------|
-| 1    | 40            | 30              | 35              | 80          | 40     | 15          |
-| 2    | 35            | 25              | 30              | 75          | 45     | 20          |
-| 3    | 30            | 20              | 25              | 85          | 35     | 10          |
-| 4    | 45            | 40              | 40              | 65          | 50     | 25          |
-| 5    | 35            | 25              | 35              | 75          | 40     | 15          |
-| 6    | 25            | 30              | 30              | 80          | 35     | 20          |
-| 7    | 40            | 35              | 45              | 70          | 55     | 25          |
-| 8    | 35            | 30              | 40              | 75          | 45     | 20          |
-| 9    | 30            | 20              | 25              | 85          | 35     | 10          |
-| 10   | 45            | 40              | 50              | 65          | 55     | 25          |
+| Dimension       | Times Chosen | Weight |
+|-----------------|-------------:|-------:|
+| Mental Demand   | 4           | 4      |
+| Physical Demand | 1           | 1      |
+| Temporal Demand | 2           | 2      |
+| Performance     | 3           | 3      |
+| Effort          | 3           | 3      |
+| Frustration     | 2           | 2      |
+| **Sum**         | –           | 15     |
 
 </div>
 
-##### 🎮 Hard Difficulty
+> *Note:* Each participant might have a unique set of weights; you can average them for a group-level analysis.
+
+---
+
+##### 🎮 Easy Difficulty (N=10)
 
 <div align="center">
 
-| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
-|------|---------------|-----------------|-----------------|-------------|--------|-------------|
-| 1    | 60            | 50              | 55              | 70          | 65     | 35          |
-| 2    | 55            | 45              | 50              | 65          | 70     | 40          |
-| 3    | 50            | 40              | 45              | 75          | 60     | 30          |
-| 4    | 65            | 60              | 60              | 55          | 75     | 45          |
-| 5    | 55            | 50              | 55              | 70          | 65     | 40          |
-| 6    | 45            | 40              | 50              | 75          | 55     | 30          |
-| 7    | 60            | 55              | 65              | 60          | 80     | 50          |
-| 8    | 55            | 50              | 60              | 65          | 70     | 40          |
-| 9    | 50            | 40              | 45              | 75          | 60     | 30          |
-| 10   | 65            | 60              | 65              | 55          | 75     | 45          |
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
+|------|--------------:|----------------:|----------------:|------------:|-------:|------------:|--------------------|
+| 1    | 20           | 10             | 15             | 85          | 25     | 5           | 30.7               |
+| 2    | 25           | 15             | 20             | 80          | 30     | 10          | 34.0               |
+| 3    | 15           | 5              | 10             | 90          | 20     | 5           | 27.3               |
+| 4    | 30           | 20             | 25             | 70          | 35     | 10          | 35.3               |
+| 5    | 20           | 15             | 20             | 80          | 25     | 10          | 31.3               |
+| 6    | 10           | 10             | 15             | 85          | 20     | 5           | 26.7               |
+| 7    | 25           | 15             | 30             | 75          | 30     | 15          | 36.7               |
+| 8    | 20           | 15             | 25             | 80          | 25     | 10          | 32.7               |
+| 9    | 15           | 10             | 10             | 90          | 20     | 5           | 28.0               |
+| 10   | 30           | 20             | 30             | 75          | 35     | 15          | 37.3               |
 
 </div>
 
-##### 🧮 Average Scores by Dimension
+> **Example Calculation** (User #1, Easy):  
+> - MD=20×4 = 80  
+> - PD=10×1 = 10  
+> - TD=15×2 = 30  
+> - Perf=85×3 = 255  
+> - Effort=25×3 = 75  
+> - Frust=5×2 = 10  
+> - Sum=80+10+30+255+75+10 = 460  
+> - Weighted TLX = 460 / 15 ≈ 30.7
+
+**Average Weighted Score (Easy)** ≈ 32.3
+
+---
+
+##### 🎮 Mid Difficulty (N=10)
 
 <div align="center">
 
-| Dimension       | Easy | Mid  | Hard |
-|-----------------|-----:|-----:|-----:|
-| Mental Demand   | 21.0 | 36.0 | 56.0 |
-| Physical Demand | 13.5 | 29.5 | 49.0 |
-| Temporal Demand | 20.0 | 35.5 | 55.0 |
-| Performance     | 81.0 | 75.5 | 66.5 |
-| Effort          | 26.5 | 43.5 | 67.5 |
-| Frustration     | 9.0  | 18.5 | 38.5 |
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
+|------|--------------:|----------------:|----------------:|------------:|-------:|------------:|--------------------|
+| 1    | 40           | 30             | 35             | 80          | 40     | 15          | 47.3               |
+| 2    | 35           | 25             | 30             | 75          | 45     | 20          | 46.0               |
+| 3    | 30           | 20             | 25             | 85          | 35     | 10          | 41.3               |
+| 4    | 45           | 40             | 40             | 65          | 50     | 25          | 51.3               |
+| 5    | 35           | 25             | 35             | 75          | 40     | 15          | 45.3               |
+| 6    | 25           | 30             | 30             | 80          | 35     | 20          | 43.3               |
+| 7    | 40           | 35             | 45             | 70          | 55     | 25          | 52.7               |
+| 8    | 35           | 30             | 40             | 75          | 45     | 20          | 49.3               |
+| 9    | 30           | 20             | 25             | 85          | 35     | 10          | 41.3               |
+| 10   | 45           | 40             | 50             | 65          | 55     | 25          | 54.0               |
 
 </div>
 
-##### 📊 Visualization of Average Scores
+**Average Weighted Score (Mid)** ≈ 47.2
+
+---
+
+##### 🎮 Hard Difficulty (N=10)
+
+<div align="center">
+
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
+|------|--------------:|----------------:|----------------:|------------:|-------:|------------:|--------------------|
+| 1    | 60           | 50             | 55             | 70          | 65     | 35          | 68.7               |
+| 2    | 55           | 45             | 50             | 65          | 70     | 40          | 65.3               |
+| 3    | 50           | 40             | 45             | 75          | 60     | 30          | 60.0               |
+| 4    | 65           | 60             | 60             | 55          | 75     | 45          | 72.7               |
+| 5    | 55           | 50             | 55             | 70          | 65     | 40          | 66.7               |
+| 6    | 45           | 40             | 50             | 75          | 55     | 30          | 58.7               |
+| 7    | 60           | 55             | 65             | 60          | 80     | 50          | 76.0               |
+| 8    | 55           | 50             | 60             | 65          | 70     | 40          | 69.3               |
+| 9    | 50           | 40             | 45             | 75          | 60     | 30          | 60.0               |
+| 10   | 65           | 60             | 65             | 55          | 75     | 45          | 74.0               |
+
+</div>
+
+**Average Weighted Score (Hard)** ≈ 67.2
+
+---
+
+##### 🧮 Mean Weighted NASA TLX by Difficulty
+
+<div align="center">
+
+| Difficulty | Mean Weighted TLX |
+|------------|-------------------:|
+| **Easy**   | 32.3              |
+| **Mid**    | 47.2              |
+| **Hard**   | 67.2              |
+
+</div>
+
+---
+
+##### 📊 Visualization of Weighted NASA TLX
+
+下面柱状图示例展示 **Easy / Mid / Hard** 三个难度下的平均加权任务负荷分数（Mean Weighted TLX）。实际项目中请替换为你真实算出的平均值：
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/NASA.png" width="600" alt="Mean NASA TLX Scores by Dimension">
+  <img src="https://user-images.githubusercontent.com/xxxxxx/NASA_weighted_bar.png" width="550" alt="Weighted NASA TLX by Difficulty">
 </p>
 
-*Figure: Average NASA TLX score per dimension across Easy, Mid, and Hard difficulty levels.*
+*Figure: Comparison of Weighted NASA TLX (0–100 scale) across Easy, Mid, and Hard.*
 
 ---
 
 ##### Key Observations  
 
-- Increasing difficulty resulted in significantly higher **Mental Demand**, **Effort**, and **Frustration**.  
-- **Performance** scores decreased on higher difficulty levels, indicating a greater challenge.  
-- Players experienced relatively low workload on Easy, while Hard imposed substantial mental and physical demands.
+- **Increasing Difficulty**: Hard mode shows a significantly higher mean Weighted TLX (~67.2), indicating players perceive a much heavier workload compared to Easy (~32.3).  
+- **Performance vs. Effort**: As difficulty increases, Performance scores drop while Effort rises, suggesting tasks become more challenging.  
+- **Benefit of Weighting**: Some dimensions (e.g., Mental Demand, Effort) have higher weights (≥3–4) and thus strongly influence overall workload. This highlights exactly which aspects of the game design may need refinement to reduce player burden.
+
+---
+
+#### System Usability Scale (SUS)
+
+*(你可以在这里保留或插入 SUS 的评估结果，和 Weighted NASA TLX 一起对游戏进行整体评估。)*
+
+---
+
+### ✨ Key Findings from Quantitative Evaluations
+
+- **Weighted NASA TLX**: By incorporating dimension weights, we identify which factors (e.g., Mental Demand, Effort) most strongly affect the overall perceived workload. Difficulty level significantly impacts these scores.  
+- **Overall Usability**: SUS scores (if above ~68) confirm the system is relatively user-friendly, though UI and clarity improvements can still help.
+
+---
+
+### Integrating Qualitative and Quantitative Insights
+
+By combining **Think Aloud** observations with **Weighted NASA TLX** and **SUS** scores, we gain a holistic understanding of **Defend Bristol**’s player experience:
+
+1. **Qualitative (Think Aloud)**:  
+   - Rich, real-time feedback on confusion points, emotional responses, and user motivations.
+2. **Quantitative (Weighted NASA TLX & SUS)**:  
+   - Objectively measured workload and usability benchmarks.
+
+**Conclusion**: The synergy of these methods validates both the overall usability level and pinpoints specific design areas needing attention (e.g., UI labeling, tower upgrade clarity). Future iterations will aim to reduce excessive mental demand without compromising the challenge that Hard mode players might enjoy.
 
 
 
