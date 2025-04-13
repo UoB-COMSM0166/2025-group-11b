@@ -422,7 +422,10 @@ After a long period of consideration, we ultimately decided to convert the image
 
 ## 🎯 5. Evaluation  
 
-In this section, we adopted two qualitative evaluation methods to assess the usability and user experience of our game **Defend Bristol**:  
+### Why Evaluation Is Important
+Evaluation is a crucial step in user-centered game development. By gathering and analyzing user feedback early and iteratively, we can identify usability issues before they become major roadblocks, refine game mechanics, and ensure that the final product meets player expectations. It’s also a cost-effective way to continually improve user experience, aligning well with industry best practices.  
+
+In this section, we adopted two qualitative evaluation methods to assess the usability and user experience of our game **Defend Bristol**:
 
 - 🗣️ Think Aloud Evaluation  
 - 🔍 Heuristic Evaluation (based on Nielsen’s 10 Usability Heuristics)
