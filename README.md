@@ -423,50 +423,75 @@ After a long period of consideration, we ultimately decided to convert the image
 ## 🎯 5. Evaluation  
 
 ### Why Evaluation Is Important
-Evaluation is a crucial step in user-centered game development. By gathering and analyzing user feedback early and iteratively, we can identify usability issues before they become major roadblocks, refine game mechanics, and ensure that the final product meets player expectations. It’s also a cost-effective way to continually improve user experience, aligning well with industry best practices.  
+Evaluation is a crucial step in user-centered game development. By gathering and analyzing user feedback early and iteratively, we can identify usability issues before they become major roadblocks, refine game mechanics, and ensure that the final product meets player expectations. It’s also a cost-effective way to continually improve user experience, aligning well with industry best practices.
 
-In this section, we adopted two qualitative evaluation methods to assess the usability and user experience of our game **Defend Bristol**:
+---
 
-- 🗣️ **Think Aloud Evaluation**  
-- 🔍 **Heuristic Evaluation** (based on Nielsen’s 10 Usability Heuristics)
+### Comparing Two Qualitative Approaches
+
+#### 1. Heuristic Evaluation
+- **Definition**: Experts (or team members) review the game against a set of established usability principles (e.g., Nielsen’s 10 Usability Heuristics).
+- **Pros**:  
+  - Quick and low-cost.  
+  - Requires no external users.  
+  - Provides a structured, principle-based checklist for identifying issues.  
+- **Cons**:  
+  - May miss real user reactions or context-specific problems.  
+  - Relies on expert assumptions rather than actual user behavior.
+  
+#### 2. Think Aloud Evaluation
+- **Definition**: Real users are asked to verbalize their thoughts, feelings, and decision-making processes while performing tasks in the game.
+- **Pros**:  
+  - Direct insight into genuine user experiences and pain points.  
+  - Captures immediate reactions and mental models.  
+  - Even small sample sizes can reveal critical usability problems.  
+- **Cons**:  
+  - Heavily reliant on user self-reporting and willingness to share thoughts openly.  
+  - Some participants may find it awkward to talk while they play.
+
+---
+
+### Why We Chose Think Aloud
+While Heuristic Evaluation is quick and structured, we decided that directly observing and listening to real players would yield richer, more user-centered feedback. Think Aloud Evaluation uncovers not only obvious usability issues but also provides insight into players’ intuitive responses and emotional reactions—crucial factors for our game’s entertainment value. By prioritizing real user voices over expert-based assumptions, we believe we can capture more genuine feedback to guide our design decisions.
+
+> **Therefore, we adopted the Think Aloud Evaluation as our primary qualitative method for assessing our game, Defend Bristol.**
 
 ---
 
 ### 🗣️ Think Aloud Evaluation  
 
 #### What Is Think Aloud?
-The Think Aloud method (also known as a “think-aloud protocol”) involves asking participants to verbalize their thoughts, feelings, and reasoning in real time as they interact with the product. By listening to what users are thinking and how they navigate through tasks, we gain direct insight into potential usability barriers and users’ overall experience.
+Think Aloud involves observing participants as they play the game and asking them to articulate their thoughts, feelings, and reasoning in real time. This approach helps reveal where players might get confused, excited, or stuck, providing direct insight into the user experience.
 
 #### Pros and Cons
 - **Pros**:  
-  - **Low Cost**: Requires minimal setup and few resources.  
-  - **Easy to Conduct**: Facilitators only need basic instructions to guide users.  
-  - **Rich Insights**: Captures users’ impressions and mental models as they perform tasks.  
-  - **Small Samples Work**: Even testing with a handful of participants can uncover major usability issues.  
+  - **Rich Insights**: Real-time user feedback clarifies both interface issues and emotional reactions.  
+  - **Low Cost**: Requires minimal special equipment.  
+  - **Small Samples Work**: Testing a few participants can uncover major pain points.  
 - **Cons**:  
-  - **Reliance on Self-Reporting**: Participants might omit or misrepresent thoughts (e.g., social desirability bias).  
-  - **Less Objective**: Observations are more qualitative and interpretive rather than purely metrics-based.  
-  - **Potential Disruption**: Some users find it unnatural to verbalize thoughts while concentrating on a task.
+  - **Self-Reporting Bias**: Participants may omit, alter, or overthink their thoughts.  
+  - **Potential Disruption**: Some users find it unnatural to speak continuously during gameplay.
 
-#### Planning a Think Aloud Evaluation
-Before conducting the Think Aloud sessions, we followed these planning steps:
-1. **Define Objectives**: Identify key research questions (e.g., Can players easily upgrade towers? Do they understand the Knight mechanic?).  
-2. **Design Tasks**: Write out specific tasks that reflect common player actions in Defend Bristol.  
-3. **Decide Participant Criteria**: Pick a diverse range of users (e.g., both gamers and non-gamers) to cover different perspectives.  
-4. **Set Session Length**: Aim for 15–30 minutes per session for focused yet manageable feedback.  
-5. **Prepare Materials**: Have a notetaker or recording method ready; ensure the game build is stable.
+#### Planning
+Before conducting the sessions, we:
+1. **Defined Objectives**: e.g., Are tower upgrade mechanics intuitive? Is the Knight feature clear?
+2. **Designed Tasks**: Scripted specific actions like “Build a new tower” or “Use the Knight mechanic.”
+3. **Selected Participants**: Recruited a variety of users: gamers and non-gamers.
+4. **Set Duration**: Each session lasted about 20 minutes to keep feedback focused.
+5. **Prepared Materials**: We had a stable build of Defend Bristol, a simple recording setup, and note-taking sheets.
 
-#### 🎮 Method:  
-Following our plan, we recruited 3 participants (2 students from our course and 1 non-gamer friend) to play *Defend Bristol*.  
-They were asked to verbalize their thoughts, feelings, and decisions while playing the game. We observed and recorded their feedback without interrupting unless needed to prompt them to keep talking.
+#### 🎮 Method  
+We recruited 3 participants (2 students from our course and 1 non-gamer friend) to play *Defend Bristol*.  
+They were asked to verbalize their thoughts, feelings, and decisions while playing the game.  
+We observed and recorded their feedback, only prompting them to continue talking if they became silent for too long.
 
-#### 📝 Tasks given to participants:  
-- Start a new game and build towers.  
-- Upgrade a tower.  
-- Use the Knight mechanic to absorb tower abilities.  
-- Complete a full level.  
+#### 📝 Tasks Given to Participants  
+1. Start a new game and build towers.  
+2. Upgrade a tower.  
+3. Use the Knight mechanic to absorb tower abilities.  
+4. Complete a full level.
 
-#### 💡 Key Findings:  
+#### 💡 Key Findings
 
 | 😊 Positive Feedback                                         | ⚠️ Issues Identified                                                              | 💡 Suggestions from Participants                                                          |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
@@ -474,73 +499,18 @@ They were asked to verbalize their thoughts, feelings, and decisions while playi
 | "The knight mechanic is very unique and fun!"               | "Sometimes I forgot where the enemies would spawn from."                          | Add an arrow or flashing light before the enemy wave starts.                              |
 | "I like the historical elements, makes it more interesting." | "The game is hard to understand at first."                                        | Consider adding a tutorial or in-game tips for beginners.                                 |
 
-#### 🧾 Summary:  
-> Most participants enjoyed the game atmosphere and historical elements. However, some usability issues were identified, particularly around tower upgrading, wave spawn clarity, and the initial learning curve.
+#### 🧾 Summary  
+> Most participants enjoyed the game atmosphere and historical elements. However, they encountered some usability issues such as unclear tower-upgrade indicators, lack of wave spawn clarity, and a somewhat steep learning curve for first-time players.
 
 ---
 
-### 🔍 Heuristic Evaluation  
+## 🎉 Evaluation Conclusion
 
-#### 🛠️ Method:  
-We conducted a heuristic evaluation using **Nielsen’s 10 Usability Heuristics**.  
-Each team member inspected the game independently and recorded potential usability issues.
+Think Aloud Evaluation directly exposed us to the player’s real-time reactions, highlighting both the game’s strengths and areas needing refinement. By focusing on actual user experiences instead of expert assumptions, we gained actionable insights:
 
-#### 🗂️ Key Issues & Heuristic Violations:  
+- **Enhance UI clarity** (especially for tower upgrade interactions).  
+- **Improve feedback mechanisms** (add wave timers, enemy spawn indicators).  
+- **Consider a tutorial** for new players to reduce initial confusion.  
 
-| 🔑 Heuristic Principle              | ⚠️ Issue Identified                                                   | 💡 Suggestion for Improvement                                                    |
-|------------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| Visibility of System Status        | No clear indicator of wave start time or enemy spawn points.          | Add countdown timers and direction arrows before waves start.                    |
-| Match Between System and Real World | Some icons (e.g., for upgrades) were unclear to new users.            | Use universally recognized symbols (e.g., up arrow for upgrades).                |
-| User Control and Freedom           | No 'Undo' option for misplaced towers.                                | Allow players to sell towers at a small refund.                                  |
-| Consistency and Standards          | Different button styles on different menus.                           | Standardize all buttons (size, color, hover effect).                              |
-| Help and Documentation             | No in-game tutorial or help section.                                  | Add a short tutorial level or in-game help tips.                                 |
+> *By embracing Think Aloud as our core qualitative method, we believe Defend Bristol will offer a smoother, more engaging experience after these adjustments.*
 
-#### 🧾 Summary:  
-> Most usability issues were minor and related to interface clarity and feedback.  
-> The game generally followed good design practices but would benefit from minor UI improvements and better feedback mechanisms.
-
----
-
-## 🎉 Evaluation Conclusion  
-
-Through the *Think Aloud Evaluation*, we gained valuable insights into the player experience, identifying both engaging aspects and areas of confusion.  
-
-Meanwhile, the *Heuristic Evaluation* helped us systematically identify UI/UX issues aligned with usability principles.
-
-#### 📌 Future Improvements Planned:
-- Add a tutorial for new players.  
-- Improve UI clarity (especially tower upgrade interactions).  
-- Enhance feedback mechanisms (wave timers, enemy spawn indicators).  
-- Maintain visual and functional consistency across interfaces.
-
-> *These evaluation methods were low-cost and effective, aligning well with industry best practices in user-centered design.*  
-> *We believe that implementing these improvements will significantly enhance the player experience of Defend Bristol.*
-
-
-
-
-- One qualitative evaluation (your choice)
-  - **Key Findings**
-  ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
-Recommendations for Improvement
-Enhance UI feedback, such as highlighting walkable areas to improve map readability.
-Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
-Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
-Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.
-
-
-- One quantitative evaluation (of your choice) 
-- **Evaluation Results**
-  ![image](https://github.com/user-attachments/assets/ec43e7c6-d779-4b49-88f1-519be9e43e66)
-Final Evaluation and Future Improvements
-By combining Think Aloud (qualitative analysis) and Heuristic Evaluation (quantitative analysis), we obtained a comprehensive assessment of the game’s usability. Key takeaways include:
-
-Improve UI clarity by enhancing button labels and tooltips.
-Enhance system feedback for player actions, particularly speed changes and tower upgrades.
-Implement a tutorial to guide new players through gameplay mechanics.
-Introduce an undo function to prevent frustration from accidental tower placements.
-Optimize map interactions to ensure players can easily differentiate walkable areas.
-Add shortcut keys for faster in-game actions.
-Future updates will prioritize these usability improvements to enhance the overall player experience.
-
-- Description of how code was tested. 
