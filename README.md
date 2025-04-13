@@ -432,7 +432,7 @@ To explore how players truly experience our game, we considered two commonly use
 
 | Method                  | Definition                                                                                      | Advantages                                                                                      | Limitations                                                                                      |
 |------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| **Heuristic Evaluation** | Experts (or team members) inspect the game against established usability principles (e.g., Nielsen’s 10 Usability Heuristics). | - Fast, low-cost, requires no external users. <br> - Systematically checks known interface issues. | - May miss authentic user reactions. <br> - Relies on expert assumptions, not real behavior.     |
+| **Heuristic Evaluation** | Experts inspect the game against established usability principles (Nielsen’s 10 Usability Heuristics). | - Fast, low-cost, requires no external users. <br> - Systematically checks known interface issues. | - May miss authentic user reactions. <br> - Relies on expert assumptions, not real behavior.     |
 | **Think Aloud Evaluation** | Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game. | - Provides direct insight into genuine user experiences. <br> - Small samples reveal big issues. | - Depends on participants’ willingness to talk. <br> - Some may find it awkward while playing.  |
 
 > 📝 *Conclusion:*  
@@ -476,14 +476,14 @@ Each session lasted 20–30 minutes with three participants:
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/TASK%20LIST%20NEW.png" width="400" style="max-height:400px; height:auto;"><br>
   <b>Figure 10</b><br>
-  <i>TASK LIST</i>
+  <i>Task List</i>
 </p>
 
 ### 2. Carrying Out a Think Aloud Evaluation  
 
 Roles:  
-- 1 Facilitator: explains the method and encourages thinking aloud.  
-- 1-2 Observers: take notes on participants' behaviors and comments.
+- 1 Facilitator(Siyuan Chen): explains the method and encourages thinking aloud.  
+- 1 Observers(Yang Yang): take notes on participants' behaviors and comments.
 
 Facilitator instructions example:  
 > "There are no right or wrong answers — please share any thoughts or feelings you have as you play. If you fall silent for a while, I might gently ask what you’re thinking."
@@ -506,8 +506,16 @@ We collected observation notes and categorized feedback into:
 | "I love the Knight mechanic — it adds a fun strategic twist." | "I didn’t notice when the tower had finished upgrading."          | Add a sound effect or pop-up when upgrade completes.                  |
 | "The historical vibe is awesome; it really makes the game stand out." | "Sometimes I wasn’t sure if the enemies had spawned yet."          | Add a countdown or alert at the start of each wave.                   |
 | "Being able to place towers on a grid is intuitive."        | "I never realized how long the Knight must stand to absorb."       | Show a progress bar or timer for ability absorption.                  |
-
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f" width="400" style="max-height:400px; height:auto;"><br>
+  <b>Figure 11</b><br>
+  <i>Summary Feedback</i>
+</p>
+ Recommendations for Improvement
+ Enhance UI feedback, such as highlighting walkable areas to improve map readability.
+ Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
+ Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
+ Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.     
 ### 🎬 Conclusion and Next Steps  
 
 Based on the Think Aloud sessions, we identified key improvements:  
