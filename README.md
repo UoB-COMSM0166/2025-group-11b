@@ -428,12 +428,12 @@ Conducting thorough evaluations is a crucial step in user-centered game developm
 ### 🔎 Choosing a Qualitative Evaluation Method
 To explore how players truly experience our game, we considered two commonly used qualitative approaches:
 
-1. **💡 Heuristic Evaluation**  
+1. **Heuristic Evaluation**  
    - **Definition**: Experts (or team members) inspect the game against established usability principles (e.g., Nielsen’s 10 Usability Heuristics).  
    - **Advantages**: Fast, low-cost, requires no external users, and systematically checks for known interface issues.  
    - **Limitations**: May miss authentic user reactions and context-specific pain points; relies on expert assumptions rather than real user behavior.
 
-2. **🗣️ Think Aloud Evaluation**  
+2. **Think Aloud Evaluation**  
    - **Definition**: Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game.  
    - **Advantages**: Provides direct insight into genuine user experiences and mental models; small samples can reveal major usability hurdles.  
    - **Limitations**: Heavily reliant on participants’ willingness to speak openly; some may find it awkward to talk while playing.
@@ -442,46 +442,59 @@ After weighing these methods, we concluded that **observing actual players** wou
 
 ---
 
-### 🗣️ Think Aloud Evaluation  
+## 🗣️ Think Aloud Evaluation  
 
-#### What Is Think Aloud?
+### What Is Think Aloud?
 Think Aloud involves inviting participants to share their thoughts, feelings, and decision-making processes aloud as they perform tasks in the game. We observe them in real time, noting points of confusion, frustration, or excitement to understand how our design is interpreted by actual players.
 
-#### Pros and Cons
-- **Pros**  
-  - **Rich, Immediate Feedback**: Lets us see exactly where players stumble or succeed.  
-  - **Cost-Effective**: Requires minimal equipment and can be done with small participant groups.  
-  - **Reveals Emotional Reactions**: Particularly valuable for a game’s entertainment factor.  
-- **Cons**  
-  - **Reliance on Participant Disclosure**: Shy or reserved players may hold back thoughts.  
-  - **Less Natural Playing**: Some users find continuous talking breaks immersion.
+---
 
-#### Planning
-Before conducting the sessions, we:
-1. **Outlined Objectives**: For instance, to see if players understand how to upgrade towers or use the Knight mechanic effectively.  
-2. **Scripted Tasks**: Designed key tasks such as “Build your first tower” or “Absorb a tower ability via the Knight.”  
-3. **Selected Participants**: Recruited a mix of gaming backgrounds (2 students in our course and 1 non-gamer).  
-4. **Set Session Duration**: Targeted ~20 minutes each to avoid fatigue and keep focus.  
-5. **Prepared Materials**: Ensured the game build was stable and we had a straightforward way to record notes.
+### 1. Planning a Think Aloud Evaluation
 
-#### 📌 Method  
-During the play sessions, participants were instructed to continually “think aloud” about what they were doing, why they were doing it, and how they felt at each step. We only intervened when they fell silent for an extended period, gently prompting them to keep sharing their thoughts.
+- **Define Research Questions**  
+  Identify what you want to learn from the study (e.g., whether players can locate specific content, how they understand certain mechanics).
 
-#### Tasks Given to Participants  
-1. Start a new game and build towers.  
-2. Upgrade a tower.  
-3. Use the Knight mechanic to absorb tower abilities.  
-4. Complete a full level.
+- **Design Tasks**  
+  Write down the tasks you want users to complete (e.g., building towers, upgrading a tower, using the Knight mechanic).
 
-#### Key Findings
-- One qualitative evaluation (your choice)
-   - **Key Findings**
-   ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
- Recommendations for Improvement
- Enhance UI feedback, such as highlighting walkable areas to improve map readability.
- Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
- Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
- Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.                             |
+- **Decide Participants & Session Length**  
+  Determine how many participants to recruit and plan session durations (15–60 minutes is recommended).
+
+
+### 2. Carrying Out a Think Aloud Evaluation
+
+**Step 1**  
+- Assign one facilitator to run the evaluation and 1–2 observers to record what participants say.  
+- The facilitator explains the method: “While you’re playing, please say out loud what you’re thinking and feeling. There is no right or wrong answer, and it’s completely fine to be critical.”  
+
+**Step 2**  
+- Let participants proceed through the tasks uninterrupted, unless you need to gently prompt them if they fall silent (e.g., “What are you thinking right now?”).  
+- Keep interventions minimal to gather authentic user reactions.
+
+
+### 3. Analyzing a Think Aloud Evaluation
+
+- **Collect Observers’ Notes**  
+  Gather the written notes from all observers into one document.
+
+- **Organize Findings**  
+  Categorize comments. For instance:  
+  - Features that helped users  
+  - Features that caused problems  
+  - Additional features or improvements users suggested  
+
+- **Quantify and Prioritize**  
+  Count how many times certain comments appear to identify the most critical issues or most requested features.
+
+
+### Key Findings in Practice
+To illustrate our approach, here’s a summary table of feedback we gathered during our Think Aloud sessions for **Defend Bristol**:
+
+| 😊 Positive Feedback                                         | ⚠️ Issues Identified                                                              | 💡 Suggestions from Participants                                                          |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| "The map is beautiful, I like seeing real Bristol landmarks." | "I was confused about where to click when I wanted to upgrade a tower."           | Add a clearer visual indicator (icon or animation) for the upgrade button.                |
+| "The knight mechanic is very unique and fun!"               | "Sometimes I forgot where the enemies would spawn from."                          | Add an arrow or flashing light before the enemy wave starts.                              |
+| "I like the historical elements, makes it more interesting." | "The game is hard to understand at first."                                        | Consider adding a tutorial or in-game tips for beginners.                                 |
 
 #### Summary
 > Overall, participants praised the blend of historical flavor and strategic gameplay. However, they noted challenges such as unclear upgrade actions, vague enemy wave indicators, and a steep learning curve at the start.
@@ -492,6 +505,23 @@ During the play sessions, participants were instructed to continually “think a
 
 
 
+
+
+
+
+
+
+
+
+
+- One qualitative evaluation (your choice)
+   - **Key Findings**
+   ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
+ Recommendations for Improvement
+ Enhance UI feedback, such as highlighting walkable areas to improve map readability.
+ Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
+ Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
+ Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.      
 
 
 
