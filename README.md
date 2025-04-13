@@ -474,42 +474,6 @@ During the play sessions, participants were instructed to continually “think a
 4. Complete a full level.
 
 #### Key Findings
-| 😊 Positive Feedback                                         | ⚠️ Issues Identified                                                              | 💡 Suggestions from Participants                                                          |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| "The map is beautiful, I like seeing real Bristol landmarks." | "I was confused about where to click when I wanted to upgrade a tower."           | Add a clearer visual indicator (icon or animation) for the upgrade button.                |
-| "The knight mechanic is very unique and fun!"               | "Sometimes I forgot where the enemies would spawn from."                          | Add an arrow or flashing light before the enemy wave starts.                              |
-| "I like the historical elements, makes it more interesting." | "The game is hard to understand at first."                                        | Consider adding a tutorial or in-game tips for beginners.                                 |
-
-#### Summary
-> Overall, participants praised the blend of historical flavor and strategic gameplay. However, they noted challenges such as unclear upgrade actions, vague enemy wave indicators, and a steep learning curve at the start.
-
----
-
-## 🎉 Evaluation Conclusion
-By opting for **Think Aloud Evaluation**, we captured authentic user experiences that might have been overlooked in an expert-driven review. This method highlighted clear opportunities to improve **Defend Bristol**, including:
-
-- Enhancing UI feedback (e.g., tower upgrade prompts, wave spawn warnings)  
-- Providing a smoother onboarding (in-game tutorials or tooltips)  
-- Refining core mechanics (ensuring the Knight mechanic remains intuitive and satisfying)
-
-*We believe that addressing these issues will significantly enhance the overall player experience, ensuring Defend Bristol is both engaging and accessible.*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - One qualitative evaluation (your choice)
    - **Key Findings**
    ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
@@ -517,7 +481,21 @@ By opting for **Think Aloud Evaluation**, we captured authentic user experiences
  Enhance UI feedback, such as highlighting walkable areas to improve map readability.
  Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
  Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
- Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.
+ Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.                             |
+
+#### Summary
+> Overall, participants praised the blend of historical flavor and strategic gameplay. However, they noted challenges such as unclear upgrade actions, vague enemy wave indicators, and a steep learning curve at the start.
+
+
+
+
+
+
+
+
+
+
+
  
  
  - One quantitative evaluation (of your choice) 
