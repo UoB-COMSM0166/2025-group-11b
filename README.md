@@ -545,79 +545,106 @@ While our Think Aloud sessions provided rich insights into **Defend Bristol**’
 
 These tools help us obtain numeric scores that allow for straightforward comparison between difficulty levels, interface iterations, or any other key design variations.
 
+---
 
-#### NASA Task Load Index (NASA TLX)
+#### 🛰️ NASA Task Load Index (NASA TLX)
 
-**Purpose**: Measure the perceived workload that players experience while performing core tasks in the game.  
+##### Purpose  
+Measure the perceived workload that players experience while performing core tasks in the game.
 
-**Method**:
-1. **Task Selection**: We asked participants to attempt the same set of tasks used in the Think Aloud sessions: starting a game, placing/upgrading towers, using the Knight’s abilities, etc.  
-2. **Completion**: After each participant finished these tasks, they filled in the NASA TLX form to rate their mental demand, physical demand, temporal demand, performance, effort, and frustration.  
-3. **Scoring**: We opted for the *raw TLX* approach (i.e., we did **not** use the weighting procedure). Each dimension was rated on a 0–100 scale, then we averaged the six scores to derive an overall workload rating.
+##### Method  
+After completing the core game tasks, participants were asked to rate their experience across six dimensions of workload:
 
-**Sample Results** (example data, N=5):
+- Mental Demand  
+- Physical Demand  
+- Temporal Demand  
+- Performance  
+- Effort  
+- Frustration  
 
-| Participant | Mental | Physical | Temporal | Performance | Effort | Frustration | Average (0–100) |
-|-------------|--------|----------|----------|------------|--------|-------------|-----------------|
-| #1          | 30     | 15       | 25       | 70         | 40     | 10          | 31.7            |
-| #2          | 40     | 20       | 50       | 80         | 50     | 30          | 45.0            |
-| #3          | 25     | 10       | 20       | 85         | 25     | 15          | 30.0            |
-| #4          | 35     | 25       | 45       | 65         | 55     | 35          | 43.3            |
-| #5          | 45     | 20       | 50       | 75         | 45     | 25          | 43.3            |
-
-> *Observations (example)*:
-> - **Performance** consistently scored high (65–85), suggesting most players felt successful at completing tasks.  
-> - **Mental Demand** showed moderate scores (25–45), indicating a reasonable cognitive load.  
-> - **Frustration** remained low for most participants, suggesting minimal emotional distress.  
+We used the *raw TLX* scoring approach (0-100 scale per dimension) without applying weights.
 
 ---
 
-#### System Usability Scale (SUS)
+##### 🎮 Easy Difficulty (N=10)
 
-**Purpose**: Obtain a global view of **Defend Bristol**’s usability from the player’s perspective.
-
-**Method**:
-1. **Administration**: After finishing all tasks (including the NASA TLX), participants were invited to fill out a standard 10-item SUS questionnaire.  
-2. **Scoring**:
-   - For odd-numbered items, the score contribution = (user response) - 1.  
-   - For even-numbered items, the score contribution = 5 - (user response).  
-   - Summing all contributions and multiplying by 2.5 gives a total SUS score in the range 0–100.
-
-**Sample Results** (example data, N=5):
-
-| Participant | SUS Score (0–100) |
-|-------------|--------------------|
-| #1          | 72.5              |
-| #2          | 65.0              |
-| #3          | 70.0              |
-| #4          | 75.0              |
-| #5          | 80.0              |
-
-> *Observations (example)*:
-> - An average SUS of ~72 indicates an **above-average** usability compared to the industry benchmark of 68.  
-> - Most participants rated the game positively, though some suggested more clarity in certain UI elements.  
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
+|------|---------------|-----------------|-----------------|-------------|--------|-------------|
+| 1    | 20            | 10              | 15              | 85          | 25     | 5           |
+| 2    | 25            | 15              | 20              | 80          | 30     | 10          |
+| 3    | 15            | 5               | 10              | 90          | 20     | 5           |
+| 4    | 30            | 20              | 25              | 70          | 35     | 10          |
+| 5    | 20            | 15              | 20              | 80          | 25     | 10          |
+| 6    | 10            | 10              | 15              | 85          | 20     | 5           |
+| 7    | 25            | 15              | 30              | 75          | 30     | 15          |
+| 8    | 20            | 15              | 25              | 80          | 25     | 10          |
+| 9    | 15            | 10              | 10              | 90          | 20     | 5           |
+| 10   | 30            | 20              | 30              | 75          | 35     | 15          |
 
 ---
 
-### ✨ Key Findings from Quantitative Evaluations
+##### 🎮 Mid Difficulty (N=10)
 
-- **Overall Usability**: With a SUS average above 70, **Defend Bristol** appears user-friendly, but further refinements could push it closer to excellent.  
-- **Moderate Workload**: NASA TLX results showed that while players found the game engaging, certain tasks (like tower upgrades) imposed higher mental/temporal demands.  
-- **Actionable Data**: By correlating the TLX sub-scores with specific tasks, we can pinpoint where to reduce cognitive load or frustration—e.g., clarifying upgrade paths, adding more intuitive UI hints, and so forth.
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
+|------|---------------|-----------------|-----------------|-------------|--------|-------------|
+| 1    | 40            | 30              | 35              | 80          | 40     | 15          |
+| 2    | 35            | 25              | 30              | 75          | 45     | 20          |
+| 3    | 30            | 20              | 25              | 85          | 35     | 10          |
+| 4    | 45            | 40              | 40              | 65          | 50     | 25          |
+| 5    | 35            | 25              | 35              | 75          | 40     | 15          |
+| 6    | 25            | 30              | 30              | 80          | 35     | 20          |
+| 7    | 40            | 35              | 45              | 70          | 55     | 25          |
+| 8    | 35            | 30              | 40              | 75          | 45     | 20          |
+| 9    | 30            | 20              | 25              | 85          | 35     | 10          |
+| 10   | 45            | 40              | 50              | 65          | 55     | 25          |
 
 ---
 
-### Integrating Qualitative and Quantitative Insights
+##### 🎮 Hard Difficulty (N=10)
 
-By combining **Think Aloud** observations with **NASA TLX** and **SUS** metrics, we gain a holistic understanding of **Defend Bristol**’s player experience:
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
+|------|---------------|-----------------|-----------------|-------------|--------|-------------|
+| 1    | 60            | 50              | 55              | 70          | 65     | 35          |
+| 2    | 55            | 45              | 50              | 65          | 70     | 40          |
+| 3    | 50            | 40              | 45              | 75          | 60     | 30          |
+| 4    | 65            | 60              | 60              | 55          | 75     | 45          |
+| 5    | 55            | 50              | 55              | 70          | 65     | 40          |
+| 6    | 45            | 40              | 50              | 75          | 55     | 30          |
+| 7    | 60            | 55              | 65              | 60          | 80     | 50          |
+| 8    | 55            | 50              | 60              | 65          | 70     | 40          |
+| 9    | 50            | 40              | 45              | 75          | 60     | 30          |
+| 10   | 65            | 60              | 65              | 55          | 75     | 45          |
 
-1. **Qualitative** (Think Aloud):  
-   - Rich, real-time feedback on confusion points, emotional responses, and user motivations.
-2. **Quantitative** (NASA TLX & SUS):  
-   - Objective workload scores and usability benchmarks.
+---
 
-**Conclusion**: The synergy of these methods validates both the overall usability level and highlights specific design areas needing attention (e.g., clarity on upgrades, UI interactions). Future iterations will focus on reducing mental demand where possible and improving the game’s strategic depth without overwhelming players.
+##### 🧮 Average Scores by Dimension
 
+| Dimension       | Easy | Mid  | Hard |
+|-----------------|-----:|-----:|-----:|
+| Mental Demand   | 21.0 | 36.0 | 56.0 |
+| Physical Demand | 13.5 | 29.5 | 49.0 |
+| Temporal Demand | 20.0 | 35.5 | 55.0 |
+| Performance     | 81.0 | 75.5 | 66.5 |
+| Effort          | 26.5 | 43.5 | 67.5 |
+| Frustration     | 9.0  | 18.5 | 38.5 |
+
+---
+
+##### 📊 Visualization of Average Scores
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/xxx/MeanNASA_TLX.png" width="600" alt="Mean NASA TLX Scores by Dimension">
+</p>
+
+*Figure: Average NASA TLX score per dimension across Easy, Mid, and Hard difficulty levels.*
+
+---
+
+##### Key Observations  
+
+- Increasing difficulty resulted in significantly higher **Mental Demand**, **Effort**, and **Frustration**.  
+- **Performance** scores decreased on higher difficulty levels, indicating a greater challenge.  
+- Players experienced relatively low workload on Easy, while Hard imposed substantial mental and physical demands.
 
 
 
