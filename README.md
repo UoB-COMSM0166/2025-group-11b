@@ -536,69 +536,59 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 ---
 
-### 🔬 Choosing a Quantitative Evaluation Method  
+### 🔬 Choosing a Quantitative Evaluation Method
 
 While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated a standardized quantitative method to validate and measure specific aspects of player perception:
 
 1. **NASA Task Load Index (NASA TLX)**
 
-This tool helps us obtain numeric scores that allow for straightforward comparison between difficulty levels, interface iterations, or any other key design variations.
+This tool helps us obtain numeric scores that allow for straightforward comparisons between difficulty levels, interface iterations, and other key design variations.
 
 ---
 
 #### 🛰️ NASA Task Load Index (NASA TLX)
 
-##### Purpose  
+##### Purpose
 Measure the perceived workload that players experience while performing core tasks in the game.
 
-##### Method  
+##### Method
 
 **NASA TLX** is computed in two main steps:
 
-1. **Determine Dimension Weights (Pairwise Comparisons)**  
-   - Each participant performs 15 pairwise comparisons between the six dimensions: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
-   - In each comparison, if a dimension is considered more important, it earns 1 point. Thus, each dimension’s weight is between 0 and 5, and the total weight across all dimensions is 15.
-   - **Important:** Each participant will have a unique weight vector based on their own comparisons.
+1. **Determine Dimension Weights (Pairwise Comparisons):**  
+   Each participant makes 15 pairwise comparisons between the six dimensions:
+   - Mental Demand (MD)
+   - Physical Demand (PD)
+   - Temporal Demand (TD)
+   - Performance (Perf)
+   - Effort (Effort)
+   - Frustration (Frust)
 
-2. **Rate Each Dimension (0–100 Scale)**  
-   - Each participant provides a rating (0–100) for each of the six dimensions (often in increments of 5).
-   - The **Weighted NASA TLX** for a participant is calculated by multiplying each dimension’s rating by its corresponding weight, summing these values, and then dividing by 15.
+   In each comparison, the chosen dimension receives 1 point. Thus, a dimension’s weight ranges from 0 to 5, and the total weight for a participant is always 15.
 
-The formula for a single participant is:
+2. **Rate Each Dimension (0–100 Scale):**  
+   Participants then give a rating (0–100) for each dimension. The **Weighted NASA TLX Score** for a participant is calculated by multiplying each dimension’s rating by its individual weight, summing these products, and dividing by 15:
 
-\[
-\text{Weighted TLX} = \frac{ (\text{MD} \times w_{\text{MD}}) + (\text{PD} \times w_{\text{PD}}) + (\text{TD} \times w_{\text{TD}}) + (\text{Perf} \times w_{\text{Perf}}) + (\text{Effort} \times w_{\text{Effort}}) + (\text{Frust} \times w_{\text{Frust}}) }{15}
-\]
+   \[
+   \text{Weighted TLX} = \frac{ (\text{MD} \times w_{\text{MD}}) + (\text{PD} \times w_{\text{PD}}) + (\text{TD} \times w_{\text{TD}}) + (\text{Perf} \times w_{\text{Perf}}) + (\text{Effort} \times w_{\text{Effort}}) + (\text{Frust} \times w_{\text{Frust}}) }{15}
+   \]
 
-*If the weighting step is skipped (i.e. using a simple average of the ratings), this is called the Raw TLX.*
-
----
-
-##### Example: Pairwise Comparisons & Dimension Weights
-
-For demonstration, suppose that after completing pairwise comparisons across participants the **average weights** for each dimension were as follows (for illustration only):
-
-<div align="center">
-
-| Dimension       | Times Chosen (Example) | Weight (Example) |
-|-----------------|------------------------:|-----------------:|
-| **Mental Demand**   | 4                  | 4                |
-| **Physical Demand** | 1                  | 1                |
-| **Temporal Demand** | 2                  | 2                |
-| **Performance**     | 3                  | 3                |
-| **Effort**          | 3                  | 3                |
-| **Frustration**     | 2                  | 2                |
-| **Total**           | –                  | 15               |
-  
-</div>
-
-> **Note:** In practice, each participant’s weight vector should be calculated individually and used for their own Weighted TLX computation.
+> **Note:**  
+> In practice, each participant has their own set of weights from their pairwise comparisons. The example below uses a uniform average weight for demonstration purposes only:
+>
+> - **Mental Demand:** 4  
+> - **Physical Demand:** 1  
+> - **Temporal Demand:** 2  
+> - **Performance:** 3  
+> - **Effort:** 3  
+> - **Frustration:** 2  
+> **Total:** 15
 
 ---
 
-##### 🎮 Easy Difficulty (N=10)
+##### 🎮 Example: Easy Difficulty (N=10)
 
-The table below shows example ratings for each of the six dimensions (0–100) from 10 participants and the resulting **Weighted TLX Scores** calculated using their individual weights (here, for simplicity, all users are shown with the example average weights):
+Below is a sample table for Easy difficulty. In this table, each row represents a participant’s ratings for the six dimensions (0–100) along with the calculated weighted score using the sample weight vector.
 
 <div align="center">
 
@@ -617,7 +607,7 @@ The table below shows example ratings for each of the six dimensions (0–100) f
 
 </div>
 
-**Example Calculation (User 1, Easy):**
+**Example Calculation (User 1, Easy):**  
 - Mental Demand: 20 × 4 = 80  
 - Physical Demand: 10 × 1 = 10  
 - Temporal Demand: 15 × 2 = 30  
@@ -627,11 +617,11 @@ The table below shows example ratings for each of the six dimensions (0–100) f
 - **Total = 80 + 10 + 30 + 255 + 75 + 10 = 460**  
 - **Weighted TLX = 460 / 15 ≈ 30.7**
 
-**Average Weighted Score (Easy) ≈ 32.3**
+**Average Weighted Score (Easy):** ≈ 32.3
 
 ---
 
-##### 🎮 Mid Difficulty (N=10)
+##### 🎮 Example: Mid Difficulty (N=10)
 
 <div align="center">
 
@@ -650,11 +640,11 @@ The table below shows example ratings for each of the six dimensions (0–100) f
 
 </div>
 
-**Average Weighted Score (Mid) ≈ 47.2**
+**Average Weighted Score (Mid):** ≈ 47.2
 
 ---
 
-##### 🎮 Hard Difficulty (N=10)
+##### 🎮 Example: Hard Difficulty (N=10)
 
 <div align="center">
 
@@ -673,7 +663,7 @@ The table below shows example ratings for each of the six dimensions (0–100) f
 
 </div>
 
-**Average Weighted Score (Hard) ≈ 67.2**
+**Average Weighted Score (Hard):** ≈ 67.2
 
 ---
 
@@ -686,14 +676,14 @@ The table below shows example ratings for each of the six dimensions (0–100) f
 | **Easy**   | 32.3              |
 | **Mid**    | 47.2              |
 | **Hard**   | 67.2              |
-  
+
 </div>
 
 ---
 
 ##### Visualization of Weighted NASA TLX
 
-Below is a sample bar chart comparing the average Weighted NASA TLX scores across difficulty levels. Replace the image link with your actual chart if available.
+Below is a sample bar chart illustrating the average Weighted NASA TLX scores across the three difficulty levels. Replace the image link with your actual generated chart.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/NASA.png" width="600" alt="Weighted NASA TLX by Difficulty">
@@ -705,23 +695,25 @@ Below is a sample bar chart comparing the average Weighted NASA TLX scores acros
 
 ##### Key Observations
 
-- **Individual Calculation:**  
-  Each participant’s weighted score must be calculated using their own pairwise comparison weights. Only after computing individual scores can we average them to obtain group-level means.
+- **Individual Calculations:**  
+  Each participant’s weighted score must be calculated using their own pairwise comparison weights. Only after computing individual scores can these be averaged for group-level analysis.
 - **Increasing Difficulty:**  
-  Hard mode shows a significantly higher mean weighted score (~67.2) compared to Easy (~32.3), reflecting a much heavier perceived workload.
+  Hard mode has a significantly higher mean weighted score (~67.2) compared to Easy (~32.3), showing a much heavier perceived workload.
 - **Dimension Impact:**  
-  Dimensions with higher weights (e.g., Mental Demand and Effort) contribute more strongly to the overall score, which highlights areas in the design that may require improvement.
+  Dimensions with higher weights (e.g., Mental Demand and Effort) contribute more strongly to the overall workload, indicating areas that may need further refinement.
 - **Advantage of Weighting:**  
-  The weighted approach distinguishes which aspects of the game contribute most to the overall workload, providing actionable insights for refining the game experience.
+  Using weighted scores allows for a clearer understanding of which aspects of gameplay most affect the perceived workload, providing actionable insights for design improvements.
 
 ---
 
 ### Integrating the Findings
 
-By combining our qualitative Think Aloud observations with the quantitative Weighted NASA TLX scores (calculated individually and aggregated), we gain a comprehensive understanding of the player experience in **Defend Bristol**. This approach allows us to pinpoint design elements—such as UI clarity, tower upgrade feedback, and enemy pacing—that may need refinement, especially under higher difficulty settings.
+By combining our qualitative observations with individual **Weighted NASA TLX** scores, we gain a comprehensive view of player workload in **Defend Bristol**. This method not only validates overall user experience but also highlights specific areas (such as UI feedback and difficulty balancing) that may require adjustments.
 
 **Conclusion:**  
-The use of weighted TLX not only validates the overall user experience but also identifies specific workload components that heavily impact gameplay. Future iterations will target reducing excessive mental and physical demands while maintaining the desired challenge level.
+Individual weighted calculations provide precision in evaluating workload. Aggregating these scores reveals a clear trend—higher difficulty leads to substantially increased workload. Future design iterations will focus on mitigating excessive mental and physical demands while maintaining a challenging experience.
+
+
 
 
 
