@@ -633,7 +633,7 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 ##### 📊 Visualization of Average Scores
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/xxx/MeanNASA_TLX.png" width="600" alt="Mean NASA TLX Scores by Dimension">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/NASA.png" width="600" alt="Mean NASA TLX Scores by Dimension">
 </p>
 
 *Figure: Average NASA TLX score per dimension across Easy, Mid, and Hard difficulty levels.*
