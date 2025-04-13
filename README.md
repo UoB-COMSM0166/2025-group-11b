@@ -566,8 +566,8 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 
 ---
 
-##### 🎮 Easy Difficulty (N=10)
-
+##### 🎮 Easy Difficulty
+<div align="center">
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
 |------|---------------|-----------------|-----------------|-------------|--------|-------------|
 | 1    | 20            | 10              | 15              | 85          | 25     | 5           |
@@ -581,9 +581,13 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 | 9    | 15            | 10              | 10              | 90          | 20     | 5           |
 | 10   | 30            | 20              | 30              | 75          | 35     | 15          |
 
----
+</div>
 
-##### 🎮 Mid Difficulty (N=10)
+
+
+##### 🎮 Mid Difficulty
+
+<div align="center">
 
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
 |------|---------------|-----------------|-----------------|-------------|--------|-------------|
@@ -598,9 +602,11 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 | 9    | 30            | 20              | 25              | 85          | 35     | 10          |
 | 10   | 45            | 40              | 50              | 65          | 55     | 25          |
 
----
+</div>
 
-##### 🎮 Hard Difficulty (N=10)
+##### 🎮 Hard Difficulty
+
+<div align="center">
 
 | User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
 |------|---------------|-----------------|-----------------|-------------|--------|-------------|
@@ -615,9 +621,11 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 | 9    | 50            | 40              | 45              | 75          | 60     | 30          |
 | 10   | 65            | 60              | 65              | 55          | 75     | 45          |
 
----
+</div>
 
 ##### 🧮 Average Scores by Dimension
+
+<div align="center">
 
 | Dimension       | Easy | Mid  | Hard |
 |-----------------|-----:|-----:|-----:|
@@ -628,7 +636,7 @@ We used the *raw TLX* scoring approach (0-100 scale per dimension) without apply
 | Effort          | 26.5 | 43.5 | 67.5 |
 | Frustration     | 9.0  | 18.5 | 38.5 |
 
----
+</div>
 
 ##### 📊 Visualization of Average Scores
 
