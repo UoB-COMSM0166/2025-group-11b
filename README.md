@@ -552,14 +552,6 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 
 
-  One qualitative evaluation (your choice)
-   - **Key Findings**
-   ![image](https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f)
- Recommendations for Improvement
- Enhance UI feedback, such as highlighting walkable areas to improve map readability.
- Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
- Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
- Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.      
 
 
 
