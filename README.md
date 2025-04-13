@@ -425,20 +425,22 @@ After a long period of consideration, we ultimately decided to convert the image
 ### Why Evaluation Is Important
 Conducting thorough evaluations is a crucial step in user-centered game development. By collecting qualitative feedback early and iteratively, we can rapidly identify usability obstacles, refine our mechanics, and ensure that **Defend Bristol** meets real player expectations. It also helps prevent costly redesigns later on, aligning with industry best practices for delivering polished gaming experiences.
 
-### Choosing a Qualitative Evaluation Method
+### 🔎 Choosing a Qualitative Evaluation Method
 To explore how players truly experience our game, we considered two commonly used qualitative approaches:
 
-1. **Heuristic Evaluation**  
+1. **💡 Heuristic Evaluation**  
    - **Definition**: Experts (or team members) inspect the game against established usability principles (e.g., Nielsen’s 10 Usability Heuristics).  
    - **Advantages**: Fast, low-cost, requires no external users, and systematically checks for known interface issues.  
    - **Limitations**: May miss authentic user reactions and context-specific pain points; relies on expert assumptions rather than real user behavior.
 
-2. **Think Aloud Evaluation**  
+2. **🗣️ Think Aloud Evaluation**  
    - **Definition**: Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game.  
    - **Advantages**: Provides direct insight into genuine user experiences and mental models; small samples can reveal major usability hurdles.  
    - **Limitations**: Heavily reliant on participants’ willingness to speak openly; some may find it awkward to talk while playing.
 
 After weighing these methods, we concluded that **observing actual players** would yield richer, more actionable feedback. While heuristic evaluations can quickly highlight certain interface-level issues, they don’t always capture the subtleties of user confusion or delight. By contrast, think-aloud protocols let us witness real-time reactions—critical for a game’s engagement and fun factor. Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
+
+---
 
 ### 🗣️ Think Aloud Evaluation  
 
@@ -462,7 +464,7 @@ Before conducting the sessions, we:
 4. **Set Session Duration**: Targeted ~20 minutes each to avoid fatigue and keep focus.  
 5. **Prepared Materials**: Ensured the game build was stable and we had a straightforward way to record notes.
 
-#### Method  
+#### 📌 Method  
 During the play sessions, participants were instructed to continually “think aloud” about what they were doing, why they were doing it, and how they felt at each step. We only intervened when they fell silent for an extended period, gently prompting them to keep sharing their thoughts.
 
 #### Tasks Given to Participants  
@@ -481,14 +483,17 @@ During the play sessions, participants were instructed to continually “think a
 #### Summary
 > Overall, participants praised the blend of historical flavor and strategic gameplay. However, they noted challenges such as unclear upgrade actions, vague enemy wave indicators, and a steep learning curve at the start.
 
+---
+
 ## 🎉 Evaluation Conclusion
 By opting for **Think Aloud Evaluation**, we captured authentic user experiences that might have been overlooked in an expert-driven review. This method highlighted clear opportunities to improve **Defend Bristol**, including:
 
-- **Enhancing UI Feedback** (e.g., tower upgrade prompts, wave spawn warnings)  
-- **Providing a Smoother Onboarding** (perhaps through in-game tutorials or tooltips)  
-- **Refining Core Mechanics** (ensuring the Knight mechanic remains intuitive and satisfying)
+- Enhancing UI feedback (e.g., tower upgrade prompts, wave spawn warnings)  
+- Providing a smoother onboarding (in-game tutorials or tooltips)  
+- Refining core mechanics (ensuring the Knight mechanic remains intuitive and satisfying)
 
 *We believe that addressing these issues will significantly enhance the overall player experience, ensuring Defend Bristol is both engaging and accessible.*
+
 
 
 
