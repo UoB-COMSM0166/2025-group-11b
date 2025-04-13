@@ -473,6 +473,11 @@ Each session lasted 20–30 minutes with three participants:
 - 2 familiar with tower defense games  
 - 1 completely new to the genre  
 
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/TASK%20LIST.png" width="500" style="max-height:400px; height:auto;"><br>
+  <b>Figure 10</b><br>
+  <i>TASK LIST</i>
+</p>
 
 ### 2. Carrying Out a Think Aloud Evaluation  
 
