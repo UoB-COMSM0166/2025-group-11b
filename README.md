@@ -507,7 +507,7 @@ We collected observation notes and categorized feedback into:
 | "The historical vibe is awesome; it really makes the game stand out." | "Sometimes I wasn’t sure if the enemies had spawned yet."          | Add a countdown or alert at the start of each wave.                   |
 | "Being able to place towers on a grid is intuitive."        | "I never realized how long the Knight must stand to absorb."       | Show a progress bar or timer for ability absorption.                  |
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f" width="400" style="max-height:400px; height:auto;"><br>
+  <img src="https://github.com/user-attachments/assets/a22804cf-5fcc-4e1e-b261-a2ec1a123a8f" width="1000" style="max-height:400px; height:auto;"><br>
   <b>Figure 11</b><br>
   <i>Summary Feedback</i>
 </p>
@@ -515,7 +515,8 @@ We collected observation notes and categorized feedback into:
  Enhance UI feedback, such as highlighting walkable areas to improve map readability.
  Increase visual guidance to clarify tower types and upgrade paths (e.g., color-coding towers).
  Provide clearer game feedback for speed adjustments (e.g., displaying “applies to new waves only”).
- Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.     
+ Refine UI interactions by improving button labels and adding confirmation prompts for selling or upgrading towers.    
+ 
 ### 🎬 Conclusion and Next Steps  
 
 Based on the Think Aloud sessions, we identified key improvements:  
