@@ -420,7 +420,80 @@ After a long period of consideration, we ultimately decided to convert the image
   ![image](https://github.com/user-attachments/assets/811b6111-4b64-4f6d-a2b5-9d27afa220ca)
   ![image](https://github.com/user-attachments/assets/a41a0005-edf9-4949-8b33-4c7fdc5c188d)
 
-### Evaluation
+## 🎯 Evaluation  
+
+In this section, we adopted two qualitative evaluation methods to assess the usability and user experience of our game **Defend Bristol**:  
+
+- 🗣️ Think Aloud Evaluation  
+- 🔍 Heuristic Evaluation (based on Nielsen’s 10 Usability Heuristics)
+
+---
+
+### 🗣️ Think Aloud Evaluation  
+
+#### 🎮 Method:  
+We recruited 3 participants (2 students from our course and 1 non-gamer friend) to play *Defend Bristol*.  
+They were asked to verbalize their thoughts, feelings, and decisions while playing the game.  
+We observed and recorded their feedback.
+
+#### 📝 Tasks given to participants:  
+- Start a new game and build towers.  
+- Upgrade a tower.  
+- Use the Knight mechanic to absorb tower abilities.  
+- Complete a full level.  
+
+#### 💡 Key Findings:  
+
+| 😊 Positive Feedback | ⚠️ Issues Identified | 💡 Suggestions from Participants |
+|---------------------|----------------------|---------------------------------|
+| "The map is beautiful, I like seeing real Bristol landmarks." | "I was confused about where to click when I wanted to upgrade a tower." | Add a clearer visual indicator (icon or animation) for the upgrade button. |
+| "The knight mechanic is very unique and fun!" | "Sometimes I forgot where the enemies would spawn from." | Add an arrow or flashing light before the enemy wave starts. |
+| "I like the historical elements, makes it more interesting." | "The game is hard to understand at first." | Consider adding a tutorial or in-game tips for beginners. |
+
+#### 🧾 Summary:  
+> Most participants enjoyed the game atmosphere and historical elements. However, some usability issues were identified, particularly around tower upgrading, wave spawn clarity, and the initial learning curve.
+
+---
+
+### 🔍 Heuristic Evaluation  
+
+#### 🛠️ Method:  
+We conducted a heuristic evaluation using **Nielsen’s 10 Usability Heuristics**.  
+Each team member inspected the game independently and recorded potential usability issues.
+
+#### 🗂️ Key Issues & Heuristic Violations:  
+
+| 🔑 Heuristic Principle | ⚠️ Issue Identified | 💡 Suggestion for Improvement |
+|------------------------|--------------------|--------------------------------|
+| Visibility of System Status | No clear indicator of wave start time or enemy spawn points. | Add countdown timers and direction arrows before waves start. |
+| Match Between System and Real World | Some icons (e.g., for upgrades) were unclear to new users. | Use universally recognized symbols (e.g., up arrow for upgrades). |
+| User Control and Freedom | No 'Undo' option for misplaced towers. | Allow players to sell towers at a small refund. |
+| Consistency and Standards | Different button styles on different menus. | Standardize all buttons (size, color, hover effect). |
+| Help and Documentation | No in-game tutorial or help section. | Add a short tutorial level or in-game help tips. |
+
+#### 🧾 Summary:  
+> Most usability issues were minor and related to interface clarity and feedback.  
+> The game generally followed good design practices but would benefit from minor UI improvements and better feedback mechanisms.
+
+---
+
+## 🎉 Evaluation Conclusion  
+
+Through the *Think Aloud Evaluation*, we gained valuable insights into the player experience, identifying both engaging aspects and areas of confusion.  
+
+Meanwhile, the *Heuristic Evaluation* helped us systematically identify UI/UX issues aligned with usability principles.
+
+#### 📌 Future Improvements Planned:
+- Add a tutorial for new players.  
+- Improve UI clarity (especially tower upgrade interactions).  
+- Enhance feedback mechanisms (wave timers, enemy spawn indicators).  
+- Maintain visual and functional consistency across interfaces.
+
+> *These evaluation methods were low-cost and effective, aligning well with industry best practices in user-centered design.*  
+> *We believe that implementing these improvements will significantly enhance the player experience of Defend Bristol.*
+
+---
+
 
 
 - One qualitative evaluation (your choice)
