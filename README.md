@@ -532,6 +532,9 @@ Based on the Think Aloud sessions, we identified key improvements:
 - **Refine UI Controls**  
   - Improve button labels for clarity.  
   - Add confirmation prompts for critical actions to prevent misclicks.
+ 
+
+---
 
 ### 🔬 Choosing a Quantitative Evaluation Method  
 
@@ -542,7 +545,6 @@ While our Think Aloud sessions provided rich insights into **Defend Bristol**’
 
 These tools help us obtain numeric scores that allow for straightforward comparison between difficulty levels, interface iterations, or any other key design variations.
 
----
 
 #### NASA Task Load Index (NASA TLX)
 
