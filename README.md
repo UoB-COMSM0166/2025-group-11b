@@ -504,8 +504,8 @@ We collected observation notes and categorized feedback into:
 | Category               | Positive Feedback                                      | Issues Identified                                                           | Suggestions for Improvement                                                                          |
 |-----------------------|--------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | Map Interaction        | The historical map design makes the game visually unique. | Difficulty distinguishing between walkable areas and obstacles.             | Highlight walkable areas to improve map readability.                                                 |
-| Tower Management       | Placing towers on a grid feels intuitive and easy to control. | Unclear upgrade paths, lack of visual differentiation between towers.       | Enhance visual guidance for tower types and upgrade paths (e.g., color-coding towers).                |
-| Enemy Speed Adjustment | Speed adjustment adds strategic depth to the gameplay. | Unclear whether speed changes affect all enemies or only new waves.         | Provide clear feedback about speed adjustment effects (e.g., display “applies to new waves only”).   |
+| Tower Management       | Placing towers on a grid feels intuitive and easy to control. | Unclear upgrade paths, lack of visual differentiation between towers.       | Enhance visual guidance for tower types and upgrade paths.                |
+| Enemy Speed Adjustment | Speed adjustment adds strategic depth to the gameplay. | Unclear whether speed changes affect all enemies or only new waves.         | Provide clear feedback about speed adjustment effects.   |
 | UI Controls            | UI layout is clear and easy to navigate.              | Some button functions are ambiguous.                                        | Refine button labels and add confirmation prompts for actions like selling or upgrading towers.       |
  
 ### 🎬 Conclusion and Next Steps  
@@ -517,10 +517,10 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 - **Refine Tower Management Feedback**  
   - Add visible or audible cues when a tower upgrade is complete.  
-  - Improve visual differentiation between tower types and upgrade paths (e.g., color-coding).
+  - Improve visual differentiation between tower types and upgrade paths.
 
 - **Clarify Enemy Speed Adjustment**  
-  - Provide clear feedback about the effect of speed-up (e.g., whether it applies to all enemies or only new waves).  
+  - Provide clear feedback about the effect of speed-up.  
   - Add tooltips or hints when activating speed-up.
 
 - **Refine Wave Alerts**  
@@ -530,7 +530,7 @@ Based on the Think Aloud sessions, we identified key improvements:
   - Incorporate a progress bar or timer to show the absorption duration for better player feedback.
 
 - **Refine UI Controls**  
-  - Improve button labels for clarity (e.g., differentiate between "Sell" and "Upgrade").  
+  - Improve button labels for clarity.  
   - Add confirmation prompts for critical actions to prevent misclicks.
 ---
 
