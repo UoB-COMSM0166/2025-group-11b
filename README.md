@@ -448,10 +448,15 @@ Think Aloud involves inviting participants to share their thoughts, feelings, an
 
 #### Pros and Cons  
 
+<div align="center">
+
 | Pros                                         | Cons                                                                 |
 |---------------------------------------------|----------------------------------------------------------------------|
 | **Rich, Immediate Feedback** <br> See exactly where players stumble or succeed. | **Reliance on Participant Disclosure** <br> Shy players may hold back thoughts. |
 | **Cost-Effective** <br> Requires minimal equipment and small participant groups. | **Less Natural Playing** <br> Continuous talking may break immersion. |
+
+</div>
+
 
 
 ### 1. Planning a Think Aloud Evaluation  
