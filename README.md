@@ -440,14 +440,22 @@ To explore how players truly experience our game, we considered two commonly use
 
 After weighing these methods, we concluded that **observing actual players** would yield richer, more actionable feedback. While heuristic evaluations can quickly highlight certain interface-level issues, they don’t always capture the subtleties of user confusion or delight. By contrast, think-aloud protocols let us witness real-time reactions—critical for a game’s engagement and fun factor. Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
 
----
 
-## 🗣️ Think Aloud Evaluation  
+### 🗣️ Think Aloud Evaluation  
 
-### What Is Think Aloud?
+#### What Is Think Aloud?
 Think Aloud involves inviting participants to share their thoughts, feelings, and decision-making processes aloud as they perform tasks in the game. We observe them in real time, noting points of confusion, frustration, or excitement to understand how our design is interpreted by actual players.
 
----
+#### Pros and Cons
+- **Pros**  
+  - **Rich, Immediate Feedback**: Lets us see exactly where players stumble or succeed.  
+  - **Cost-Effective**: Requires minimal equipment and can be done with small participant groups.  
+  - **Reveals Emotional Reactions**: Particularly valuable for a game’s entertainment factor.  
+- **Cons**  
+  - **Reliance on Participant Disclosure**: Shy or reserved players may hold back thoughts.  
+  - **Less Natural Playing**: Some users find continuous talking breaks immersion.
+
+#### Planning
 
 ### 1. Planning a Think Aloud Evaluation
 
