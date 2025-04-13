@@ -422,83 +422,104 @@ After a long period of consideration, we ultimately decided to convert the image
 
 ## 🎯 5. Evaluation  
 
-### Why Evaluation Is Important
+### Why Evaluation Is Important  
 Conducting thorough evaluations is a crucial step in user-centered game development. By collecting qualitative feedback early and iteratively, we can rapidly identify usability obstacles, refine our mechanics, and ensure that **Defend Bristol** meets real player expectations. It also helps prevent costly redesigns later on, aligning with industry best practices for delivering polished gaming experiences.
 
-### 🔎 Choosing a Qualitative Evaluation Method
+---
+
+### 🔎 Choosing a Qualitative Evaluation Method  
+
 To explore how players truly experience our game, we considered two commonly used qualitative approaches:
 
-1. **Heuristic Evaluation**  
-   - **Definition**: Experts (or team members) inspect the game against established usability principles (e.g., Nielsen’s 10 Usability Heuristics).  
-   - **Advantages**: Fast, low-cost, requires no external users, and systematically checks for known interface issues.  
-   - **Limitations**: May miss authentic user reactions and context-specific pain points; relies on expert assumptions rather than real user behavior.
+| Method                  | Definition                                                                                      | Advantages                                                                                      | Limitations                                                                                      |
+|------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Heuristic Evaluation** | Experts (or team members) inspect the game against established usability principles (e.g., Nielsen’s 10 Usability Heuristics). | - Fast, low-cost, requires no external users. <br> - Systematically checks known interface issues. | - May miss authentic user reactions. <br> - Relies on expert assumptions, not real behavior.     |
+| **Think Aloud Evaluation** | Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game. | - Provides direct insight into genuine user experiences. <br> - Small samples reveal big issues. | - Depends on participants’ willingness to talk. <br> - Some may find it awkward while playing.  |
 
-2. **Think Aloud Evaluation**  
-   - **Definition**: Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game.  
-   - **Advantages**: Provides direct insight into genuine user experiences and mental models; small samples can reveal major usability hurdles.  
-   - **Limitations**: Heavily reliant on participants’ willingness to speak openly; some may find it awkward to talk while playing.
+> 📝 *Conclusion:*  
+> After weighing these methods, we concluded that observing actual players would yield richer, more actionable feedback.  
+> Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
 
-After weighing these methods, we concluded that **observing actual players** would yield richer, more actionable feedback. While heuristic evaluations can quickly highlight certain interface-level issues, they don’t always capture the subtleties of user confusion or delight. By contrast, think-aloud protocols let us witness real-time reactions—critical for a game’s engagement and fun factor. Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
-
+---
 
 ### 🗣️ Think Aloud Evaluation  
 
-#### What Is Think Aloud?
+#### What Is Think Aloud?  
 Think Aloud involves inviting participants to share their thoughts, feelings, and decision-making processes aloud as they perform tasks in the game. We observe them in real time, noting points of confusion, frustration, or excitement to understand how our design is interpreted by actual players.
 
-#### Pros and Cons
-- **Pros**  
-  - **Rich, Immediate Feedback**: Lets us see exactly where players stumble or succeed.  
-  - **Cost-Effective**: Requires minimal equipment and can be done with small participant groups.  
-  - **Reveals Emotional Reactions**: Particularly valuable for a game’s entertainment factor.  
-- **Cons**  
-  - **Reliance on Participant Disclosure**: Shy or reserved players may hold back thoughts.  
-  - **Less Natural Playing**: Some users find continuous talking breaks immersion.
+---
 
-#### Planning
+#### Pros and Cons  
 
-### 1. Planning a Think Aloud Evaluation
+| Pros                                         | Cons                                                                 |
+|---------------------------------------------|----------------------------------------------------------------------|
+| **Rich, Immediate Feedback** <br> See exactly where players stumble or succeed. | **Reliance on Participant Disclosure** <br> Shy players may hold back thoughts. |
+| **Cost-Effective** <br> Requires minimal equipment and small participant groups. | **Less Natural Playing** <br> Continuous talking may break immersion. |
+| **Reveals Emotional Reactions** <br> Valuable for game entertainment factor. |                                                                      |
 
-We began by clarifying our key questions:  
+---
+
+### 1. Planning a Think Aloud Evaluation  
+
+We began by clarifying our key questions:
+
 - ⚔️ *Can players figure out how to place and upgrade towers on their own?*  
 - 🤔 *Do they understand how the Knight absorbs a tower’s ability?*  
-- ❓ *Are there any points of confusion about the interface or objectives?*
+- ❓ *Are there any points of confusion about the interface or objectives?*  
 
-From these questions, we created a brief list of tasks covering each core mechanic—such as starting a new game, placing a tower, upgrading it, using the Knight to absorb abilities, and completing a full enemy wave.
+Based on these, we created tasks covering each core mechanic — starting a new game, placing a tower, upgrading, using the Knight to absorb abilities, and completing a wave.
 
-Each testing session lasted about 20–30 minutes, giving participants enough time to explore without feeling rushed. We invited three individuals: two were already familiar with tower defense games, and one was completely new to the genre. This allowed us to see how both seasoned players and beginners approached the game’s systems.
+Each session lasted 20–30 minutes with three participants:  
+- 2 familiar with tower defense games  
+- 1 completely new to the genre  
 
-### 2. Carrying Out a Think Aloud Evaluation
+---
 
-We assigned one facilitator to explain the Think Aloud method and keep the session running smoothly. They began by telling participants:  
-> “There are no right or wrong answers—please share any thoughts or feelings you have as you play. If you fall silent for a while, I might gently ask what you’re thinking.”
+### 2. Carrying Out a Think Aloud Evaluation  
 
-Meanwhile, one or two observers took notes on everything participants said or seemed to feel during gameplay. Once a session started, participants attempted the tasks independently while we listened for signs of confusion or delight. Only if someone stopped speaking for too long did we nudge them with a quick prompt—like,  
-> “Could you talk me through your decision here?”  
+Roles:  
+- 1 Facilitator: explains the method and encourages thinking aloud.  
+- 1-2 Observers: take notes on participants' behaviors and comments.
 
-This helped maintain a steady flow of verbalized thought without being intrusive.
+Facilitator instructions example:  
+> "There are no right or wrong answers — please share any thoughts or feelings you have as you play. If you fall silent for a while, I might gently ask what you’re thinking."
 
-### 3. Analyzing a Think Aloud Evaluation
+Prompt example (if silent too long):  
+> "Could you talk me through your decision here?"
 
-After each session, we collected all notes from the facilitator and observers, then sorted them by common themes. We often grouped feedback into categories like **helpful features**, **confusing elements**, and **suggestions for improvement**, counting how frequently each type of comment arose. This method pinpointed which issues affected multiple participants versus ones that occurred rarely.
+---
 
-Below is a quick snapshot of what emerged from our Think Aloud sessions:
+### 3. Analyzing a Think Aloud Evaluation  
+
+We collected observation notes and categorized feedback into:  
+- **Helpful Features**  
+- **Confusing Elements**  
+- **Suggestions for Improvement**  
+
+#### Summary of Feedback  
 
 | 😊 Positive Feedback                                        | ⚠️ Issues Identified                                              | 💡 Suggestions for Improvement                                       |
 |------------------------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------------------|
-| “I love the Knight mechanic—it adds a fun strategic twist.” | “I didn’t notice when the tower had finished upgrading.”          | Include a clear sound effect or pop-up when an upgrade completes.     |
-| “The historical vibe is awesome; it really makes the game stand out.” | “Sometimes I wasn’t sure if the enemies had spawned yet.”          | Add a short countdown or alert at the start of each wave.             |
-| “Being able to place towers on a grid is intuitive.”        | “I never realized how long the Knight must stand to absorb.”       | Provide a small progress bar or timer to show how absorption works.   |
+| "I love the Knight mechanic — it adds a fun strategic twist." | "I didn’t notice when the tower had finished upgrading."          | Add a sound effect or pop-up when upgrade completes.                  |
+| "The historical vibe is awesome; it really makes the game stand out." | "Sometimes I wasn’t sure if the enemies had spawned yet."          | Add a countdown or alert at the start of each wave.                   |
+| "Being able to place towers on a grid is intuitive."        | "I never realized how long the Knight must stand to absorb."       | Show a progress bar or timer for ability absorption.                  |
 
-### Conclusion and Next Steps
+---
 
-Overall, participants enjoyed the game’s unique historical flair and the Knight’s absorbing mechanic. However, a few usability gaps stood out:
+### 🎬 Conclusion and Next Steps  
 
-- **Improve Upgrade Feedback**: Adding more visible or audible cues to confirm an upgrade has completed.  
-- **Refine Wave Alerts**: Providing clearer indicators or countdowns so players know exactly when enemies will spawn.  
-- **Clarify Knight Absorption**: Incorporating a brief timer or progress bar to illustrate how (and when) the Knight gains power.
+Based on the Think Aloud sessions, we identified key improvements:  
 
-By addressing these areas, we believe **Defend Bristol** will offer an even more accessible and engaging tower defense experience, delighting both new and experienced players alike.
+- **Improve Upgrade Feedback**  
+  - Add visible or audible cues when an upgrade is complete.
+
+- **Refine Wave Alerts**  
+  - Provide clearer indicators or countdowns for enemy spawning.
+
+- **Clarify Knight Absorption**  
+  - Incorporate a progress bar or timer for better feedback.
+
+By addressing these areas, we believe **Defend Bristol** will offer an even more accessible and engaging tower defense experience — delighting both new and experienced players alike.
 
 
 
