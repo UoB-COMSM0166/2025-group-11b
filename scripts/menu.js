@@ -432,135 +432,98 @@ class MenuButton {
   
     
     // 渲染按钮
+  // 渲染按钮
     draw() {
         if (!this.isVisible) return;
         push();
-
         
-        var imgOffset = 0;
-        var textOffset = 0;
-        // 根据不同状态设置按钮颜色
+        const { imgOffset, textOffset } = this.calculateButtonOffsets();
+        this.updateButtonSize(imgOffset, textOffset);
+        
+        if (["PLAY", "START"].includes(this.label)) {
+            this.drawCenterButton(imgOffset, textOffset);
+        } 
+        else if (this.label === "RIGHT") {
+            this.drawRightButton(imgOffset);
+        }
+        else if (this.label === "LEFT") {
+            this.drawLeftButton(imgOffset);
+        }
+        else if (this.label === "RETURN") {
+            this.drawReturnButton(imgOffset);
+        }
+        
+        pop();
+    }
+
+    // 计算按钮偏移量
+    calculateButtonOffsets() {
+        let imgOffset = 0;
+        let textOffset = 0;
+        
         if (this.isPressed) {
             imgOffset = -5;
             textOffset = -this.fontSize / 6;
-        } else if (this.isMouseOver()) {
+        } 
+        else if (this.isMouseOver()) {
             imgOffset = 5;
             textOffset = this.fontSize / 6;
-        } else {
-            imgOffset = 0;
-            textOffset = 0;
         }
-        if(this.label=="PLAY"){
-            this.x = width/2;
-            this.y = height/2;
-            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+        
+        return { imgOffset, textOffset };
+    }
 
-            imageMode(CENTER);
-            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+    // 更新按钮尺寸
+    updateButtonSize(imgOffset, textOffset) {
+        this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
+        this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
+        this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+    }
 
-            // 绘制按钮文本
-            if (this.label.lenght === 0) return;
-            stroke(0);
-            strokeWeight(this.tarFontSize / 6*widthRatio);
-            fill(this.labelColor);
-            textFont(uiFont);
-            textAlign(CENTER, CENTER);
-            textSize(this.tarFontSize*widthRatio);
-            text(this.label,  this.x,this.y);
-            pop();
+    // 绘制居中按钮（PLAY/START）
+    drawCenterButton(imgOffset, textOffset) {
+        this.x = width/2;
+        this.y = height/2;
+        
+        imageMode(CENTER);
+        image(this.bg, this.x, this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
 
-        }else if(this.label=="START"){
-            this.x = width/2;
-            this.y = height/2;
-            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
+        if (this.label.length === 0) return;
+        
+        stroke(0);
+        strokeWeight(this.tarFontSize / 6 * widthRatio);
+        fill(this.labelColor);
+        textFont(uiFont);
+        textAlign(CENTER, CENTER);
+        textSize(this.tarFontSize * widthRatio);
+        text(this.label, this.x, this.y);
+    }
 
-            imageMode(CENTER);
-            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+    // 绘制右侧按钮
+    drawRightButton(imgOffset) {
+        this.x = width - this.tarWidth * widthRatio;
+        this.y = height/2;
+        
+        imageMode(CENTER);
+        image(this.bg, this.x, this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+    }
 
-            // 绘制按钮文本
-            if (this.label.lenght === 0) return;
-            stroke(0);
-            strokeWeight(this.tarFontSize / 6*widthRatio);
-            fill(this.labelColor);
-            textFont(uiFont);
-            textAlign(CENTER, CENTER);
-            textSize(this.tarFontSize*widthRatio);
-            text(this.label,  this.x,this.y);
-            pop();
+    // 绘制左侧按钮
+    drawLeftButton(imgOffset) {
+        this.x = this.tarHeight * widthRatio/2;
+        this.y = height/2;
+        
+        imageMode(CENTER);
+        image(this.bg, this.x, this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
+    }
 
-        }
-
-        else if(this.label=="RIGHT"){
-            this.x = width-this.tarWidth*widthRatio;
-            this.y = height/2;
-            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
-
-            imageMode(CENTER);
-            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
-
-
-            pop();
-
-        }
-
-        else if(this.label=="LEFT"){
-            this.x = this.tarHeight*widthRatio/2
-            this.y = height/2;
-            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
-
-            imageMode(CENTER);
-            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
-
-
-            pop();
-
-        }
-
-        else if(this.label=="RETURN"){
-            this.x = this.tarWidth*widthRatio/2;
-            this.y =  this.tarHeight*widthRatio;
-            this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-            this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-            this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
-
-            imageMode(CENTER);
-            image(this.bg, this.x,this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
-
-
-            pop();
-
-        }
-
-
-            else{
-            // translate(this.x, this.y);
-            // this.tarWidth = lerp(this.tarWidth, this.w + imgOffset * 2, 0.5);
-            // this.tarHeight = lerp(this.tarHeight, this.h + imgOffset * 2, 0.5);
-            // this.tarFontSize = lerp(this.tarFontSize, this.fontSize + textOffset, 0.5);
-            //
-            // imageMode(CENTER);
-            // image(this.bg, this.w/2, this.h/2, this.tarWidth, this.tarHeight);
-            //
-            // // 绘制按钮文本
-            // if (this.label.lenght === 0) return;
-            // stroke(0);
-            // strokeWeight(this.tarFontSize / 6);
-            // fill(this.labelColor);
-            // textFont(uiFont);
-            // textAlign(CENTER, CENTER);
-            // textSize(this.tarFontSize);
-            // text(this.label, this.w / 2, this.h / 2 - this.tarFontSize / 5);
-            // pop();
-        }
-
+    // 绘制返回按钮
+    drawReturnButton(imgOffset) {
+        this.x = this.tarWidth * widthRatio/2;
+        this.y = this.tarHeight * widthRatio;
+        
+        imageMode(CENTER);
+        image(this.bg, this.x, this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
     }
   
     // 按钮按下

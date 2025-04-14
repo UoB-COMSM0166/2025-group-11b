@@ -1,6 +1,6 @@
 // 初始默认生命值和金钱
 const defaultHealth = 100;
-const defaultCash = 9999999;
+const defaultCash = 1000;
 
 let mapData = maps.customMap;  // 获取自定义地图数据
 
@@ -950,20 +950,23 @@ class SlidePane {
                 let startX = towerWidth / 12;
                 let startY = 60;
                 let fontHeight = towerWidth / 20;
+                let fontSize = towerWidth / 15;  // 调大内容字体
+                let lineHeight = fontSize * 1.5; // 新增：行间距为字体大小的1.5倍
                 fill(this.t.color);
                 noStroke();
-                textSize(towerWidth / 20);
+                textSize(fontSize);
 
                 textAlign(LEFT, TOP);
                 text(this.t.title, startX, startY); // **这里的 `y` 相对面板顶部**
                 fill(0);
-                text("Cost:$" + this.t.totalCost, startX, startY + fontHeight);
-                text("Sell Price:$" + this.t.sellPrice(), startX, startY + fontHeight * 2);
-                text("Upgrade Price:$" + (this.t.upgrades.length > 0 ? '$' + this.t.upgrades[0].cost : 'N/A'), startX, startY + fontHeight * 3);
-                text("Damage:" + this.t.getDamage(), startX, startY + fontHeight * 4);
-                text("Type:" + this.t.type.toUpperCase(), startX, startY + fontHeight * 5);
-                text("Range:" + this.t.range, startX, startY + fontHeight * 6);
-                text("Avg. Cooldown:" + this.t.getCooldown().toFixed(2) + 's', startX, startY + fontHeight * 7);
+                text("Cost:$" + this.t.totalCost, startX, startY + lineHeight);
+                text("Sell Price:$" + this.t.sellPrice(), startX, startY + lineHeight * 2);
+                text("Upgrade Price:$" + (this.t.upgrades.length > 0 ? '$' + this.t.upgrades[0].cost : 'N/A'), 
+                    startX, startY + lineHeight * 3);
+                text("Damage:" + this.t.getDamage(), startX, startY + lineHeight * 4);
+                text("Type:" + this.t.type.toUpperCase(), startX, startY + lineHeight * 5);
+                text("Range:" + this.t.range, startX, startY + lineHeight * 6);
+                text("Avg. Cooldown:" + this.t.getCooldown().toFixed(2) + 's', startX, startY + lineHeight * 7);
                 // text("Cost:$"+this.t.totalCost, 20, startY+index*towerHeight/10); // **这里的 `y` 相对面板顶部**
 
                 if (this.isPlaceTower) {
