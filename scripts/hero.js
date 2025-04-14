@@ -213,123 +213,120 @@ class Hero {  // 创建塔的类
     }
 
     getPowerByTowers(towers) {
-
+        this.handlePowerCreation();
+        
+        let cancleCreate = true;
+        
+        for (var i = 0; i < towers.length; i++) {
+            var t = towers[i];
+            if (this.checkTowerCollision(t)) {
+                cancleCreate = false;
+                this.displayPoweCD(this.pos.x, this.pos.y);   // 绘制cd
+                this.updatePowerCD();
+                
+                this.handlePowerAcquisition(t);
+            }
+        }
+    
+        if (cancleCreate) {
+            this.resetPowerState();
+        }
+    }
+    
+    // Helper methods
+    handlePowerCreation() {
         if (this.powerCd <= 0 && this.createPower) {
             this.tower = new Tower(this.x, this.y);
             this.tower.copyTower(this.copyTower);
             // this.tower.onCreate();
             this.createPower = false;
         }
-
-        let cancleCreate = true;
-        //检测塔和英雄是否重叠
-        for (var i = 0; i < towers.length; i++) {
-            var t = towers[i];
-
-            let rect1 = {
-                x: this.x,
-                y: this.y,
-                width: ts,
-                height: ts,
-
-            };
-
-            let rect2 = {
-                x: t.pos.x,
-                y: t.pos.y,
-                width: ts,
-                height: ts,
-
-            };
-            if (checkRectCollision(rect1, rect2)) {
-
-                cancleCreate=false;
-                this.displayPoweCD(this.pos.x, this.pos.y);   // 绘制cd
-                this.updatePowerCD();
-
-
-                //第一次获取能力
-                if (this.powerTowerPostionRect === undefined) {
-
-
-                    //
-                    //
-
-                    this.powerTowerPostionRect = {
-                        x: t.pos.x,
-                        y: t.pos.y,
-                        width: ts,
-                        height: ts,
-
-                    };
-
-                    this.resetPowerCoolDown();
-
-                    this.createPower = true;
-                    this.copyTower = t;
-                    this.tower = undefined;
-
-                } else {
-
-                    let rect1 = {
-                        x: this.x,
-                        y: this.y,
-                        width: ts,
-                        height: ts,
-
-                    };
-
-                    //已经有能力，禁止重复获取相同的塔
-                    if (!checkRectCollision(rect1, this.powerTowerPostionRect) && this.createPower == false) {
-                        // console.log("生成")
-
-                        this.powerTowerPostionRect = {
-                            x: t.pos.x,
-                            y: t.pos.y,
-                            width: ts,
-                            height: ts,
-
-                        };
-
-                        this.resetPowerCoolDown();
-
-                        this.createPower = true;
-                        this.copyTower = t;
-                        // this.tower =undefined;
-                    }
-
-                    //已经有能力，相同位置的塔升级了 可以重新获取
-                    if (checkRectCollision(rect1, this.powerTowerPostionRect) && this.createPower == false) {
-                        
-
-                        if (this.tower.name != t.name) {
-                            this.resetPowerCoolDown();
-                            this.createPower = true;
-                            this.copyTower = t;
-                            // this.tower =undefined;
-                        }
-
-
-                    }
-
-
-                }
-
-
-            }
-
+    }
+    
+    checkTowerCollision(tower) {
+        let rect1 = {
+            x: this.x,
+            y: this.y,
+            width: ts,
+            height: ts,
+        };
+    
+        let rect2 = {
+            x: tower.pos.x,
+            y: tower.pos.y,
+            width: ts,
+            height: ts,
+        };
+        
+        return checkRectCollision(rect1, rect2);
+    }
+    
+    handlePowerAcquisition(tower) {
+        if (this.powerTowerPostionRect === undefined) {
+            this.initializePower(tower);
+        } else {
+            this.updateExistingPower(tower);
         }
-
-        if(cancleCreate==true){
-            this.createPower =false;
-            this.powerCd =0;
-            this.powerCoolDown=0;
+    }
+    
+    initializePower(tower) {
+        this.powerTowerPostionRect = {
+            x: tower.pos.x,
+            y: tower.pos.y,
+            width: ts,
+            height: ts,
+        };
+    
+        this.resetPowerCoolDown();
+        this.createPower = true;
+        this.copyTower = tower;
+        this.tower = undefined;
+    }
+    
+    updateExistingPower(tower) {
+        let heroRect = {
+            x: this.x,
+            y: this.y,
+            width: ts,
+            height: ts,
+        };
+    
+        // 已经有能力，禁止重复获取相同的塔
+        if (!checkRectCollision(heroRect, this.powerTowerPostionRect) && this.createPower == false) {
+            this.reinitializePower(tower);
         }
-
-        //充能
-
-        //获取塔的能力
-
+    
+        // 已经有能力，相同位置的塔升级了 可以重新获取
+        if (checkRectCollision(heroRect, this.powerTowerPostionRect)) {
+            this.handleUpgradedTower(tower);
+        }
+    }
+    
+    reinitializePower(tower) {
+        this.powerTowerPostionRect = {
+            x: tower.pos.x,
+            y: tower.pos.y,
+            width: ts,
+            height: ts,
+        };
+    
+        this.resetPowerCoolDown();
+        this.createPower = true;
+        this.copyTower = tower;
+    }
+    
+    handleUpgradedTower(tower) {
+        if (this.createPower == false && this.tower.name != tower.name) {
+            this.resetPowerCoolDown();
+            this.createPower = true;
+            this.copyTower = tower;
+        }
+    }
+    
+    resetPowerState() {
+        this.createPower = false;
+        this.powerCd = 0;
+        this.powerCoolDown = 0;
     }
 
     target(entities) {
