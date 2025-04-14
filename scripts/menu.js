@@ -37,6 +37,9 @@ function initMenu()
     btnStart = new MenuButton(gameWidth / 2 - 100, height - 250, 300, 150, imgStartButton, "START", color(255), onStartButtonClicked);
     btnReturn = new MenuButton(0, 20, 60, 50, imgReturnButton, "RETURN", color(255), onReturnButtonClicked);
     btnStart.setTextSize(50);
+   
+    btnStart.pulseSpeed = 0.08;
+    btnStart.glowDirection = 1.5;
     levelMenuButtons.push(btnLeft);
     levelMenuButtons.push(btnRight);
     levelMenuButtons.push(btnStart);
@@ -390,6 +393,7 @@ function onRetryButtonClicked()
 }
 
 
+
 // 菜单按钮类
 class MenuButton {
     constructor(x, y, w, h, bg, label, c, callback) {
@@ -410,8 +414,39 @@ class MenuButton {
         this.tarHeight = 0;
         this.tarFontSize = 0;
         this.fontSize = 20;
+        this.pulseSize = 0;
+        this.pulseSpeed = 0.05;
+        this.glowAlpha = 0;
+        this.glowDirection = 1;
+        this.effectSize = 0; // 统一效果尺寸
     }
-  
+     // 更新动态效果
+    updateEffects() {
+        // 脉冲效果
+        this.pulseSize = sin(frameCount * this.pulseSpeed) * this.pulseMax;
+        
+        // 光晕呼吸效果
+        this.glowAlpha += this.glowDirection * this.glowSpeed;
+        if (this.glowAlpha > this.glowMax || this.glowAlpha < 0) {
+        this.glowDirection *= -1;
+        }
+        
+        this.lastUpdate = millis();
+    }
+    // 更新动态效果
+    updateDynamicEffects() {
+        // 脉冲效果
+        this.pulseSize = sin(frameCount * this.pulseSpeed) * 10;
+        
+        // 光晕呼吸效果
+        this.glowAlpha += this.glowDirection * 2;
+        if (this.glowAlpha > 100 || this.glowAlpha < 0) {
+          this.glowDirection *= -1;
+        }
+        
+        // 综合效果尺寸（用于统一调整）
+        this.effectSize = this.pulseSize * (this.isMouseOver() ? 1.5 : 1);
+      }
     setVisible(isShow) {
         this.isVisible = isShow;
     }
@@ -436,10 +471,13 @@ class MenuButton {
     draw() {
         if (!this.isVisible) return;
         push();
-        
+        this.updateDynamicEffects(); // 更新效果
         const { imgOffset, textOffset } = this.calculateButtonOffsets();
         this.updateButtonSize(imgOffset, textOffset);
-        
+         
+        if (this.label === "START") {
+            this.drawStartButtonEffects();
+        }
         if (["PLAY", "START"].includes(this.label)) {
             this.drawCenterButton(imgOffset, textOffset);
         } 
@@ -456,6 +494,34 @@ class MenuButton {
         pop();
     }
 
+    drawStartButtonEffects() {
+        // 矩形光晕效果
+        noStroke();
+        fill(255, 215, 0, this.glowAlpha); // 金色半透明
+        
+        // 绘制圆角矩形光晕（匹配按钮形状）
+        rectMode(CENTER);
+        let glowWidth = this.w + this.effectSize * 2-60;
+        let glowHeight = this.h + this.effectSize * 2-30;
+        let cornerRadius = 15 + this.effectSize/2; // 圆角随效果变大
+        
+          // 修改这行（添加偏移量）
+        const xOffset = -90; // 往左偏移5像素
+        const yOffset = -40; // 往上偏移5像素
+        
+        // 主光晕（添加偏移）
+        rect(this.x + this.w/2 + xOffset, this.y + this.h/2 + yOffset, 
+            glowWidth, glowHeight, cornerRadius);
+        
+        // 高光光晕（同样添加偏移）
+        rect(this.x + this.w/2 + xOffset, this.y + this.h/2 + yOffset, 
+            glowWidth * 0.9, glowHeight * 0.9, cornerRadius * 0.9);
+
+        // 调整按钮尺寸以包含动态效果
+        this.tarWidth += this.effectSize;
+        this.tarHeight += this.effectSize;
+        this.tarFontSize += this.effectSize / 3;
+    }
     // 计算按钮偏移量
     calculateButtonOffsets() {
         let imgOffset = 0;
@@ -484,8 +550,10 @@ class MenuButton {
     drawCenterButton(imgOffset, textOffset) {
         this.x = width/2;
         this.y = height/2;
-        
+         // 对START按钮应用额外效果
+        const extraSize = this.label === "START" ? this.effectSize : 0;
         imageMode(CENTER);
+        rectMode(CENTER);
         image(this.bg, this.x, this.y, this.tarWidth*widthRatio, this.tarHeight*widthRatio);
 
         if (this.label.length === 0) return;
