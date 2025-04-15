@@ -146,22 +146,41 @@ function openResultMenu(isSurvival)
     }
 }
 
+let coverZoom = 1.0;          // 封面当前缩放值
+let targetZoom = 1.02;        // 目标缩放值 
+let zoomDirection = 0.0002;   // 缩放变化步长
+const ZOOM_RANGE = 0.03;      // 最大缩放幅度
 // ========================================= 页面绘制 ==========================================
 
 // 绘制：主菜单
-function drawMainMenu()
-{
+function drawMainMenu() {
     if (!showMainMenu) return;
     
-    // 绘制封面
-    image(mainMenuCover, 0, 0, width, height);
+    // 更新缩放值（产生呼吸效果）
+    updateCoverZoom();
+    
+    // 计算缩放后的尺寸和偏移（保持居中）
+    let scaledWidth = width * coverZoom;
+    let scaledHeight = height * coverZoom;
+    let offsetX = (width - scaledWidth) / 2;
+    let offsetY = (height - scaledHeight) / 2;
+    
+    // 绘制动态封面
+    image(mainMenuCover, offsetX, offsetY, scaledWidth, scaledHeight);
 
-    // 绘制按钮
+    // 绘制按钮（不受封面缩放影响）
     for (let btn of mainMenuButtons) {
         btn.draw();
     }
 }
-
+function updateCoverZoom() {
+    coverZoom += zoomDirection;
+    
+    // 到达边界时反转方向
+    if (coverZoom > 1 + ZOOM_RANGE || coverZoom < 1 - ZOOM_RANGE/2) {
+        zoomDirection *= -1;
+    }
+}
 // 绘制：关卡页面
 function drawLevelMenu()
 {
