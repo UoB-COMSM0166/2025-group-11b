@@ -923,72 +923,98 @@ class SlidePane {
 
     display() {
         push();
-        translate(this.x, this.y); // **让整个面板随动**
-
-        // **绘制滑动面板**
+        translate(this.x, this.y);
+        
+        this.drawPanelBase();
+        this.drawTitleBar();
+        
+        if (this.isExpanded) {
+            this.drawExpandedContent();
+        }
+        
+        pop();
+    }
+    
+    // 绘制面板基础
+    drawPanelBase() {
         fill(255);
         stroke(180);
         strokeWeight(2);
         rect(0, 0, this.w, this.currentHeight, 15);
-
-        // **绘制标题栏**
+    }
+    
+    // 绘制标题栏
+    drawTitleBar() {
         fill(255);
         rect(0, 0, this.w, 50, 15);
-
+        
         fill(0);
         textFont(uiFont);
         textSize(towerWidth / 10);
         textAlign(CENTER, CENTER);
-
         text(this.isExpanded ? "🔼 TOWER INFO" : "🔽 TOWER INFO", this.w / 2, 25);
-
-        // **展开时显示内容**
-        if (this.isExpanded) {
-            if (this.t === undefined) {
-            } else {
-                push();
-                let startX = towerWidth / 12;
-                let startY = 60;
-                let fontHeight = towerWidth / 20;
-                let fontSize = towerWidth / 15;  // 调大内容字体
-                let lineHeight = fontSize * 1.5; // 新增：行间距为字体大小的1.5倍
-                fill(this.t.color);
-                noStroke();
-                textSize(fontSize);
-
-                textAlign(LEFT, TOP);
-                text(this.t.title, startX, startY); // **这里的 `y` 相对面板顶部**
-                fill(0);
-                text("Cost:$" + this.t.totalCost, startX, startY + lineHeight);
-                text("Sell Price:$" + this.t.sellPrice(), startX, startY + lineHeight * 2);
-                text("Upgrade Price:$" + (this.t.upgrades.length > 0 ? '$' + this.t.upgrades[0].cost : 'N/A'), 
-                    startX, startY + lineHeight * 3);
-                text("Damage:" + this.t.getDamage(), startX, startY + lineHeight * 4);
-                text("Type:" + this.t.type.toUpperCase(), startX, startY + lineHeight * 5);
-                text("Range:" + this.t.range, startX, startY + lineHeight * 6);
-                text("Avg. Cooldown:" + this.t.getCooldown().toFixed(2) + 's', startX, startY + lineHeight * 7);
-                // text("Cost:$"+this.t.totalCost, 20, startY+index*towerHeight/10); // **这里的 `y` 相对面板顶部**
-
-                if (this.isPlaceTower) {
-                    // **绘制按钮**
-                    fill(100, 150, 200);
-                    rect(startX, startY + fontHeight * 9, towerWidth / 3, towerWidth / 10, 10);
-                    rect(startX + towerWidth / 3 + towerWidth / 5, startY + fontHeight * 9, towerWidth / 3, towerWidth / 10, 10);
-
-                    fill(255);
-                    // textSize(16);
-                    textAlign(CENTER, CENTER);
-                    text("SELL", startX + fontHeight * 3.2, startY + fontHeight * 10);
-                    text("UPGRADE", startX + towerWidth / 3 + towerWidth / 10 + fontHeight * 5.5, startY + fontHeight * 10);
-                }
-
-
-                pop();
-            }
-
+    }
+    
+    // 绘制展开内容
+    drawExpandedContent() {
+        if (this.t === undefined) return;
+        
+        push();
+        this.drawTowerInfo();
+        
+        if (this.isPlaceTower) {
+            this.drawActionButtons();
         }
-
         pop();
+    }
+    
+    // 绘制塔信息
+    drawTowerInfo() {
+        const startX = towerWidth / 12;
+        const startY = 60;
+        const fontSize = towerWidth / 15;
+        const lineHeight = fontSize * 1.5;
+        
+        fill(this.t.color);
+        noStroke();
+        textSize(fontSize);
+        textAlign(LEFT, TOP);
+        
+        // 绘制各项信息
+        const infoLines = [
+            this.t.title,
+            `Cost:$${this.t.totalCost}`,
+            `Sell Price:$${this.t.sellPrice()}`,
+            `Upgrade Price:${this.t.upgrades.length > 0 ? '$' + this.t.upgrades[0].cost : 'N/A'}`,
+            `Damage:${this.t.getDamage()}`,
+            `Type:${this.t.type.toUpperCase()}`,
+            `Range:${this.t.range}`,
+            `Avg. Cooldown:${this.t.getCooldown().toFixed(2)}s`
+        ];
+        
+        infoLines.forEach((line, i) => {
+            fill(i === 0 ? this.t.color : 0);
+            text(line, startX, startY + lineHeight * i);
+        });
+    }
+    
+    // 绘制操作按钮
+    drawActionButtons() {
+        const startX = towerWidth / 12;
+        const startY = 60;
+        const fontHeight = towerWidth / 20;
+        const btnY = startY + fontHeight * 9;
+        
+        // 绘制按钮背景
+        fill(100, 150, 200);
+        rect(startX, btnY, towerWidth / 3, towerWidth / 10, 10);
+        rect(startX + towerWidth / 3 + towerWidth / 5, btnY, towerWidth / 3, towerWidth / 10, 10);
+        
+        // 绘制按钮文字
+        fill(255);
+        textAlign(CENTER, CENTER);
+        text("SELL", startX + towerWidth/6, btnY + towerWidth/20);
+        text("UPGRADE", startX + towerWidth/3 + towerWidth/5 + towerWidth/6, btnY + towerWidth/20);
     }
 
     toggle() {
