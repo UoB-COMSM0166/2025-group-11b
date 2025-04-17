@@ -307,6 +307,7 @@ With these concepts in mind, we developed an early prototype, testing core mecha
 ![image](https://github.com/user-attachments/assets/7925da2a-0908-44fc-a9c3-f40d15695e33){width=100 height=50}
 ![image](https://github.com/user-attachments/assets/35c7626f-300d-4f4b-80aa-a14bb7cbc425){width=400 height=300}
 ![image](https://github.com/user-attachments/assets/015e9792-fd1d-4894-bc2c-533d7e2171b6)
+🧩 Tower Defense Game - Sequence Diagram Explanation
 
 # 4. Implementation
 
