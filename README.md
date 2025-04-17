@@ -306,48 +306,72 @@ With these concepts in mind, we developed an early prototype, testing core mecha
 # 3. Design: System Architecture & Diagrams
 ![image](https://github.com/user-attachments/assets/7925da2a-0908-44fc-a9c3-f40d15695e33){width=100 height=50}
 ![image](https://github.com/user-attachments/assets/35c7626f-300d-4f4b-80aa-a14bb7cbc425){width=400 height=300}
-## 🧩 Tower Defense Game - Sequence Explanation
 
-### 1. Tower Placement
+# 📘 Entity Relationship Description – Tower Defense Game
 
-- The **User** selects and places a tower.
-- The **GameLoop** initializes the tower by adding it to the `towers` array.
+This document describes the relationships between key entities in a tower defense game based on the provided class diagram.
 
 ---
 
-### 2. Game Loop Updates
+## 🧱 Entities & Relationships
 
-The **GameLoop** continuously runs, updating each frame:
-
-- **Monster** moves and updates its state.
-- If the monster exits the map, it triggers a **health decrease**.
-- **Tower** targets nearby monsters and updates its state.
-
----
-
-### 3. Tower Attacks
-
-- The **Tower** chooses the nearest monster as a target.
-- A **bullet is spawned** via `bullets.push()`.
-- The **Bullet** is updated via `steer()` and `update()` functions.
+### 1. `main`
+- **Has a one-to-one (1:1)** relationship with `map`.
+- **Has a one-to-many (1:n)** relationship with:
+  - `monsters` (a list or collection of monster groups)
+  - `towers` (a list or collection of towers)
 
 ---
 
-### 4. Collision & Explosion
-
-- The **GameLoop** checks if the bullet hits the target using `reachedTarget()`.
-- If hit:
-  - The **bullet explodes** and is **destroyed**.
-  - A **visual particle effect** is triggered via `particle.run()`.
+### 2. `map`
+- The game `map` is unique per game instance (linked 1:1 with `main`).
+- It can be associated with multiple towers → **1:n** relationship with `towers`.
 
 ---
 
-### 5. Wave Check
+### 3. `monsters`
+- Represents a collection or wave of multiple `monster` instances → **1:n**.
+- Can also interact with `towers` in a **many-to-many (n:n)** relationship, implying:
+  - A single wave of monsters can be targeted by multiple towers.
+  - One tower can attack multiple monsters.
 
-If all monsters are defeated (`noMoreMonster()` returns `true`), the system:
+---
 
-- Checks for **wave completion**.
-- Starts the **next wave** by calling `nextWave()`.
+### 4. `monster`
+- Each `monster` belongs to a `monsters` group → **1:n**.
+- Participates in a **many-to-many (n:n)** relationship with `tower`.
+
+---
+
+### 5. `towers`
+- Collection of `tower` instances → **1:n** with `tower`.
+- Linked with `monsters` in **n:n** fashion for combat/targeting.
+
+---
+
+### 6. `tower`
+- A specific defense unit placed on the `map`.
+- Interacts with many `monster` instances (attack logic), and vice versa → **n:n**.
+
+---
+
+## 🔁 Summary of Key Multiplicities
+
+| From     | To        | Type     | Meaning                                            |
+|----------|-----------|----------|----------------------------------------------------|
+| main     | map       | 1:1      | One map per game                                  |
+| main     | monsters  | 1:n      | One game has many monster waves                   |
+| main     | towers    | 1:n      | One game has many towers                          |
+| monsters | monster   | 1:n      | Each wave has many monsters                       |
+| towers   | tower     | 1:n      | Tower list contains many tower instances          |
+| monster  | tower     | n:n      | Monsters and towers interact with each other      |
+| monsters | towers    | n:n      | Waves and towers are linked through game logic    |
+| map      | towers    | 1:n      | Towers are placed on the map                      |
+
+---
+
+This diagram is a high-level structural view of the object relationships in a typical tower defense game implementation.
+
 
 
 ![image](https://github.com/user-attachments/assets/015e9792-fd1d-4894-bc2c-533d7e2171b6)
