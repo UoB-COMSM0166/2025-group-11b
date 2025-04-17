@@ -370,10 +370,6 @@ This document describes the relationships between key entities in a tower defens
 
 ---
 
-This diagram is a high-level structural view of the object relationships in a typical tower defense game implementation.
-
-
-
 ![image](https://github.com/user-attachments/assets/015e9792-fd1d-4894-bc2c-533d7e2171b6)
 ## 🧩 Tower Defense Game - Sequence Explanation
 
