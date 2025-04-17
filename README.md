@@ -308,6 +308,20 @@ With these concepts in mind, we developed an early prototype, testing core mecha
 ![image](https://github.com/user-attachments/assets/35c7626f-300d-4f4b-80aa-a14bb7cbc425){width=400 height=300}
 ![image](https://github.com/user-attachments/assets/015e9792-fd1d-4894-bc2c-533d7e2171b6)
 🧩 Tower Defense Game - Sequence Diagram Explanation
+🧍‍♂️ Actors
+User: The player interacting with the game.
+
+GameLoop: The central loop that updates all game logic per frame.
+
+Monster: Enemy units progressing toward a goal.
+
+Tower: Defense structures placed by the user to attack monsters.
+
+Bullet: Projectiles spawned by towers to damage monsters.
+
+CheckWaves: Checks if the wave of enemies is completed.
+
+NextWave: Logic to start the next wave.
 
 # 4. Implementation
 
