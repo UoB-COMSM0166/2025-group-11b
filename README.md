@@ -306,6 +306,50 @@ With these concepts in mind, we developed an early prototype, testing core mecha
 # 3. Design: System Architecture & Diagrams
 ![image](https://github.com/user-attachments/assets/7925da2a-0908-44fc-a9c3-f40d15695e33){width=100 height=50}
 ![image](https://github.com/user-attachments/assets/35c7626f-300d-4f4b-80aa-a14bb7cbc425){width=400 height=300}
+## 🧩 Tower Defense Game - Sequence Explanation
+
+### 1. Tower Placement
+
+- The **User** selects and places a tower.
+- The **GameLoop** initializes the tower by adding it to the `towers` array.
+
+---
+
+### 2. Game Loop Updates
+
+The **GameLoop** continuously runs, updating each frame:
+
+- **Monster** moves and updates its state.
+- If the monster exits the map, it triggers a **health decrease**.
+- **Tower** targets nearby monsters and updates its state.
+
+---
+
+### 3. Tower Attacks
+
+- The **Tower** chooses the nearest monster as a target.
+- A **bullet is spawned** via `bullets.push()`.
+- The **Bullet** is updated via `steer()` and `update()` functions.
+
+---
+
+### 4. Collision & Explosion
+
+- The **GameLoop** checks if the bullet hits the target using `reachedTarget()`.
+- If hit:
+  - The **bullet explodes** and is **destroyed**.
+  - A **visual particle effect** is triggered via `particle.run()`.
+
+---
+
+### 5. Wave Check
+
+If all monsters are defeated (`noMoreMonster()` returns `true`), the system:
+
+- Checks for **wave completion**.
+- Starts the **next wave** by calling `nextWave()`.
+
+
 ![image](https://github.com/user-attachments/assets/015e9792-fd1d-4894-bc2c-533d7e2171b6)
 ## 🧩 Tower Defense Game - Sequence Explanation
 
