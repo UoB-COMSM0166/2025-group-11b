@@ -305,6 +305,63 @@ With these concepts in mind, we developed an early prototype, testing core mecha
 ---
 # 3. Design: System Architecture & Diagrams
 ![image](https://github.com/user-attachments/assets/7925da2a-0908-44fc-a9c3-f40d15695e33){width=100 height=50}
+# 📦 Class Diagram Explanation – Tower Defense Game
+
+This class diagram illustrates the structure and interactions between major components in a tower defense game system, including monsters, towers, and the game map.
+
+---
+
+## 🔷 Class: `monster` (Manager Class)
+
+This is a **controller/manager** class for managing entities in the game such as monsters, bullets, towers, and paths.
+
+### Attributes:
+- `monsters`, `newMonsters`: Arrays managing current and incoming monsters.
+- `bullets`, `newBullets`: Arrays for handling bullet instances.
+- `towers`, `newTowers`: Tower entities.
+- `particle`: Handles particle effects (e.g., explosions).
+- `paths`: Movement paths for monsters.
+- `wave`, `cash`, `health`: Game state indicators.
+
+### Methods:
+- `dealDamage(x, y)`, `attack(monster)`: Core game logic for combat.
+- `draw()`, `shake()`, `update()`, `move()`: Visual or state update logic.
+- `onKilled(monster)`, `ifDie()`: Death handling for monsters.
+
+---
+
+## 🏰 Class: `Tower`
+
+Represents a defense tower placed by the player.
+
+### Attributes:
+- Boolean flags for visuals and logic: `baseOnTop`, `drawLine`, `length`, `radius`, `type`
+- Vectors and arrays: `color`, `pos`
+- Stats: `cost`, `damageMin`, `damageMax`
+
+### Methods:
+- `rotate(x,y)`, `attack(monster)`, `onTarget(monster)`: Tower targeting and firing logic.
+- `draw()`, `destroy()`, `initialize()`, `sell()`, `resetCd()`: Rendering and lifecycle functions.
+
+---
+
+## 👾 Class: `monster` (Entity Class)
+
+This is the **individual monster entity**, separate from the manager class.
+
+### Attributes:
+- Identity and state: `name`, `health`, `cash`, `speed`, `color`
+- Visuals and animation: `frameIndex`, `frameCount`, `animationSpeed`, `facingRight`
+- Position: `pos`
+
+### Methods:
+Same as manager's monster logic:
+- `dealDamage(x,y)`, `attack(monster)`, `draw()`, `move()`, `update()`
+- `ifDie()`, `onKilled(monster)`, `shake()`
+
+---
+
+
 ![image](https://github.com/user-attachments/assets/35c7626f-300d-4f4b-80aa-a14bb7cbc425){width=400 height=300}
 
 ## 📘 Entity Relationship Description – Tower Defense Game
