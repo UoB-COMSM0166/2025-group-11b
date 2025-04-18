@@ -360,18 +360,18 @@ Same as manager's monster logic:
 - `ifDie()`, `onKilled(monster)`, `shake()`
 
 ---
-## 🗺️ Class: `map`
+### 🗺️ Class: `map`
 
 Represents the level layout and environment configuration.
 
-### Attributes:
+#### Attributes:
 - `customMap`: Full map configuration object.
 - `grid`, `paths`, `metadata`, `spawnpoints`, `exitArray`: Layout and logic elements.
 - Dimensions: `bgArray`, `cols`, `rows`
 
 ---
 
-## 🔁 Class Relationships
+### 🔁 Class Relationships
 
 - The `monster` manager **controls** both `Tower` and individual `monster` entities.
 - The `map` is **loaded** and referenced by the `monster` manager.
@@ -380,7 +380,7 @@ Represents the level layout and environment configuration.
 
 ---
 
-## 🧠 Notes
+### 🧠 Notes
 
 - There is a separation between **game state management (controller)** and **entity objects**.
 - The system uses arrays to manage dynamic entities like bullets and monsters.
