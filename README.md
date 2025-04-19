@@ -371,6 +371,36 @@ Towers automatically detect and attack enemies.
 2. Enemy escapes → Tower retargets  
 
 ---
+## Use Case 4: Apply Special Effect
+**Brief Description:**  
+Tower or hero applies a status effect (e.g., freeze) to enemies.
+
+**Basic Flow:**  
+1. Special tower fires  
+2. Attack hits enemy  
+3. Effect applied (e.g., slow)  
+4. System updates enemy state  
+
+**Alternative Flows:**  
+1. Enemy immune → No effect  
+2. Multiple effects → Stack or overwrite  
+
+---
+
+## Use Case 5: Control the Hero Character
+**Brief Description:**  
+Player controls hero for added gameplay strategy.
+
+**Basic Flow:**  
+1. Player uses controls to move hero  
+2. Hero navigates the map  
+3. Hero auto-attacks enemies  
+4. Hero activates special skills  
+
+**Alternative Flows:**  
+1. Obstacle blocks movement  
+2. Skill on cooldown  
+3. Hero dies → Respawn after delay  
 
 
 
