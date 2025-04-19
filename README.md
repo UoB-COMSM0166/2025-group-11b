@@ -371,7 +371,7 @@ Towers automatically detect and attack enemies.
 2. Enemy escapes → Tower retargets  
 
 ---
-## Use Case 4: Apply Special Effect
+### Use Case 4: Apply Special Effect
 **Brief Description:**  
 Tower or hero applies a status effect (e.g., freeze) to enemies.
 
@@ -387,7 +387,7 @@ Tower or hero applies a status effect (e.g., freeze) to enemies.
 
 ---
 
-## Use Case 5: Control the Hero Character
+### Use Case 5: Control the Hero Character
 **Brief Description:**  
 Player controls hero for added gameplay strategy.
 
@@ -401,8 +401,6 @@ Player controls hero for added gameplay strategy.
 1. Obstacle blocks movement  
 2. Skill on cooldown  
 3. Hero dies → Respawn after delay  
-
-
 
 ---
 # 3. Design: System Architecture & Diagrams
