@@ -298,7 +298,7 @@ With these concepts in mind, we developed an early prototype, testing core mecha
   <i>Use case diagrams</i>
 </p>
 
-## 🚀 Applying Pair Programming + Kanban to My Tower Defense Game
+### 🚀 Applying Pair Programming + Kanban to My Tower Defense Game
 
 To improve both the development process and collaboration efficiency in my Tower Defense game project, I plan to apply a combination of **Pair Programming** and **Kanban**. Here's how this approach will help:
 
