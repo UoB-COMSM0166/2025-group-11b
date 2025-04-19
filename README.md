@@ -321,7 +321,8 @@ To improve both the development process and collaboration efficiency in my Tower
 
 ---
 # 3. Design: System Architecture & Diagrams
-![image](https://github.com/user-attachments/assets/7925da2a-0908-44fc-a9c3-f40d15695e33){width=100 height=50}
+![image](https://github.com/user-attachments/assets/983aecaf-989a-40e7-854f-ed215df4eed7)
+
 ## 📦 Class Diagram Explanation – Tower Defense Game
 
 This class diagram illustrates the structure and interactions between major components in a tower defense game system, including monsters, towers, and the game map.
