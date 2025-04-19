@@ -277,6 +277,24 @@ To further refine our user needs, we specified atomic requirements based on our 
 | AR-02 | The system shall allow the player to upgrade a tower to increase its attack damage. | Given the player selects an existing tower, when they choose upgrade, then the tower’s attack stats should increase. |
 | AR-03 | The system shall spawn enemy waves with increasing difficulty. | Given the player starts a new wave, when the wave spawns, then enemy stats (speed, health, number) should increase. |
 | AR-04 | The system shall display earned in-game currency when enemies are defeated. | Given an enemy is defeated, when the player views their resources, then the currency value should update accordingly. |
+## 🚀 Applying Pair Programming + Kanban to My Tower Defense Game
+
+To improve both the development process and collaboration efficiency in my Tower Defense game project, I plan to apply a combination of **Pair Programming** and **Kanban**. Here's how this approach will help:
+
+1. **Better Code Quality**  
+   Pair programming allows one developer to write code while the other reviews in real time, reducing bugs and improving design decisions early.
+
+2. **Faster Problem Solving**  
+   Two minds working together solve logic and implementation issues quicker, especially for complex systems like enemy AI or wave management.
+
+3. **Clear Visual Workflow**  
+   Kanban boards help visualize tasks (To Do / In Progress / Done), making the project more manageable and reducing bottlenecks.
+
+4. **Continuous Feedback Loop**  
+   Code reviews and daily task updates ensure constant feedback, allowing quick adjustments to design or scope.
+
+5. **Shared Knowledge**  
+   Developers stay aligned on system architecture, game logic, and UI flow, which is crucial for maintaining consistency across gameplay features.
 
 
 
