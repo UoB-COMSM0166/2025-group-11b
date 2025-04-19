@@ -317,11 +317,11 @@ To improve both the development process and collaboration efficiency in my Tower
 5. **Shared Knowledge**  
    Developers stay aligned on system architecture, game logic, and UI flow, which is crucial for maintaining consistency across gameplay features.
 ![image](https://github.com/user-attachments/assets/c65d717a-6558-4d30-9ae0-e002ababfe0f)
-# 🏰 Tower Defense Game – Use Case Outline
+## 🏰 Tower Defense Game – Use Case Outline
 
 ---
 
-## Use Case 1: Place a Tower
+### Use Case 1: Place a Tower
 **Brief Description:**  
 Player selects and places a tower on a valid grid cell.
 
@@ -339,7 +339,7 @@ Player selects and places a tower on a valid grid cell.
 
 ---
 
-## Use Case 2: Spawn Enemy Wave
+### Use Case 2: Spawn Enemy Wave
 **Brief Description:**  
 The game launches enemies along a predefined path.
 
@@ -355,7 +355,7 @@ The game launches enemies along a predefined path.
 
 ---
 
-## Use Case 3: Tower Attacks Enemy
+### Use Case 3: Tower Attacks Enemy
 **Brief Description:**  
 Towers automatically detect and attack enemies.
 
