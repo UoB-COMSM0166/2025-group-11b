@@ -316,6 +316,7 @@ To improve both the development process and collaboration efficiency in my Tower
 
 5. **Shared Knowledge**  
    Developers stay aligned on system architecture, game logic, and UI flow, which is crucial for maintaining consistency across gameplay features.
+![image](https://github.com/user-attachments/assets/c65d717a-6558-4d30-9ae0-e002ababfe0f)
 
 
 ---
