@@ -317,6 +317,61 @@ To improve both the development process and collaboration efficiency in my Tower
 5. **Shared Knowledge**  
    Developers stay aligned on system architecture, game logic, and UI flow, which is crucial for maintaining consistency across gameplay features.
 ![image](https://github.com/user-attachments/assets/c65d717a-6558-4d30-9ae0-e002ababfe0f)
+# 🏰 Tower Defense Game – Use Case Outline
+
+---
+
+## Use Case 1: Place a Tower
+**Brief Description:**  
+Player selects and places a tower on a valid grid cell.
+
+**Basic Flow:**  
+1. User opens the tower menu  
+2. User selects a tower type  
+3. System highlights valid placement zones  
+4. User clicks a valid tile to place tower  
+5. System deducts cost and spawns tower  
+
+**Alternative Flows:**  
+1. Selected tile is invalid → Show error message  
+2. Not enough cash → Prevent placement  
+3. User cancels → Tower not placed  
+
+---
+
+## Use Case 2: Spawn Enemy Wave
+**Brief Description:**  
+The game launches enemies along a predefined path.
+
+**Basic Flow:**  
+1. Player clicks "Start Wave"  
+2. Game spawns a group of enemies  
+3. Enemies follow the path  
+4. System tracks wave progress  
+
+**Alternative Flows:**  
+1. Previous wave still active → Warning  
+2. Path is blocked → Error or auto-correct  
+
+---
+
+## Use Case 3: Tower Attacks Enemy
+**Brief Description:**  
+Towers automatically detect and attack enemies.
+
+**Basic Flow:**  
+1. Enemy enters tower range  
+2. Tower rotates to aim  
+3. Tower fires  
+4. Bullet hits enemy  
+5. Enemy health decreases  
+
+**Alternative Flows:**  
+1. Enemy dies → Trigger animation  
+2. Enemy escapes → Tower retargets  
+
+---
+
 
 
 ---
