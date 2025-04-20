@@ -758,7 +758,7 @@ The NASA TLX evaluation is computed in two main steps:
    Each participant then assigns a rating (from 0 to 100, usually in increments of 5) to each dimension.  
    Their **Weighted TLX Score** is calculated by multiplying each dimension’s rating by its individual weight, summing these products, and dividing by 15:
    
-$ \text{Weighted TLX} = \frac{(MD \times w_{MD}) + \cdots + (Frust \times w_{Frust})}{15} $
+![Weighted TLX Formula](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/folum.png)
 
    
 
