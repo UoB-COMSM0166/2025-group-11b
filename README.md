@@ -385,11 +385,11 @@ Represents the level layout and environment configuration.
 
 ![Untitled (1)](https://github.com/user-attachments/assets/766d9033-69f5-456b-bdb1-e95a5ed95b9c)
 
-# 📘 Entity-Relationship Diagram Description
+## 📘 Entity-Relationship Diagram Description
 
-## 🧩 Entities
+### 🧩 Entities
 
-### Main
+#### Main
 - Central controller of the game.
 - Holds game-wide settings and references to other components.
 - Attributes:
