@@ -18,22 +18,22 @@ Add a group photo here!
 
 ## Project Report
 
-# ✨ 1. Introduction 🎮
+# ✨ 1. Introduction 
 
 <div style="text-align: center;">
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
 </div>
 
-🛡️ In designing our game, we set out to create a historically immersive tower defense experience that is both engaging and educational. 🌍 Our vision was to craft a game that combines strategy ♟️, progression 📈, and cultural significance 🏛️, allowing players to explore the rich history of Bristol while defending the city from various threats ⚔️ across different time periods ⏳.
+In designing our game, we set out to create a historically immersive tower defense experience that is both engaging and educational. Our vision was to craft a game that combines strategy , progression , and cultural significance , allowing players to explore the rich history of Bristol while defending the city from various threats  across different time periods .
 
-## ⚔️ A Unique Twist on Tower Defense 🏹  
-🕰️ Unlike traditional tower defense games that focus only on mechanics, our game integrates historical storytelling into the experience. Spanning multiple eras, from the medieval period ⚔️ to the high-tech future 🤖, players take on the role of a Guardian 👑, defending Bristol from invading armies, pirate raids, and cyber warfare across time.
+## A Unique Twist on Tower Defense 
+Unlike traditional tower defense games that focus only on mechanics, our game integrates historical storytelling into the experience. Spanning multiple eras, from the medieval period to the high-tech future, players take on the role of a Guardian , defending Bristol from invading armies, pirate raids, and cyber warfare across time.
 
-- ⚔️ **Invading armies**  
-- 🏴‍☠️ **Pirate raids**  
-- 🖥️ **High-tech cyber warfare**  
+-  **Invading armies**  
+- **Pirate raids**  
+-  **High-tech cyber warfare**  
 
-🔥 Get ready to **defend, strategize, and experience history like never before!** 🔥  
+ Get ready to **defend, strategize, and experience history like never before!**  
 
 <div align="center">
   <table>
@@ -58,7 +58,7 @@ Add a group photo here!
 </div>
 
 
-## 🏛️ Bringing History to Life 🏰  
+##  Bringing History to Life   
 
 To enhance immersion, we carefully incorporated **real historical landmarks** from Bristol, such as:  
 
@@ -70,7 +70,7 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
     <th>Image</th>
   </tr>
   <tr align="center">
-    <td>⛪ <b>Bristol Cathedral</b></td>
+    <td><b>Bristol Cathedral</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100" height="100"></td>
     <td>🚢 <b>SS Great Britain</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100" height="100"></td>
@@ -97,7 +97,7 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
 
 
 
-Beyond this, we have also implemented a distinctive tower upgrade mode 🔄, allowing players to evolve their defenses in historically meaningful ways.
+Beyond this, we have also implemented a distinctive tower upgrade mode , allowing players to evolve their defenses in historically meaningful ways.
 
 <div align="center">
   <table style="border-collapse: collapse; width: 60%; max-width: 600px;">
@@ -148,9 +148,9 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🔄, all
 
 
 
-## 🏇 Knight Mechanic: Absorbing Tower Abilities ⚔️  
+##  Knight Mechanic: Absorbing Tower Abilities   
 
-🏇 To tackle the common lack of player interaction in tower defense games, we introduced a medieval knight ⚔️ who can absorb a tower’s ability ✨ by staying nearby for 5 seconds ⏱️. The knight then fights alongside the tower, adding a dynamic and strategic layer as players guide him between different towers to combine powers and defeat enemies.
+ To tackle the common lack of player interaction in tower defense games, we introduced a medieval knight  who can absorb a tower’s ability  by staying nearby for 5 seconds . The knight then fights alongside the tower, adding a dynamic and strategic layer as players guide him between different towers to combine powers and defeat enemies.
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" 
        alt="Knight Mechanic" 
