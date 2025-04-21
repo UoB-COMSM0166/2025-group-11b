@@ -489,7 +489,7 @@ Represents the level layout and environment configuration.
   - `+setMove(keyCode, isMoving)`
   - `+draw()`
 
-## 🔗 Relationships
+### 🔗 Relationships
 
 | From | To | Relationship Type | Description |
 |------|----|-------------------|-------------|
