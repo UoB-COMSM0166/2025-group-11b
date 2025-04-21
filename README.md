@@ -880,7 +880,7 @@ This breakdown reveals a progressive increase in mental, temporal, and effort-re
 To better visualize how different task dimensions contributed to perceived workload across difficulty levels, we computed the average weighted contribution of each TLX dimension for Easy, Mid, and Hard conditions.
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Visual%20Comparison%20by%20Dimension%20%26%20Difficulty.png" width="600" alt="Weighted NASA TLX by Difficulty">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/weighted_tlx_by_dimension_corrected.png" width="600" alt="Weighted NASA TLX by Difficulty">
 </p>
 
 Figure: Average Weighted NASA TLX contribution per dimension across Easy, Mid, and Hard difficulty levels.
