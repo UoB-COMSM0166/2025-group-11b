@@ -456,7 +456,7 @@ Represents the level layout and environment configuration.
   - `+canFire()`
   - `+draw()`
   - `+drawBarrel()`
-### MenuButton
+#### MenuButton
 - UI element for user interaction.
 - Attributes:
   - `x, y, w, h: number`
