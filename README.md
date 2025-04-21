@@ -735,6 +735,9 @@ Measure the perceived workload that players experience when performing core task
 
 #### Method
 
+We adopted a within-subjects design: each of the 10 participants played Easy, Mid, and Hard versions of Defend Bristol, then completed the NASA TLX after each session.
+This allowed us to perform paired statistical analyses (Wilcoxon signed-rank tests) and reduce the effect of individual differences on workload scores.
+
 The NASA TLX evaluation is computed in two main steps:
 
 1. **Determine Dimension Weights (Pairwise Comparisons):**  
