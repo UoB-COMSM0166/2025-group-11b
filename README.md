@@ -938,7 +938,7 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 </div>
 
-#### Test Data Design (Part)
+#### Test Data Design
 
 <div align="center">
 
