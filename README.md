@@ -913,44 +913,39 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 
 ### Test
-### 1. Testing Scope
 
-- **Main**: Game state machine – waves, cash, health, purchase/placement logic  
-- **Map**: Grid layout, spawn point, exit, placeable area  
-- **Tower**: Rotation, shooting, cooldown, selling  
-- **Monster**: Individual enemy movement, taking damage, death  
-- **MenuButton**: UI button visibility, hover state, click, disabled logic  
-- **Hero**: Friendly unit direction, speed, attack range  
+### Testing Scope
 
-### 2. Testing Strategies
+<div align="center">
+  
+| Module       | Responsibilities                                               |
+|--------------|----------------------------------------------------------------|
+| `Main`       | Game state machine – waves, cash, health, purchase/placement logic |
+| `Map`        | Grid layout, spawn point, exit, placeable area                |
+| `Tower`      | Rotation, shooting, cooldown, selling                         |
+| `Monster`    | Individual enemy movement, taking damage, death               |
+| `MenuButton` | UI button visibility, hover state, click, disabled logic      |
+| `Hero`       | Friendly unit direction, speed, attack range                  |
 
-- **White-box Testing**  
-  - Tool: JUnit 5  
-  - Goal: ≥ 90% statement coverage, ≥ 80% branch coverage  
-  - Add MC/DC analysis for `Tower.attack` and `Main.buy`  
+</div>
 
-- **Black-box Testing**  
-  - Equivalence classes + boundary value analysis:  
-    - **cash**: <0, 0, 1–9999, ≥10000  
-    - **health**: <0, 0, 1–100  
-    - **coordinates (col, row)**: negative, 0 / max edge, center  
-    - **range**: 0, 1–4, >4  
+### Testing Strategies
 
-- **Integration Testing**  
-  1. `Tower ⇔ Monster` attack interaction  
-  2. `Main` drives `Map` / `Monster` / `Tower` together  
-  3. `MenuButton → Main` event trigger  
+<div align="center">
 
-- **System / Acceptance Testing**  
-  - Full 10-wave scripted gameplay with 3 monster types  
-  - Auto-compare win/loss and resource deltas  
-  - Manual visual confirmation by player  
+| Dimension       | Strategy                                                                                     |
+|------------------|----------------------------------------------------------------------------------------------|
+| **White-box**    | - JUnit 5<br>- Goal: ≥ 90% statement coverage, ≥ 80% branch coverage<br>- Add MC/DC to `Tower.attack` and `Main.buy` |
+| **Black-box**    | - Equivalence class + boundary value analysis:<br> • cash: <0, 0, 1–9999, ≥10000<br> • health: <0, 0, 1–100<br> • coordinates (col, row): negative, 0/max, center<br> • range: 0, 1–4, >4 |
+| **Integration**  | 1. `Tower ⇔ Monster` combat<br>2. `Main` drives `Map` / `Monster` / `Tower` together<br>3. `MenuButton → Main` triggers |
+| **System / Acceptance** | - 10-wave gameplay script (3 monster types)<br>- Auto-compare win/loss + resource delta<br>- Manual visual confirmation |
+| **Automation**   | - GitHub Actions: auto-run unit + integration tests on push<br>- E2E testing via Playwright recording |
 
-- **Automation**  
-  - GitHub Actions: on push, run unit + integration tests & generate JaCoCo report  
-  - E2E Testing: recorded with Playwright  
+</div>
 
-### 3. Test Data Design (Excerpt)
+### Test Data Design (Excerpt)
+
+<div align="center">
 
 | Input     | Valid Class | Invalid Class   | Representative Values     |
 |-----------|-------------|-----------------|----------------------------|
@@ -959,9 +954,13 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | range     | 1–4         | 0, >4           | 3 / 0 / 5                  |
 | col       | 0–cols‑1    | < 0, ≥ cols     | 0 / 11 / -1 / 12           |
 
+</div>
+
 *All values tested at: -1 / 0 / 1 and max‑1 / max / max+1.*
 
-### 4. Key Unit Test Cases (Sample)
+### Key Unit Test Cases
+
+<div align="center">
 
 | TC     | Class / Method                  | Scenario                             | Expected Result                                  |
 |--------|----------------------------------|--------------------------------------|--------------------------------------------------|
@@ -972,9 +971,11 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | UT‑05  | `Main.buy()`                    | insufficient cash                    | returns `false`, cash unchanged                  |
 | UT‑06  | `MenuButton.setVisible(false)`<br>+ call `isMouseOver()` | hidden state | always returns `false`                          |
 
-*Full list of 38 unit cases available in Appendix A.*
+</div>
 
-### 5. Integration Test Cases (Sample)
+### Integration Test Cases
+
+<div align="center">
 
 | IT     | Interaction          | Steps                                               | Assertion                                                     |
 |--------|----------------------|-----------------------------------------------------|---------------------------------------------------------------|
@@ -982,7 +983,11 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | IT‑B   | Main ↔ Map           | 1. Call `Main.canPlace(-1,20)`                      | returns `false`                                               |
 | IT‑C   | UI → Main            | 1. Click MenuButton "Start Wave"                    | `Main.wave` increments; `addWave()` is invoked                |
 
-### 6. Coverage Results
+</div>
+
+### Coverage Results
+
+<div align="center">
 
 | Class       | Statement | Branch | MC/DC* |
 |-------------|-----------|--------|--------|
@@ -994,9 +999,13 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | Hero        | 90%       | 78%    | —      |
 | **Average** | **92.5%** | **83.5%** | —    |
 
+</div>
+
 \* MC/DC collected only on logic-critical methods.
 
-### 7. Defects & Risks
+### Defects & Risks
+
+<div align="center">
 
 | ID      | Module         | Severity | Description / Status                                         |
 |---------|----------------|----------|---------------------------------------------------------------|
@@ -1004,7 +1013,9 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | DEF‑11  | Monster.move   | Medium   | Jittering due to float speed; fixed and merged in PR#42      |
 | RISK‑03 | Hero vs Tower  | Medium   | Future version may allow Hero to block bullets; new test cases needed |
 
-### 8. Conclusion & Suggestions
+</div>
+
+### Conclusion & Suggestions
 
 - Achieved target coverage levels: ≥ 90% statement, ≥ 80% branch  
 - Test cases cover core business flow, edge cases, and UI interactions  
