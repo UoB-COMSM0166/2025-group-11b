@@ -456,6 +456,23 @@ Represents the level layout and environment configuration.
   - `+canFire()`
   - `+draw()`
   - `+drawBarrel()`
+### MenuButton
+- UI element for user interaction.
+- Attributes:
+  - `x, y, w, h: number`
+  - `bg: any`
+  - `label: string`
+  - `labelColor: any`
+  - `callback: function`
+  - `isVisible: boolean = true`
+  - `isHovered: boolean = false`
+  - `isPressed: boolean = false`
+  - `isDisabled: boolean = false`
+- Methods:
+  - `+setVisible(isShow)`
+  - `+setDisabled(state)`
+  - `+setTextSize(size)`
+  - `+isMouseOver()`
 ### 🔁 Summary of Key Multiplicities
 
 | From     | To        | Type     | Meaning                                            |
