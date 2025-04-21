@@ -614,7 +614,7 @@ After a long period of consideration, we ultimately decided to convert the image
 Conducting thorough evaluations is a crucial step in user-centered game development. By collecting qualitative feedback early and iteratively, we can rapidly identify usability obstacles, refine our mechanics, and ensure that **Defend Bristol** meets real player expectations. It also helps prevent costly redesigns later on, aligning with industry best practices for delivering polished gaming experiences.
 
 
-### 🔎 Choosing a Qualitative Evaluation Method  
+### Choosing a Qualitative Evaluation Method  
 
 To explore how players truly experience our game, we considered two commonly used qualitative approaches:
 
@@ -623,12 +623,12 @@ To explore how players truly experience our game, we considered two commonly use
 | **Heuristic Evaluation** | Experts inspect the game against established usability principles (Nielsen’s 10 Usability Heuristics). | - Fast, low-cost, requires no external users. <br> - Systematically checks known interface issues. | - May miss authentic user reactions. <br> - Relies on expert assumptions, not real behavior.     |
 | **Think Aloud Evaluation** | Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game. | - Provides direct insight into genuine user experiences. <br> - Small samples reveal big issues. | - Depends on participants’ willingness to talk. <br> - Some may find it awkward while playing.  |
 
-> 📝 *Conclusion:*  
+> *Conclusion:*  
 > After weighing these methods, we concluded that observing actual players would yield richer, more actionable feedback.  
 > Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
 
 
-### 🗣️ Think Aloud Evaluation  
+### Think Aloud Evaluation  
 
 #### What Is Think Aloud?  
 Think Aloud involves inviting participants to share their thoughts, feelings, and decision-making processes aloud as they perform tasks in the game. We observe them in real time, noting points of confusion, frustration, or excitement to understand how our design is interpreted by actual players.
@@ -651,9 +651,9 @@ Think Aloud involves inviting participants to share their thoughts, feelings, an
 
 We began by clarifying our key questions:
 
-- ⚔️ *Can players figure out how to place and upgrade towers on their own?*  
-- 🤔 *Do they understand how the Knight absorbs a tower’s ability?*  
-- ❓ *Are there any points of confusion about the interface or objectives?*  
+- *Can players figure out how to place and upgrade towers on their own?*  
+- *Do they understand how the Knight absorbs a tower’s ability?*  
+- *Are there any points of confusion about the interface or objectives?*  
 
 Based on these, we created tasks covering each core mechanic — starting a new game, placing a tower, upgrading, using the Knight to absorb abilities, and completing a wave.
 
@@ -696,7 +696,7 @@ We collected observation notes and categorized feedback into:
 | Enemy Speed Adjustment | Speed adjustment adds strategic depth to the gameplay. | Unclear whether speed changes affect all enemies or only new waves.         | Provide clear feedback about speed adjustment effects.   |
 | UI Controls            | UI layout is clear and easy to navigate.              | Some button functions are ambiguous.                                        | Refine button labels and add confirmation prompts for actions like selling or upgrading towers.       |
  
-### 🎬 Conclusion and Next Steps  
+### Conclusion and Next Steps  
 
 Based on the Think Aloud sessions, we identified key improvements:  
 
@@ -724,11 +724,11 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 ---
 
-### 🔬 Choosing a Quantitative Evaluation Method
+### Choosing a Quantitative Evaluation Method
 
 While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated a standardized quantitative method to validate and measure specific aspects of player perception:
 
-### 🛰️ NASA Task Load Index (NASA TLX)
+### NASA Task Load Index (NASA TLX)
 
 #### Purpose
 Measure the perceived workload that players experience when performing core tasks in the game.
