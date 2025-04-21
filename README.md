@@ -919,7 +919,7 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
   
 | Module       | Responsibilities                                               |
 |--------------|----------------------------------------------------------------|
-| `Main`       | Game state machine – waves, cash, health, purchase/placement logic |
+| `Main`       | Game state machine – waves, cash, health, purchase and placement logic |
 | `Map`        | Grid layout, spawn point, exit, placeable area                |
 | `Tower`      | Rotation, shooting, cooldown, selling                         |
 | `Monster`    | Individual enemy movement, taking damage, death               |
@@ -955,7 +955,6 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 </div>
 
-*All values tested at: -1 / 0 / 1 and max‑1 / max / max+1.*
 
 ### Key Unit Test Cases
 
@@ -966,7 +965,7 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | UT‑01  | `Tower.canFire()`               | cooldown = 0 and target in range     | returns `true`                                   |
 | UT‑02  | `Tower.canFire()`               | cooldown > 0                         | returns `false`                                  |
 | UT‑03  | `Monster.ifDie()`               | health → 0                           | `alive = false`, triggers `onKilled`             |
-| UT‑04  | `Map.drawMapGrid()`             | rows = 8, cols = 12                  | returns 8×12 grid with spawn/exit                |
+| UT‑04  | `Map.drawMapGrid()`             | rows = 8, cols = 12                  | returns 8×12 grid with exit                |
 | UT‑05  | `Main.buy()`                    | insufficient cash                    | returns `false`, cash unchanged                  |
 | UT‑06  | `MenuButton.setVisible(false)`<br>+ call `isMouseOver()` | hidden state | always returns `false`                          |
 
