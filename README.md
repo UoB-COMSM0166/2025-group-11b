@@ -419,7 +419,7 @@ Represents the level layout and environment configuration.
 - Methods:
   - `+drawMapGrid()`
  
-### Monster
+#### Monster
 - Represents an enemy/creature in the game.
 - Attributes:
   - `color: array = [0, 0, 0]`
