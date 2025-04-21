@@ -936,8 +936,8 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 |------------------|----------------------------------------------------------------------------------------------|
 | **White-box**    | - JUnit 5<br>- Goal: ≥ 90% statement coverage, ≥ 80% branch coverage<br>- Add MC/DC to `Tower.attack` and `Main.buy` |
 | **Black-box**    | - Equivalence class + boundary value analysis:<br> • cash: <0, 0, 1–9999, ≥10000<br> • health: <0, 0, 1–100<br> • coordinates (col, row): negative, 0/max, center<br> • range: 0, 1–4, >4 |
-| **Integration**  | 1. `Tower ⇔ Monster` combat<br>2. `Main` drives `Map` / `Monster` / `Tower` together<br>3. `MenuButton → Main` triggers |
-| **System / Acceptance** | - 10-wave gameplay script (3 monster types)<br>- Auto-compare win/loss + resource delta<br>- Manual visual confirmation |
+| **Integration**  | 1. `Tower ⇔ Monster` combat<br>2. `Main` drives `Map` , `Monster` , `Tower` together<br>3. `MenuButton to Main` triggers |
+| **System / Acceptance** | - 10-wave gameplay script (3 monster types)<br>- Auto-compare win or loss and resource delta<br>- Manual visual confirmation |
 | **Automation**   | - GitHub Actions: auto-run unit + integration tests on push<br>- E2E testing via Playwright recording |
 
 </div>
@@ -964,7 +964,7 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 |--------|----------------------------------|--------------------------------------|--------------------------------------------------|
 | UT‑01  | `Tower.canFire()`               | cooldown = 0 and target in range     | returns `true`                                   |
 | UT‑02  | `Tower.canFire()`               | cooldown > 0                         | returns `false`                                  |
-| UT‑03  | `Monster.ifDie()`               | health → 0                           | `alive = false`, triggers `onKilled`             |
+| UT‑03  | `Monster.ifDie()`               | health -> 0                           | `alive = false`, triggers `onKilled`             |
 | UT‑04  | `Map.drawMapGrid()`             | rows = 8, cols = 12                  | returns 8×12 grid with exit                |
 | UT‑05  | `Main.buy()`                    | insufficient cash                    | returns `false`, cash unchanged                  |
 | UT‑06  | `MenuButton.setVisible(false)`<br>+ call `isMouseOver()` | hidden state | always returns `false`                          |
