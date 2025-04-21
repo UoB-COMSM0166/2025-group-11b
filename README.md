@@ -385,53 +385,26 @@ Represents the level layout and environment configuration.
 
 ![Untitled (1)](https://github.com/user-attachments/assets/766d9033-69f5-456b-bdb1-e95a5ed95b9c)
 
-## 📘 Entity Relationship Description – Tower Defense Game
+# 📘 Entity-Relationship Diagram Description
 
-This document describes the relationships between key entities in a tower defense game based on the provided class diagram.
+## 🧩 Entities
 
----
-
-### 🧱 Entities & Relationships
-
-#### 1. `main`
-- **Has a one-to-one (1:1)** relationship with `map`.
-- **Has a one-to-many (1:n)** relationship with:
-  - `monsters` (a list or collection of monster groups)
-  - `towers` (a list or collection of towers)
-
----
-
-#### 2. `map`
-- The game `map` is unique per game instance (linked 1:1 with `main`).
-- It can be associated with multiple towers → **1:n** relationship with `towers`.
-
----
-
-#### 3. `monsters`
-- Represents a collection or wave of multiple `monster` instances → **1:n**.
-- Can also interact with `towers` in a **many-to-many (n:n)** relationship, implying:
-  - A single wave of monsters can be targeted by multiple towers.
-  - One tower can attack multiple monsters.
-
----
-
-#### 4. `monster`
-- Each `monster` belongs to a `monsters` group → **1:n**.
-- Participates in a **many-to-many (n:n)** relationship with `tower`.
-
----
-
-#### 5. `towers`
-- Collection of `tower` instances → **1:n** with `tower`.
-- Linked with `monsters` in **n:n** fashion for combat/targeting.
-
----
-
-#### 6. `tower`
-- A specific defense unit placed on the `map`.
-- Interacts with many `monster` instances (attack logic), and vice versa → **n:n**.
-
----
+### Main
+- Central controller of the game.
+- Holds game-wide settings and references to other components.
+- Attributes:
+  - `defaultHealth: number = 100`
+  - `defaultCash: number = 1000`
+  - `mapData: object`
+  - `debugMap: boolean = false`
+  - `enableShakeEffect: boolean = true`
+  - `enableHeartbeatEffect: boolean = true`
+- Methods:
+  - `+addGroup(group)`
+  - `+addWave(pattern)`
+  - `+buy(t)`
+  - `+canPlace(col, row)`
+  - `+canSpawn()`
 
 ### 🔁 Summary of Key Multiplicities
 
