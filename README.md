@@ -308,7 +308,7 @@ This class diagram illustrates the structure and interactions between major comp
 
 ---
 
-### 🔷 Class: `monster` (Manager Class)
+### 🔷 Class: `main` (Manager Class)
 
 This is a **controller/manager** class for managing entities in the game such as monsters, bullets, towers, and paths.
 
