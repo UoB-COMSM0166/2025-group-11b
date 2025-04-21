@@ -1015,14 +1015,6 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 </div>
 
-### Conclusion & Suggestions
-
-- Achieved target coverage levels: ≥ 90% statement, ≥ 80% branch  
-- Test cases cover core business flow, edge cases, and UI interactions  
-- **Future improvements**:  
-  - Introduce mutation testing (PIT) to assess test effectiveness  
-  - Add stress testing for large maps (rows > 20)  
-  - Include Hero skills & multiplayer regression tests in next iteration  
 
 ---
 ##### Optimizations Based on Green Software Foundation Principles
