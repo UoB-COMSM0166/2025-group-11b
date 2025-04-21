@@ -984,36 +984,6 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 </div>
 
-### Coverage Results
-
-<div align="center">
-
-| Class       | Statement | Branch | MC/DC* |
-|-------------|-----------|--------|--------|
-| Main        | 94%       | 87%    | 78%    |
-| Map         | 92%       | 85%    | —      |
-| Tower       | 95%       | 89%    | 81%    |
-| Monster     | 93%       | 82%    | —      |
-| MenuButton  | 91%       | 80%    | —      |
-| Hero        | 90%       | 78%    | —      |
-| **Average** | **92.5%** | **83.5%** | —    |
-
-</div>
-
-\* MC/DC collected only on logic-critical methods.
-
-### Defects & Risks
-
-<div align="center">
-
-| ID      | Module         | Severity | Description / Status                                         |
-|---------|----------------|----------|---------------------------------------------------------------|
-| DEF‑07  | Main.buy       | High     | Can purchase with cash = 0 (results in negative value); reproducible; fix pending |
-| DEF‑11  | Monster.move   | Medium   | Jittering due to float speed; fixed and merged in PR#42      |
-| RISK‑03 | Hero vs Tower  | Medium   | Future version may allow Hero to block bullets; new test cases needed |
-
-</div>
-
 
 ---
 ##### Optimizations Based on Green Software Foundation Principles
