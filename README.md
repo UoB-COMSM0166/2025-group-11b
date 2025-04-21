@@ -875,20 +875,13 @@ The NASA TLX evaluation is computed in two main steps:
 </div>
 These values represent the average contribution of each TLX dimension to participants' workload under each difficulty level, based on their personalized weights.
 
-##### Visual Comparison by Dimension & Difficulty
-<p align="center"> <img src="./weighted_tlx_by_dimension.png" width="700" alt="Weighted TLX by Dimension and Difficulty"> </p>
-Figure: Bar chart of average weighted TLX scores for each dimension across Easy, Mid, and Hard gameplay conditions.
----
-
 ##### Visualization of Weighted NASA TLX
-
-Below is a sample bar chart comparing the average Weighted NASA TLX scores across the three difficulty levels. Replace the image link with your actual generated chart.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Visual%20Comparison%20by%20Dimension%20%26%20Difficulty.png" width="600" alt="Weighted NASA TLX by Difficulty">
 </p>
 
-*Figure: Comparison of average Weighted NASA TLX scores (0–100 scale) for Easy, Mid, and Hard difficulty levels (sample data).*
+Figure: Bar chart of average weighted TLX scores for each dimension across Easy, Mid, and Hard gameplay conditions.
 
 ---
 ##### Optimizations Based on Green Software Foundation Principles
