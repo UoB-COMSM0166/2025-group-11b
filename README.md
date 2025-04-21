@@ -435,7 +435,7 @@ Represents the level layout and environment configuration.
   - `+drawImageTintEffect(type)`
   - `+drawDamageVisual(type)`
   - `+createGlowEffect(color)`
-### Tower
+#### Tower
 - Represents a defensive tower in the game.
 - Attributes:
   - `baseOnTop: boolean = true`
