@@ -728,12 +728,6 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated a standardized quantitative method to validate and measure specific aspects of player perception:
 
-1. **NASA Task Load Index (NASA TLX)**
-
-This tool allows us to obtain numeric scores that can be compared between difficulty levels, interface iterations, and other key design variations.
-
----
-
 #### 🛰️ NASA Task Load Index (NASA TLX)
 
 ##### Purpose
@@ -764,9 +758,7 @@ The NASA TLX evaluation is computed in two main steps:
 
 ---
 
-##### Individual Participant Weights
-
-Below is an example table showing each participant’s weights for the six TLX dimensions as derived from their pairwise comparisons:
+##### Individual Participant Weights Table
 
 <div align="center">
 
@@ -788,38 +780,43 @@ Below is an example table showing each participant’s weights for the six TLX d
 
 ---
 
-##### Example: Ease Difficulty Ratings and Weighted TLX Scores (N=10)
+##### Ease Difficulty Ratings and Weighted TLX Scores Table
 
-The following table presents each user’s ratings for the six TLX dimensions in the Easy difficulty condition, along with the computed Weighted TLX Score. (Note: For demonstration, we use the average weights from the table above; in your study, use each user’s actual weights.)
 
 <div align="center">
 
-| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration | **Weighted Score** |
-|------|---------------|-----------------|-----------------|-------------|--------|-------------|--------------------|
-| 1    | 20            | 10              | 15              | 85          | 25     | 5           | 30.7               |
-| 2    | 25            | 15              | 20              | 80          | 30     | 10          | 34.0               |
-| 3    | 15            | 5               | 10              | 90          | 20     | 5           | 27.3               |
-| 4    | 30            | 20              | 25              | 70          | 35     | 10          | 35.3               |
-| 5    | 20            | 15              | 20              | 80          | 25     | 10          | 31.3               |
-| 6    | 10            | 10              | 15              | 85          | 20     | 5           | 26.7               |
-| 7    | 25            | 15              | 30              | 75          | 30     | 15          | 36.7               |
-| 8    | 20            | 15              | 25              | 80          | 25     | 10          | 32.7               |
-| 9    | 15            | 10              | 10              | 90          | 20     | 5           | 28.0               |
-| 10   | 30            | 20              | 30              | 75          | 35     | 15          | 37.3               |
+| User | Mental Demand | Physical Demand | Temporal Demand | Performance | Effort | Frustration |
+|------|----------------|------------------|------------------|-------------|--------|--------------|
+| 1    | 85             | 25               | 60               | 80          | 75     | 40           |
+| 2    | 70             | 30               | 55               | 85          | 65     | 35           |
+| 3    | 90             | 20               | 65               | 70          | 80     | 30           |
+| 4    | 65             | 40               | 50               | 75          | 70     | 45           |
+| 5    | 80             | 25               | 55               | 78          | 82     | 35           |
+| 6    | 55             | 50               | 60               | 68          | 60     | 50           |
+| 7    | 68             | 35               | 70               | 60          | 72     | 42           |
+| 8    | 88             | 28               | 58               | 83          | 70     | 38           |
+| 9    | 78             | 32               | 52               | 90          | 58     | 40           |
+| 10   | 60             | 45               | 45               | 78          | 68     | 48           |
 
 </div>
 
-*Example Calculation for User 1 (Easy):*  
-- Mental Demand: 20 × 4 = 80  
-- Physical Demand: 10 × 1 = 10  
-- Temporal Demand: 15 × 2 = 30  
-- Performance: 85 × 3 = 255  
-- Effort: 25 × 3 = 75  
-- Frustration: 5 × 2 = 10  
-- **Total = 80 + 10 + 30 + 255 + 75 + 10 = 460**  
-- **Weighted TLX = 460 / 15 ≈ 30.7**
+##### Calculated Weighted TLX Scores Table
 
-**Average Weighted Score (Easy) ≈ 32.3**
+<div align="center">
+  
+| User | Weighted TLX |
+|------|---------------|
+| 1    | 70.33         |
+| 2    | 60.33         |
+| 3    | 74.67         |
+| 4    | 59.67         |
+| 5    | 68.60         |
+| 6    | 56.40         |
+| 7    | 60.93         |
+| 8    | 69.93         |
+| 9    | 65.20         |
+| 10   | 59.60         |
+</div>
 
 ---
 
