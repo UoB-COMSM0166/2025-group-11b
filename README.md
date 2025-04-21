@@ -873,15 +873,17 @@ The NASA TLX evaluation is computed in two main steps:
 | Frustration       | 1.2  | 3.8  | 5.9  |
 
 </div>
-These values represent the average contribution of each TLX dimension to participants' workload under each difficulty level, based on their personalized weights.
+This breakdown reveals a progressive increase in mental, temporal, and effort-related workload with rising difficulty, and a decline in perceived performance, which aligns with expectations in usability studies.
 
 ##### Visualization of Weighted NASA TLX
+
+To better visualize how different task dimensions contributed to perceived workload across difficulty levels, we computed the average weighted contribution of each TLX dimension for Easy, Mid, and Hard conditions.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Visual%20Comparison%20by%20Dimension%20%26%20Difficulty.png" width="600" alt="Weighted NASA TLX by Difficulty">
 </p>
 
-Figure: Bar chart of average weighted TLX scores for each dimension across Easy, Mid, and Hard gameplay conditions.
+Figure: Average Weighted NASA TLX contribution per dimension across Easy, Mid, and Hard difficulty levels.
 
 ---
 ##### Optimizations Based on Green Software Foundation Principles
