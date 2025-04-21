@@ -963,7 +963,7 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 | UT‑03  | `Monster.ifDie()`               | health -> 0                           | `alive = false`, triggers `onKilled`             |
 | UT‑04  | `Map.drawMapGrid()`             | rows = 8, cols = 12                  | returns 8×12 grid with exit                |
 | UT‑05  | `Main.buy()`                    | insufficient cash                    | returns `false`, cash unchanged                  |
-| UT‑06  | `MenuButton.setVisible(false)`<br>+ call `isMouseOver()` | hidden state | always returns `false`                          |
+| UT‑06  | `MenuButton.setVisible(false)`<br> and call `isMouseOver()` | hidden state | always returns `false`                          |
 
 </div>
 
