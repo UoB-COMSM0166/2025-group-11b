@@ -885,7 +885,7 @@ Figure: Bar chart of average weighted TLX scores for each dimension across Easy,
 Below is a sample bar chart comparing the average Weighted NASA TLX scores across the three difficulty levels. Replace the image link with your actual generated chart.
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/NASA.png" width="600" alt="Weighted NASA TLX by Difficulty">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Visual%20Comparison%20by%20Dimension%20%26%20Difficulty.png" width="600" alt="Weighted NASA TLX by Difficulty">
 </p>
 
 *Figure: Comparison of average Weighted NASA TLX scores (0–100 scale) for Easy, Mid, and Hard difficulty levels (sample data).*
