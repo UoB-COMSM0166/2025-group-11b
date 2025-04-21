@@ -885,6 +885,23 @@ To better visualize how different task dimensions contributed to perceived workl
 
 Figure: Average Weighted NASA TLX contribution per dimension across Easy, Mid, and Hard difficulty levels.
 
+##### Statistical Significance: Wilcoxon Signed-Rank Test and Confidence Intervals
+
+To assess whether workload differences across difficulty levels were statistically significant, we conducted paired Wilcoxon Signed-Rank Tests (α = 0.05) on participants' Weighted NASA TLX scores.
+
+The analysis compares each participant’s workload between two conditions:
+
+| Comparison      | Mean Δ (TLX) | 95% CI (Diff)     | W (Wilcoxon) | *p*-value |
+|-----------------|--------------|-------------------|--------------|-----------|
+| Mid − Easy      | **+22.64**   | [20.79, 24.49]    | 0            | 0.00195   |
+| Hard − Mid      | **+21.76**   | [18.14, 25.38]    | 0            | 0.00195   |
+| Hard − Easy     | **+44.40**   | [40.90, 47.90]    | 0            | 0.00195   |
+
+
+All three comparisons show statistically significant differences (p < 0.01), with 95% confidence intervals that do not cross zero, confirming a progressive increase in perceived workload as task difficulty rises.
+
+These findings validate the sensitivity of the NASA TLX method and reinforce its reliability in detecting usability impacts across design conditions.
+
 ---
 ##### Optimizations Based on Green Software Foundation Principles
 
