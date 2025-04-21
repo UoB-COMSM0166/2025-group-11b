@@ -473,6 +473,22 @@ Represents the level layout and environment configuration.
   - `+setDisabled(state)`
   - `+setTextSize(size)`
   - `+isMouseOver()`
+### Hero
+- The main controllable player character.
+- Attributes:
+  - `img: any`
+  - `x, y: number`
+  - `size: number`
+  - `speed: number = 3`
+  - `range: number = 2`
+  - `direction: string = "down"`
+  - `isMoving: boolean = false`
+  - `animationFrame: number = 0`
+- Methods:
+  - `+updateStateAndPosition()`
+  - `+setMove(keyCode, isMoving)`
+  - `+draw()`
+
 ### 🔁 Summary of Key Multiplicities
 
 | From     | To        | Type     | Meaning                                            |
