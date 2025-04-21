@@ -728,12 +728,12 @@ Based on the Think Aloud sessions, we identified key improvements:
 
 While our Think Aloud sessions provided rich insights into **Defend Bristol**’s user experience, we also incorporated a standardized quantitative method to validate and measure specific aspects of player perception:
 
-#### 🛰️ NASA Task Load Index (NASA TLX)
+### 🛰️ NASA Task Load Index (NASA TLX)
 
-##### Purpose
+#### Purpose
 Measure the perceived workload that players experience when performing core tasks in the game.
 
-##### Method
+#### Method
 
 The NASA TLX evaluation is computed in two main steps:
 
@@ -816,6 +816,7 @@ The NASA TLX evaluation is computed in two main steps:
 | 8    | 69.93         |
 | 9    | 65.20         |
 | 10   | 59.60         |
+
 </div>
 
 ---
