@@ -902,6 +902,10 @@ The analysis compares each participant’s workload between two conditions:
 
 All three comparisons show statistically significant differences (p < 0.01), with 95% confidence intervals that do not cross zero, confirming a progressive increase in perceived workload as task difficulty rises.
 
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/tlx_significance_plot_pvalues.png" width="600" alt="Weighted NASA TLX by Difficulty">
+</p>
+
 These findings validate the sensitivity of the NASA TLX method and reinforce its reliability in detecting usability impacts across design conditions.
 
 ---
