@@ -385,7 +385,8 @@ Represents the level layout and environment configuration.
 
 
 
-![image](https://github.com/user-attachments/assets/35c7626f-300d-4f4b-80aa-a14bb7cbc425){width=400 height=300}
+![Uploading Untitled (1).png…]()
+
 
 ## 📘 Entity Relationship Description – Tower Defense Game
 
