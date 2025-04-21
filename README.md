@@ -405,7 +405,19 @@ Represents the level layout and environment configuration.
   - `+buy(t)`
   - `+canPlace(col, row)`
   - `+canSpawn()`
-
+### Map
+- Represents the game map/grid and its structure.
+- Attributes:
+  - `spawnpoints: array`
+  - `exit: array`
+  - `cols: number = 12`
+  - `rows: number = 8`
+  - `display: array`
+  - `displayDir: array`
+  - `metadata: array`
+  - `bg: array = [0, 0, 0]`
+- Methods:
+  - `+drawMapGrid()`
 ### 🔁 Summary of Key Multiplicities
 
 | From     | To        | Type     | Meaning                                            |
