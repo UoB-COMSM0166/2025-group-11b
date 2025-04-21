@@ -383,10 +383,7 @@ Represents the level layout and environment configuration.
 - The system uses arrays to manage dynamic entities like bullets and monsters.
 - Inheritance is not shown; composition and control logic dominate.
 
-
-
-![Uploading Untitled (1).png…]()
-
+![Untitled (1)](https://github.com/user-attachments/assets/766d9033-69f5-456b-bdb1-e95a5ed95b9c)
 
 ## 📘 Entity Relationship Description – Tower Defense Game
 
