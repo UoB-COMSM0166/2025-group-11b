@@ -435,6 +435,27 @@ Represents the level layout and environment configuration.
   - `+drawImageTintEffect(type)`
   - `+drawDamageVisual(type)`
   - `+createGlowEffect(color)`
+### Tower
+- Represents a defensive tower in the game.
+- Attributes:
+  - `baseOnTop: boolean = true`
+  - `color: array = [0, 0, 0]`
+  - `drawLine: boolean = true`
+  - `follow: boolean = true`
+  - `hasBarrel: boolean = true`
+  - `hasBase: boolean = true`
+  - `length: number = 0.7`
+  - `radius: number = 1`
+  - `secondary: array = [0, 0, 0]`
+  - `weight: number = 2`
+  - `width: number = 0.3`
+  - `health: number = 10`
+- Methods:
+  - `+aim(x, y)`
+  - `+attack(e)`
+  - `+canFire()`
+  - `+draw()`
+  - `+drawBarrel()`
 ### 🔁 Summary of Key Multiplicities
 
 | From     | To        | Type     | Meaning                                            |
