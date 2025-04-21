@@ -162,20 +162,20 @@ Beyond this, we have also implemented a distinctive tower upgrade mode 🔄, all
 
 # 🎯 2. Requirements  
 
-## 🏗️ Ideation Process - Game Concept Development 🎯  
+##  Ideation Process - Game Concept Development 
 
-### 💡 Early Brainstorming & Game Ideas  
+### Early Brainstorming & Game Ideas  
 During **Week 2**, our team (**which initially had 6 members**) brainstormed **two potential game concepts**:  
 
-1. **🛡️ Tower Defense Game**  
+1. **Tower Defense Game**  
    - A **historical tower defense game**, integrating **different defense strategies across various eras**.  
-   - Players would be able to **place, upgrade, and manage towers** to defend against invaders from different time periods (e.g., knights ⚔️, pirates 🏴‍☠️, futuristic AI robots 🤖).  
+   - Players would be able to **place, upgrade, and manage towers** to defend against invaders from different time periods (e.g., knights , pirates , futuristic AI robots ).  
 
-2. **✈️ Aircraft Shooter Game**  
+2. **Aircraft Shooter Game**  
    - A **classic aerial shooter**, where players pilot an aircraft to **engage in air combat and eliminate enemies**.  
    - The game would feature multiple historical settings (e.g., **WWI, WWII, modern warfare, and futuristic battles**).  
 
-### 📜 Paper Prototype Development  
+### Paper Prototype Development  
 To better understand and test the game mechanics, we created two paper prototypes 📄🎲 for this as part of the early validation process：
 - #### Tower Defense Game Paper Prototype  
 <p align="center">
@@ -193,7 +193,7 @@ To better understand and test the game mechanics, we created two paper prototype
        style="max-width: 100%; height: auto;">
 </p>
 
-### 🤝 How We Decided as a Team What to Develop  (**which initially had 6 members**) 
+### How We Decided as a Team What to Develop  (**which initially had 6 members**) 
 
 - Open Brainstorming Sessions:  
   We first conducted open discussions where every team member pitched ideas, focusing on gameplay mechanics, target audiences, and possible historical or educational elements.
@@ -213,7 +213,7 @@ To better understand and test the game mechanics, we created two paper prototype
 
 
 
-### 🧅 Onion Model of Stakeholders  
+### Onion Model of Stakeholders  
 
 To better visualize the relationship between different stakeholders in our game project, we created an **Onion Model** to represent their roles and levels of involvement.
 
@@ -231,7 +231,7 @@ The model illustrates four concentric layers:
 </p>
 
 
-### 🧩 Identify Top-Level User Needs
+###  Identify Top-Level User Needs
 
 After analysing the project context and stakeholders' needs, we identified the top-level user requirements (Epics) that would guide our game development:
 
@@ -242,20 +242,20 @@ After analysing the project context and stakeholders' needs, we identified the t
 - Epic 5: Create a scalable backend and infrastructure to support future updates and multiplayer functionality.
 
 
-### 🧑‍🤝‍🧑 User Stories & Stakeholders
+###  User Stories & Stakeholders
 
 In this phase, we identified the key **stakeholders** whose input and needs would directly influence the game's development. Our goal was to ensure the game appealed to a broad audience—both users and creators. The key stakeholders we focused on were:
 
-- 🎮 **Players**: The main users who play the game.
-- 🎨 **Game Designers**: Those who design levels and mechanics.
-- 👩‍💻 **Developers**: Programmers implementing the game.
-- 🐞 **QA Testers**: People testing for bugs and balance.
-- 🖌️ **Artists**: Designers of game assets (characters, towers, environment).
-- 🎶 **Sound Designers**: Those who create sound effects and music.
-- 📅 **Project Managers**: Oversee development progress.
-- 📢 **Marketing Team**: Promote the game to players.
-- 💰 **Investors/Publishers**: Fund the project.
-- 🧑‍⚖️ **Community Moderators**: Manage player discussions and feedback.
+- **Players**: The main users who play the game.
+- **Game Designers**: Those who design levels and mechanics.
+-  **Developers**: Programmers implementing the game.
+-  **QA Testers**: People testing for bugs and balance.
+-  **Artists**: Designers of game assets (characters, towers, environment).
+-  **Sound Designers**: Those who create sound effects and music.
+-  **Project Managers**: Oversee development progress.
+-  **Marketing Team**: Promote the game to players.
+-  **Investors/Publishers**: Fund the project.
+-  **Community Moderators**: Manage player discussions and feedback.
 
 As we refined our ideas, we began developing **user stories** to ensure that our vision aligned with the experiences we wanted to deliver. These stories were crafted in **collaboration** with developers, designers, and artists, incorporating a variety of perspectives to make sure we were covering all aspects of the game.
 
@@ -265,7 +265,7 @@ As we refined our ideas, we began developing **user stories** to ensure that our
   <i>Stakeholder Requirements</i>
 </p>
 
-### 🧾 Specify Atomic Requirements  
+###  Specify Atomic Requirements  
 
 To further refine our user needs, we specified atomic requirements based on our user stories. These requirements are clear, testable, and independent to ensure traceability and system verification.
 
@@ -278,18 +278,18 @@ To further refine our user needs, we specified atomic requirements based on our 
 | AR-03 | The system shall spawn enemy waves with increasing difficulty. | Given the player starts a new wave, when the wave spawns, then enemy stats (speed, health, number) should increase. |
 | AR-04 | The system shall display earned in-game currency when enemies are defeated. | Given an enemy is defeated, when the player views their resources, then the currency value should update accordingly. |
 
-### 🎨 Early Design & Prototyping  
+###  Early Design & Prototyping  
 
-🔍 Research & Conceptualization
+ Research & Conceptualization
 In the early stages of design, we researched traditional tower defense games to understand their mechanics and identify potential areas for innovation. Our key decision was to merge tower defense gameplay with the historical evolution of Bristol 🏛️, offering players the opportunity to enjoy strategic gameplay while also learning about the city's history.
 
-🛠️ Core Gameplay Design
+ Core Gameplay Design
 Once the core game concept was defined, we focused on establishing the key gameplay pillars. For example, tower placement would be strategically important, with different historical periods unlocking unique towers and monsters. We also aimed to incorporate Bristol's historical landmarks as key gameplay elements, enhancing both the strategic depth and the educational value of the game.
 
-💻 Technical Considerations
+ Technical Considerations
 To ensure the game met these design goals, we considered the system's technical requirements. The game needed to be accessible across multiple platforms (PC, console, and web) 🌐, allowing players to engage seamlessly. The user interface was designed to be intuitive, facilitating easy tower placement, upgrades, and resource management.
 
-🚀 Prototype Development
+ Prototype Development
 With these concepts in mind, we developed an early prototype, testing core mechanics such as grid-based tower placement, monster AI pathfinding, and resource management. These tests validated our ideas and ensured that the game could progress to full-scale development with a solid foundation.
 
 <p align="center">
