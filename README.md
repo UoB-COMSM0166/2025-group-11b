@@ -418,6 +418,23 @@ Represents the level layout and environment configuration.
   - `bg: array = [0, 0, 0]`
 - Methods:
   - `+drawMapGrid()`
+ 
+### Monster
+- Represents an enemy/creature in the game.
+- Attributes:
+  - `color: array = [0, 0, 0]`
+  - `radius: number = 0.5`
+  - `path: any`
+  - `alive: boolean = true`
+  - `effects: array`
+  - `name: string = "monster"`
+  - `sound: string = "pop"`
+- Methods:
+  - `+draw()`
+  - `+dealDamage(amt, type)`
+  - `+drawImageTintEffect(type)`
+  - `+drawDamageVisual(type)`
+  - `+createGlowEffect(color)`
 ### 🔁 Summary of Key Multiplicities
 
 | From     | To        | Type     | Meaning                                            |
