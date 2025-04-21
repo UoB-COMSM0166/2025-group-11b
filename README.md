@@ -473,7 +473,7 @@ Represents the level layout and environment configuration.
   - `+setDisabled(state)`
   - `+setTextSize(size)`
   - `+isMouseOver()`
-### Hero
+#### Hero
 - The main controllable player character.
 - Attributes:
   - `img: any`
