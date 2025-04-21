@@ -859,6 +859,25 @@ The NASA TLX evaluation is computed in two main steps:
 
 </div>
 
+##### Group Level Mean Weighted TLX by Difficulty
+
+<div align="center">
+
+| Dimension         | Easy | Mid  | Hard |
+|------------------|------|------|------|
+| Mental Demand     | 6.7  | 12.2 | 19.5 |
+| Physical Demand   | 1.9  | 3.9  | 5.4  |
+| Temporal Demand   | 4.5  | 8.0  | 11.1 |
+| Performance       | 15.2 | 12.7 | 9.7  |
+| Effort            | 5.0  | 9.7  | 13.0 |
+| Frustration       | 1.2  | 3.8  | 5.9  |
+
+</div>
+These values represent the average contribution of each TLX dimension to participants' workload under each difficulty level, based on their personalized weights.
+
+##### Visual Comparison by Dimension & Difficulty
+<p align="center"> <img src="./weighted_tlx_by_dimension.png" width="700" alt="Weighted TLX by Dimension and Difficulty"> </p>
+Figure: Bar chart of average weighted TLX scores for each dimension across Easy, Mid, and Hard gameplay conditions.
 ---
 
 ##### Visualization of Weighted NASA TLX
