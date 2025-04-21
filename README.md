@@ -658,9 +658,9 @@ After a long period of consideration, we ultimately decided to convert the image
 - Implementing animation blending for fluid motion.
   ![image](https://github.com/user-attachments/assets/811b6111-4b64-4f6d-a2b5-9d27afa220ca)
   ![image](https://github.com/user-attachments/assets/a41a0005-edf9-4949-8b33-4c7fdc5c188d)
-# 📊 How We Track Progress in Our Tower Defense Game Project
+### 📊 How We Track Progress in Our Tower Defense Game Project
 
-## ✅ Sprint Reviews and Demos
+### ✅ Sprint Reviews and Demos
 
 At the end of each sprint, we organize a **sprint review** where the development team presents the current version of the tower defense game to stakeholders — including instructors, testers, or team leads. This typically includes:
 
