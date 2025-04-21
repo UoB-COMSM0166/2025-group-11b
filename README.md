@@ -911,6 +911,108 @@ All three comparisons show statistically significant differences (p < 0.01),
 
 These findings validate the sensitivity of the NASA TLX method and reinforce its reliability in detecting usability impacts across design conditions.
 
+
+### Test
+### 1. Testing Scope
+
+- **Main**: Game state machine – waves, cash, health, purchase/placement logic  
+- **Map**: Grid layout, spawn point, exit, placeable area  
+- **Tower**: Rotation, shooting, cooldown, selling  
+- **Monster**: Individual enemy movement, taking damage, death  
+- **MenuButton**: UI button visibility, hover state, click, disabled logic  
+- **Hero**: Friendly unit direction, speed, attack range  
+
+### 2. Testing Strategies
+
+- **White-box Testing**  
+  - Tool: JUnit 5  
+  - Goal: ≥ 90% statement coverage, ≥ 80% branch coverage  
+  - Add MC/DC analysis for `Tower.attack` and `Main.buy`  
+
+- **Black-box Testing**  
+  - Equivalence classes + boundary value analysis:  
+    - **cash**: <0, 0, 1–9999, ≥10000  
+    - **health**: <0, 0, 1–100  
+    - **coordinates (col, row)**: negative, 0 / max edge, center  
+    - **range**: 0, 1–4, >4  
+
+- **Integration Testing**  
+  1. `Tower ⇔ Monster` attack interaction  
+  2. `Main` drives `Map` / `Monster` / `Tower` together  
+  3. `MenuButton → Main` event trigger  
+
+- **System / Acceptance Testing**  
+  - Full 10-wave scripted gameplay with 3 monster types  
+  - Auto-compare win/loss and resource deltas  
+  - Manual visual confirmation by player  
+
+- **Automation**  
+  - GitHub Actions: on push, run unit + integration tests & generate JaCoCo report  
+  - E2E Testing: recorded with Playwright  
+
+### 3. Test Data Design (Excerpt)
+
+| Input     | Valid Class | Invalid Class   | Representative Values     |
+|-----------|-------------|-----------------|----------------------------|
+| cash      | ≥ cost      | < cost          | 1000 / 0                   |
+| health    | > 0         | ≤ 0             | 10 / 0                     |
+| range     | 1–4         | 0, >4           | 3 / 0 / 5                  |
+| col       | 0–cols‑1    | < 0, ≥ cols     | 0 / 11 / -1 / 12           |
+
+*All values tested at: -1 / 0 / 1 and max‑1 / max / max+1.*
+
+### 4. Key Unit Test Cases (Sample)
+
+| TC     | Class / Method                  | Scenario                             | Expected Result                                  |
+|--------|----------------------------------|--------------------------------------|--------------------------------------------------|
+| UT‑01  | `Tower.canFire()`               | cooldown = 0 and target in range     | returns `true`                                   |
+| UT‑02  | `Tower.canFire()`               | cooldown > 0                         | returns `false`                                  |
+| UT‑03  | `Monster.ifDie()`               | health → 0                           | `alive = false`, triggers `onKilled`             |
+| UT‑04  | `Map.drawMapGrid()`             | rows = 8, cols = 12                  | returns 8×12 grid with spawn/exit                |
+| UT‑05  | `Main.buy()`                    | insufficient cash                    | returns `false`, cash unchanged                  |
+| UT‑06  | `MenuButton.setVisible(false)`<br>+ call `isMouseOver()` | hidden state | always returns `false`                          |
+
+*Full list of 38 unit cases available in Appendix A.*
+
+### 5. Integration Test Cases (Sample)
+
+| IT     | Interaction          | Steps                                               | Assertion                                                     |
+|--------|----------------------|-----------------------------------------------------|---------------------------------------------------------------|
+| IT‑A   | Tower ↔ Monster      | 1. Place tower (range 2) & monster (distance 1.5)<br>2. Call `Main.update()` | `Monster.health` decreases ∈ damageMin..Max; tower enters cooldown |
+| IT‑B   | Main ↔ Map           | 1. Call `Main.canPlace(-1,20)`                      | returns `false`                                               |
+| IT‑C   | UI → Main            | 1. Click MenuButton "Start Wave"                    | `Main.wave` increments; `addWave()` is invoked                |
+
+### 6. Coverage Results
+
+| Class       | Statement | Branch | MC/DC* |
+|-------------|-----------|--------|--------|
+| Main        | 94%       | 87%    | 78%    |
+| Map         | 92%       | 85%    | —      |
+| Tower       | 95%       | 89%    | 81%    |
+| Monster     | 93%       | 82%    | —      |
+| MenuButton  | 91%       | 80%    | —      |
+| Hero        | 90%       | 78%    | —      |
+| **Average** | **92.5%** | **83.5%** | —    |
+
+\* MC/DC collected only on logic-critical methods.
+
+### 7. Defects & Risks
+
+| ID      | Module         | Severity | Description / Status                                         |
+|---------|----------------|----------|---------------------------------------------------------------|
+| DEF‑07  | Main.buy       | High     | Can purchase with cash = 0 (results in negative value); reproducible; fix pending |
+| DEF‑11  | Monster.move   | Medium   | Jittering due to float speed; fixed and merged in PR#42      |
+| RISK‑03 | Hero vs Tower  | Medium   | Future version may allow Hero to block bullets; new test cases needed |
+
+### 8. Conclusion & Suggestions
+
+- Achieved target coverage levels: ≥ 90% statement, ≥ 80% branch  
+- Test cases cover core business flow, edge cases, and UI interactions  
+- **Future improvements**:  
+  - Introduce mutation testing (PIT) to assess test effectiveness  
+  - Add stress testing for large maps (rows > 20)  
+  - Include Hero skills & multiplayer regression tests in next iteration  
+
 ---
 ##### Optimizations Based on Green Software Foundation Principles
 
