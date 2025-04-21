@@ -660,7 +660,7 @@ After a long period of consideration, we ultimately decided to convert the image
   ![image](https://github.com/user-attachments/assets/a41a0005-edf9-4949-8b33-4c7fdc5c188d)
 ### 📊 How We Track Progress in Our Tower Defense Game Project
 
-### ✅ Sprint Reviews and Demos
+#### ✅ Sprint Reviews and Demos
 
 At the end of each sprint, we organize a **sprint review** where the development team presents the current version of the tower defense game to stakeholders — including instructors, testers, or team leads. This typically includes:
 
@@ -668,8 +668,15 @@ At the end of each sprint, we organize a **sprint review** where the development
 - Gathering feedback on gameplay feel, UI/UX elements, and feature completeness.
 - Identifying what to refine or reprioritize for the next sprint.
 
-This regular demo ensures that our development stays aligned with user expectations and allows us to make fast, iterative improvements.
+#### 📉 Burndown Charts and Velocity Tracking
 
+We use a **burndown chart** to visualize our progress throughout each sprint. The chart plots the amount of remaining work (in story points or tasks) against time. As tasks (e.g., "implement tower firing", "create wave logic", "add hero animation") are completed, the line trends downward.
+
+Additionally, we track **team velocity**, which is the number of story points completed in each sprint. This helps us:
+
+- Estimate future workload and sprint capacity.
+- Adjust scope when we're ahead or behind.
+- Identify bottlenecks or underestimated tasks.
 ---
 ## 🎯 5. Evaluation  
 
