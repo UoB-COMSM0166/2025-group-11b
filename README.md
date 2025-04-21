@@ -18,7 +18,7 @@ Add a group photo here!
 
 ## Project Report
 
-# ✨ 1. Introduction 
+# ✨1. Introduction 
 
 <div style="text-align: center;">
   <img src="Assets_For_ReadMe/oriamforreport.gif" alt="Oiram Game" width="50">
