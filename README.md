@@ -489,18 +489,15 @@ Represents the level layout and environment configuration.
   - `+setMove(keyCode, isMoving)`
   - `+draw()`
 
-### 🔁 Summary of Key Multiplicities
+## 🔗 Relationships
 
-| From     | To        | Type     | Meaning                                            |
-|----------|-----------|----------|----------------------------------------------------|
-| main     | map       | 1:1      | One map per game                                  |
-| main     | monsters  | 1:n      | One game has many monster waves                   |
-| main     | towers    | 1:n      | One game has many towers                          |
-| monsters | monster   | 1:n      | Each wave has many monsters                       |
-| towers   | tower     | 1:n      | Tower list contains many tower instances          |
-| monster  | tower     | n:n      | Monsters and towers interact with each other      |
-| monsters | towers    | n:n      | Waves and towers are linked through game logic    |
-| map      | towers    | 1:n      | Towers are placed on the map                      |
+| From | To | Relationship Type | Description |
+|------|----|-------------------|-------------|
+| Main | Map | 1 : 1 | One Main has one Map |
+| Main | Monster | 1 : * | One Main controls many Monsters |
+| Main | Tower | 1 : * | One Main controls many Towers |
+| Main | MenuButton | 1 : * | One Main controls many MenuButtons |
+| Main | Hero | 1 : 1 | One Main controls one Hero |
 
 ---
 
