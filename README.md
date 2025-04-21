@@ -405,7 +405,7 @@ Represents the level layout and environment configuration.
   - `+buy(t)`
   - `+canPlace(col, row)`
   - `+canSpawn()`
-### Map
+#### Map
 - Represents the game map/grid and its structure.
 - Attributes:
   - `spawnpoints: array`
