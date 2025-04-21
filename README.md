@@ -914,7 +914,6 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 ### Test
 
-### Testing Scope
 
 <div align="center">
   
@@ -943,7 +942,7 @@ These findings validate the sensitivity of the NASA TLX method and reinforce its
 
 </div>
 
-### Test Data Design (Excerpt)
+### Test Data Design (Part)
 
 <div align="center">
 
