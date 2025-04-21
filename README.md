@@ -755,10 +755,9 @@ The NASA TLX evaluation is computed in two main steps:
 ![Weighted TLX Formula](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/folum.png)
 
    
-
 ---
 
-##### Individual Participant Weights Table
+#### Individual Participant Weights Table
 
 <div align="center">
 
@@ -780,7 +779,7 @@ The NASA TLX evaluation is computed in two main steps:
 
 ---
 
-##### Ease Difficulty Ratings and Weighted TLX Scores Table
+#### Ease Difficulty Ratings and Weighted TLX Scores Table
 
 
 <div align="center">
@@ -803,7 +802,7 @@ The NASA TLX evaluation is computed in two main steps:
 </div>
 
 
-##### Mid Difficulty Raw Ratings & Weighted TLX
+#### Mid Difficulty Raw Ratings & Weighted TLX
 
 <div align="center">
 
@@ -824,7 +823,7 @@ The NASA TLX evaluation is computed in two main steps:
 
 </div>
 
-##### Hard Difficulty Raw Ratings & Weighted TLX
+#### Hard Difficulty Raw Ratings & Weighted TLX
 
 <div align="center">
 
@@ -846,7 +845,7 @@ The NASA TLX evaluation is computed in two main steps:
 </div>
 
 
-##### Group Level Mean Weighted TLX by Difficulty
+#### Group Level Mean Weighted TLX by Difficulty
 
 <div align="center">
 
@@ -859,7 +858,7 @@ The NASA TLX evaluation is computed in two main steps:
 
 </div>
 
-##### Group Level Mean Weighted TLX by Difficulty
+#### Group Level Mean Weighted TLX by Difficulty
 
 <div align="center">
 
@@ -875,7 +874,7 @@ The NASA TLX evaluation is computed in two main steps:
 </div>
 This breakdown reveals a progressive increase in mental, temporal, and effort-related workload with rising difficulty, and a decline in perceived performance, which aligns with expectations in usability studies.
 
-##### Visualization of Weighted NASA TLX
+#### Visualization of Weighted NASA TLX
 
 To better visualize how different task dimensions contributed to perceived workload across difficulty levels, we computed the average weighted contribution of each TLX dimension for Easy, Mid, and Hard conditions.
 
@@ -885,18 +884,21 @@ To better visualize how different task dimensions contributed to perceived workl
 
 Figure: Average Weighted NASA TLX contribution per dimension across Easy, Mid, and Hard difficulty levels.
 
-##### Statistical Significance: Wilcoxon Signed-Rank Test and Confidence Intervals
+#### Statistical Significance: Wilcoxon Signed-Rank Test and Confidence Intervals
 
 To assess whether workload differences across difficulty levels were statistically significant, we conducted paired Wilcoxon Signed-Rank Tests (α = 0.05) on participants' Weighted NASA TLX scores.
 
 The analysis compares each participant’s workload between two conditions:
 
+<div align="center">
+  
 | Comparison      | Mean Δ (TLX) | 95% CI (Diff)     | W (Wilcoxon) | *p*-value |
 |-----------------|--------------|-------------------|--------------|-----------|
 | Mid − Easy      | **+22.64**   | [20.79, 24.49]    | 0            | 0.00195   |
 | Hard − Mid      | **+21.76**   | [18.14, 25.38]    | 0            | 0.00195   |
 | Hard − Easy     | **+44.40**   | [40.90, 47.90]    | 0            | 0.00195   |
 
+</div>
 
 All three comparisons show statistically significant differences (p < 0.01), with 95% confidence intervals that do not cross zero, confirming a progressive increase in perceived workload as task difficulty rises.
 
