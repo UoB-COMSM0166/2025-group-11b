@@ -72,25 +72,25 @@ To enhance immersion, we carefully incorporated **real historical landmarks** fr
   <tr align="center">
     <td><b>Bristol Cathedral</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/West_front_of_Bristol_Cathedral.jpg" width="100" height="100"></td>
-    <td>🚢 <b>SS Great Britain</b></td>
+    <td><b>SS Great Britain</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/great-britain.jpg" width="100" height="100"></td>
   </tr>
   <tr align="center">
-    <td>🌉 <b>Clifton Suspension Bridge</b></td>
+    <td> <b>Clifton Suspension Bridge</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Clifton%20Suspension%20Bridge.jpg" width="100" height="100"></td>
-    <td>🏰 <b>St Mary Redcliffe</b></td>
+    <td> <b>St Mary Redcliffe</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Bristol_eglise_St_Mary_redcliffe-crop.jpg" width="100" height="100"></td>
   </tr>
   <tr align="center">
-    <td>🗼 <b>Cabot Tower</b></td>
+    <td> <b>Cabot Tower</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Cabot%20Tower.jpg" width="100" height="100"></td>
-    <td>🏛️ <b>Merchant Venturers Building</b></td>
+    <td> <b>Merchant Venturers Building</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/MVB%20500%20x%20250.jpg" width="100" height="100"></td>
   </tr>
   <tr align="center">
-    <td>🏛️ <b>Chemistry Building</b></td>
+    <td> <b>Chemistry Building</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/Chemistry.jpg" width="100" height="100"></td>
-    <td>🎨 <b>We The Curious</b></td>
+    <td> <b>We The Curious</b></td>
     <td><img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/images/we%20the%20curious.jpg" width="100" height="100"></td>
   </tr>
 </table>
@@ -176,7 +176,7 @@ During **Week 2**, our team (**which initially had 6 members**) brainstormed **t
    - The game would feature multiple historical settings (e.g., **WWI, WWII, modern warfare, and futuristic battles**).  
 
 ### Paper Prototype Development  
-To better understand and test the game mechanics, we created two paper prototypes 📄🎲 for this as part of the early validation process：
+To better understand and test the game mechanics, we created two paper prototypes  for this as part of the early validation process：
 - #### Tower Defense Game Paper Prototype  
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Early%20Design.gif" 
@@ -287,7 +287,7 @@ In the early stages of design, we researched traditional tower defense games to 
 Once the core game concept was defined, we focused on establishing the key gameplay pillars. For example, tower placement would be strategically important, with different historical periods unlocking unique towers and monsters. We also aimed to incorporate Bristol's historical landmarks as key gameplay elements, enhancing both the strategic depth and the educational value of the game.
 
  Technical Considerations
-To ensure the game met these design goals, we considered the system's technical requirements. The game needed to be accessible across multiple platforms (PC, console, and web) 🌐, allowing players to engage seamlessly. The user interface was designed to be intuitive, facilitating easy tower placement, upgrades, and resource management.
+To ensure the game met these design goals, we considered the system's technical requirements. The game needed to be accessible across multiple platforms (PC, console, and web) , allowing players to engage seamlessly. The user interface was designed to be intuitive, facilitating easy tower placement, upgrades, and resource management.
 
  Prototype Development
 With these concepts in mind, we developed an early prototype, testing core mechanics such as grid-based tower placement, monster AI pathfinding, and resource management. These tests validated our ideas and ensured that the game could progress to full-scale development with a solid foundation.
