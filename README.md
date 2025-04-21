@@ -677,6 +677,8 @@ Additionally, we track **team velocity**, which is the number of story points co
 - Estimate future workload and sprint capacity.
 - Adjust scope when we're ahead or behind.
 - Identify bottlenecks or underestimated tasks.
+![image](https://github.com/user-attachments/assets/09beb072-88b2-4c31-a90b-61d08494a67e)
+
 ---
 ## 🎯 5. Evaluation  
 
