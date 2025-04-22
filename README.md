@@ -769,12 +769,15 @@ We collected observation notes and categorized feedback into:
 
 #### Summary of Feedback  
 
-| Category               | Positive Feedback                                      | Issues Identified                                                           | Suggestions for Improvement                                                                          |
-|-----------------------|--------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Map Interaction        | The historical map design makes the game visually unique. | Difficulty distinguishing between walkable areas and obstacles.             | Highlight walkable areas to improve map readability.                                                 |
-| Tower Management       | Placing towers on a grid feels intuitive and easy to control. | Unclear upgrade paths, lack of visual differentiation between towers.       | Enhance visual guidance for tower types and upgrade paths.                |
-| Enemy Speed Adjustment | Speed adjustment adds strategic depth to the gameplay. | Unclear whether speed changes affect all enemies or only new waves.         | Provide clear feedback about speed adjustment effects.   |
-| UI Controls            | UI layout is clear and easy to navigate.              | Some button functions are ambiguous.                                        | Refine button labels and add confirmation prompts for actions like selling or upgrading towers.       |
+| Category | Positive Feedback | Issues Identified | Suggestions for Improvement |
+|----------|------------------|------------------|----------------------------|
+| **Map Interaction** | Historical map design is visually unique. | Difficulty distinguishing walkable areas vs. obstacles. | Highlight walkable areas (e.g., path glow or grid markers). |
+| **Tower Management** | Grid-based placement feels intuitive. | Unclear upgrade paths; tower types lack visual differentiation. | Add tier icons/colors for upgrades; animate tower abilities on hover. |
+| **Enemy Speed Adjustment** | Speed tweaks add strategic depth. | Confusion over whether changes apply to all enemies or just new waves. | Add real-time UI feedback (e.g., "Speed +10%: Affects ALL enemies"). |
+| **UI Controls** | Layout is clean and navigable. | Ambiguous button functions (e.g., sell/upgrade). | Relabel buttons (e.g., "Sell Tower - 50% Refund"); add confirmation dialogs. |
+| **Tower Function Clarity** | - | Players struggle to intuit tower abilities and counter mechanics. | Add tooltips with stats (e.g., "Slow Tower: Reduces speed by 30%") and enemy-type hints. |
+| **Economy Transparency** | - | Gold/resource flow feels unbalanced; upgrades seem costly for marginal gains. | Show gold-per-wave previews; rebalance upgrade costs to align with power spikes. |
+| **Difficulty Pacing** | - | Early waves are too punishing for new players. | Tune Wave 1-3 enemy health/density; add adaptive hints after failures. |
  
 ### Conclusion and Next Steps  
 
