@@ -730,7 +730,10 @@ We began by clarifying our key questions:
 
 - *Can players figure out how to place and upgrade towers on their own?*  
 - *Do they understand how the Knight absorbs a tower’s ability?*  
-- *Are there any points of confusion about the interface or objectives?*  
+- *Are there any points of confusion about the interface or objectives?*
+- *Can players intuitively grasp each tower’s unique function and counter mechanics?*
+- *Is the economy system (gold/resources) transparent and balanced?*
+- *Does the difficulty curve ease players in without early frustration?*
 
 Based on these, we created tasks covering each core mechanic — starting a new game, placing a tower, upgrading, using the Knight to absorb abilities, and completing a wave.
 
