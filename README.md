@@ -16,6 +16,13 @@ Add a group photo here!
 - Group member 1, yangyang, df24465@bristol.ac.uk, role
 - Group member 2, Siyuan Chen, gd23774@bristol.ac.uk, role
 
+## VIDEO
+
+<video width="640" height="360" controls>
+  <source src="https://www.youtube.com/watch?v=jj8xFY1JR4E" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Project Report
 
 # ✨ 1. Introduction
