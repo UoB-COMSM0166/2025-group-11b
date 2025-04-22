@@ -698,6 +698,7 @@ To explore how players truly experience our game, we considered two commonly use
 |------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | **Heuristic Evaluation** | Experts inspect the game against established usability principles (Nielsen’s 10 Usability Heuristics). | - Fast, low-cost, requires no external users. <br> - Systematically checks known interface issues. | - May miss authentic user reactions. <br> - Relies on expert assumptions, not real behavior.     |
 | **Think Aloud Evaluation** | Real users verbalize their thoughts, decisions, and emotional reactions as they interact with the game. | - Provides direct insight into genuine user experiences. <br> - Small samples reveal big issues. | - Depends on participants’ willingness to talk. <br> - Some may find it awkward while playing.  |
+![image](https://github.com/user-attachments/assets/0ac3e95a-6540-4727-ab81-e539cbcaca8b)
 
 *Conclusion:*  
 After weighing these methods, we concluded that observing actual players would yield richer, more actionable feedback. Therefore, we ultimately chose **Think Aloud** as our primary method to gain deeper insights into player behavior and emotional responses.
