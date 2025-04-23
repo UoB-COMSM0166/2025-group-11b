@@ -999,6 +999,18 @@ This outlines the process of applying the System Usability Survey (SUS) to evalu
 ##### Step 1: Design the SUS Questionnaire
 The SUS consists of 10 standard questions, but for this tower defense game, we adapt the questions to fit the gaming context. Below are the 5 questions shown in the image, adjusted for the game, rated on a 1-5 Likert scale (1 = Strongly Disagree, 5 = Strongly Agree). The full SUS would include all 10 questions, but we focus on these for brevity.
 
+##### SUS Questionnaire for Tower Defense Game
+1. I think that I would like to play this tower defense game frequently.
+   - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
+2. I found the game unnecessarily complex.
+   - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
+3. I thought the game was easy to play.
+   - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
+4. I think that I would need the support of a technical person to be able to play this game.
+   - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
+5. I found the various functions in this game were well integrated.
+   - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
+
 ### Test
 
 
