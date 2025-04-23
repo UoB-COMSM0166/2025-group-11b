@@ -1020,6 +1020,16 @@ Distribute the survey to a sample of players after they have played the game. Fo
 | Q3       | 3        | 4        | 4        |
 | Q4       | 1        | 2        | 1        |
 | Q5       | 4        | 4        | 5        |
+
+##### Step 3: Calculate the SUS Score
+SUS scoring involves adjusting the raw scores and calculating an overall usability score. For each player:
+
+- For odd-numbered questions (1, 3, 5): Subtract 1 from the score.
+- For even-numbered questions (2, 4): Subtract the score from 5.
+- Sum the adjusted scores for each player.
+- Multiply the sum by 2.5 to get the SUS score (out of 100).
+
+
 ### Test
 
 
