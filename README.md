@@ -1058,6 +1058,18 @@ SUS scoring involves adjusting the raw scores and calculating an overall usabili
 ##### Average SUS Score
 - Average = (37.5 + 32.5 + 47.5) / 3 = 39.17
 
+##### Step 4: Analyze the Results
+- The average SUS score is 39.17, which is below the typical benchmark of 68 for an acceptable system.
+- **Interpretation**: The tower defense game has usability issues. Players found it somewhat complex (Q2) and not very easy to play (Q3). They also didn’t strongly want to play frequently (Q1).
+- **Recommendations**:
+  1. Simplify the game mechanics or improve the tutorial to reduce perceived complexity.
+  2. Enhance the user interface to make controls more intuitive.
+  3. Ensure game functions (e.g., tower placement, upgrades) feel cohesive, as integration scored relatively well (Q5).
+
+##### Conclusion
+Using SUS, we identified usability challenges in the tower defense game. The score of 39.17 indicates room for improvement, particularly in ease of use and reducing complexity. Further iterations and user testing are recommended.
+
+---
 ### Test
 
 
