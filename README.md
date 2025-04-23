@@ -1028,7 +1028,35 @@ SUS scoring involves adjusting the raw scores and calculating an overall usabili
 - For even-numbered questions (2, 4): Subtract the score from 5.
 - Sum the adjusted scores for each player.
 - Multiply the sum by 2.5 to get the SUS score (out of 100).
+##### Player 1 Calculation
+- Q1: 4 - 1 = 3
+- Q2: 5 - 2 = 3
+- Q3: 3 - 1 = 2
+- Q4: 5 - 1 = 4
+- Q5: 4 - 1 = 3
+- Total = 3 + 3 + 2 + 4 + 3 = 15
+- SUS Score = 15 * 2.5 = 37.5
 
+##### Player 2 Calculation
+- Q1: 3 - 1 = 2
+- Q2: 5 - 3 = 2
+- Q3: 4 - 1 = 3
+- Q4: 5 - 2 = 3
+- Q5: 4 - 1 = 3
+- Total = 2 + 2 + 3 + 3 + 3 = 13
+- SUS Score = 13 * 2.5 = 32.5
+
+##### Player 3 Calculation
+- Q1: 5 - 1 = 4
+- Q2: 5 - 1 = 4
+- Q3: 4 - 1 = 3
+- Q4: 5 - 1 = 4
+- Q5: 5 - 1 = 4
+- Total = 4 + 4 + 3 + 4 + 4 = 19
+- SUS Score = 19 * 2.5 = 47.5
+
+##### Average SUS Score
+- Average = (37.5 + 32.5 + 47.5) / 3 = 39.17
 
 ### Test
 
