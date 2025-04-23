@@ -1010,7 +1010,16 @@ The SUS consists of 10 standard questions, but for this tower defense game, we a
    - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
 5. I found the various functions in this game were well integrated.
    - 1 (Strongly Disagree) | 2 | 3 | 4 | 5 (Strongly Agree)
+##### Step 2: Collect Responses
+Distribute the survey to a sample of players after they have played the game. For this simulation, we assume 3 players provided the following responses:
 
+| Question | Player 1 | Player 2 | Player 3 |
+|----------|----------|----------|----------|
+| Q1       | 4        | 3        | 5        |
+| Q2       | 2        | 3        | 1        |
+| Q3       | 3        | 4        | 4        |
+| Q4       | 1        | 2        | 1        |
+| Q5       | 4        | 4        | 5        |
 ### Test
 
 
