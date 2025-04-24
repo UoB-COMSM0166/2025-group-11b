@@ -1212,7 +1212,19 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Spawn valid enemy wave → Success
 - [x] Attempt to spawn using an invalid enemy ID → Error
 - [x] Invalid path configuration → Error
+---
 
+### 5. ⏯️ Game Control (Start/Pause)
+
+| Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
+|-------|---------------------------|-----------------------------|----------------|
+| Control Command | start / pause / resume | unknown / null | "start", "fly" |
+| Current Game State | Correct state transitions | Incorrect state transition | pause→resume (valid), start→start (no change) |
+
+✅ Test Cases:
+- [x] Start the game normally → Game starts
+- [x] Attempt to start when already started → No change or error
+- [x] Invalid control command → Error
 ---
 ---
 
