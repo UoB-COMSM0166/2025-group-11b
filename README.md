@@ -1172,7 +1172,7 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Attempt to place tower with insufficient coins → Error
 - [x] Attempt to place tower out of bounds → Error
 - [x] Attempt to place an unavailable tower type → Error
-### 2. ⬆️ Upgrade Tower
+##### 2. ⬆️ Upgrade Tower
 
 | Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
 |-------|---------------------------|-----------------------------|----------------|
