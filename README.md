@@ -1139,9 +1139,9 @@ Using SUS, we identified usability challenges in the tower defense game. The sco
 
 </div>
 
-### 🛡️ Equivalence Partitioning Test Plan: Tower Defense Game
+### 🛡️ Equivalence Partitioning Test
 
-#### 🎮 System Under Test: Tower Defense Game
+#### 🎮 System Under Test
 
 ##### 📌 Testing Goal:
 To apply the Equivalence Partitioning (EP) method to identify and design test cases for key features of the Tower Defense game.
