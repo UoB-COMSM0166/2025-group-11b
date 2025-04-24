@@ -1186,7 +1186,7 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Upgrade with insufficient coins → Error
 - [x] Attempt to upgrade a non-existent tower → Error
 
-### 3. 💰 Deduct Coins (Spend Coins)
+##### 3. 💰 Deduct Coins (Spend Coins)
 
 | Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
 |-------|---------------------------|-----------------------------|----------------|
