@@ -1139,9 +1139,25 @@ Using SUS, we identified usability challenges in the tower defense game. The sco
 
 </div>
 
+### 🛡️ Equivalence Partitioning Test Plan: Tower Defense Game
+
+#### 🎮 System Under Test: Tower Defense Game
+
+##### 📌 Testing Goal:
+To apply the Equivalence Partitioning (EP) method to identify and design test cases for key features of the Tower Defense game.
 
 ---
-##### Optimizations Based on Green Software Foundation Principles
+
+#### 📦 Functional Units Breakdown
+
+1. Place Tower
+2. Upgrade Tower
+3. Deduct Coins (Spend Coins)
+4. Enemy Spawn and Pathing
+5. Game Start and Pause
+
+---
+### Optimizations Based on Green Software Foundation Principles
 
 According to the principles proposed by the Green Software Foundation, the following optimizations have been implemented:
 
