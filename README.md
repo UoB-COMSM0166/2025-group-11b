@@ -1155,12 +1155,11 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 3. Deduct Coins (Spend Coins)
 4. Enemy Spawn and Pathing
 5. Game Start and Pause
-
 ---
 
-## 🧪 Equivalence Partitioning & Test Design
+#### 🧪 Equivalence Partitioning & Test Design
 
-### 1. 🏰 Place Tower
+##### 1. 🏰 Place Tower
 
 | Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values | Description |
 |-------|---------------------------|-----------------------------|----------------|------------|
@@ -1176,7 +1175,6 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 
 ---
 
----
 ### Optimizations Based on Green Software Foundation Principles
 
 According to the principles proposed by the Green Software Foundation, the following optimizations have been implemented:
