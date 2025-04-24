@@ -1200,7 +1200,7 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 
 ---
 
-### 4. 👾 Enemy Spawn and Pathing
+##### 4. 👾 Enemy Spawn and Pathing
 
 | Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
 |-------|---------------------------|-----------------------------|----------------|
