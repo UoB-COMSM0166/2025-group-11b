@@ -1172,7 +1172,21 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Attempt to place tower with insufficient coins → Error
 - [x] Attempt to place tower out of bounds → Error
 - [x] Attempt to place an unavailable tower type → Error
+### 2. ⬆️ Upgrade Tower
 
+| Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
+|-------|---------------------------|-----------------------------|----------------|
+| Current Tower Level | < Maximum level | Already at maximum level | Lv.1, Lv.5 (max) |
+| Coin Amount | ≥ Upgrade cost | < Upgrade cost | 300, 20 |
+| Tower Existence | Existing tower | Non-existent tower / Empty space | id=123, id=null |
+
+✅ Test Cases:
+- [x] Upgrade a valid tower → Success
+- [x] Attempt to upgrade a max-level tower → Error
+- [x] Upgrade with insufficient coins → Error
+- [x] Attempt to upgrade a non-existent tower → Error
+
+---
 ---
 
 ### Optimizations Based on Green Software Foundation Principles
