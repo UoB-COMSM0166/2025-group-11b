@@ -1199,6 +1199,21 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Non-numeric coin deduction → Error
 
 ---
+
+### 4. 👾 Enemy Spawn and Pathing
+
+| Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
+|-------|---------------------------|-----------------------------|----------------|
+| Enemy Type | Valid enemy type | Invalid enemy ID | Zombie, Alien, Unknown_99 |
+| Path Configuration | Valid path array | Empty path / Invalid format | [(0,0)-(0,1)], null |
+| Spawn Wave | ≥ 1 | 0 or negative number | Wave 3, Wave 0 |
+
+✅ Test Cases:
+- [x] Spawn valid enemy wave → Success
+- [x] Attempt to spawn using an invalid enemy ID → Error
+- [x] Invalid path configuration → Error
+
+---
 ---
 
 ### Optimizations Based on Green Software Foundation Principles
