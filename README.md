@@ -1157,6 +1157,26 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 5. Game Start and Pause
 
 ---
+
+## 🧪 Equivalence Partitioning & Test Design
+
+### 1. 🏰 Place Tower
+
+| Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values | Description |
+|-------|---------------------------|-----------------------------|----------------|------------|
+| Map Coordinates | Valid placement area coordinates | Invalid placement area / Out of bounds | (3,4), (-1,10) | Validity check |
+| Coin Amount | ≥ Required tower cost | Less than tower cost | 200 (valid), 20 (invalid) | Coin validation |
+| Tower Type | Available tower types | Unlocked towers / Invalid tower types | Archer, "FlyingLaser" | Check tower type validity |
+
+✅ Test Cases:
+- [x] Place a valid tower in a valid area with sufficient coins → Success
+- [x] Attempt to place tower with insufficient coins → Error
+- [x] Attempt to place tower out of bounds → Error
+- [x] Attempt to place an unavailable tower type → Error
+
+---
+
+---
 ### Optimizations Based on Green Software Foundation Principles
 
 According to the principles proposed by the Green Software Foundation, the following optimizations have been implemented:
