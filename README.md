@@ -1227,10 +1227,9 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Invalid control command → Error
 ---
 
-## ✅ Summary
+#### ✅ Summary
 
 - The testing was conducted using the Equivalence Partitioning (EP) technique, effectively covering the boundary cases and input validation for core functionalities.
----
 ---
 
 ### Optimizations Based on Green Software Foundation Principles
