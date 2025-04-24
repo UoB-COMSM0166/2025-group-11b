@@ -1084,16 +1084,6 @@ Using SUS, we identified usability challenges in the tower defense game. The sco
 
 </div>
 
-Applying System Usability Survey (SUS) to a Tower Defense Game
-
-Overview
-
-This document outlines the process of applying the System Usability Survey (SUS) to evaluate the usability of a tower defense game. The SUS is a standardized questionnaire used to assess the perceived usability of a system, providing a score between 0 and 100.
-
-Step 1: Design the SUS Questionnaire
-
-The SUS consists of 10 standard questions, but for this tower defense game, we adapt the questions to fit the gaming context. Below are the 5 questions shown in the image, adjusted for the game, rated on a 1-5 Likert scale (1 = Strongly Disagree, 5 = Strongly Agree). The full SUS would include all 10 questions, but we focus on these for brevity.
-
 #### Testing Strategies
 
 <div align="center">
