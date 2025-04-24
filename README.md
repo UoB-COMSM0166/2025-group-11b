@@ -1214,7 +1214,7 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Invalid path configuration → Error
 ---
 
-### 5. ⏯️ Game Control (Start/Pause)
+##### 5. ⏯️ Game Control (Start/Pause)
 
 | Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
 |-------|---------------------------|-----------------------------|----------------|
