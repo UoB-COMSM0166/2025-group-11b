@@ -1186,6 +1186,18 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Upgrade with insufficient coins → Error
 - [x] Attempt to upgrade a non-existent tower → Error
 
+### 3. 💰 Deduct Coins (Spend Coins)
+
+| Input | Valid Equivalence Classes | Invalid Equivalence Classes | Example Values |
+|-------|---------------------------|-----------------------------|----------------|
+| Coins Deducted | ≤ Current coin amount | > Current coin amount | Deduct 50, Deduct 1000 (current 100) |
+| Current Coins | Positive integer | Negative value / Non-numeric | 100, -50, "abc" |
+
+✅ Test Cases:
+- [x] Valid coin deduction → Success, balance decreased
+- [x] Deduct more coins than available → Error
+- [x] Non-numeric coin deduction → Error
+
 ---
 ---
 
