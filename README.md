@@ -1348,9 +1348,6 @@ We score the game’s sustainability (out of 10):
 - Economic: 4
 - Technical: 4
 - Individual: 5
-
-#### 4. Conclusion
-Using SuSAF, we identified sustainability issues in *Sustainable Towers*, such as high energy use and limited accessibility. The user stories and implementation plan aim to create a more inclusive, eco-friendly, and economically viable game.
 ---
 
 ### Integrating the Findings
