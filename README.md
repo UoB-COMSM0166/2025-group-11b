@@ -1227,11 +1227,6 @@ To apply the Equivalence Partitioning (EP) method to identify and design test ca
 - [x] Invalid control command → Error
 ---
 
-#### ✅ Summary
-
-- The testing was conducted using the Equivalence Partitioning (EP) technique, effectively covering the boundary cases and input validation for core functionalities.
----
-
 ### Optimizations Based on Green Software Foundation Principles
 
 According to the principles proposed by the Green Software Foundation, the following optimizations have been implemented:
@@ -1289,6 +1284,20 @@ These optimizations collectively:
   Dimensions with higher weights (e.g., Mental Demand and Effort) contribute more to the overall workload, pinpointing areas that might require targeted design improvements.
 - **Advantage of Weighting:**  
   The weighted approach provides clarity on which aspects of the game most affect perceived workload, offering actionable insights for refining the experience.
+
+---
+### Sustainability
+Sustainable Tower Defense: Applying the SuSAF Framework
+
+#### 1. Project Overview
+We apply the Sustainability Awareness Framework (SuSAF) to *Sustainable Towers*, a mobile tower defense game with single-player and multiplayer modes and leaderboards. Our goal is to improve its sustainability across five dimensions: Social, Environmental, Economic, Technical, and Individual.
+
+##### 2.1 Step 1: Define Dimensions
+- **Social**: Inclusivity and community impact.
+- **Environmental**: Energy footprint.
+- **Economic**: Economic fairness for players and developers.
+- **Technical**: Long-term technical support.
+- **Individual**: Player well-being and privacy.
 
 ---
 
