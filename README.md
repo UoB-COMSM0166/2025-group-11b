@@ -1303,8 +1303,8 @@ We apply the Sustainability Awareness Framework (SuSAF) to *Sustainable Towers*,
 We ask one question per dimension to identify sustainability impacts.
 
 ###### Social
-- **Question**: Does the game support accessibility for diverse players?
-  - **Answer**: No, it lacks features like colorblind mode, excluding some players.
+- **Question**: Does the game allow players to adjust difficulty for better accessibility?
+  - **Answer**: No, the game has fixed difficulty levels, which may exclude less experienced players.
 
 ###### Environmental
 - **Question**: Does the game consume excessive energy?
