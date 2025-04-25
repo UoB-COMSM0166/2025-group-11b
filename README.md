@@ -1299,6 +1299,28 @@ We apply the Sustainability Awareness Framework (SuSAF) to *Sustainable Towers*,
 - **Technical**: Long-term technical support.
 - **Individual**: Player well-being and privacy.
 
+##### 2.2 Step 2: Guiding Questions and Discussion
+We ask one question per dimension to identify sustainability impacts.
+
+###### Social
+- **Question**: Does the game support accessibility for diverse players?
+  - **Answer**: No, it lacks features like colorblind mode, excluding some players.
+
+###### Environmental
+- **Question**: Does the game consume excessive energy?
+  - **Answer**: Yes, real-time rendering and servers use significant energy.
+
+###### Economic
+- **Question**: Does the game’s monetization model ensure fairness and sustainability for players and developers?
+  - **Answer**: The game is free with no in-app purchases, but lacks alternative revenue streams, risking developer sustainability.
+
+###### Technical
+- **Question**: Is the game optimized for older devices?
+  - **Answer**: No, older devices experience lag, leading to obsolescence.
+
+###### Individual
+- **Question**: Does the game encourage excessive playtime?
+  - **Answer**: Yes, daily challenges may lead to overplaying.
 ---
 
 ### Integrating the Findings
