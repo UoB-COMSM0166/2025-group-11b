@@ -1331,7 +1331,23 @@ We identify key impacts and long-term effects.
 - **Technical**: Poor optimization → Hardware upgrades → Increased e-waste.
 - **Individual**: Daily challenges → Excessive play → Mental health risks.
 
-**Long-Term Reflection**: Widespread use could increase energy consumption and e-waste, while lack of monetization may lead to the game’s discontinuation.
+### 2.4 Step 4: User Stories
+We create user stories to address the identified issues.
+
+- **Social**: As a visually impaired player, I want a colorblind mode, so I can play comfortably.
+- **Environmental**: As a player, I want a low-power mode, so the game uses less energy.
+- **Economic**: As a developer, I want a sustainable monetization model (e.g., optional ads), so the game remains viable without unfair costs to players.
+- **Technical**: As a player with an older device, I want optimization, so I can play without lag.
+- **Individual**: As a player, I want optional daily challenges, so I can manage my playtime.
+
+### 2.5 Step 5: SusAD Visualization
+We score the game’s sustainability (out of 10):
+
+- Social: 4
+- Environmental: 3
+- Economic: 4
+- Technical: 4
+- Individual: 5
 ---
 
 ### Integrating the Findings
