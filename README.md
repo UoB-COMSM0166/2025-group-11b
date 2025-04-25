@@ -1321,6 +1321,17 @@ We ask one question per dimension to identify sustainability impacts.
 ###### Individual
 - **Question**: Does the game encourage excessive playtime?
   - **Answer**: Yes, daily challenges may lead to overplaying.
+
+### 2.3 Step 3: Discussion Summary
+We identify key impacts and long-term effects.
+
+- **Social**: Lack of accessibility → Excludes players → Reduces inclusivity.
+- **Environmental**: High energy use → Larger carbon footprint → Environmental harm.
+- **Economic**: No revenue model → Developer funding issues → Potential abandonment.
+- **Technical**: Poor optimization → Hardware upgrades → Increased e-waste.
+- **Individual**: Daily challenges → Excessive play → Mental health risks.
+
+**Long-Term Reflection**: Widespread use could increase energy consumption and e-waste, while lack of monetization may lead to the game’s discontinuation.
 ---
 
 ### Integrating the Findings
