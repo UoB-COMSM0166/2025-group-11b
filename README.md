@@ -1334,7 +1334,7 @@ We identify key impacts and long-term effects.
 ##### 2.4 Step 4: User Stories
 We create user stories to address the identified issues.
 
-- **Social**: As a visually impaired player, I want a colorblind mode, so I can play comfortably.
+- **Social**: As a beginner player, I want adjustable difficulty levels, so I can enjoy the game at my skill level.
 - **Environmental**: As a player, I want a low-power mode, so the game uses less energy.
 - **Economic**: As a developer, I want a sustainable monetization model (e.g., optional ads), so the game remains viable without unfair costs to players.
 - **Technical**: As a player with an older device, I want optimization, so I can play without lag.
@@ -1348,13 +1348,6 @@ We score the game’s sustainability (out of 10):
 - Economic: 4
 - Technical: 4
 - Individual: 5
-
-## 3. Implementation Plan
-- Add colorblind mode (1 month).
-- Introduce low-power mode (1 month).
-- Add optional ads for revenue (2 months).
-- Optimize for older devices (2 months).
-- Make daily challenges optional with playtime reminders (1 month).
 
 ## 4. Conclusion
 Using SuSAF, we identified sustainability issues in *Sustainable Towers*, such as high energy use and lack of accessibility. The user stories and implementation plan aim to create a more inclusive, eco-friendly, and economically viable game.
