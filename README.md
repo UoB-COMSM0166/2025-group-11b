@@ -1348,6 +1348,16 @@ We score the game’s sustainability (out of 10):
 - Economic: 4
 - Technical: 4
 - Individual: 5
+
+## 3. Implementation Plan
+- Add colorblind mode (1 month).
+- Introduce low-power mode (1 month).
+- Add optional ads for revenue (2 months).
+- Optimize for older devices (2 months).
+- Make daily challenges optional with playtime reminders (1 month).
+
+## 4. Conclusion
+Using SuSAF, we identified sustainability issues in *Sustainable Towers*, such as high energy use and lack of accessibility. The user stories and implementation plan aim to create a more inclusive, eco-friendly, and economically viable game.
 ---
 
 ### Integrating the Findings
