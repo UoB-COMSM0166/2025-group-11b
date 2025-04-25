@@ -1325,7 +1325,7 @@ We ask one question per dimension to identify sustainability impacts.
 ##### 2.3 Step 3: Discussion Summary
 We identify key impacts and long-term effects.
 
-- **Social**: Lack of accessibility → Excludes players → Reduces inclusivity.
+- **Social**: Fixed difficulty → Excludes beginners → Reduces inclusivity.
 - **Environmental**: High energy use → Larger carbon footprint → Environmental harm.
 - **Economic**: No revenue model → Developer funding issues → Potential abandonment.
 - **Technical**: Poor optimization → Hardware upgrades → Increased e-waste.
@@ -1349,8 +1349,8 @@ We score the game’s sustainability (out of 10):
 - Technical: 4
 - Individual: 5
 
-## 4. Conclusion
-Using SuSAF, we identified sustainability issues in *Sustainable Towers*, such as high energy use and lack of accessibility. The user stories and implementation plan aim to create a more inclusive, eco-friendly, and economically viable game.
+#### 4. Conclusion
+Using SuSAF, we identified sustainability issues in *Sustainable Towers*, such as high energy use and limited accessibility. The user stories and implementation plan aim to create a more inclusive, eco-friendly, and economically viable game.
 ---
 
 ### Integrating the Findings
