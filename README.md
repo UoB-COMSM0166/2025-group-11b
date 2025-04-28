@@ -19,6 +19,7 @@ Add a group photo here!
 ## VIDEO
 
 [![Watch the video](https://img.youtube.com/vi/jj8xFY1JR4E/0.jpg)](https://www.youtube.com/watch?v=jj8xFY1JR4E)
+https://www.youtube.com/watch?v=mTt0Yl9rejE
 
 
 
