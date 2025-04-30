@@ -592,13 +592,11 @@ However, this change introduced a new challenge. Since the entire interface was 
 </p>
 
 #### 1.3 Final Unified Rendering Solution and Adaptive Scaling Strategy
-To fully resolve the UI inconsistencies caused by browser-dependent scaling, we developed a more robust and adaptive rendering pipeline within the p5.js framework. The core of this solution involved dynamically calculating a global scaling factor based on the current window dimensions, device pixel ratio, and expected canvas resolution. This allowed us to normalize visual proportions across different browsers, devices, and zoom levels, ensuring that elements like the sidebar, buttons, and content panels appeared exactly as intended regardless of the viewing environment.
+To ensure a consistent and responsive user experience across a wide range of screen sizes and aspect ratios, we implemented a dynamic resolution adaptation strategy using p5.js. At the core of this approach is the calculation of a scalable tile size (ts), which is derived based on the current window dimensions and the predefined grid size (12 columns by 8 rows). This ensures that all map elements maintain their proportions and remain visually aligned across different devices.
 
-In implementation, the game now launches with an initial check of the viewport size and pixel density. Based on this, a unified scaleFactor is computed and applied consistently across all drawing operations in p5. UI elements are no longer positioned using absolute pixel values, but rather relative to the canvas size and this scaling factor. Additionally, we created a responsive layout manager that recalculates element placement and font sizes in real-time whenever the window is resized.
+The game dynamically computes the canvas dimensions by multiplying the tile size with the number of columns and rows, and then recenters the canvas on screen using calculated offsets (gameX and gameY). This allows the game view to remain centered and properly scaled regardless of window size. UI components such as buttons, panels, and fonts are also scaled proportionally using a scaling factor derived from the tile size, ensuring a unified appearance.
 
-To further enhance visual consistency, we introduced a fixed aspect ratio for the canvas (16:9) and used letterboxing techniques to center the content when the window size doesn't match. This ensured that gameplay and UI remained proportionally aligned, even on ultra-wide monitors or mobile devices.
-
-The final outcome is a stable, consistent, and fully integrated game interface that adapts seamlessly to any resolution or device—without relying on external HTML components or suffering from layout fragmentation.
+Furthermore, we utilize the windowResized() function to listen for screen changes in real time. Whenever the window is resized, the canvas is updated, UI elements are re-rendered, and layout parameters are recalculated to maintain consistency. This approach offers a resolution-independent, pixel-perfect layout that avoids layout breaks and maintains usability across devices, including mobile and ultra-wide screens.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly3.gif" width="500"><br>
@@ -606,14 +604,6 @@ The final outcome is a stable, consistent, and fully integrated game interface t
   <i>final solution</i>
 </p>
 
-#### 1.1 Splitting Game Maps  
-   We explored various methods to split existing tower defense maps and integrate them into our game. Using Python in combination with OpenCV and Matplotlib, we visualized the maps. After dozens of attempts, we ultimately decided on an 8-row by 12-column grid layout.
-
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/split_maps.png"><br>
-  <b>Figure 16</b><br>
-  <i>Attempting to split tower defense game maps</i>
-</p>
 
 #### 2. Frame Animation Design
 1. Frame Rate Optimization
