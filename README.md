@@ -640,7 +640,7 @@ In addition, the Monster class supports rendering various attack effects (e.g., 
   <i>sprite sheet 2</i>
 </p>
 
-#### 2. Introducing an Interactive Knight System to Overcome Passive Gameplay
+#### 3. Introducing an Interactive Knight System to Overcome Passive Gameplay
 
 Traditional tower defense games often suffer from a lack of interactivity: once towers are placed, the player’s role becomes largely passive, limited to watching waves unfold or clicking upgrades. To address this, we introduced a controllable knight system as an active gameplay element.
 
