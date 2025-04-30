@@ -578,7 +578,7 @@ The first challenge arose from our initial decision to build the game's interfac
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/8217188c84dd9f94b81095c864b18a4.jpg" width="500"><br>
-  <b>Figure 15</b><br>
+  <b>Figure 7</b><br>
   <i>use html instead of p5</i>
 </p>
 
@@ -588,7 +588,7 @@ However, this change introduced a new challenge. Since the entire interface was 
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/black%20block.png" width="500"><br>
-  <b>Figure 15</b><br>
+  <b>Figure 8</b><br>
   <i>bad attempt</i>
 </p>
 
@@ -601,7 +601,7 @@ Furthermore, we utilize the windowResized() function to listen for screen change
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly3.gif" width="500"><br>
-  <b>Figure 15</b><br>
+  <b>Figure 9</b><br>
   <i>final solution</i>
 </p>
 
@@ -617,7 +617,7 @@ We soon realized that to support features like tower upgrades, enemy health trac
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Weixin%20Image_20250430205552.jpg" width="500"><br>
-  <b>Figure 15</b><br>
+  <b>Figure 10</b><br>
   <i>the very beginning</i>
 </p>
 
@@ -631,13 +631,13 @@ In addition, the Monster class supports rendering various attack effects (e.g., 
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/dreamstime_xxl_116937186.jpg" width="500"><br>
-  <b>Figure 15</b><br>
+  <b>Figure 11</b><br>
   <i>sprite sheet 1</i>
 </p>
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/future.jpg" width="500"><br>
-  <b>Figure 15</b><br>
+  <b>Figure 12</b><br>
   <i>sprite sheet 2</i>
 </p>
 
@@ -740,7 +740,7 @@ Each session lasted 20–30 minutes with three participants:
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/TASK%20LIST%20NEW.png" width="400" style="max-height:400px; height:auto;"><br>
-  <b>Figure 10</b><br>
+  <b>Figure 13</b><br>
   <i>Task List</i>
 </p>
 
