@@ -615,55 +615,6 @@ The final outcome is a stable, consistent, and fully integrated game interface t
   <i>Attempting to split tower defense game maps</i>
 </p>
 
-#### 1.2 Converting Images into a Cartoon Style  
-At first, we attempted to embed the MVB and teaching buildings into the game images. However, we found that the styles were inconsistent. To resolve this, we explored various methods to convert images into a cartoon style. We tried multiple approaches, including using some software found on TikTok and features available on existing websites.
-
-Ultimately, we decided to use a Photoshop plugin called Clone, which easily transforms images into a cartoon style. However, while integrating this plugin, we encountered the "Plugin is not properly signed" issue on Windows systems. To resolve this, we modified the Windows Registry Editor to successfully integrate the software.
-
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/MVB%20500%20x%20250.jpg"><br>
-  <b>Figure 19</b><br>
-  <i>Original image</i>
-</p>
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/MVB%20cartoon.png"><br>
-  <b>Figure 20</b><br>
-  <i>Cartoonized image</i>
-</p>
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/clone.png" width="500"><br>
-  <b>Figure 21</b><br>
-  <i>Photoshop Plugin</i>
-</p>
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/register_fault.png" width="500"><br>
-  <b>Figure 22</b><br>
-  <i>Register_Fault</i>
-</p>
-
-#### 1.3 First Failed Attempt  
-We attempted to insert the cartoonized MVB and Chemistry Building into our game map, but it was an obvious failure—the cartoonized images were 2D, while the game map was 2.5D. This initial setback was quite frustrating for us.
-
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/First_Failed_Attempt.png" width="500"><br>
-  <b>Figure 23</b><br>
-  <i>First_Failed_Attempt</i>
-</p>
-
-#### 1.4 Final Work  
-After a long period of consideration, we ultimately decided to convert the images into 2.5D. We tried another Photoshop plugin called 2.5D Generator 2, which allowed us to add depth to the images. After that, we adjusted the brightness to make the images blend better with the game map. We all agreed that the final result was highly satisfactory.
-
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/3D-transformed%20MVB.png" width="500"><br>
-  <b>Figure 24</b><br>
-  <i>2.5D</i>
-</p>
-<p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/final_map.png" width="500"><br>
-  <b>Figure 25</b><br>
-  <i>final map</i>
-</p>
-
 #### 2. Frame Animation Design
 1. Frame Rate Optimization
 - Choosing the right frame rate is crucial to balance smoothness and performance.
