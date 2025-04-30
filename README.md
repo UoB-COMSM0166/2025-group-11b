@@ -571,7 +571,7 @@ feat: Implement game structure and core components
 
 One of the most significant challenges we encountered during the development was ensuring that our game could properly support multiple screen resolutions while maintaining the integrity of a complex user interface. The game includes interactive UI elements such as a tower selection panel, a scrollable information bar, and paginated navigation buttons. In the early stages of development, we used hardcoded pixel-based coordinates for positioning UI elements. While this approach worked initially on our target resolution, it quickly became problematic when tested on devices with different screen sizes or aspect ratios. UI components would become misaligned, clipped, or overlapping, severely impacting usability. To address this, we refactored the layout system to rely on relative positioning and scaling, often using percentage-based anchors and layout groups provided by our game engine. We also incorporated a dynamic resolution manager that could adjust element spacing, font size, and margins in real-time. This significantly improved the consistency of the user experience across various devices and resolutions, though it required a considerable redesign of our original UI structure.
 
-#### 1.2 Initial Use of Static HTML and UI Loading Order Issues
+#### 1.1 Initial Use of Static HTML and UI Loading Order Issues
 
 The first challenge arose from our initial decision to build the game's interface using static HTML pages. While this approach allowed for rapid prototyping and easier organization of UI components, it introduced a noticeable issue during the game's loading phase. Specifically, we observed that the sidebar UI—containing menus and options—would render on the screen before the main game canvas was fully initialized. This led to a disjointed user experience where players would momentarily see an incomplete or partially loaded interface, which gave the impression of a performance issue or a broken layout.
 
@@ -591,7 +591,7 @@ However, this change introduced a new challenge. Since the entire interface was 
   <i>bad attempt</i>
 </p>
 
-#### 1.3 Final Unified Rendering Solution and Adaptive Scaling Strategy
+#### 1.2 Final Unified Rendering Solution and Adaptive Scaling Strategy
 To ensure a consistent and responsive user experience across a wide range of screen sizes and aspect ratios, we implemented a dynamic resolution adaptation strategy using p5.js. At the core of this approach is the calculation of a scalable tile size (ts), which is derived based on the current window dimensions and the predefined grid size (12 columns by 8 rows). This ensures that all map elements maintain their proportions and remain visually aligned across different devices.
 
 The game dynamically computes the canvas dimensions by multiplying the tile size with the number of columns and rows, and then recenters the canvas on screen using calculated offsets (gameX and gameY). This allows the game view to remain centered and properly scaled regardless of window size. UI components such as buttons, panels, and fonts are also scaled proportionally using a scaling factor derived from the tile size, ensuring a unified appearance.
