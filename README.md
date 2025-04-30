@@ -588,7 +588,22 @@ However, this change introduced a new challenge. Since the entire interface was 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/black%20block.png" width="500"><br>
   <b>Figure 15</b><br>
-  <i>use html instead of p5</i>
+  <i>bad attempt</i>
+</p>
+
+#### 1.3 Final Unified Rendering Solution and Adaptive Scaling Strategy
+To fully resolve the UI inconsistencies caused by browser-dependent scaling, we developed a more robust and adaptive rendering pipeline within the p5.js framework. The core of this solution involved dynamically calculating a global scaling factor based on the current window dimensions, device pixel ratio, and expected canvas resolution. This allowed us to normalize visual proportions across different browsers, devices, and zoom levels, ensuring that elements like the sidebar, buttons, and content panels appeared exactly as intended regardless of the viewing environment.
+
+In implementation, the game now launches with an initial check of the viewport size and pixel density. Based on this, a unified scaleFactor is computed and applied consistently across all drawing operations in p5. UI elements are no longer positioned using absolute pixel values, but rather relative to the canvas size and this scaling factor. Additionally, we created a responsive layout manager that recalculates element placement and font sizes in real-time whenever the window is resized.
+
+To further enhance visual consistency, we introduced a fixed aspect ratio for the canvas (16:9) and used letterboxing techniques to center the content when the window size doesn't match. This ensured that gameplay and UI remained proportionally aligned, even on ultra-wide monitors or mobile devices.
+
+The final outcome is a stable, consistent, and fully integrated game interface that adapts seamlessly to any resolution or device—without relying on external HTML components or suffering from layout fragmentation.
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly3.gif" width="500"><br>
+  <b>Figure 15</b><br>
+  <i>final solution</i>
 </p>
 
 #### 1.1 Splitting Game Maps  
