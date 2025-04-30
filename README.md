@@ -651,8 +651,8 @@ This system introduced several design challenges, including collision detection 
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" width="250" alt="GIF 1" style="display:inline-block; margin: 5px;">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" width="250" alt="GIF 2" style="display:inline-block; margin: 5px;">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" width="250" alt="GIF 3" style="display:inline-block; margin: 5px;">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly4.gif" width="250" alt="GIF 2" style="display:inline-block; margin: 5px;">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/fly5.gif" width="250" alt="GIF 3" style="display:inline-block; margin: 5px;">
 </p>
 
 
