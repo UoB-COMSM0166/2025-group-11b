@@ -565,17 +565,22 @@ feat: Implement game structure and core components
   - **Speeding up monster movement**.
   - **Exiting and switching to the team interface**.
 
-### Challenges
+## Challenges
 
-#### 1. Multi-resolution Support and Complex UI Interaction
+### 1. Multi-resolution Support and Complex UI Interaction
 
 One of the most significant challenges we encountered during the development was ensuring that our game could properly support multiple screen resolutions while maintaining the integrity of a complex user interface. The game includes interactive UI elements such as a tower selection panel, a scrollable information bar, and paginated navigation buttons. In the early stages of development, we used hardcoded pixel-based coordinates for positioning UI elements. While this approach worked initially on our target resolution, it quickly became problematic when tested on devices with different screen sizes or aspect ratios. UI components would become misaligned, clipped, or overlapping, severely impacting usability. To address this, we refactored the layout system to rely on relative positioning and scaling, often using percentage-based anchors and layout groups provided by our game engine. We also incorporated a dynamic resolution manager that could adjust element spacing, font size, and margins in real-time. This significantly improved the consistency of the user experience across various devices and resolutions, though it required a considerable redesign of our original UI structure.
 
+#### 1.2 Initial Use of Static HTML and UI Loading Order Issues
+
+The first challenge arose from our initial decision to build the game's interface using static HTML pages. While this approach allowed for rapid prototyping and easier organization of UI components, it introduced a noticeable issue during the game's loading phase. Specifically, we observed that the sidebar UI—containing menus and options—would render on the screen before the main game canvas was fully initialized. This led to a disjointed user experience where players would momentarily see an incomplete or partially loaded interface, which gave the impression of a performance issue or a broken layout.
+
+To solve this, we transitioned to a more integrated rendering approach where the entire UI, including the sidebar, was dynamically injected and controlled via JavaScript after the game canvas had finished loading. We also implemented a loading screen with a progress indicator to bridge the delay, ensuring that no UI elements appeared prematurely. This solution not only improved visual coherence but also made it easier to manage game state transitions and synchronize UI behavior with the underlying game logic.
 
 <p align="center">
-  <img src="https://github.com/feixiangkong/tower-defence/blob/main/final_map.png" width="500"><br>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/8217188c84dd9f94b81095c864b18a4.jpg" width="500"><br>
   <b>Figure 15</b><br>
-  <i>Map integrating Bristol MVB and Chemistry Buildings</i>
+  <i>use html instead of p5</i>
 </p>
 
 #### 1.1 Splitting Game Maps  
