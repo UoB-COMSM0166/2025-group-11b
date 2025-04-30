@@ -555,15 +555,16 @@ If all monsters are defeated (`noMoreMonster()` returns `true`), the system:
 
 # 4. Implementation
 
-feat: Implement game structure and core components
+## Building a Modular Tower Defense Game with p5.js
+Before developing more complex gameplay features—like hero skills or dynamic wave logic—we first designed a modular and scalable architecture for a tower defense game. The game logic was split into multiple dedicated modules: towers.js handled tower mechanics, monsters.js managed enemy behavior, maps.js stored predefined map layouts, main.js served as the core game loop, and ui.js managed interface components and interactions.
 
-- Researched similar games and decided to divide the game into four main components: **map, towers, monsters, and the main interface**.
-- Created four separate classes: **maps.js, tower.js, monster.js, and main.js**.
-- Implemented core functionalities:
-  - **Placing, purchasing, selling, and upgrading towers**.
-  - **Pausing, starting, and resetting the game**.
-  - **Speeding up monster movement**.
-  - **Exiting and switching to the team interface**.
+Although map data itself is statically defined in maps.js, we implemented dynamic pathfinding and map validation logic through functions like getWalkMap() and getVisitMap(). This allowed the system to simulate flexible terrain behavior and makes it extensible for future features like random map generation or a map editor.
+
+A custom SlidePane class was implemented to provide a tower information panel that can expand or collapse with animation, supports scrollable content, and dynamically updates display data. It also includes interactive elements like upgrade and sell buttons. This layer of UI polish significantly improved the gameplay experience.
+
+Inside main.js, the main game loop manages all subsystems, including monster spawning, tower targeting, projectile and particle systems, and player status such as health and gold. While each module handles its own responsibilities, they coordinate via shared state flags such as toPlace, paused, and toCooldown.
+
+Though this may appear to be a relatively simple tower defense game, we placed strong emphasis on code structure, separation of concerns, and future-proof design. This foundation allows us to easily expand the game with new features such as skill trees, map editors, or new enemy types without rewriting core logic.
 
 ## Challenges
 
