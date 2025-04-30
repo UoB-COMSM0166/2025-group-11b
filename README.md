@@ -575,10 +575,18 @@ One of the most significant challenges we encountered during the development was
 
 The first challenge arose from our initial decision to build the game's interface using static HTML pages. While this approach allowed for rapid prototyping and easier organization of UI components, it introduced a noticeable issue during the game's loading phase. Specifically, we observed that the sidebar UI—containing menus and options—would render on the screen before the main game canvas was fully initialized. This led to a disjointed user experience where players would momentarily see an incomplete or partially loaded interface, which gave the impression of a performance issue or a broken layout.
 
-To solve this, we transitioned to a more integrated rendering approach where the entire UI, including the sidebar, was dynamically injected and controlled via JavaScript after the game canvas had finished loading. We also implemented a loading screen with a progress indicator to bridge the delay, ensuring that no UI elements appeared prematurely. This solution not only improved visual coherence but also made it easier to manage game state transitions and synchronize UI behavior with the underlying game logic.
-
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/8217188c84dd9f94b81095c864b18a4.jpg" width="500"><br>
+  <b>Figure 15</b><br>
+  <i>use html instead of p5</i>
+</p>
+
+To address this issue, I decided to abandon the use of static HTML altogether and refactored all UI pages into a unified p5.js-based interface. By relying solely on p5 for both game logic and UI rendering, we eliminated the premature rendering problem caused by HTML loading separately from the game canvas. This integration ensured that all elements appeared simultaneously and consistently once the canvas was fully initialized.
+
+However, this change introduced a new challenge. Since the entire interface was now rendered through p5, its appearance became highly sensitive to browser-specific scaling behaviors and screen DPI settings. In different browsers or under varying resolution and zoom configurations, the sidebar layout could shift, scale inconsistently, or even overflow the visible canvas area. These discrepancies posed a new threat to the visual stability we had just achieved and required us to implement additional logic to detect screen resolution and zoom level, and dynamically adjust the canvas scale and element positions accordingly.
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/black%20block.png" width="500"><br>
   <b>Figure 15</b><br>
   <i>use html instead of p5</i>
 </p>
