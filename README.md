@@ -605,31 +605,43 @@ Furthermore, we utilize the windowResized() function to listen for screen change
 </p>
 
 
-#### 2. Frame Animation Design
-1. Frame Rate Optimization
-- Choosing the right frame rate is crucial to balance smoothness and performance.
-- Too low FPS results in choppy animations, while too high FPS can cause performance issues.
+#### 2. Designing Enemy and Tower Spawning Systems
 
-2. Sprite Sheet Management
-- Efficiently organizing sprite sheets to reduce memory usage and rendering time.
-- Ensuring correct frame alignment to avoid misalignment when drawing.
-- Handling different frame sizes dynamically.
+In the early stages of development, one major challenge we faced was how to effectively manage the spawning of enemies and the placement of towers within the game world. Initially, we adopted a very static approach: enemies and towers were represented by fixed images (sprites) that were directly placed onto the screen using absolute pixel coordinates. While this allowed for a quick visual prototype, it quickly proved insufficient for a scalable tower defense game.
 
-3. Directional Animations
-- Designing animations for multiple directions (e.g., left, right, up, down).
-- Avoiding redundant frames by flipping sprites instead of drawing extra frames.
+The use of static images meant that each tower and enemy type had to be manually drawn and positioned, which not only limited their interactivity but also introduced alignment issues across different screen resolutions. Additionally, this approach offered no room for animation, dynamic behaviors, or in-game upgrades—all of which are crucial features in a tower defense experience.
 
-4. Animation Timing and Synchronization
-- Controlling frame transitions smoothly based on speed or events.
-- Synchronizing animations with game physics (e.g., running, attacking, jumping).
-- Ensuring consistent playback across different devices.
+We soon realized that to support features like tower upgrades, enemy health tracking, and real-time interactions (e.g., targeting and attacking), we needed to move toward a fully object-oriented architecture. Each tower and enemy would need to be represented as a class instance, with properties such as position, type, health, damage, and cooldown logic. This transition laid the groundwork for creating a robust and flexible system that could scale with the game’s increasing complexity.
 
-5. State Transitions and Blending
-- Handling smooth transitions between animations (e.g., walking to running to idle).
-- Avoiding sudden jumps or unnatural movements.
-- Implementing animation blending for fluid motion.
-  ![image](https://github.com/user-attachments/assets/811b6111-4b64-4f6d-a2b5-9d27afa220ca)
-  ![image](https://github.com/user-attachments/assets/a41a0005-edf9-4949-8b33-4c7fdc5c188d)
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/Weixin%20Image_20250430205552.jpg" width="500"><br>
+  <b>Figure 15</b><br>
+  <i>the very beginning</i>
+</p>
+
+
+As the game evolved, we moved beyond using static images and began designing enemies as fully encapsulated class-based objects. Each enemy is now an instance of a Monster class, which not only stores its position, health, speed, and pathfinding logic, but also manages animation frames, status effects, damage response, and visual effects such as stun, burn, or freeze.
+
+The transition to this structure enabled us to implement sprite-based animations in a scalable way. Rather than hardcoding image switching, each enemy has internal state properties like frameIndex, frameCount, and animationSpeed, allowing frame-based animation to be updated smoothly in real time. These properties make it possible to visually differentiate enemy types and behavior phases, such as walking, stunned, or dying.
+
+In addition, the Monster class supports rendering various attack effects (e.g., lightning arcs, frost spikes, or glow pulses) and integrates seamlessly with the combat and targeting system. This change drastically improved both gameplay feedback and code maintainability. By centralizing all enemy logic within a single class, we gained a modular structure that’s easier to expand with new enemy types, behaviors, or animations in the future.
+
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/dreamstime_xxl_116937186.jpg" width="500"><br>
+  <b>Figure 15</b><br>
+  <i>sprite sheet 1</i>
+</p>
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/future.jpg" width="500"><br>
+  <b>Figure 15</b><br>
+  <i>sprite sheet 2</i>
+</p>
+
+
+
 ### 📊 How We Track Progress in Our Tower Defense Game Project
 
 #### ✅ Sprint Reviews and Demos
