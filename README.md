@@ -567,12 +567,9 @@ feat: Implement game structure and core components
 
 ### Challenges
 
-#### 1. Integrate Bristol landmarks with game map
+#### 1. Multi-resolution Support and Complex UI Interaction
 
-- This was by far the hardest task: finding a way to seamlessly integrate **Bristol's landmarks** into a **tower defense-style game map**.
-- We aimed to blend **Bristol’s unique elements** with the game’s mechanics while maintaining **strategic gameplay balance**.
-- Implemented location-based tower placements to align with real-world landmarks.
-- Designed custom textures and structures inspired by **Bristol’s architecture** to enhance immersion.
+One of the most significant challenges we encountered during the development was ensuring that our game could properly support multiple screen resolutions while maintaining the integrity of a complex user interface. The game includes interactive UI elements such as a tower selection panel, a scrollable information bar, and paginated navigation buttons. In the early stages of development, we used hardcoded pixel-based coordinates for positioning UI elements. While this approach worked initially on our target resolution, it quickly became problematic when tested on devices with different screen sizes or aspect ratios. UI components would become misaligned, clipped, or overlapping, severely impacting usability. To address this, we refactored the layout system to rely on relative positioning and scaling, often using percentage-based anchors and layout groups provided by our game engine. We also incorporated a dynamic resolution manager that could adjust element spacing, font size, and margins in real-time. This significantly improved the consistency of the user experience across various devices and resolutions, though it required a considerable redesign of our original UI structure.
 
 
 <p align="center">
