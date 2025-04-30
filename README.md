@@ -640,6 +640,22 @@ In addition, the Monster class supports rendering various attack effects (e.g., 
   <i>sprite sheet 2</i>
 </p>
 
+#### 2. Introducing an Interactive Knight System to Overcome Passive Gameplay
+
+Traditional tower defense games often suffer from a lack of interactivity: once towers are placed, the player’s role becomes largely passive, limited to watching waves unfold or clicking upgrades. To address this, we introduced a controllable knight system as an active gameplay element.
+
+The knight is implemented as a movable Hero class, which can be directly controlled using keyboard inputs to navigate the battlefield in real time. This character is not just cosmetic. It can actively interact with the environment, detect nearby towers, and temporarily acquire their abilities through proximity-based collision detection. Once empowered, the knight inherits the selected tower’s attack type, cooldown, and targeting logic, essentially acting as a mobile tower with dynamic targeting and skill reuse.
+
+This system introduced several design challenges, including collision detection between the knight and towers, cooldown management to prevent ability spamming, and synchronization of animation states with movement direction. We also had to balance the knight’s influence so that it would complement the tower mechanics rather than replace them. The result is a more engaging player experience that blends real-time action with classic tower defense strategy.
+
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" width="250" alt="GIF 1" style="display:inline-block; margin: 5px;">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" width="250" alt="GIF 2" style="display:inline-block; margin: 5px;">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/upgrate.gif" width="250" alt="GIF 3" style="display:inline-block; margin: 5px;">
+</p>
+
+
 
 
 ### 📊 How We Track Progress in Our Tower Defense Game Project
