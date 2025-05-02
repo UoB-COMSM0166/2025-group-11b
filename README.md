@@ -1299,21 +1299,23 @@ Throughout the project, we used a variety of tools to support both task manageme
 
 To track project progress and coordinate development efforts, we initially used a Kanban board built into GitHub Projects. Tasks were organized into columns such as “To Do,” “In Progress,” and “Done,” which helped us visualize workflow and prioritize tasks efficiently. However, as the project grew more complex, we encountered issues such as unclear task descriptions and misunderstandings among team members, sometimes resulting in duplicated or wasted work. To address this, we later transitioned to using a shared Lark document. This platform allowed us to provide more detailed task descriptions, including textual explanations, screenshots, and images of paper prototypes, which made our expectations clearer and reduced ambiguity.
 
-For real-time communication, we primarily relied on WeChat, which functioned as our main coordination platform. It was used for scheduling meetings, sending reminders, and discussing implementation details. Compared to more formal platforms such as email or GitHub comments, WeChat enabled much faster and more dynamic exchanges of information. This helped the team stay connected and maintain a steady development pace, especially during sprints.
-
-By combining GitHub for version control, Kanban boards for progress tracking, Lark for centralized documentation, and WeChat for daily communication, we established a collaborative workflow that was both efficient and well-suited to our small team setup.
-
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/kanban%20board.png" width="400" style="max-height:400px; height:auto;"><br>
   <b>Figure 16</b><br>
   <i>Kanban Board</i>
 </p>
 
+
+For real-time communication, we primarily relied on WeChat, which functioned as our main coordination platform. It was used for scheduling meetings, sending reminders, and discussing implementation details. Compared to more formal platforms such as email or GitHub comments, WeChat enabled much faster and more dynamic exchanges of information. This helped the team stay connected and maintain a steady development pace, especially during sprints.
+
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/wechat.png" width="400" style="max-height:400px; height:auto;"><br>
   <b>Figure 17</b><br>
   <i>WeChat</i>
 </p>
+
+By combining GitHub for version control, Kanban boards for progress tracking, Lark for centralized documentation, and WeChat for daily communication, we established a collaborative workflow that was both efficient and well-suited to our small team setup.
+
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/lark.png" width="400" style="max-height:400px; height:auto;"><br>
