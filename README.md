@@ -1253,6 +1253,50 @@ These optimizations collectively:
 - Improve loading performance
 - Maintain full application functionality
 - Are compatible with modern web standards
+
+## 🎯 6. Process
+
+### 6.1 Scrum Process
+In this project, we adopted the Scrum agile development process to organize our team collaboration. Since the team consisted of only two members, we maintained a lightweight yet efficient workflow. Siyuan Chen served as the Scrum Master, responsible for facilitating daily stand-up meetings, planning sprints, and ensuring that the team followed the Scrum rhythm and goals. Yang Yang took on the role of Product Owner, primarily in charge of clarifying project requirements, prioritizing features, and making key decisions from a user-oriented perspective.
+
+Our development cycle was structured around weekly sprints. Each sprint began with a Sprint Planning session and concluded with a Sprint Review and Sprint Retrospective. We conducted short daily stand-up meetings via Microsoft Teams to report progress, identify blockers, and adjust task allocation. Tasks were documented and managed in a shared Product Backlog, and we used Trello (or Jira) to visualize task status and update priorities based on development progress.
+
+For example, during the first sprint, our core tasks included “map loading” and “basic tower logic.” Siyuan focused on implementing the core code framework and interaction logic, while Yang Yang was responsible for designing the feature flow, writing documentation, and testing the code with feedback. This role allocation allowed us to move quickly in development while maintaining efficient communication and continuous feedback.
+
+Through the iterative structure of Scrum and clearly defined roles, we were able to maintain an organized and highly collaborative development process even within a two-person team. By using Scrum, we maintained consistent momentum, responded quickly to feedback, and improved our team’s coordination and accountability.
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/feedback_loop.png" width="400" style="max-height:400px; height:auto;"><br>
+  <b>Figure 14</b><br>
+  <i>feedback loop</i>
+</p>
+
+However, in the later stages of the project, we encountered a significant team-related challenge. Specifically, Yang Yang was largely absent during the middle phase of development, including minimal participation in both coding and documentation tasks. As a result, the Scrum-based development process faced substantial strain due to the absence of one core team member.
+
+With only one active contributor during this period, several key Scrum principles—such as collaborative planning, shared ownership, and continuous feedback—were difficult to uphold. This highlighted a key limitation: Scrum, while effective in small teams, becomes much less robust when even one member becomes inactive. The situation placed additional pressure on the remaining member, who had to assume both development and documentation responsibilities, impacting the team’s balance and sustainability.
+
+### 6.2 Pair Programming
+To improve code quality and communication efficiency, we also implemented pair programming at several stages during the project. In this method, two programmers work on the same codebase at the same time, but with clearly defined roles:
+
+The helm (Siyuan Chen) is the person at the keyboard, responsible for writing the actual code.
+
+The tactician (Yang Yang) observes, thinks ahead, and identifies potential design or logic issues.
+
+Communication is key to making pair programming work. The interaction between the helm and tactician helps uncover potential issues early and facilitates real-time collaboration. Furthermore, code ownership is shared: no code is “owned” by a single author, and any team member can later refactor or improve the implementation.
+
+All code written in this format was immediately reviewed, and the tactician was well-positioned to suggest structural improvements or refactoring. This method was particularly helpful during our early sprint, when we were defining key architectural patterns and wanted to ensure that the code was clean and extensible.
+
+While the practice was less effective later in the project due to reduced team participation, it proved to be a valuable communication and quality assurance tool during active collaboration periods.
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/feedback_loop.png" width="400" style="max-height:400px; height:auto;"><br>
+  <b>Figure 15</b><br>
+  <i>Pair Programming</i>
+</p>
+
+
+
+
   ## 🟢 Green Software Optimization Results
 
 | Optimization Technique | Icon | Before Size | After Size | Reduction | Efficiency |
