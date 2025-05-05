@@ -35,7 +35,6 @@ In designing our game, we set out to create a historically immersive tower defen
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/cover.png" width="500" style="max-height:400px; height:auto;"><br>
-  <i>Cover</i>
 </p>
 
 ## A Unique Twist on Tower Defense 
