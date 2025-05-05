@@ -32,6 +32,12 @@ Add a group photo here!
 
 In designing our game, we set out to create a historically immersive tower defense experience that is both engaging and educational. Our vision was to craft a game that combines strategy , progression , and cultural significance , allowing players to explore the rich history of Bristol while defending the city from various threats  across different time periods .
 
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/cover.png" width="500" style="max-height:400px; height:auto;"><br>
+  <i>Cover</i>
+</p>
+
 ## A Unique Twist on Tower Defense 
 Unlike traditional tower defense games that focus only on mechanics, our game integrates historical storytelling into the experience. Spanning multiple eras, from the medieval period to the high-tech future, players take on the role of a Guardian , defending Bristol from invading armies, pirate raids, and cyber warfare across time.
 
