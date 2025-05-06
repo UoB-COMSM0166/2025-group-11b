@@ -18,7 +18,9 @@ Add a group photo here!
 
 ## VIDEO
 
-[![Watch the video](https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/cover.png)](https://youtu.be/dDnz3VEoCnM)
+<a href="https://youtu.be/dDnz3VEoCnM">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/cover.png" width="480">
+</a>
 
 
 
