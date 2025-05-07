@@ -26,7 +26,6 @@ Add a group photo here!
 </a>
 
 
-
 # ✨ 1. Introduction
 
 <div style="text-align: center;">
