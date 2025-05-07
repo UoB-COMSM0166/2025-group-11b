@@ -22,7 +22,7 @@ Add a group photo here!
   <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/play.png" width="480">
 </a>
 <a href="https://www.youtube.com/watch?v=mTt0Yl9rejE">
-  <img src="https://img.youtube.com/vi/mTt0Yl9rejE/hqdefault.jpg" width="480">
+  <img src="https://img.youtube.com/vi/mTt0Yl9rejE/hqdefault.jpg" width="460">
 </a>
 
 
