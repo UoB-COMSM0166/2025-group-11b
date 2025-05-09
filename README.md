@@ -19,7 +19,7 @@ Add a group photo here!
 ## VIDEO
 
 <a href="https://youtu.be/Re5hUP_9Xms">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/play.png" width="500">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-11b/blob/main/play.png" width="600">
 </a>
 
 <a href="https://www.youtube.com/watch?v=mTt0Yl9rejE">
