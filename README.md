@@ -27,7 +27,7 @@ Add a group photo here!
 </a>
 
 <a href="https://www.youtube.com/watch?v=mTt0Yl9rejE">
-  <img src="https://img.youtube.com/vi/mTt0Yl9rejE/hqdefault.jpg" width="460">
+  <img src="https://img.youtube.com/vi/mTt0Yl9rejE/hqdefault.jpg" width="600">
 </a>
 
 
