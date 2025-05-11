@@ -15,7 +15,7 @@ Add a group photo here!
 
 - Group member 1, yangyang, df24465@bristol.ac.uk, role
 - Group member 2, Siyuan Chen, gd23774@bristol.ac.uk, role
-  ![WechatIMG1235](https://github.com/user-attachments/assets/588e0d6e-9619-4d9c-b4a2-c3d60a719300)
+  <img src="[your-image.png](https://github.com/user-attachments/assets/588e0d6e-9619-4d9c-b4a2-c3d60a719300)" width="200px">
 
 
 ## VIDEO
